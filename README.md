@@ -18,7 +18,7 @@ This repository houses the primary data model, including XML Schemas (XSD), Pyth
 
 ```text
 .
-├── schemas/                # The core PIXM XML Schema Definition files (XSD)
+├── schema/                # The core PIXM XML Schema Definition files (XSD)
 │   ├── PIXM_Features.xsd   # Main feature definitions (Aircraft, Engines, etc.)
 │   ├── PIXM_DataTypes.xsd  # Fundamental types (Speed, Weight, Temperature)
 │   ├── PIXM_Codelists.xsd  # Enumerated values (controlled vocabulary)
