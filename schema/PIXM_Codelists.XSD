@@ -1,0 +1,1628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:pixm="http://www.pixm.aero/schema/0.1"
+           targetNamespace="http://www.pixm.aero/schema/0.1"
+           elementFormDefault="qualified">
+
+
+  <xs:simpleType name="CodeACorECSBleedBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AUTO"/>
+          <xs:enumeration value="OFF"/>
+          <xs:enumeration value="ON"/>
+          <xs:enumeration value="ONE_PACK_ON"/>
+          <xs:enumeration value="TWO_PACK_ON"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeAeoThrustSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AVERAGE"/>
+          <xs:enumeration value="MIN"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeAirportHeliportBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AD"/>
+          <xs:enumeration value="AH"/>
+          <xs:enumeration value="BP"/>
+          <xs:enumeration value="GP"/>
+          <xs:enumeration value="HP"/>
+          <xs:enumeration value="LS"/>
+          <xs:enumeration value="SPACE"/>
+          <xs:enumeration value="SPB"/>
+          <xs:enumeration value="UL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeAirspeedBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CAS"/>
+          <xs:enumeration value="EAS"/>
+          <xs:enumeration value="IAS"/>
+          <xs:enumeration value="TAS"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeAltitudeUseBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AT"/>
+          <xs:enumeration value="AT_OR_ABOVE"/>
+          <xs:enumeration value="AT_OR_BELOW"/>
+          <xs:enumeration value="BETWEEN"/>
+          <xs:enumeration value="BY_ATC"/>
+          <xs:enumeration value="EXPECTED"/>
+          <xs:enumeration value="RECOMMENDED"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeAntiIceDeIceSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ENGINE_ONLY"/>
+          <xs:enumeration value="ENGINE_WING"/>
+          <xs:enumeration value="FLIGHT_IN_ICING"/>
+          <xs:enumeration value="OFF"/>
+          <xs:enumeration value="STUCK_OPEN"/>
+          <xs:enumeration value="WING_ONLY"/>
+          <xs:enumeration value="ENGINE_AIRFRAME"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeAntiSkidSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="OFF"/>
+          <xs:enumeration value="ON"/>
+          <xs:enumeration value="PARTIAL_OFF"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeApproachBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ARA"/>
+          <xs:enumeration value="ARSR"/>
+          <xs:enumeration value="ASR"/>
+          <xs:enumeration value="DF"/>
+          <xs:enumeration value="GLS"/>
+          <xs:enumeration value="GPS"/>
+          <xs:enumeration value="IGS"/>
+          <xs:enumeration value="ILS"/>
+          <xs:enumeration value="LDA"/>
+          <xs:enumeration value="LDA_DME"/>
+          <xs:enumeration value="LOC"/>
+          <xs:enumeration value="LOC_BC"/>
+          <xs:enumeration value="MLS"/>
+          <xs:enumeration value="MLS_AZM"/>
+          <xs:enumeration value="NDB"/>
+          <xs:enumeration value="NDB_DME"/>
+          <xs:enumeration value="PAR"/>
+          <xs:enumeration value="RNAV"/>
+          <xs:enumeration value="RNP"/>
+          <xs:enumeration value="SDF"/>
+          <xs:enumeration value="SRA"/>
+          <xs:enumeration value="TACAN"/>
+          <xs:enumeration value="TLS"/>
+          <xs:enumeration value="VOR"/>
+          <xs:enumeration value="VOR_DME"/>
+          <xs:enumeration value="VORTAC"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeApproachCategoryBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NORMAL"/>
+          <xs:enumeration value="STEEP"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeApproachClimbGradSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AVG_GRADIENT"/>
+          <xs:enumeration value="CHECK_OBSTACLES"/>
+          <xs:enumeration value="NORMAL"/>
+          <xs:enumeration value="SELECTED"/>
+          <xs:enumeration value="WIND_ADJUSTED"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeApproachClimbSpeedSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="APPLY_DELTA"/>
+          <xs:enumeration value="FIXED"/>
+          <xs:enumeration value="NORMAL"/>
+          <xs:enumeration value="VREF_INC"/>
+          <xs:enumeration value="VS_MULT"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeBrakeEnergyChoiceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NORMAL"/>
+          <xs:enumeration value="SELECTED"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeBrakesConfigurationBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ALL_OPERATING"/>
+          <xs:enumeration value="NOSE_GEAR_INOP"/>
+          <xs:enumeration value="ONE_BRAKE_INOP"/>
+          <xs:enumeration value="TWO_BRAKE_INOP"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeBrakingActionBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="DRY"/>
+          <xs:enumeration value="GOOD"/>
+          <xs:enumeration value="MEDIUM"/>
+          <xs:enumeration value="MEDIUM_GOOD"/>
+          <xs:enumeration value="MEDIUM_POOR"/>
+          <xs:enumeration value="NIL"/>
+          <xs:enumeration value="POOR"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeBrakingMuCalcSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="INPUT_OVERRIDE"/>
+          <xs:enumeration value="MIN_VALUE"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeCardinalDirectionBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="E"/>
+          <xs:enumeration value="ENE"/>
+          <xs:enumeration value="ESE"/>
+          <xs:enumeration value="N"/>
+          <xs:enumeration value="NE"/>
+          <xs:enumeration value="NNE"/>
+          <xs:enumeration value="NNW"/>
+          <xs:enumeration value="NW"/>
+          <xs:enumeration value="S"/>
+          <xs:enumeration value="SE"/>
+          <xs:enumeration value="SSE"/>
+          <xs:enumeration value="SSW"/>
+          <xs:enumeration value="SW"/>
+          <xs:enumeration value="W"/>
+          <xs:enumeration value="WNW"/>
+          <xs:enumeration value="WSW"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeCenterGearBrakesBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ALL_OPERATING"/>
+          <xs:enumeration value="ONE_INOP"/>
+          <xs:enumeration value="TWO_PLUS_INOP"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeContaminationBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ASH"/>
+          <xs:enumeration value="CHEMICAL_TREATMENT"/>
+          <xs:enumeration value="COMPACT_SNOW"/>
+          <xs:enumeration value="DRIFTING_SNOW"/>
+          <xs:enumeration value="DRY"/>
+          <xs:enumeration value="DRY_SNOW"/>
+          <xs:enumeration value="FROST"/>
+          <xs:enumeration value="GRAS"/>
+          <xs:enumeration value="ICE"/>
+          <xs:enumeration value="LOOSE_SAND"/>
+          <xs:enumeration value="NONE"/>
+          <xs:enumeration value="OIL"/>
+          <xs:enumeration value="PREPARED_WINTER_RWY"/>
+          <xs:enumeration value="RUBBER"/>
+          <xs:enumeration value="RUT"/>
+          <xs:enumeration value="SAND"/>
+          <xs:enumeration value="SLIPPERY_WET"/>
+          <xs:enumeration value="SLUSH"/>
+          <xs:enumeration value="STANDING_WATER"/>
+          <xs:enumeration value="WATER"/>
+          <xs:enumeration value="WET"/>
+          <xs:enumeration value="WET_ICE"/>
+          <xs:enumeration value="WET_SNOW"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeCourseBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MAG_BRG"/>
+          <xs:enumeration value="MAG_COURSE"/>
+          <xs:enumeration value="MAG_HDG"/>
+          <xs:enumeration value="MAG_TRACK"/>
+          <xs:enumeration value="RDL"/>
+          <xs:enumeration value="TRUE_BRG"/>
+          <xs:enumeration value="TRUE_COURSE"/>
+          <xs:enumeration value="TRUE_HDG"/>
+          <xs:enumeration value="TRUE_TRACK"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeDeclaredDistanceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ASDA"/>
+          <xs:enumeration value="LDA"/>
+          <xs:enumeration value="LDAH"/>
+          <xs:enumeration value="RTODAH"/>
+          <xs:enumeration value="TODA"/>
+          <xs:enumeration value="TODAH"/>
+          <xs:enumeration value="TORA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeDestinationAlternateSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ALTERNATE"/>
+          <xs:enumeration value="DESTINATION"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeDistanceVerticalUomBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FL"/>
+          <xs:enumeration value="FT"/>
+          <xs:enumeration value="M"/>
+          <xs:enumeration value="SM"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  
+  <xs:simpleType name="CodeEngineDrivenPumpInopBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NORMAL"/>
+          <xs:enumeration value="ONE_YELLOW"/>
+          <xs:enumeration value="ONE_GREEN"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  
+  <xs:simpleType name="CodeEngineInoperativeSelectionBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CRITICAL"/>
+          <xs:enumeration value="OUTER_LEFT"/>
+          <xs:enumeration value="OUTER_RIGHT"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeEngineStatusBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AEO"/>
+          <xs:enumeration value="OEI"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeEquipmentConditionBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="INOPERATIVE"/>
+          <xs:enumeration value="OPERATIVE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeFinalSegObsClearanceMethodChoiceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MULTIPLE"/>
+          <xs:enumeration value="NONE"/>
+          <xs:enumeration value="SINGLE"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeFlightPathChoiceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BEST_SECSEG_EXT"/>
+          <xs:enumeration value="BEST_SECSEG_FINAL"/>
+          <xs:enumeration value="EXT_SECSEG"/>
+          <xs:enumeration value="MFG_ALTERNATE"/>
+          <xs:enumeration value="SECSEG_FINAL"/>
+          <xs:enumeration value="SECSEG_ONLY"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeForwardCGLimitPositionBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ALTERNATE"/>
+          <xs:enumeration value="ALTERNATE_2"/>
+          <xs:enumeration value="STANDARD"/>
+          <xs:enumeration value="USER_INPUT"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeFrictionDeviceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BRD"/>
+          <xs:enumeration value="GRT"/>
+          <xs:enumeration value="MUM"/>
+          <xs:enumeration value="RFT"/>
+          <xs:enumeration value="SFH"/>
+          <xs:enumeration value="SFL"/>
+          <xs:enumeration value="SKH"/>
+          <xs:enumeration value="SKL"/>
+          <xs:enumeration value="TAP"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeFrictionEstimateBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="GOOD"/>
+          <xs:enumeration value="MEDIUM"/>
+          <xs:enumeration value="MEDIUM_GOOD"/>
+          <xs:enumeration value="MEDIUM_POOR"/>
+          <xs:enumeration value="POOR"/>
+          <xs:enumeration value="RWYCC_0"/>
+          <xs:enumeration value="RWYCC_1"/>
+          <xs:enumeration value="RWYCC_2"/>
+          <xs:enumeration value="RWYCC_3"/>
+          <xs:enumeration value="RWYCC_4"/>
+          <xs:enumeration value="RWYCC_5"/>
+          <xs:enumeration value="RWYCC_6"/>
+          <xs:enumeration value="UNRELIABLE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeGradientLossApplicationBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AFM_DEFINED"/>
+          <xs:enumeration value="MFG_DEFINED"/>
+          <xs:enumeration value="SPECIFIED"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeGroundSpoilerSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ARMED"/>
+          <xs:enumeration value="INOP"/>
+          <xs:enumeration value="NOT_ARMED"/>
+          <xs:enumeration value="ONE_PAIR_INOP"/>
+          <xs:enumeration value="TWO_PAIR_INOP"/>
+          <xs:enumeration value="UNLOCKED"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeHeightReferenceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="HAA"/>
+          <xs:enumeration value="HAL"/>
+          <xs:enumeration value="HAS"/>
+          <xs:enumeration value="HAT"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeLandingClimbGradSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NORMAL"/>
+          <xs:enumeration value="SELECTED"/>
+          <xs:enumeration value="WIND_ADJUSTED"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeLandingClimbSpeedSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="APPLY_DELTA"/>
+          <xs:enumeration value="FIXED"/>
+          <xs:enumeration value="NORMAL"/>
+          <xs:enumeration value="VS_MULT"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeLandingGearPositionBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EXTENDED"/>
+          <xs:enumeration value="RETRACTED"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeLandingLightsAutoRetractBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NORMAL"/>
+          <xs:enumeration value="ONE_LIGHT_INOP"/>
+          <xs:enumeration value="TWO_LIGHTS_INOP"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeLandingCalculationModeBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="DISPATCH_RLD"/>
+          <xs:enumeration value="OPERATIONAL_OPLD"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeLandingCalculationTypeBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FIRST_PRINCIPLE"/>
+          <xs:enumeration value="PRECALCULATION"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeLandingCategoryChoiceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AUTO"/>
+          <xs:enumeration value="CAT2"/>
+          <xs:enumeration value="CAT3A"/>
+          <xs:enumeration value="CAT3B"/>
+          <xs:enumeration value="MANUAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeLandingErrorBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CALC_ERROR"/>
+          <xs:enumeration value="INPUT_ERROR"/>
+          <xs:enumeration value="MOD_TO_LIMITS"/>
+          <xs:enumeration value="NO_VALID_RESULT"/>
+          <xs:enumeration value="SUCCESS"/>
+          <xs:enumeration value="SUCCESS_INPUTS_NOT_USED"/>
+          <xs:enumeration value="SUCCESS_NOT_FOR_OPS"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeLandingLimitBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="APP_CLIMB_LIMIT"/>
+          <xs:enumeration value="BRAKE_ENERGY"/>
+          <xs:enumeration value="INPUT_WEIGHT"/>
+          <xs:enumeration value="LDA"/>
+          <xs:enumeration value="LDG_CLIMB_LIMIT"/>
+          <xs:enumeration value="LVO_AEO_CLIMB_LIMIT"/>
+          <xs:enumeration value="LVO_OEI_CLIMB_LIMIT"/>
+          <xs:enumeration value="TIRE_SPEED"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeLandingRequestBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="DISTANCES"/>
+          <xs:enumeration value="LIMIT_WEIGHTS"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  
+  <xs:simpleType name="CodeLandingSlatFlapOptimizationBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="OPTIMUM"/>
+          <xs:enumeration value="SELECTED"/>
+          <xs:enumeration value="TEXT_ENTRY"/>
+        </xs:restriction>
+      </xs:simpleType>
+     </xs:union>
+  </xs:simpleType>
+  
+
+  <xs:simpleType name="CodeLevelOffHeightChoiceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FIXED"/>
+          <xs:enumeration value="MAX_AND_MIN"/>
+          <xs:enumeration value="MAX_ONLY"/>
+          <xs:enumeration value="MIN_ONLY"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeMaxAssumedTempSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EXACT"/>
+          <xs:enumeration value="ROUND_DOWN_DEGC"/>
+          <xs:enumeration value="ROUND_DOWN_DEGF"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeMaxStoppingMarginBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FIXED_DIST"/>
+          <xs:enumeration value="PERCENT_DIST"/>
+          <xs:enumeration value="UNRESTRICTED"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeMaxWeightLimitSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FIXED"/>
+          <xs:enumeration value="MAX"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeMeteoConditionsBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ALL"/>
+          <xs:enumeration value="IMC"/>
+          <xs:enumeration value="VMC"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeMinV1RestrictionChoiceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NO_RESTRICTION"/>
+          <xs:enumeration value="USER_INPUT"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  
+  <xs:simpleType name="CodeMinWeightDistanceFlagBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ALL_WEIGHTS"/>
+          <xs:enumeration value="GIVEN_WEIGHT_ONLY"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="CodeMuCalculationBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="INPUT_OVERRIDE"/>
+          <xs:enumeration value="MINIMUM"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeNormalSelectedBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NORMAL"/>
+          <xs:enumeration value="SELECTED"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeNumInopBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ALL_OPERATING"/>
+          <xs:enumeration value="ONE_INOP"/>
+          <xs:enumeration value="TWO_PLUS_INOP"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeObstacleDatumBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BEGIN_TORA"/>
+          <xs:enumeration value="END_TORA"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeOeiFerryFlightBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NO"/>
+          <xs:enumeration value="ONE_ENGINE_FERRY"/>
+          <xs:enumeration value="TWO_ENGINE_GOAROUND"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeOeiSplaySelectionBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FAA_AC120_91"/>
+          <xs:enumeration value="ICAO_ANNEX_6"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeOeiSplayStartBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="END_TOD"/>
+          <xs:enumeration value="END_TODA"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeOnOffBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="OFF"/>
+          <xs:enumeration value="ON"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeOpLDOptionBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BOTH"/>
+          <xs:enumeration value="MAX"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeOutputTypeSelectionBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FULL"/>
+          <xs:enumeration value="SHORT"/>
+          <xs:enumeration value="VERY_SHORT"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodePavementBehaviourBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FLEXIBLE"/>
+          <xs:enumeration value="RIGID"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodePavementSubgradeBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="A"/>
+          <xs:enumeration value="B"/>
+          <xs:enumeration value="C"/>
+          <xs:enumeration value="D"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodePerformAllEngineCalcBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="IF_AVAILABLE"/>
+          <xs:enumeration value="NO"/>
+          <xs:enumeration value="YES"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodePerfRunwaySurfaceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CORAL"/>
+          <xs:enumeration value="GRASS_GTE15CBR"/>
+          <xs:enumeration value="GRASS_LT15CBR"/>
+          <xs:enumeration value="GRAVEL"/>
+          <xs:enumeration value="GROOVED_POROUS"/>
+          <xs:enumeration value="NORMAL_SMOOTH"/>
+          <xs:enumeration value="UNPAVED_FIXEDCBR"/>
+          <xs:enumeration value="UNPAVED_GTE15CBR"/>
+          <xs:enumeration value="UNPAVED_LT15CBR"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeReducedThrustMethodBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="IMPROVED"/>
+          <xs:enumeration value="NONE"/>
+          <xs:enumeration value="TRADITIONAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeRelativePositionBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AFTER"/>
+          <xs:enumeration value="AT"/>
+          <xs:enumeration value="BEFORE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeSlatFlapOptimizationBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FIXED"/>
+          <xs:enumeration value="FULL_OPTIMUM"/>
+          <xs:enumeration value="HALF_DEG_OPTIMUM"/>
+          <xs:enumeration value="LIMITED_OPTIMUM"/>
+          <xs:enumeration value="WHOLE_DEG_OPTIMUM"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeTakeoffThrustPowerSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MTO"/>
+          <xs:enumeration value="NORMAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeThresholdSpeedSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FMS_SPEED_INC"/>
+          <xs:enumeration value="NORMAL"/>
+          <xs:enumeration value="VREF_ADDITIVE"/>
+          <xs:enumeration value="VS_MULT"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeThresholdTouchdownDistBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FIXED"/>
+          <xs:enumeration value="MIN"/>
+          <xs:enumeration value="NORMAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeThrustRevDelayBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ADDITIONAL"/>
+          <xs:enumeration value="REGULATORY"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeThrustReverseLevelBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MAX_EMERGENCY"/>
+          <xs:enumeration value="MAX_NORM"/>
+          <xs:enumeration value="NON_STD_SCHED_I"/>
+          <xs:enumeration value="NON_STD_SCHED_II"/>
+          <xs:enumeration value="REV_IDLE"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeThrustReverseSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ALL_INOP"/>
+          <xs:enumeration value="ALL_OPERATIVE"/>
+          <xs:enumeration value="FIFTY_PERCENT_FULL"/>
+          <xs:enumeration value="ONE_INOP"/>
+          <xs:enumeration value="TWO_INOP"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeThrustSettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EPR"/>
+          <xs:enumeration value="PCT_N1"/>
+          <xs:enumeration value="PCT_N2"/>
+          <xs:enumeration value="THR_SETTING"/>
+          <xs:enumeration value="TPR"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeTimeReferenceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="UTC"/>
+          <xs:enumeration value="UTC-1"/>
+          <xs:enumeration value="UTC-10"/>
+          <xs:enumeration value="UTC-11"/>
+          <xs:enumeration value="UTC-12"/>
+          <xs:enumeration value="UTC-2"/>
+          <xs:enumeration value="UTC-2:30"/>
+          <xs:enumeration value="UTC-3"/>
+          <xs:enumeration value="UTC-3:30"/>
+          <xs:enumeration value="UTC-4"/>
+          <xs:enumeration value="UTC-5"/>
+          <xs:enumeration value="UTC-6"/>
+          <xs:enumeration value="UTC-7"/>
+          <xs:enumeration value="UTC-8"/>
+          <xs:enumeration value="UTC-9"/>
+          <xs:enumeration value="UTC-9:30"/>
+          <xs:enumeration value="UTC:+9:30"/>
+          <xs:enumeration value="UTC+1"/>
+          <xs:enumeration value="UTC+10"/>
+          <xs:enumeration value="UTC+10:30"/>
+          <xs:enumeration value="UTC+11"/>
+          <xs:enumeration value="UTC+12"/>
+          <xs:enumeration value="UTC+12:45"/>
+          <xs:enumeration value="UTC+13"/>
+          <xs:enumeration value="UTC+14"/>
+          <xs:enumeration value="UTC+2"/>
+          <xs:enumeration value="UTC+3"/>
+          <xs:enumeration value="UTC+4"/>
+          <xs:enumeration value="UTC+4:30"/>
+          <xs:enumeration value="UTC+5"/>
+          <xs:enumeration value="UTC+5:30"/>
+          <xs:enumeration value="UTC+5:45"/>
+          <xs:enumeration value="UTC+6"/>
+          <xs:enumeration value="UTC+6:30"/>
+          <xs:enumeration value="UTC+7"/>
+          <xs:enumeration value="UTC+8"/>
+          <xs:enumeration value="UTC+8:45"/>
+          <xs:enumeration value="UTC+9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeTireProfileBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="LOW"/>
+          <xs:enumeration value="NORMAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeTireTypeBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="LOW"/>
+          <xs:enumeration value="NORMAL"/>
+          <xs:enumeration value="RADIAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeTOCalculationOptionBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FULL"/>
+          <xs:enumeration value="LIMITED"/>
+          <xs:enumeration value="SHORT"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeTOLimitBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ACCEL_AEO"/>
+          <xs:enumeration value="ACCEL_OEI"/>
+          <xs:enumeration value="ACCEL_SEGMENT"/>
+          <xs:enumeration value="ASD_AEO"/>
+          <xs:enumeration value="ASD_OEI"/>
+          <xs:enumeration value="FINAL_SEGMENT_CG"/>
+          <xs:enumeration value="FIRST_SEGMENT_CG"/>
+          <xs:enumeration value="FUEL_DUMP"/>
+          <xs:enumeration value="INPUT_WEIGHT"/>
+          <xs:enumeration value="MAX_BRAKE_ENERGY"/>
+          <xs:enumeration value="MAX_STRUCTURAL"/>
+          <xs:enumeration value="MAX_V1VR"/>
+          <xs:enumeration value="MAX_V2_TAS"/>
+          <xs:enumeration value="MIN_V1"/>
+          <xs:enumeration value="MIN_V1VR"/>
+          <xs:enumeration value="MIN_V2"/>
+          <xs:enumeration value="MIN_V2_TAS"/>
+          <xs:enumeration value="OBSTACLE"/>
+          <xs:enumeration value="SECOND_SEGMENT_CG"/>
+          <xs:enumeration value="THRUST_TIME"/>
+          <xs:enumeration value="TIRE_PRESSURE"/>
+          <xs:enumeration value="TIRE_SPEED"/>
+          <xs:enumeration value="TOD_AEO"/>
+          <xs:enumeration value="TOD_OEI"/>
+          <xs:enumeration value="TOR_AEO"/>
+          <xs:enumeration value="TOR_OEI"/>
+          <xs:enumeration value="UPHILL_SLOPE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeTurnStartBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="DISTANCE"/>
+          <xs:enumeration value="GROSS_HEIGHT"/>
+          <xs:enumeration value="MIN_NET_HEIGHT"/>
+          <xs:enumeration value="NET_HEIGHT"/>
+          <xs:enumeration value="PRESSURE_ALTITUDE"/>
+          <xs:enumeration value="QFE_ALTITUDE"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeV1VRChoiceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BALANCED"/>
+          <xs:enumeration value="BALANCED_PLUS"/>
+          <xs:enumeration value="BALANCED_PLUS_VMCG"/>
+          <xs:enumeration value="FIXED_V1"/>
+          <xs:enumeration value="FIXED_V1VR"/>
+          <xs:enumeration value="INTERMEDIATE_V1"/>
+          <xs:enumeration value="MAXIMUM"/>
+          <xs:enumeration value="MINIMUM"/>
+          <xs:enumeration value="OPTIMUM"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeV1VRRangeChoiceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FULL"/>
+          <xs:enumeration value="REDUCED"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeV2VSChoiceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FIXED"/>
+          <xs:enumeration value="FIXED_VMU"/>
+          <xs:enumeration value="OPTIMUM"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeVerticalReferenceBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSL"/>
+          <xs:enumeration value="SFC"/>
+          <xs:enumeration value="STD"/>
+          <xs:enumeration value="W84"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeVerticalStructureBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AG_EQUIP"/>
+          <xs:enumeration value="AIRCRAFT"/>
+          <xs:enumeration value="AIRPORT_BEACON"/>
+          <xs:enumeration value="ANEMOMETER"/>
+          <xs:enumeration value="ANTENNA"/>
+          <xs:enumeration value="ARCH"/>
+          <xs:enumeration value="BLAST_FENCE"/>
+          <xs:enumeration value="BRIDGE"/>
+          <xs:enumeration value="BUILDING"/>
+          <xs:enumeration value="BUSH"/>
+          <xs:enumeration value="CABLE_CAR"/>
+          <xs:enumeration value="CAPTIVE_BALLOON_KITE"/>
+          <xs:enumeration value="CATENARY"/>
+          <xs:enumeration value="CHURCH"/>
+          <xs:enumeration value="CITY"/>
+          <xs:enumeration value="COAST_GUARD_STATION"/>
+          <xs:enumeration value="COMPRESSED_AIR_SYSTEM"/>
+          <xs:enumeration value="CONIFEROUS_TREES"/>
+          <xs:enumeration value="CONTROL_MONITORING_SYSTEM"/>
+          <xs:enumeration value="CONTROL_TOWER"/>
+          <xs:enumeration value="COOLING_TOWER"/>
+          <xs:enumeration value="CRANE"/>
+          <xs:enumeration value="DAM"/>
+          <xs:enumeration value="DOME"/>
+          <xs:enumeration value="EARTHEN_WORKS"/>
+          <xs:enumeration value="ELECTRICAL_EXIT_LIGHT"/>
+          <xs:enumeration value="ELECTRICAL_SYSTEM"/>
+          <xs:enumeration value="ELEVATOR"/>
+          <xs:enumeration value="FENCE"/>
+          <xs:enumeration value="FIRE_STATION"/>
+          <xs:enumeration value="FIXED_BASE_OPERATOR"/>
+          <xs:enumeration value="FOREST"/>
+          <xs:enumeration value="FORT"/>
+          <xs:enumeration value="FUEL_SYSTEM"/>
+          <xs:enumeration value="GATE"/>
+          <xs:enumeration value="GENERAL_UTILITY"/>
+          <xs:enumeration value="GRAIN_ELEVATOR"/>
+          <xs:enumeration value="HANGAR"/>
+          <xs:enumeration value="HEAT_COOL_SYSTEM"/>
+          <xs:enumeration value="INDUSTRIAL_STRUCTURE"/>
+          <xs:enumeration value="INDUSTRIAL_SYSTEM"/>
+          <xs:enumeration value="LIGHT_POLE"/>
+          <xs:enumeration value="LIGHT_STANCHION"/>
+          <xs:enumeration value="LIGHTHOUSE"/>
+          <xs:enumeration value="LOOKOUT_TOWER"/>
+          <xs:enumeration value="MONUMENT"/>
+          <xs:enumeration value="MOSQUE"/>
+          <xs:enumeration value="NATURAL_GAS_SYSTEM"/>
+          <xs:enumeration value="NAVAID"/>
+          <xs:enumeration value="NUCLEAR_REACTOR"/>
+          <xs:enumeration value="OIL_GAS_FIELD"/>
+          <xs:enumeration value="PAGODA"/>
+          <xs:enumeration value="PALM"/>
+          <xs:enumeration value="PEDESTRIAN_BRIDGE"/>
+          <xs:enumeration value="PIPELINE"/>
+          <xs:enumeration value="POLE"/>
+          <xs:enumeration value="POWER_PLANT"/>
+          <xs:enumeration value="RAILROAD_BRIDGE"/>
+          <xs:enumeration value="RECREATIONAL_STRUCTURE"/>
+          <xs:enumeration value="REFINERY"/>
+          <xs:enumeration value="RIG"/>
+          <xs:enumeration value="ROAD_BRIDGE"/>
+          <xs:enumeration value="RUINS"/>
+          <xs:enumeration value="SALTWATER_SYSTEM"/>
+          <xs:enumeration value="SHIP"/>
+          <xs:enumeration value="SIGN"/>
+          <xs:enumeration value="SOLAR_PANELS"/>
+          <xs:enumeration value="SPIRE"/>
+          <xs:enumeration value="STACK"/>
+          <xs:enumeration value="STADIUM"/>
+          <xs:enumeration value="STORAGE_STRUCTURE"/>
+          <xs:enumeration value="STORM_SYSTEM"/>
+          <xs:enumeration value="TANK"/>
+          <xs:enumeration value="TELE_POLE"/>
+          <xs:enumeration value="TELEPHONE_LINE"/>
+          <xs:enumeration value="TEMPLE"/>
+          <xs:enumeration value="TERMINAL_BUILDING"/>
+          <xs:enumeration value="TERRAIN_HIGHPOINT"/>
+          <xs:enumeration value="TOWER"/>
+          <xs:enumeration value="TOWN"/>
+          <xs:enumeration value="TRAIN"/>
+          <xs:enumeration value="TRAMWAY"/>
+          <xs:enumeration value="TRANSMISSION_LINE"/>
+          <xs:enumeration value="TRANSMISSION_TOWER"/>
+          <xs:enumeration value="TREE"/>
+          <xs:enumeration value="URBAN"/>
+          <xs:enumeration value="VEGETATION"/>
+          <xs:enumeration value="VEHICLE"/>
+          <xs:enumeration value="VILLAGE"/>
+          <xs:enumeration value="WALL"/>
+          <xs:enumeration value="WASTEWATER_SYSTEM"/>
+          <xs:enumeration value="WATER_SYSTEM"/>
+          <xs:enumeration value="WATER_TOWER"/>
+          <xs:enumeration value="WIND_INDICATOR"/>
+          <xs:enumeration value="WINDMILL"/>
+          <xs:enumeration value="WINDMILL_FARMS"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeVerticalStructureMarkingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CHEQUERED"/>
+          <xs:enumeration value="FLAG"/>
+          <xs:enumeration value="HBANDS"/>
+          <xs:enumeration value="MARKERS"/>
+          <xs:enumeration value="MONOCOLOUR"/>
+          <xs:enumeration value="VBANDS"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeVerticalStructureMaterialBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ADOBE_BRICK"/>
+          <xs:enumeration value="ALUMINIUM"/>
+          <xs:enumeration value="BRICK"/>
+          <xs:enumeration value="CONCRETE"/>
+          <xs:enumeration value="FIBREGLASS"/>
+          <xs:enumeration value="GLASS"/>
+          <xs:enumeration value="IRON"/>
+          <xs:enumeration value="MASONRY"/>
+          <xs:enumeration value="METAL"/>
+          <xs:enumeration value="MUD"/>
+          <xs:enumeration value="PLANT"/>
+          <xs:enumeration value="PRESTRESSED_CONCRETE"/>
+          <xs:enumeration value="REINFORCED_CONCRETE"/>
+          <xs:enumeration value="SOD"/>
+          <xs:enumeration value="STEEL"/>
+          <xs:enumeration value="STONE"/>
+          <xs:enumeration value="TREATED_TIMBER"/>
+          <xs:enumeration value="WOOD"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeVisibilitySettingBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="LOW"/>
+          <xs:enumeration value="NORMAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeYesNoBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NO"/>
+          <xs:enumeration value="YES"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+</xs:schema>
