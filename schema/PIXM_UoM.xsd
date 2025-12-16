@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:pixm="http://www.pixm.aero/schema/0.1"
+           targetNamespace="http://www.pixm.aero/schema/0.1"
+           xmlns="http://www.pixm.aero/schema/0.1"
+           elementFormDefault="qualified">
+
+
+  <xs:simpleType name="UomBrakeEnergyType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MJ"/>
+          <xs:enumeration value="MLB_FT"/>
+          <xs:enumeration value="PCT_MAX"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="UomDepthType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CM"/>
+          <xs:enumeration value="FT"/>
+          <xs:enumeration value="IN"/>
+          <xs:enumeration value="MM"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="UomDistanceType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CM"/>
+          <xs:enumeration value="FT"/>
+          <xs:enumeration value="KM"/>
+          <xs:enumeration value="M"/>
+          <xs:enumeration value="MI"/>
+          <xs:enumeration value="NM"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="UomDistanceVerticalType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FL"/>
+          <xs:enumeration value="FT"/>
+          <xs:enumeration value="M"/>
+          <xs:enumeration value="SM"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="UomDurationType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="HR"/>
+          <xs:enumeration value="MIN"/>
+          <xs:enumeration value="SEC"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="UomFLType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FL"/>
+          <xs:enumeration value="SM"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="UomPressureType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ATM"/>
+          <xs:enumeration value="BAR"/>
+          <xs:enumeration value="HPA"/>
+          <xs:enumeration value="KPA"/>
+          <xs:enumeration value="MPA"/>
+          <xs:enumeration value="PA"/>
+          <xs:enumeration value="PSI"/>
+          <xs:enumeration value="TORR"/>
+          <xs:enumeration value="INHG"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="UomSpeedType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FT_MIN"/>
+          <xs:enumeration value="FT_SEC"/>
+          <xs:enumeration value="KM_H"/>
+          <xs:enumeration value="KT"/>
+          <xs:enumeration value="M_MIN"/>
+          <xs:enumeration value="M_SEC"/>
+          <xs:enumeration value="MACH"/>
+          <xs:enumeration value="MPH"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="UomTemperatureType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="C"/>
+          <xs:enumeration value="DISA_C"/>
+          <xs:enumeration value="DISA_F"/>
+          <xs:enumeration value="F"/>
+          <xs:enumeration value="K"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="UomThrustSettingType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EPR"/>
+          <xs:enumeration value="FT_LBF"/>
+          <xs:enumeration value="NM"/>
+          <xs:enumeration value="PCT_N1"/>
+          <xs:enumeration value="TPR"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="UomWeightType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="KG"/>
+          <xs:enumeration value="LB"/>
+          <xs:enumeration value="T"/>
+          <xs:enumeration value="TON"/>
+          <xs:enumeration value="KN"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+</xs:schema>

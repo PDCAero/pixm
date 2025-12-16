@@ -1,0 +1,1818 @@
+<?xml  version='1.0' encoding='utf-8' ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:aixm="http://www.aixm.aero/schema/5.1.1"
+	targetNamespace="http://www.pixm.aero/schema/0.1"
+	xmlns="http://www.pixm.aero/schema/0.1"
+	xmlns:pixm="http://www.pixm.aero/schema/0.1"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<xs:import namespace="http://www.aixm.aero/schema/5.1.1" schemaLocation="http://www.aixm.aero/schema/5.1.1/aixm511.xsd"/>
+	<xs:include schemaLocation="PIXM_Codelists.xsd"/>
+	<xs:include schemaLocation="PIXM_DataTypes.xsd"/>
+	<xs:include schemaLocation="PIXM_Measures.xsd"/>
+	<xs:include schemaLocation="PIXM_AbstractGML_ObjectTypes.xsd"/>
+	
+	<xs:element name="ContaminationTimeSlice" type="pixm:ContaminationTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/> 
+	<xs:complexType name="ContaminationTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="contamDepth" type="pixm:ValDepthType" minOccurs="0"/>
+					<xs:element name="contamSpecificGravity" type="xs:decimal" minOccurs="0"/>
+					<xs:element name="contamType" type="pixm:CodeContaminationType" minOccurs="0"/>
+					<xs:element name="muValue" type="pixm:ValMuType" minOccurs="0"/>
+					<xs:element name="rcrValue" type="xs:positiveInteger" minOccurs="0"/>
+					<xs:element name="location" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ContaminationDefinition" type="pixm:CodeContaminationType" substitutionGroup="pixm:AbstractPIXMFeatureType"/> 	
+	<xs:complexType name="ContaminationDefinitionType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:ContaminationTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ObstacleTimeSlice" type="pixm:ObstacleTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/> 
+	<xs:complexType name="ObstacleTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="aglHeight" type="pixm:ValDistanceVerticalType" minOccurs="1"/>
+					<xs:element name="amslHeight" type="ValDistanceVerticalType" minOccurs="1"/>
+					<xs:element name="horizontalAccuracy" type="ValDistanceType" minOccurs="0"/>
+					<xs:element name="name" type="xs:string" minOccurs="0"/>
+					<xs:element name="studyNumber" type="xs:string" minOccurs="1"/>
+					<xs:element name="type" type="xs:string" minOccurs="0"/>
+					<xs:element name="verticalAccuracy" type="ValDistanceVerticalType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="Obstacle" type="pixm:ObstacleType" substitutionGroup="pixm:AbstractPIXMFeatureType"/> 	
+	<xs:complexType name="ObstacleType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:ObstacleTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="PerformanceObstacleTimeSlice" type="pixm:PerformanceObstacleTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/> 
+	<xs:complexType name="PerformanceObstacleTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="heightAboveReference" type="pixm:ValDistanceVerticalType" minOccurs="1"/>
+					<xs:element name="longitudinalDistance" type="pixm:ValDistanceType" minOccurs="1"/>
+					<xs:element name="lateralDistance" type="pixm:ValDistanceType" minOccurs="0"/>
+					<xs:element name="obstacleDatum" type="pixm:CodeObstacleDatumType" minOccurs="0"/>
+					<xs:choice minOccurs="0">
+						<xs:element name="sourceObstacle" type="ObstacleType"/>
+						<xs:element name="sourceAIXMObstacle" type="VerticalStructure"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>	
+	</xs:complexType>
+	
+	<xs:element name="PerformanceObstacle" type="pixm:PerformanceObstacleType" substitutionGroup="pixm:AbstractPIXMFeatureType"/> 	
+	<xs:complexType name="PerformanceObstacleType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:PerformanceObstacleTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="PerformanceObstacleSetTimeSlice" type="pixm:PerformanceObstacleSetTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/> 
+	<xs:complexType name="PerformanceObstacleSetTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="numObs" type="xs:int"/>
+					<xs:element name="referencePointName" type="xs:string" minOccurs="0"/>
+					<xs:element name="referencePointGeometry" type="gml:GM_Point" minOccurs="0"/>
+					<xs:element name="obstacleDefinition" type="pixm:PerformanceObstacleType" minOccurs="0" maxOccurs="unbound"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="PerformanceObstacleSet" type="pixm:PerformanceObstacleSetType" substitutionGroup="pixm:AbstractPIXMFeatureType"/> 	
+	<xs:complexType name="PerformanceObstacleSetType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:PerformanceObstacleSetTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="ObstacleAccountabilitySplayTimeSlice" type="ObstacleAccountabilitySplayTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:complexType name="ObstacleAccountabilitySplayTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="expandedSplayForTurns" type="pixm:CodeYesNoType"/>
+					<xs:element name="initialHalfWidth" type="pixm:ValDistanceType"/>
+					<xs:element name="maxHalfWidthAfterTurn" type="pixm:ValDistanceType"/>
+					<xs:element name="maxTypicalHalfWidth" type="pixm:ValDistanceType"/>
+					<xs:element name="oeiSplaySelection" type="pixm:CodeOeiSplaySelectionType"/>
+					<xs:element name="oeiSplayStart" type="pixm:CodeOeiSplayStartType"/>
+					<xs:element name="splayTurningGrowthRate" type="pixm:ValPercentType"/>
+					<xs:element name="splayTypicalGrowthRate" type="pixm:ValPercentType"/>
+					<xs:choice>
+						<xs:element name="surfaceExtent_3D" type="gml:SurfaceType"/>
+						<xs:element name="surfaceExtent_2D" type="gml:SurfaceType"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="ObstacleAccountabilitySplay" type="pixm:ObstacleAccountabilitySplayType" substitutionGroup="pixm:AbstractPIXMFeatureType"/> 	
+	<xs:complexType name="ObstacleAccountabilitySplayType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:ObstacleAccountabilitySplayTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	
+	<xs:element name="PerformanceRunwayTimeSlice" type="PerformanceRunwayTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:complexType name="PerformanceRunwayTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="asda" type="pixm:ValDistanceType" minOccurs="0"/>
+					<xs:element name="asdaSlope" type="pixm:ValSlopeType" minOccurs="0"/>
+					<xs:element name="clearwayDistance" type="pixm:ValDistanceType" minOccurs="0"/>
+					<xs:element name="elevation" type="pixm:ValDistanceVerticalType" minOccurs="0"/>
+					<xs:element name="fixedCBRValue" type="xs:positiveInteger" minOccurs="0"/>
+					<xs:element name="lda" type="pixm:ValDistanceType" minOccurs="0"/>
+					<xs:element name="ldaSlope" type="pixm:ValSlopeType" minOccurs="0"/>
+					<xs:element name="perfRunwaySurface" type="pixm:CodePerfRunwaySurfaceType" minOccurs="0"/>
+					<xs:element name="perfStopwaySurface" type="pixm:CodePerfRunwaySurfaceType" minOccurs="0"/>
+					<xs:element name="runwayWidth" type="pixm:ValDistanceType" minOccurs="0"/>
+					<xs:element name="stopwayDistance" type="pixm:ValDistanceType" minOccurs="0"/>
+					<xs:element name="toda" type="pixm:ValDistanceType" minOccurs="0"/>
+					<xs:element name="todaSlope" type="pixm:ValSlopeType" minOccurs="0"/>
+					<xs:element name="tora" type="pixm:ValDistanceType" minOccurs="0"/>
+					<xs:element name="contamDefinition" type="ContaminationDefinitionType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="splayDefinition" type="ObstacleAccountabilitySplayType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="obstacleSet" type="PerformanceObstacleSetType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="aixmRunway" type="aixm:RunwayDirection" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="PerformanceRunway" type="pixm:PerformanceRunwayType" substitutionGroup="pixm:AbstractPIXMFeatureType"/> 	
+	<xs:complexType name="PerformanceRunwayType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:PerformanceRunwayTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="PerformanceProfilePointTimeSlice" type="PerformanceProfilePointTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:complexType name="PerformanceProfilePointTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="airspeed" type="pixm:AirspeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="distanceFromReference" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="flapConfiguration" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="flightSegment" type="pixm:NoNumberType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="heightAboveReference" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="pointId" type="pixm:NoSequenceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="pressureAltitude" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="slatConfiguration" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thrustSetting" type="pixm:ValThrustSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="timeElaposed" type="pixm:ValDurationType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="weight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="geometry" type="gml:Point" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="PerformanceProfilePoint" type="pixm:PerformanceProfilePointType" substitutionGroup="pixm:AbstractPIXMFeatureType"/> 	
+	<xs:complexType name="PerformanceProfilePointType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:PerformanceProfilePointTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="FlightPathTurnDefinition" type="pixm:FlightPathTurnDefinitionType" substitutionGroup="pixm:AbstractPIXMFeatureType"/> 	
+	<xs:complexType name="FlightPathTurnDefinitionType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:FlightPathTurnDefinitionTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="FlightPathTurnDefinitionTimeSlice" type="FlightPathTurnDefinitionTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:complexType name="FlightPathTurnDefinitionTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="fixedBankAngle" type="pixm:ValAngleType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="fixedGradientLossValue" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="fixedTurnRadius" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="gradientLossApplication" type="pixm:CodeGradientLossApplicationType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxBankAngle" type="pixm:ValAngleType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="minTurnStartDistance" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="turnEndDistance" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="turnEndPoint" type="gml:Point" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="turnId" type="pixm:NoSequenceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="turnStartDistance" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="turnStartGrossHeight" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="turnStartNetHeight" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="turnStartPoint" type="gml:Point" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="turnStartPressureAltitude" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="turnStartQFEAltitude" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="turnStartType" type="pixm:CodeTurnStartType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!--Element for a collection of turn definitions-->
+	<xs:element name="FlightPathTurnDefinitionSet" type="FlightPathTurnDefinitionSetType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="FlightPathTurnDefinitionSetType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:FlightPathTurnDefinitionSetTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="FlightPathTurnDefinitionSetTimeSlice" type="FlightPathTurnDefinitionSetTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:complexType name="FlightPathTurnDefinitionSetTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="turnDefinition" type="pixm:FlightPathTurnDefinitionType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="engineInoperativeSelection" type="pixm:CodeEngineInoperativeSelectionType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="gradientLossApplicationType" type="pixm:CodeGradientLossApplicationType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	
+	<!--Element for definition of PerformanceProfileSegment which could be a curve or line segment-->
+	<xs:element name="PerformanceProfileSegmentTimeSlice" type="pixm:PerformanceProfileSegmentTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:complexType name="PerformanceProfileSegmentTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="segmentId" type="pixm:NoSequenceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="sesgmentLength" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="geometry" type="gml:LineString" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="PerformanceProfileSegment" type="pixm:PerformanceProfileSegmentType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="PerformanceProfileSegmentType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:PerformanceProfileSegmentTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!--Next element is an object that indicates the obstacle clearance of a flight path over a specific obstacle
+	The object references an existing PerformanceObstacleType object-->
+	<xs:element name="PerformanceObstacleClearanceTimeSlice" type="pixm:PerformanceObstacleClearanceTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:complexType name="PerformanceObstacleClearanceTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="obstacle" type="pixm:PerformanceObstacleType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="clearanceMargin" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="isConsidered" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="isLimiting" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PerformanceObstacleClearance" type="pixm:PerformanceObstacleClearanceType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="PerformanceObstacleClearanceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:PerformanceObstacleClearanceTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!--Next element for a Performance profile which is a collection of PerformanceProfilePoints and/or-->
+	<!--PerformanceProfileSegments-->
+	<xs:element name="PerformanceProfileTimeSlice" type="pixm:PerformanceProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="PerformanceProfile" type="pixm:PerformanceProfileType"></xs:element>
+	<xs:complexType name="PerformanceProfileTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="referencePoint" type="gml:Point" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="referencePointName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="numPathSegments" type="xs:int" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="profileName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="profilePoint" type="pixm:PerformanceProfilePointType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="profileSegment" type="pixm:PerformanceProfileSegmentType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="turnDefinitionSet" type="pixm:FlightPathTurnDefinitionSetType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="obstacleClearance" type="pixm:PerformanceObstacleClearanceType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="PerformanceProfileType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:PerformanceProfileTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Next object is a GeometricProfilePoint with simplified characteristics of distance and height above
+	reference, flight segment and a point ID-->
+	<xs:element name="GeometricProfilePointTimeSlice" type="pixm:GeometricProfilePointTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="GeometricProfilePoint" type="pixm:GeometricProfilePointType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="GeometricProfilePointTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="distanceFromReference" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="heightAboveReference" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="flightSegment" type="pixm:NoNumberType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="pointId" type="pixm:NoSequenceType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="GeometricProfilePointType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:GeometricProfilePointTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Next object is a GeometricProfileType for a simplifid 2D non-georefernced profile-->
+	<xs:element name="GeometricProfileTimeSlice" type="pixm:GeometricProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="GeometricProfile" type="pixm:GeometricProfileType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	
+	<xs:complexType name="GeometricProfileTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="referencePoint" type="gml:Point" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="referencePointName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="numPathSegments" type="xs:int" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="profileName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="profilePoint" type="pixm:GeometricProfilePointType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="obstacleClearance" type="pixm:PerformanceObstacleClearanceType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="GeometricProfileType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:GeometricProfileTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- AEO Takeoff Performance Profile -->
+	<xs:element name="AeoTakeoffPerformanceProfileTimeSlice" type="pixm:AeoTakeoffPerformanceProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="AeoTakeoffPerformanceProfile" type="pixm:AeoTakeoffPerformanceProfileType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="AeoTakeoffPerformanceProfileTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="minAverageClimbGradient" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="minAverageClimbRate" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="targetPitchAttitude" type="pixm:ValAngleType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="textSIDSTARDesignator" type="pixm:TextSIDSTARDesignatorType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="ClimbGradientComplianceCheck" type="pixm:ClimbGradientComplianceCheckType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="aeoPerformanceProfile" type="pixm:PerformanceProfileType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AeoTakeoffPerformanceProfileType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:AeoTakeoffPerformanceProfileTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- AEO Flight Path Settings -->
+	<xs:element name="AeoFlightPathSettingsTimeSlice" type="pixm:AeoFlightPathSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="AeoFlightPathSettings" type="pixm:AeoFlightPathSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="AeoFlightPathSettingsTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="accelHeight" type="pixm:ValDistanceVerticalType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="aeoInitialClimbSpeed" type="pixm:AirspeedType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="cruiseAltitude" type="pixm:ValDistanceVerticalType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="fixedHeightDecrementInTurn" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="gradientDecrement" type="pixm:ValPercentType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="heightDecrement" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thrustReductionHeight" type="pixm:ValDistanceVerticalType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="transitionAltitude" type="pixm:ValDistanceVerticalType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="aeoProcedure" type="pixm:AeoProcedureType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="turnDefinition" type="pixm:FlightPathTurnDefinitionType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AeoFlightPathSettingsType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:AeoFlightPathSettingsTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="AeoClimbConstraint" type="pixm:AeoClimbConstraintType"/>
+	<xs:complexType name="AeoClimbConstraintType">
+		<xs:complexContent>
+			<xs:extension base="AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="constraintAltitude" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="constraintClimbGradient" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="constraintDistance" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="constraintHeight" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<!-- AEO Procedure -->
+	<xs:element name="AeoProcedureTimeSlice" type="pixm:AeoProcedureTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="AeoProcedure" type="pixm:AeoProcedureType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="AeoProcedureTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="procedureId" type="pixm:TextSIDSTARDesignatorType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="referenceDistance" type="xs:int" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="referenceHeight" type="xs:int" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="aeoClimbConstraint" type="pixm:AeoClimbConstraintType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AeoProcedureType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:AeoProcedureTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Climb Gradient Compliance Check -->
+	<xs:element name="ClimbGradientComplianceCheckTimeSlice" type="pixm:ClimbGradientComplianceCheckTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="ClimbGradientComplianceCheck" type="pixm:ClimbGradientComplianceCheckType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="ClimbGradientComplianceCheckTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="averageClimbGradient" type="pixm:ValSlopeType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="averageClimbRate" type="pixm:ValSpeedType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="crossingAltitude" type="pixm:ValDistanceVerticalType" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ClimbGradientComplianceCheckType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:ClimbGradientComplianceCheckTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Takeoff Aircraft Configuration Settings -->
+	<xs:element name="TakeoffAircraftConfigurationSettingsTimeSlice" type="pixm:TakeoffAircraftConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffAircraftConfigurationSettings" type="pixm:TakeoffAircraftConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="TakeoffAircraftConfigurationSettingsTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:group ref="pixm:AircraftConfigurationPropertyGroup"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TakeoffAircraftConfigurationSettingsType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:TakeoffAircraftConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Takeoff Environmental Settings -->
+	<xs:element name="TakeoffEnvironmentalSettingsTimeSlice" type="pixm:TakeoffEnvironmentalSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffEnvironmentalSettings" type="pixm:TakeoffEnvironmentalSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+
+	<xs:complexType name="TakeoffEnvironmentalSettingsTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:group ref="pixm:TerminalEnvironmentalSettingsPropertyGroup"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TakeoffEnvironmentalSettingsType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:TakeoffEnvironmentalSettingsTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Takeoff CG Configuration Settings -->
+	<xs:element name="TakeoffCGConfigurationSettingsTimeSlice" type="pixm:TakeoffCGConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffCGConfigurationSettings" type="pixm:TakeoffCGConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="TakeoffCGConfigurationSettingsTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="airplaneCG" type="pixm:TextDecimalType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="forwardCGLimitPosition" type="pixm:TextDecimalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="forwardCGLimitPositionSetting" type="pixm:CodeForwardCGLimitPositionType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="lateralCGDeviation" type="pixm:TextDecimalType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TakeoffCGConfigurationSettingsType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:TakeoffCGConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Takeoff Output Adjustment Factors -->
+
+	<xs:element name="TakeoffOutputAdjustmentFactorsTimeSlice" type="pixm:TakeoffOutputAdjustmentFactorsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffOutputAdjustmentFactors" type="pixm:TakeoffOutputAdjustmentFactorsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="TakeoffOutputAdjustmentFactorsTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="distIncrementA" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="gradientIncrementA" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="multFactorK" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="parameterName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="speedIncrementA" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="weightIncrementA" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TakeoffOutputAdjustmentFactorsType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:TakeoffOutputAdjustmentFactorsTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Takeoff Thrust Configuration Settings -->
+	<xs:element name="TakeoffThrustConfigurationSettingsTimeSlice" type="pixm:TakeoffThrustConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffThrustConfigurationSettings" type="pixm:TakeoffThrustConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="TakeoffThrustConfigurationSettingsTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="aeoThrustLevelSetting" type="pixm:CodeAeoThrustSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="climbDerateWashoutAltitude" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="climbThrust" type="pixm:ValThrustSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="deratedThrustLevel" type="pixm:ValThrustSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxAssumedTemp" type="pixm:ValTemperatureType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxAssumedTempSetting" type="pixm:CodeMaxAssumedTempSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxThrustReduction" type="pixm:ValThrustSettingType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="performThrustCutbackCalc" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="reducedThrustMethod" type="pixm:CodeReducedThrustMethodType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="returnMaxUsableAssumedTemp" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thrustCutbackSetting" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thrustReductionHeight" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thrustReductionSpeed" type="pixm:AirspeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thrustTimeLimit" type="pixm:ValDurationType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="useMaxAssumedTemp" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thrustCutbackSettings" type="pixm:ThrustCutbackSettings" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TakeoffThrustConfigurationSettingsType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:TakeoffThrustConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Takeoff Speed Configuration Settings -->
+	<xs:element name="TakeoffSpeedConfigurationSettingsTimeSlice" type="pixm:TakeoffSpeedConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffSpeedConfigurationSettings" type="pixm:TakeoffSpeedConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="TakeoffSpeedConfigurationSettingsTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="altClimbSpeedConstraint" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="approachClimbSpeedDelta" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="approachClimbSpeedFactor" type="pixm:TextDecimalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="approachClimbSpeedFixed" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="approachClimbSpeedSetting" type="pixm:CodeApproachClimbSpeedSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="climbSpeedConstraint" type="pixm:AirspeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="finalClimbSpeed" type="pixm:AirspeedType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="fixedV1Value" type="pixm:AirspeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="fixedV1VRAsPercent" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="fixedV1VRValue" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxStoppingMarginMinV1Dist" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxStoppingMarginMinV1Percent" type="pixm:ValPercentType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxV1VRDelta" type="pixm:AirspeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxV2" type="pixm:AirspeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="minV1RestrictionChoice" type="pixm:CodeMinV1RestrictionChoiceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="minV2" type="pixm:AirspeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="V1VRChoice" type="pixm:CodeV1VRChoiceType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="V1VRRangeLimitChoice" type="pixm:CodeV1VRRangeChoiceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="V2VSChoice" type="pixm:CodeV2VSChoiceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="V2VSValue" type="pixm:NumericalWithNilReason" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="improveClimbRange" type="pixm:ImprovedClimbRangeLimits" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="v1VRRange" type="pixm:V1VRRangeLimits" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="v2VSRange" type="pixm:V2VSRangeLimits" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TakeoffSpeedConfigurationSettingsType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:TakeoffSpeedConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Takeoff Runway Settings -->
+	<xs:element name="TakeoffRunwaySettingsTimeSlice" type="pixm:TakeoffRunwaySettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffRunwaySettings" type="pixm:TakeoffRunwaySettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="TakeoffRunwaySettingsTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="alignDistAsda" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="alignDistToraToda" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="asdaFactor" type="pixm:TextDecimalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="asdaIncrement" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="brakingActionValue" type="pixm:CodeBrakingActionType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="contamDragAccountability" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="engineStatus" type="pixm:CodeEngineStatusType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="muCalculationChoice" type="pixm:CodeMuCalculationType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="runwayEntryAngle" type="pixm:ValRunwayEntryAngleType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="startTakeoffProcedure" type="xs:int" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="performanceRunway" type="pixm:PerformanceRunwayType" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TakeoffRunwaySettingsType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:TakeoffRunwaySettingsTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Takeoff Runway Result -->
+	<xs:element name="TakeoffRunwayResultTimeSlice" type="pixm:TakeoffRunwayResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffRunwayResult" type="pixm:TakeoffRunwayResultType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="TakeoffRunwayResultTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="aeoTOD" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="aeoTOR" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="asdLimitCode" type="pixm:CodeTOLimitType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="calculatedAsdaAlignmentDist" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="calculatedToraTodaAlignmentDist" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxTempLimit" type="pixm:ValTemperatureType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="oeiASD" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="oeiTOD" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="oeiTOR" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="runwayDryCheckCode" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="brakeEnergyResult" type="pixm:TakeoffBrakeEnergyResultTimeSliceType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TakeoffRunwayResultType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:TakeoffRunwayResultTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Takeoff Weight Limit Result -->
+	<xs:element name="TakeoffWeightLimitResultTimeSlice" type="pixm:TakeoffWeightLimitResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffWeightLimitResult" type="pixm:TakeoffWeightLimitResultType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="TakeoffWeightLimitResultTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="aeoFieldLengthLimitWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="brakeEnergyLimitWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="fieldLengthLimitWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="finalSegLimitWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="firstSegLimitWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="fuelDumpExemptionLimitWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxStructuralTOLimitWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="obstacleLimitWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="secondSegLimitWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thirdSegLimitWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thrustTimeLimitWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="tireSpeedLimitWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="vmcgLimitWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TakeoffWeightLimitResultType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:TakeoffWeightLimitResultTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Takeoff Brake Energy Result -->
+	<xs:element name="TakeoffBrakeEnergyResultTimeSlice" type="pixm:TakeoffBrakeEnergyResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffBrakeEnergyResult" type="pixm:TakeoffBrakeEnergyResultType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="TakeoffBrakeEnergyResultTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="accumulatedBrakeEnergy" type="xs:int" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="brakeEnergyRatio" type="xs:int" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="brakeTempZone" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="gearDownBrakeCoolingDuration" type="pixm:ValDurationType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="groundBrakeCoolingDuration" type="pixm:ValDurationType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TakeoffBrakeEnergyResultType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:TakeoffBrakeEnergyResultTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Thrust Setting Result -->
+	<xs:element name="ThrustSettingResultTimeSlice" type="pixm:ThrustSettingResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="ThrustSettingResult" type="pixm:ThrustSettingResultType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="ThrustSettingResultTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="cutbackThrustSetting" type="pixm:ValThrustSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="goAroundPowerSetting" type="pixm:ValThrustSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="isTempInActualRange" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="isTempinAssumedRange" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxAssumedTemp" type="pixm:ValTemperatureType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxUsableAssumedTemp" type="pixm:ValTemperatureType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="primaryTOThrustSetting" type="pixm:ValThrustSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="reservePrimaryTOThrustSetting" type="pixm:ValThrustSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="reserveSecondaryTOThrustSetting" type="pixm:ValThrustSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="secondaryTOThrustSetting" type="pixm:ValThrustSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thrustBreakTemp" type="pixm:ValTemperatureType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thrustTimeLimitEncountered" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="totalThrustReduction" type="pixm:ValPercentType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ThrustSettingResultType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:ThrustSettingResultTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- OEI Takeoff Performance Profile -->
+	<xs:element name="OeiTakeoffPerformanceProfileTimeSlice" type="pixm:OeiTakeoffPerformanceProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="OeiTakeoffPerformanceProfile" type="pixm:OeiTakeoffPerformanceProfileType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="OeiTakeoffPerformanceProfileTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="climbOutFactor" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="engineInoperativeSelection" type="pixm:CodeEngineInoperativeSelectionType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="finalSegmentGradientLoss" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="grossFinalSegClimbGradient" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="grossSecondSegClimbGradient" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="minTurnStartDistance" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="minTurnStartHeight" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="secondSegmentGradientLoss" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="targetPitchAttitude" type="pixm:ValAngleType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="netFinalSegClimbGradient" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="netSecondSegClimbGradient" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="oeiGrossPerformanceProfile" type="pixm:PerformanceProfileType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="OeiTakeoffPerformanceProfileType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:OeiTakeoffPerformanceProfileTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- OEI Net Geometric Profile -->
+	<xs:element name="OeiNetGeometricProfileTimeSlice" type="pixm:OeiNetGeometricProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="OeiNetGeometricProfile" type="pixm:OeiNetGeometricProfileType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="OeiNetGeometricProfileTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="netFinalSegClimbGradient" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="netSecondSegClimbGradient" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="oeiNetGeometricProfile" type="pixm:GeometricProfileType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="OeiNetGeometricProfileType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:OeiNetGeometricProfileTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Property group for TakeoffAircraftConfiguration -->
+	<xs:group name="AircraftConfigurationPropertyGroup">
+		<xs:sequence>
+			<xs:element name="ahrsStatus" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="airConditioningECSBleed" type="pixm:CodeACorECSBleedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="alternateBraking" type="pixm:CodeNumInopType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="antiIceDeIce" type="pixm:CodeAntiIceDeIceSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="antiIceDeiceFluid" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="antiSkid" type="pixm:CodeAntiSkidSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="antiSkidAutobrake" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="appClimbFlapSetting" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="appClimbSlatPosition" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="apu" type="pixm:CodeOnOffType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="apuDoorPosition" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="autoBrakes" type="pixm:CodeOnOffType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="autoBrakesCustomSetting" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="availableBleedSources" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="brakeCoolingFans" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="brakeEnergy" type="pixm:ValBrakeEnergyType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="brakeEnergyChoice" type="pixm:CodeBrakeEnergyChoiceType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="centerGearBrakesInop" type="pixm:CodeNumInopType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="centerMainGearPositionBeforeTakeoff" type="pixm:CodeLandingGearPositionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="differentialFlapSetting" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="dragIndex" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="engineDrivenPump" type="pixm:CodeEngineDrivenPumpInopType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="engineFailureWarningSystem" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="engineIntermix" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="fanAirValve" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="finalClimbACorECS" type="pixm:CodeACorECSBleedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="flapsFault" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="flapSlatEnhancements" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="flightDirector" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="fmsConfiguration" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="fuelTankPump" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="groundIdle" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="groundSpoilers" type="pixm:CodeGroundSpoilerSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="hydraulicPump" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="inflightIcing" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="krugerFlaps" type="pixm:CodeNumInopType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="landingFlapSetting" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="landingGearPosition" type="pixm:CodeLandingGearPositionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="landingLightsAutoRetractInop" type="pixm:CodeNumInopType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="landingSlatPosition" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="landingSpeedBrakesField" type="pixm:CodeOnOffType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="landingSpeedBrakesWAT" type="pixm:CodeOnOffType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="lgAutoPreArm" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="mainBrakeConfiguration" type="pixm:CodeBrakesConfigurationType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="mainGearPositionAfterFirstSeg" type="pixm:CodeLandingGearPositionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="mainNoseBrakesConfig" type="pixm:CodeNumInopType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="maxTakeoffFlapSetting" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="minTakeoffFlapSetting" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="noseGearPositionAfterFirstSeg" type="pixm:CodeLandingGearPositionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="noseWheelSteering" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="oeiFerryFlight" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="oeiLandingFlap" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="powerManagementSystem" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="rudderActuator" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="semiLeveredGear" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="slatFlapOptimizationChoice" type="pixm:CodeSlatFlapOptimizationType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="slatsFault" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="spareEngineCarriage" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="speedBrakes" type="pixm:CodeOnOffType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="startOfTakeoffThrust" type="pixm:CodeStartTakeoffThrustType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="tailskidConfig" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="takeoffFlapPosition" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="takeoffSlatPosition" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="thrustReverseConfig" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="thrustReverseCredit" type="pixm:CodeThrustReverseSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="thrustReverseLevel" type="pixm:CodeThrustReverseLevelType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="thrustReverserDelay" type="pixm:ValDurationType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="tirePressure" type="pixm:ValPressureType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="tireSpeed" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="tireType" type="pixm:CodeTireTypeType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="vortexDissipators" type="pixm:CodeOnOffType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="wheelTachometers" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="wingGearPositionAfterFirstSeg" type="pixm:CodeLandingGearPositionType" minOccurs="0" maxOccurs="1"/>
+			<!-- Extension and custom items -->
+			<xs:element name="customExtension" type="pixm:AircraftConfigurationExtension" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="customConfigItem" type="pixm:AircraftConfigurationItem" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="externalInstallation" type="pixm:ExternalInstallationItem" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="fuelDumpSettings" type="pixm:FuelDumpSettings" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="melCdlItem" type="pixm:MELCDLItem" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="propellerConfiguration" type="pixm:PropellerConfigurationSettings" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+
+	<!-- Property group for TerminalEnvironmentalSettings -->
+	<xs:group name="TerminalEnvironmentalSettingsPropertyGroup">
+		<xs:sequence>
+			<xs:element name="actualOutsideAirTemp" type="pixm:ValTemperatureType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="airportAltitudeAsAltitude" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="airportAltitudeAsQFE" type="pixm:ValPressureType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="airportAltitudeAsQNH" type="pixm:ValPressureType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="crosswindComponent" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="finalSegWindComponent" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="inflightIcing" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="inputTemperature" type="pixm:ValTemperatureType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="inversionAltitude" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="runwayWindComponent" type="pixm:ValSpeedType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="tempAtInversionAltitude" type="pixm:ValTemperatureType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="tempInversionPresent" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="useISADev" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="visibilitySetting" type="pixm:CodeVisibilitySettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="windGustComponent" type="pixm:ValSpeedType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+
+	<!-- Takeoff Request -->
+	<xs:element name="TakeoffRequestTimeSlice" type="pixm:TakeoffRequestTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffRequest" type="pixm:TakeoffRequestType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="TakeoffRequestTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="inputMaxWeight" type="pixm:ValWeightType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="maxWeightLimitSetting" type="pixm:CodeMaxWeightLimitSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="outputIncludesAlignDist" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="outputTraceFile" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="outputTypeSelection" type="pixm:CodeOutputTypeSelectionType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="performAllEngineCalc" type="pixm:CodePerformAllEngineCalcType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="performDryCheck" type="pixm:CodeYesNoType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="takeoffRequestId" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="userId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="zeroFuelWeight" type="pixm:ValWeightType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="aeoFlightPathSettings" type="pixm:AeoFlightPathSettingsType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="flightPathConfiguration" type="pixm:FlightPathConfigurationSettingsType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="aircraftConfiguration" type="pixm:TakeoffAircraftConfigurationSettingsType" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="cgConfiguration" type="pixm:TakeoffCGConfigurationSettingsType" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="environmentalSettings" type="pixm:TakeoffEnvironmentalSettingsType" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="adjustmentFactors" type="pixm:TakeoffOutputAdjustmentFactorsType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="runwaySettings" type="pixm:TakeoffRunwaySettingsType" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="speedConfiguration" type="pixm:TakeoffSpeedConfigurationSettingsType" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="thrustSettings" type="pixm:TakeoffThrustConfigurationSettingsType" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="TakeoffRequestType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:TakeoffRequestTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Takeoff Response -->
+	<xs:element name="TakeoffResponseTimeSlice" type="pixm:TakeoffResponseTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffResponse" type="pixm:TakeoffResponseType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="TakeoffResponseTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="aeoErrorCode" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="balV1VRRatio" type="xs:float" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="calculationTimestamp" type="pixm:DateTimeUtcType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="calculatorId" type="pixm:UniversallyUniqueIdentifierType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="firstLimitCode" type="pixm:CodeTOLimitType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="flapPosition" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="inputId" type="pixm:UniversallyUniqueIdentifierType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="landingFlapForTurnBack" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxTakeoffWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="maxV1VRRatio" type="xs:float" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="minV1VRratio" type="xs:float" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="oeiErrorCode" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="outputId" type="pixm:UniversallyUniqueIdentifierType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="pitchTrimSetting" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="secondLimitCode" type="pixm:CodeTOLimitType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="slatPosition" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="V1SpeedType" type="pixm:CodeV1SpeedOptionType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="V2VSRatio" type="xs:float" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="aeoProfile" type="pixm:AeoTakeoffPerformanceProfileType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="outputAirspeed" type="pixm:AirspeedType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="errorMessage" type="pixm:ErrorMessageType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="oeiNetProfile" type="pixm:OeiNetGeometricProfileType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="oeiGrossProfile" type="pixm:OeiTakeoffPerformanceProfileType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="runwayResult" type="pixm:TakeoffRunwayResultType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="weightLimitResult" type="pixm:TakeoffWeightLimitResultType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thrustSettings" type="pixm:ThrustSettingResultType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="TakeoffResponseType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:TakeoffResponseTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Flight Path Configuration Settings -->
+	<xs:element name="FlightPathConfigurationSettingsTimeSlice" type="pixm:FlightPathConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="FlightPathConfigurationSettings" type="pixm:FlightPathConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="FlightPathConfigurationSettingsTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="antiIceDeiceAccelHeight" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="finalSegNetGrossClimbGradientMargin" type="pixm:ValPercentType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="finalSegObsClearanceMargin" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="finalSegObsClearanceMarginMethodChoice" type="pixm:CodeFinalSegObsClearanceMethodChoiceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="finalSegObstacleClearanceChoice" type="pixm:CodeYesNoType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="fixedLevelOffHeightValue" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="flightPathChoice" type="pixm:CodeFlightPathChoiceType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="gradientLossInTurnHeight" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="levelOffHeightChoice" type="pixm:CodeLevelOffHeightChoiceType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="lowestLevelOffHeightValue" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="netObstacleClearance" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="screenHeight" type="pixm:ValDistanceVerticalType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="secSegGradientChoice" type="pixm:CodeSecSegGradientChoiceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="secSegGradientValue" type="pixm:ValPercentType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="finalSegObsClearanceSetting" type="pixm:FinalSegObstacleClearanceSettingType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="turnDefinition" type="pixm:FlightPathTurnDefinitionType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="residualClimbSettings" type="pixm:ResidualClimbSettingsType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FlightPathConfigurationSettingsType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:FlightPathConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- AircraftConfigurationExtension -->
+	<xs:element name="AircraftConfigurationExtensionTimeSlice" type="pixm:AircraftConfigurationExtensionTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="AircraftConfigurationExtension" type="pixm:AircraftConfigurationExtensionType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="AircraftConfigurationExtensionTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AircraftConfigurationExtensionType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:AircraftConfigurationExtensionTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- AircraftConfigurationItem -->
+	<xs:element name="AircraftConfigurationItemTimeSlice" type="pixm:AircraftConfigurationItemTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="AircraftConfigurationItem" type="pixm:AircraftConfigurationItemType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="AircraftConfigurationItemTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="configItemDataType" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="configItemId" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="configItemName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="configItemValue" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AircraftConfigurationItemType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:AircraftConfigurationItemTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- ExternalInstallationItem -->
+	<xs:element name="ExternalInstallationItemTimeSlice" type="pixm:ExternalInstallationItemTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="ExternalInstallationItem" type="pixm:ExternalInstallationItemType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="ExternalInstallationItemTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ExternalInstallationItemType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:ExternalInstallationItemTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<!-- FuelDumpSettings -->
+	<xs:element name="FuelDumpSettingsTimeSlice" type="pixm:FuelDumpSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="FuelDumpSettings" type="pixm:FuelDumpSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="FuelDumpSettingsTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="approachAC" type="pixm:CodeACorECSBleedType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="approachAntiIce" type="pixm:CodeAntiIceDeIceSettingType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="approachFlapPosition" type="pixm:Character3Type" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="approachThrustPower" type="pixm:CodeNormalSelectedType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="fuelJettisonConfig" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="landingFlapPosition" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="zeroFuelWeight" type="pixm:ValWeightType" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FuelDumpSettingsType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:FuelDumpSettingsTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- MELCDLItem -->
+	<xs:element name="MELCDLItemTimeSlice" type="pixm:MELCDLItemTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="MELCDLItem" type="pixm:MELCDLItemType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="MELCDLItemTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="itemIndex" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="numberInoperativeItems" type="xs:int" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MELCDLItemType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:MELCDLItemTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- PropellerConfigurationSettings -->
+	<xs:element name="PropellerConfigurationSettingsTimeSlice" type="pixm:PropellerConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="PropellerConfigurationSettings" type="pixm:PropellerConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="PropellerConfigurationSettingsTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="propAutoFeather" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="propRPMforNoiseSetting" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="propRPMValue" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PropellerConfigurationSettingsType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:PropellerConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- AircraftConfigurationExtension -->
+	<xs:element name="LandingAircraftConfigurationExtensionTimeSlice" type="pixm:LandingAircraftConfigurationExtensionTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingAircraftConfigurationExtension" type="pixm:LandingAircraftConfigurationExtensionType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="LandingAircraftConfigurationExtensionTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence/>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingAircraftConfigurationExtensionType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:LandingAircraftConfigurationExtensionTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- BrakeEnergySettings -->
+	<xs:element name="BrakeEnergySettingsTimeSlice" type="pixm:BrakeEnergySettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="BrakeEnergySettings" type="pixm:BrakeEnergySettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="BrakeEnergySettingsTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:element name="accumBrakeEnergy" type="pixm:ValBrakeEnergyType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="accumBrakeEnergyRatio" type="pixm:ValPercentType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="brakeTempIndication" type="pixm:ValTemperatureType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="brakeTempZone" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="groundBrakeCoolingTime" type="pixm:ValDurationType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="inflightGearDownBrakeCoolingTime" type="pixm:ValDurationType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="maxQuickTurnBrakeEnergyLimit" type="pixm:ValBrakeEnergyType" minOccurs="0" maxOccurs="1"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BrakeEnergySettingsType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:BrakeEnergySettingsTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- ErrorMessage -->
+	<xs:element name="ErrorMessageTimeSlice" type="pixm:ErrorMessageTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="ErrorMessage" type="pixm:ErrorMessageType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="ErrorMessageTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:element name="message" type="xs:string" minOccurs="1" maxOccurs="1"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ErrorMessageType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:ErrorMessageTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- ExtendedFinalSegmentObsClearanceMargin -->
+	<xs:element name="ExtendedFinalSegmentObsClearanceMarginTimeSlice" type="pixm:ExtendedFinalSegmentObsClearanceMarginTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="ExtendedFinalSegmentObsClearanceMargin" type="pixm:ExtendedFinalSegmentObsClearanceMarginType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="ExtendedFinalSegmentObsClearanceMarginTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:element name="clearanceMargin" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="transitionAltitude" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ExtendedFinalSegmentObsClearanceMarginType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:ExtendedFinalSegmentObsClearanceMarginTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- GoAroundFlightPathSettings -->
+	<xs:element name="GoAroundFlightPathSettingsTimeSlice" type="pixm:GoAroundFlightPathSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="GoAroundFlightPathSettings" type="pixm:GoAroundFlightPathSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="GoAroundFlightPathSettingsTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:element name="finalSegNetGrossMargin" type="pixm:ValPercentType" minOccurs="1" maxOccurs="1"/>
+	        <xs:element name="finalSegObsClearanceMargin" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="goAroundDecisionAltitude" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="lowestGrossLeveloffheight" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="maxDistForGoAroundAccelDH" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="maxKVSSpeedAtDH" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="speedOptGoAround" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="targetOeiGoAroundAltitude" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+
+	        <xs:element name="finSegClearanceMargin" type="pixm:ExtendedFinalSegmentObsClearanceMarginType" minOccurs="0" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GoAroundFlightPathSettingsType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:GoAroundFlightPathSettingsTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	
+	<!-- GoAroundSettings -->
+	<xs:element name="GoAroundSettingsTimeSlice" type="pixm:GoAroundSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="GoAroundSettings" type="pixm:GoAroundSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="GoAroundSettingsTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:element name="aeoGoAroundThrustSetting" type="pixm:ValThrustSettingType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="lvoAeoClimbGradient" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="lvoOeiClimbGradient" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="oeiGoAroundThrustSetting" type="pixm:ValThrustSettingType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="netGoAroundGeometricProfile" type="pixm:GeometricProfileType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="grossGoAroundPerformanceProfile" type="pixm:PerformanceProfileType" minOccurs="0" maxOccurs="1"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GoAroundSettingsType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:GoAroundSettingsTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- InFlightFailureData -->
+	<xs:element name="InFlightFailureDataTimeSlice" type="pixm:InFlightFailureDataTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="InFlightFailureData" type="pixm:InFlightFailureDataType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="InFlightFailureDataTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:element name="aeoReverserStatus" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="factoredLandingDistance" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="operationalLandingDistance" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="runwayOverrunWarningDistance" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="vRef" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="VAppIncrements" type="pixm:VAppIncrementsType" minOccurs="0" maxOccurs="1"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InFlightFailureDataType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:InFlightFailureDataTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- LandingAircraftConfigurationSettings -->
+	<xs:element name="LandingAircraftConfigurationSettingsTimeSlice" type="pixm:LandingAircraftConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingAircraftConfigurationSettings" type="pixm:LandingAircraftConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="LandingAircraftConfigurationSettingsTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:group ref="pixm:AircraftConfigurationPropertyGroup"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingAircraftConfigurationSettingsType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:LandingAircraftConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- LandingBrakeEnergy -->
+	<xs:element name="LandingBrakeEnergyTimeSlice" type="pixm:LandingBrakeEnergyTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingBrakeEnergy" type="pixm:LandingBrakeEnergyType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="LandingBrakeEnergyTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:element name="accumulatedBrakeEnergy" type="pixm:ValBrakeEnergyType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="brakeEnergyRatio" type="pixm:ValPercentType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="brakeTempZone" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="gearDownBrakeCoolingDuration" type="pixm:ValDurationType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="groundBrakeCoolingDuration" type="pixm:ValDurationType" minOccurs="0" maxOccurs="1"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingBrakeEnergyType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:LandingBrakeEnergyTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- LandingCGConfigurationSettings -->
+	<xs:element name="LandingCGConfigurationSettingsTimeSlice" type="pixm:LandingCGConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingCGConfigurationSettings" type="pixm:LandingCGConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="LandingCGConfigurationSettingsTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:element name="airplaneCG" type="pixm:TextDecimalType" minOccurs="1" maxOccurs="1"/>
+	        <xs:element name="forwardCGLimitPositionSetting" type="pixm:CodeForwardCGLimitPositionType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="lateralCGDeviation" type="pixm:TextDecimalType" minOccurs="0" maxOccurs="1"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingCGConfigurationSettingsType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:LandingCGConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- LandingEnvironmentalSettings -->
+	<xs:element name="LandingEnvironmentalSettingsTimeSlice" type="pixm:LandingEnvironmentalSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingEnvironmentalSettings" type="pixm:LandingEnvironmentalSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="LandingEnvironmentalSettingsTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	    	<xs:sequence>
+	    		<xs:group ref="pixm:TerminalEnvironmentalSettingsPropertyGroup"/>
+	    	</xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingEnvironmentalSettingsType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:LandingEnvironmentalSettingsTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- LandingRequest -->
+	<xs:element name="LandingRequestTimeSlice" type="pixm:LandingRequestTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingRequest" type="pixm:LandingRequestType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="LandingRequestTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:element name="inputMaxWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="maxWeightLimitSetting" type="pixm:CodeMaxWeightLimitSettingType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="minWeightDistanceFlag" type="pixm:CodeMinWeightDistanceFlagType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="outputIncludesAlignDist" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="outputTraceFile" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="outputTypeSelection" type="pixm:CodeOutputTypeSelectionType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="performAllEngineCalc" type="pixm:CodePerformAllEngineCalcType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="performDryCheck" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="landingRequestId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="userId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="zeroFuelWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="aircraftConfiguration" type="pixm:LandingAircraftConfigurationSettingsType" minOccurs="0" maxOccurs="unbounded"/>
+	        <xs:element name="cgConfiguration" type="pixm:LandingCGConfigurationSettingsType" minOccurs="0" maxOccurs="unbounded"/>
+	        <xs:element name="environmentalSettings" type="pixm:LandingEnvironmentalSettingsType" minOccurs="0" maxOccurs="unbounded"/>
+	        <xs:element name="runwaySettings" type="pixm:LandingRunwaySettingsType" minOccurs="0" maxOccurs="unbounded"/>
+	        <xs:element name="speedConfiguration" type="pixm:LandingSpeedSettingsType" minOccurs="0" maxOccurs="unbounded"/>
+	        <xs:element name="thrustConfiguration" type="pixm:LandingThrustConfigurationSettingsType" minOccurs="0" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingRequestType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:LandingRequestTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- LandingResponse -->
+	<xs:element name="LandingResponseTimeSlice" type="pixm:LandingResponseTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingResponse" type="pixm:LandingResponseType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="LandingResponseTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:element name="calculationTimestamp" type="pixm:DateTimeUtcType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="calculatorId" type="pixm:UniversallyUniqueIdentifierType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="inputId" type="pixm:UniversallyUniqueIdentifierType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="outputId" type="pixm:UniversallyUniqueIdentifierType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="maxLandingWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="flapPosition" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="slatPosition" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="pitchTrimSetting" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="aeoErrorCode" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="oeiErrorCode" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="firstLimitCode" type="pixm:CodeLandingLimitType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="secondLimitCode" type="pixm:CodeLandingLimitType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="runwayResult" type="pixm:LandingRunwayResultType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="weightLimitResult" type="pixm:LandingWeightLimitResultType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="brakeEnergyResult" type="pixm:LandingBrakeEnergyType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="outputAirspeed" type="pixm:AirspeedType" minOccurs="0" maxOccurs="unbounded"/>
+	        <xs:element name="specialCondition" type="pixm:LandingSpecialConditionType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="errorMessage" type="pixm:ErrorMessageType" minOccurs="0" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingResponseType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:LandingResponseTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- LandingRunwayResult -->
+	<xs:element name="LandingRunwayResultTimeSlice" type="pixm:LandingRunwayResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingRunwayResult" type="pixm:LandingRunwayResultType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="LandingRunwayResultTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:element name="factoredLandingDistance" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="ldrMaxStructural" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="operationalLandingDistance" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="unfactoredLandingDistance" type="pixm:ValDistanceType" minOccurs="1" maxOccurs="1"/>
+	        <xs:element name="unfactoredThrToTouchdownDistance" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingRunwayResultType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:LandingRunwayResultTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- LandingRunwaySettings -->
+	<xs:element name="LandingRunwaySettingsTimeSlice" type="pixm:LandingRunwaySettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingRunwaySettings" type="pixm:LandingRunwaySettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="LandingRunwaySettingsTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:element name="brakingActionValue" type="pixm:CodeBrakingActionType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="brakingMuCalcSetting" type="pixm:CodeBrakingMuCalcSettingType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="distThresholdTouchdownSetting" type="pixm:CodeThresholdTouchdownDistType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="glidepathAngle" type="pixm:ValAngleType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="ilsRefDatumHeight" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="ldaFactor" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="ldaIncrement" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="opLDFactor" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="opLDIncrement" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="opLDOptionSetting" type="pixm:CodeOpLDOptionType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="thresholdScreenHeight" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="thresholdTouchdownDist" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="tawsLimitForSteepApproach" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="performanceRunway" type="pixm:PerformanceRunwayType" minOccurs="0" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingRunwaySettingsType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:LandingRunwaySettingsTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- LandingRunwaySettings -->
+	<xs:element name="LandingSpeedSettingsTimeSlice" type="pixm:LandingSpeedSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingSpeedSettings" type="pixm:LandingSpeedSettingsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="LandingSpeedSettingsTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="approachClimbSpeedDelta" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="approachClimbSpeedFactor" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="approachClimbSpeedFixed" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="approachClimbSpeedSetting" type="pixm:CodeApproachClimbSpeedSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="landingClimbSpeedDelta" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="landingClimbSpeedFactor" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="landingClimbSpeedFixed" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="landingClimbSpeedSetting" type="pixm:CodeLandingClimbSpeedSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thresholdSpeedFactor" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thresholdSpeedIncrement" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="thresholdSpeedSetting" type="pixm:CodeThresholdSpeedSettingTyp" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="pixm:LandingSpeedSettingsType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:LandingSpeedSettingsTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<!--VApp Increments element-->
+	<xs:element name="VAppIncrementsTimeSlice" type="pixm:VAppIncrementsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="VAppIncrements" type="pixm:VAppIncrementsType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="VAppIncrementsTimeSliceType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
+	      <xs:sequence>
+	        <xs:element name="autothrustInc" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="cdlItemsInc" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="dvAdditionalInc" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="headwindInc" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="iceAccretionInc" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="iffcVAppInc" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="incrementLogicInc" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="lipAutolandInc" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="steepApproachInc" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="VAppIncrementsType">
+	  <xs:complexContent>
+	    <xs:extension base="pixm:AbstractPIXMFeatureType">
+	      <xs:sequence>
+	        <xs:element name="timeSlice" type="pixm:VAppIncrementsTimeSliceType" maxOccurs="unbounded"/>
+	      </xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+	
+	<!-- LandingSpecialCondition -->
+	<xs:element name="LandingSpecialConditionTimeSlice" type="pixm:LandingSpecialConditionTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingSpecialCondition" type="pixm:LandingSpecialConditionType" substitutionGroup="pixm:AbstractPIXMFeatureType"/>
+	<xs:complexType name="LandingSpecialConditionTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="abnormalLandingFlap" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="climbWeightDecreaseNotDeiced" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="ldrIncreaseAbnormalFlap" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="oeiLandingFlap" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="vRefIncIceOnAirframe" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="vRefIncWingNotDeiced" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingSpecialConditionType">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:LandingSpecialConditionTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:pixm="http://www.pixm.aero/schema/0.1"
+  xsi:schemaLocation="
+    http://www.opengis.net/gml/3.2 schemas/gml/3.2.1/gml.xsd
+    http://www.pixm.aero/schema/0.1 PIXM_Features.XSD">
+
+  <!-- TakeoffResponse Feature -->
+  <gml:featureMember>
+    <pixm:TakeoffResponse gml:id="to-rsp-01R">
+      <pixm:timeSlice>
+        <pixm:TakeoffResponseTimeSlice gml:id="to-rsp-01R-ts">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="tp-to-rsp-01R">
+              <gml:beginPosition>2025-06-11T04:40:00Z</gml:beginPosition>
+              <gml:endPosition>2025-06-11T05:10:00Z</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+
+          <pixm:contextUsage>Demonstration - 01R Base</pixm:contextUsage>
+          <pixm:calculationTimestamp>2025-06-11T00:00:00Z</pixm:calculationTimestamp>
+          <pixm:calculatorId>c9e2f7b2-4e1a-4c3a-9f7e-2a1b4e6d8c3f</pixm:calculatorId>
+          <pixm:inputId>0abcd1234-5678-90ab-cdef-1234567890ab</pixm:inputId>
+          <pixm:outputId>e5a7c8d2-9b3f-4e2a-8c1d-7f6e5b4a3c2d</pixm:outputId>
+          <pixm:firstLimitCode>INPUT_WEIGHT</pixm:firstLimitCode>
+          <pixm:secondLimitCode>OBSTACLE</pixm:secondLimitCode>
+          <pixm:balV1VRRatio>0.976</pixm:balV1VRRatio>
+          <pixm:flapPosition>5</pixm:flapPosition>
+          <pixm:slatPosition>EXTEND</pixm:slatPosition>
+          <pixm:V1SpeedType>BALANCED</pixm:V1SpeedType>
+          <pixm:maxTakeoffWeight uom="LB">177000</pixm:maxTakeoffWeight>
+
+          <!-- Airspeed Outputs -->
+          <pixm:airspeedOutput>
+            <pixm:speedName>V1 bal</pixm:speedName>
+            <pixm:valSpeed uom="KT">153.1</pixm:valSpeed>
+            <pixm:airspeedType>IAS</pixm:airspeedType>
+          </pixm:airspeedOutput>
+          <pixm:airspeedOutput>
+            <pixm:speedName>Vmcg</pixm:speedName>
+            <pixm:valSpeed uom="KT">99.9</pixm:valSpeed>
+            <pixm:airspeedType>IAS</pixm:airspeedType>
+          </pixm:airspeedOutput>
+          <pixm:airspeedOutput>
+            <pixm:speedName>Vmbe</pixm:speedName>
+            <pixm:valSpeed uom="KT">166.4</pixm:valSpeed>
+            <pixm:airspeedType>IAS</pixm:airspeedType>
+          </pixm:airspeedOutput>
+          <pixm:airspeedOutput>
+            <pixm:speedName>VR</pixm:speedName>
+            <pixm:valSpeed uom="KT">156.8</pixm:valSpeed>
+            <pixm:airspeedType>IAS</pixm:airspeedType>
+          </pixm:airspeedOutput>
+          <pixm:airspeedOutput>
+            <pixm:speedName>V2</pixm:speedName>
+            <pixm:valSpeed uom="KT">164.9</pixm:valSpeed>
+            <pixm:airspeedType>IAS</pixm:airspeedType>
+          </pixm:airspeedOutput>
+
+          <!-- Thrust Settings -->
+          <pixm:thrustSettings>
+            <pixm:isTempInActualRange>true</pixm:isTempInActualRange>
+            <pixm:isTempInAssumedRange>true</pixm:isTempInAssumedRange>
+            <pixm:primaryTOThrustSetting uom="PCT_N1">101.26</pixm:primaryTOThrustSetting>
+            <pixm:thrustTimeLimitEncountered>false</pixm:thrustTimeLimitEncountered>
+          </pixm:thrustSettings>
+
+          <!-- Runway Result -->
+          <pixm:runwayResult>
+            <pixm:aeoTOD uom="FT">7879</pixm:aeoTOD>
+            <pixm:aeoTOR uom="FT">7292</pixm:aeoTOR>
+            <pixm:oeiASD uom="FT">8164</pixm:oeiASD>
+            <pixm:oeiTOD uom="FT">8164</pixm:oeiTOD>
+            <pixm:oeiTOR uom="FT">7270</pixm:oeiTOR>
+          </pixm:runwayResult>
+
+          <!-- Weight Limit Result -->
+          <pixm:weightLimitResult>
+            <pixm:brakeEnergyLimitWeight uom="LB">190000</pixm:brakeEnergyLimitWeight>
+            <pixm:fieldLengthLimitWeight uom="LB">181172</pixm:fieldLengthLimitWeight>
+            <pixm:finalSegLimitWeight uom="LB">190000</pixm:finalSegLimitWeight>
+            <pixm:firstSegLimitWeight uom="LB">190000</pixm:firstSegLimitWeight>
+            <pixm:maxStructuralTOLimitWeight uom="LB">190000</pixm:maxStructuralTOLimitWeight>
+            <pixm:obstacleLimitWeight uom="LB">181172</pixm:obstacleLimitWeight>
+            <pixm:secondSegLimitWeight uom="LB">190000</pixm:secondSegLimitWeight>
+            <pixm:tireSpeedLimitWeight uom="LB">190000</pixm:tireSpeedLimitWeight>
+          </pixm:weightLimitResult>
+
+          <!-- OEI Net Profile -->
+          <pixm:oeiNetProfile>
+            <pixm:description>Min LO Path</pixm:description>
+            <pixm:netFinalSegClimbGradient>0.0</pixm:netFinalSegClimbGradient>
+            <pixm:netSecondSegClimbGradient>0.0</pixm:netSecondSegClimbGradient>
+            <pixm:oeiNetGeometricProfile>
+              <pixm:referencePointName>BRAKE_RELEASE</pixm:referencePointName>
+              <pixm:profilePoint>
+                <pixm:distanceFromReference uom="FT">36.0</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">0.0</pixm:heightAboveReference>
+                <pixm:pointId>6</pixm:pointId>
+                <pixm:flightSegment>0</pixm:flightSegment>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:distanceFromReference uom="FT">7306.0</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">0.0</pixm:heightAboveReference>
+                <pixm:pointId>7</pixm:pointId>
+                <pixm:flightSegment>1</pixm:flightSegment>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:distanceFromReference uom="FT">8200.0</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">35.0</pixm:heightAboveReference>
+                <pixm:pointId>8</pixm:pointId>
+                <pixm:flightSegment>1</pixm:flightSegment>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:distanceFromReference uom="FT">9476</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">75.0</pixm:heightAboveReference>
+                <pixm:pointId>9</pixm:pointId>
+                <pixm:flightSegment>2</pixm:flightSegment>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:distanceFromReference uom="FT">68068</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">1799.0</pixm:heightAboveReference>
+                <pixm:pointId>10</pixm:pointId>
+                <pixm:flightSegment>3</pixm:flightSegment>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:distanceFromReference uom="FT">103072</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">1799.0</pixm:heightAboveReference>
+                <pixm:pointId>11</pixm:pointId>
+                <pixm:flightSegment>4</pixm:flightSegment>
+              </pixm:profilePoint>
+            </pixm:oeiNetGeometricProfile>
+          </pixm:oeiNetProfile>
+
+          <!-- OEI Gross Profile -->
+          <pixm:oeiGrossProfile>
+            <pixm:description>Min LO Path</pixm:description>
+            <pixm:grossFinalSegClimbGradient>0.0</pixm:grossFinalSegClimbGradient>
+            <pixm:grossSecondSegClimbGradient>0.0</pixm:grossSecondSegClimbGradient>
+            <pixm:oeiGrossPerformanceProfile>
+              <pixm:referencePointName>BRAKE_RELEASE</pixm:referencePointName>
+              <pixm:profilePoint>
+                <pixm:position>
+                  <gml:Point gml:id="fp-gross-pt-0" srsName="urn:ogc:def:crs:OGC:1.3:CRS83">
+                    <gml:pos>37.60641735 -122.3809828 11.0</gml:pos>
+                  </gml:Point>
+                </pixm:position>
+                <pixm:airspeed>
+                  <pixm:speedName>STATIC</pixm:speedName>
+                  <pixm:valSpeed uom="KT">0.0</pixm:valSpeed>
+                  <pixm:airspeedType>IAS</pixm:airspeedType>
+                </pixm:airspeed>
+                <pixm:distanceFromReference uom="FT">36</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">0.0</pixm:heightAboveReference>
+                <pixm:flapConfiguration>5</pixm:flapConfiguration>
+                <pixm:slatConfiguration>EXTEND</pixm:slatConfiguration>
+                <pixm:thrustSetting uom="PCT_N1">101.26</pixm:thrustSetting>
+                <pixm:flightSegment>0</pixm:flightSegment>
+                <pixm:pressureAltitude uom="FT">11.0</pixm:pressureAltitude>
+                <pixm:timeElapsed uom="SEC">0.0</pixm:timeElapsed>
+                <pixm:gearPosition>Down</pixm:gearPosition>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:position>
+                  <gml:Point gml:id="fp-gross-pt-1" srsName="urn:ogc:def:crs:OGC:1.3:CRS83">
+                    <gml:pos>37.62407854 -122.369275 11.0</gml:pos>
+                  </gml:Point>
+                </pixm:position>
+                <pixm:airspeed>
+                  <pixm:speedName>VR</pixm:speedName>
+                  <pixm:valSpeed uom="KT">156.8</pixm:valSpeed>
+                  <pixm:airspeedType>IAS</pixm:airspeedType>
+                </pixm:airspeed>
+                <pixm:distanceFromReference uom="FT">7306</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">0.0</pixm:heightAboveReference>
+                <pixm:flapConfiguration>5</pixm:flapConfiguration>
+                <pixm:slatConfiguration>EXTEND</pixm:slatConfiguration>
+                <pixm:thrustSetting uom="PCT_N1">101.26</pixm:thrustSetting>
+                <pixm:flightSegment>1</pixm:flightSegment>
+                <pixm:pressureAltitude uom="FT">11.0</pixm:pressureAltitude>
+                <pixm:timeElapsed uom="SEC">18.75219248</pixm:timeElapsed>
+                <pixm:gearPosition>Down</pixm:gearPosition>
+              </pixm:profilePoint>
+
+              <pixm:profilePoint>
+                <pixm:position>
+                  <gml:Point gml:id="fp-gross-pt-2" srsName="urn:ogc:def:crs:OGC:1.3:CRS83">
+                    <gml:pos>37.62625027 -122.3678349 46.0</gml:pos>
+                  </gml:Point>
+                </pixm:position>
+                <pixm:airspeed>
+                  <pixm:speedName>V2</pixm:speedName>
+                  <pixm:valSpeed uom="KT">164.9</pixm:valSpeed>
+                  <pixm:airspeedType>IAS</pixm:airspeedType>
+                </pixm:airspeed>
+                <pixm:distanceFromReference uom="FT">8200</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">35.0</pixm:heightAboveReference>
+                <pixm:flapConfiguration>5</pixm:flapConfiguration>
+                <pixm:slatConfiguration>EXTEND</pixm:slatConfiguration>
+                <pixm:thrustSetting uom="PCT_N1">101.26</pixm:thrustSetting>
+                <pixm:flightSegment>1</pixm:flightSegment>
+                <pixm:pressureAltitude uom="FT">46.0</pixm:pressureAltitude>
+                <pixm:timeElapsed uom="SEC">21.05817049</pixm:timeElapsed>
+                <pixm:gearPosition>Down</pixm:gearPosition>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:position>
+                  <gml:Point gml:id="fp-gross-pt-3" srsName="urn:ogc:def:crs:OGC:1.3:CRS83">
+                    <gml:pos>37.62934994 -122.3657793 96.0</gml:pos>
+                  </gml:Point>
+                </pixm:position>
+                <pixm:airspeed>
+                  <pixm:speedName>V2</pixm:speedName>
+                  <pixm:valSpeed uom="KT">164.9</pixm:valSpeed>
+                  <pixm:airspeedType>IAS</pixm:airspeedType>
+                </pixm:airspeed>
+                <pixm:distanceFromReference uom="FT">9476</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">85.0</pixm:heightAboveReference>
+                <pixm:flapConfiguration>5</pixm:flapConfiguration>
+                <pixm:slatConfiguration>EXTEND</pixm:slatConfiguration>
+                <pixm:thrustSetting uom="PCT_N1">101.26</pixm:thrustSetting>
+                <pixm:flightSegment>2</pixm:flightSegment>
+                <pixm:pressureAltitude uom="FT">96.0</pixm:pressureAltitude>
+                <pixm:timeElapsed uom="SEC">24.3494769</pixm:timeElapsed>
+                <pixm:gearPosition>Down</pixm:gearPosition>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:position>
+                  <gml:Point gml:id="fp-gross-pt-4" srsName="urn:ogc:def:crs:OGC:1.3:CRS83">
+                    <gml:pos>37.77164173 -122.271205 2289.0</gml:pos>
+                  </gml:Point>
+                </pixm:position>
+                <pixm:airspeed>
+                  <pixm:speedName>V2</pixm:speedName>
+                  <pixm:valSpeed uom="KT">164.9</pixm:valSpeed>
+                  <pixm:airspeedType>IAS</pixm:airspeedType>
+                </pixm:airspeed>
+                <pixm:distanceFromReference uom="FT">68068</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">2278.0</pixm:heightAboveReference>
+                <pixm:flapConfiguration>5</pixm:flapConfiguration>
+                <pixm:slatConfiguration>EXTEND</pixm:slatConfiguration>
+                <pixm:thrustSetting uom="PCT_N1">101.26</pixm:thrustSetting>
+                <pixm:flightSegment>3</pixm:flightSegment>
+                <pixm:pressureAltitude uom="FT">2289.0</pixm:pressureAltitude>
+                <pixm:timeElapsed uom="SEC">175.4813149</pixm:timeElapsed>
+                <pixm:gearPosition>Up</pixm:gearPosition>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:position>
+                  <gml:Point gml:id="fp-gross-pt-5" srsName="urn:ogc:def:crs:OGC:1.3:CRS83">
+                    <gml:pos>37.841685 -122.2244981 2289.0</gml:pos>
+                  </gml:Point>
+                </pixm:position>
+                <pixm:airspeed>
+                  <pixm:speedName>V4</pixm:speedName>
+                  <pixm:valSpeed uom="KT">250.0</pixm:valSpeed>
+                  <pixm:airspeedType>IAS</pixm:airspeedType>
+                </pixm:airspeed>
+                <pixm:distanceFromReference uom="FT">96922</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">2278.0</pixm:heightAboveReference>
+                <pixm:flapConfiguration>0</pixm:flapConfiguration>
+                <pixm:slatConfiguration>RETRACT</pixm:slatConfiguration>
+                <pixm:thrustSetting uom="PCT_N1">85.0</pixm:thrustSetting>
+                <pixm:flightSegment>4</pixm:flightSegment>
+                <pixm:pressureAltitude uom="FT">2289.0</pixm:pressureAltitude>
+                <pixm:timeElapsed uom="SEC">250.0</pixm:timeElapsed>
+                <pixm:gearPosition>Up</pixm:gearPosition>
+              </pixm:profilePoint>
+            </pixm:oeiGrossPerformanceProfile>
+          </pixm:oeiGrossProfile>
+        </pixm:TakeoffResponseTimeSlice>
+      </pixm:timeSlice>
+      <pixm:timeSlice>
+        <pixm:TakeoffResponseTimeSlice>
+          <gml:validTime>
+            <gml:TimePeriod gml:id="tp-to-rsp-01R-UAS">
+              <gml:beginPosition>2025-06-11T04:40:00Z</gml:beginPosition>
+              <gml:endPosition>2025-06-11T05:10:00Z</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>TEMPDELTA</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:contextUsage>Demonstration - 01R-UAS</pixm:contextUsage>
+          <pixm:outputId>c9e2f7b2-4e1a-4c3a-9f7e-2a1b4e6d8c1f</pixm:outputId>
+
+          <pixm:oeiNetProfile>
+            <pixm:description>Min LO Path</pixm:description>
+            <pixm:netFinalSegClimbGradient>0.0</pixm:netFinalSegClimbGradient>
+            <pixm:netSecondSegClimbGradient>0.0</pixm:netSecondSegClimbGradient>
+            <pixm:oeiNetGeometricProfile>
+              <pixm:referencePointName>BRAKE_RELEASE</pixm:referencePointName>
+              <pixm:profilePoint>
+                <pixm:distanceFromReference uom="FT">36</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">0.0</pixm:heightAboveReference>
+                <pixm:pointId>18</pixm:pointId>
+                <pixm:flightSegment>0</pixm:flightSegment>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:distanceFromReference uom="FT">7306</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">0.0</pixm:heightAboveReference>
+                <pixm:pointId>19</pixm:pointId>
+                <pixm:flightSegment>1</pixm:flightSegment>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:distanceFromReference uom="FT">8200</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">35.0</pixm:heightAboveReference>
+                <pixm:pointId>20</pixm:pointId>
+                <pixm:flightSegment>1</pixm:flightSegment>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:distanceFromReference uom="FT">9476</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">75.0</pixm:heightAboveReference>
+                <pixm:pointId>21</pixm:pointId>
+                <pixm:flightSegment>2</pixm:flightSegment>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:distanceFromReference uom="FT">84421</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">2199.0</pixm:heightAboveReference>
+                <pixm:pointId>22</pixm:pointId>
+                <pixm:flightSegment>3</pixm:flightSegment>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:distanceFromReference uom="FT">121338</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">2199.0</pixm:heightAboveReference>
+                <pixm:pointId>23</pixm:pointId>
+                <pixm:flightSegment>4</pixm:flightSegment>
+              </pixm:profilePoint>
+            </pixm:oeiNetGeometricProfile>
+          </pixm:oeiNetProfile>
+          <pixm:oeiGrossProfile>
+            <pixm:description>Min LO Path</pixm:description>
+            <pixm:grossFinalSegClimbGradient>0.0</pixm:grossFinalSegClimbGradient>
+            <pixm:grossSecondSegClimbGradient>0.0</pixm:grossSecondSegClimbGradient>
+            <pixm:oeiGrossPerformanceProfile>
+              <pixm:referencePointName>BRAKE_RELEASE</pixm:referencePointName>
+              <pixm:profilePoint>
+                <pixm:position>
+                  <gml:Point gml:id="fp-gross-pt-12" srsName="urn:ogc:def:crs:OGC:1.3:CRS83">
+                    <gml:pos>37.60641735 -122.3809828 11.0</gml:pos>
+                  </gml:Point>
+                </pixm:position>
+                <pixm:airspeed>
+                  <pixm:speedName>STATIC</pixm:speedName>
+                  <pixm:valSpeed uom="KT">0.0</pixm:valSpeed>
+                  <pixm:airspeedType>IAS</pixm:airspeedType>
+                </pixm:airspeed>
+                <pixm:distanceFromReference uom="FT">36</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">0.0</pixm:heightAboveReference>
+                <pixm:flapConfiguration>5</pixm:flapConfiguration>
+                <pixm:slatConfiguration>EXTEND</pixm:slatConfiguration>
+                <pixm:thrustSetting uom="PCT_N1">101.26</pixm:thrustSetting>
+                <pixm:flightSegment>0</pixm:flightSegment>
+                <pixm:pressureAltitude uom="FT">11.0</pixm:pressureAltitude>
+                <pixm:timeElapsed uom="SEC">0.0</pixm:timeElapsed>
+                <pixm:gearPosition>Down</pixm:gearPosition>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:position>
+                  <gml:Point gml:id="fp-gross-pt-13" srsName="urn:ogc:def:crs:OGC:1.3:CRS83">
+                    <gml:pos>37.62407854 -122.369275 11.0</gml:pos>
+                  </gml:Point>
+                </pixm:position>
+                <pixm:airspeed>
+                  <pixm:speedName>VR</pixm:speedName>
+                  <pixm:valSpeed uom="KT">156.8</pixm:valSpeed>
+                  <pixm:airspeedType>IAS</pixm:airspeedType>
+                </pixm:airspeed>
+                <pixm:distanceFromReference uom="FT">7306</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">0.0</pixm:heightAboveReference>
+                <pixm:flapConfiguration>5</pixm:flapConfiguration>
+                <pixm:slatConfiguration>EXTEND</pixm:slatConfiguration>
+                <pixm:thrustSetting uom="PCT_N1">101.26</pixm:thrustSetting>
+                <pixm:flightSegment>1</pixm:flightSegment>
+                <pixm:pressureAltitude uom="FT">11.0</pixm:pressureAltitude>
+                <pixm:timeElapsed uom="SEC">15.88668228</pixm:timeElapsed>
+                <pixm:gearPosition>Down</pixm:gearPosition>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:position>
+                  <gml:Point gml:id="fp-gross-pt-14" srsName="urn:ogc:def:crs:OGC:1.3:CRS83">
+                    <gml:pos>37.62625027 -122.3678349 46.0</gml:pos>
+                  </gml:Point>
+                </pixm:position>
+                <pixm:airspeed>
+                  <pixm:speedName>V2</pixm:speedName>
+                  <pixm:valSpeed uom="KT">164.9</pixm:valSpeed>
+                  <pixm:airspeedType>IAS</pixm:airspeedType>
+                </pixm:airspeed>
+                <pixm:distanceFromReference uom="FT">8200</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">35.0</pixm:heightAboveReference>
+                <pixm:flapConfiguration>5</pixm:flapConfiguration>
+                <pixm:slatConfiguration>EXTEND</pixm:slatConfiguration>
+                <pixm:thrustSetting uom="PCT_N1">101.26</pixm:thrustSetting>
+                <pixm:flightSegment>1</pixm:flightSegment>
+                <pixm:pressureAltitude uom="FT">46.0</pixm:pressureAltitude>
+                <pixm:timeElapsed uom="SEC">17.8402853</pixm:timeElapsed>
+                <pixm:gearPosition>Down</pixm:gearPosition>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:position>
+                  <gml:Point gml:id="fp-gross-pt-15" srsName="urn:ogc:def:crs:OGC:1.3:CRS83">
+                    <gml:pos>37.62934994 -122.3657793 96.0</gml:pos>
+                  </gml:Point>
+                </pixm:position>
+                <pixm:airspeed>
+                  <pixm:speedName>V2</pixm:speedName>
+                  <pixm:valSpeed uom="KT">164.9</pixm:valSpeed>
+                  <pixm:airspeedType>IAS</pixm:airspeedType>
+                </pixm:airspeed>
+                <pixm:distanceFromReference uom="FT">9476</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">85.0</pixm:heightAboveReference>
+                <pixm:flapConfiguration>5</pixm:flapConfiguration>
+                <pixm:slatConfiguration>EXTEND</pixm:slatConfiguration>
+                <pixm:thrustSetting uom="PCT_N1">101.26</pixm:thrustSetting>
+                <pixm:flightSegment>2</pixm:flightSegment>
+                <pixm:pressureAltitude uom="FT">96.0</pixm:pressureAltitude>
+                <pixm:timeElapsed uom="SEC">20.62864935</pixm:timeElapsed>
+                <pixm:gearPosition>Down</pixm:gearPosition>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:position>
+                  <gml:Point gml:id="fp-gross-pt-16" srsName="urn:ogc:def:crs:OGC:1.3:CRS83">
+                    <gml:pos>37.81134113 -122.2447447 2820.0</gml:pos>
+                  </gml:Point>
+                </pixm:position>
+                <pixm:airspeed>
+                  <pixm:speedName>V2</pixm:speedName>
+                  <pixm:valSpeed uom="KT">164.9</pixm:valSpeed>
+                  <pixm:airspeedType>IAS</pixm:airspeedType>
+                </pixm:airspeed>
+                <pixm:distanceFromReference uom="FT">84421</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">2809.0</pixm:heightAboveReference>
+                <pixm:flapConfiguration>5</pixm:flapConfiguration>
+                <pixm:slatConfiguration>EXTEND</pixm:slatConfiguration>
+                <pixm:thrustSetting uom="PCT_N1">101.26</pixm:thrustSetting>
+                <pixm:flightSegment>3</pixm:flightSegment>
+                <pixm:pressureAltitude uom="FT">2820.0</pixm:pressureAltitude>
+                <pixm:timeElapsed uom="SEC">184.4013321</pixm:timeElapsed>
+                <pixm:gearPosition>Up</pixm:gearPosition>
+              </pixm:profilePoint>
+              <pixm:profilePoint>
+                <pixm:position>
+                  <gml:Point gml:id="fp-gross-pt-17" srsName="urn:ogc:def:crs:OGC:1.3:CRS83">
+                    <gml:pos>37.8841132 -122.1961565 2820.0</gml:pos>
+                  </gml:Point>
+                </pixm:position>
+                <pixm:airspeed>
+                  <pixm:speedName>V4</pixm:speedName>
+                  <pixm:valSpeed uom="KT">250.0</pixm:valSpeed>
+                  <pixm:airspeedType>IAS</pixm:airspeedType>
+                </pixm:airspeed>
+                <pixm:distanceFromReference uom="FT">114404</pixm:distanceFromReference>
+                <pixm:heightAboveReference uom="FT">2809.0</pixm:heightAboveReference>
+                <pixm:flapConfiguration>0</pixm:flapConfiguration>
+                <pixm:slatConfiguration>RETRACT</pixm:slatConfiguration>
+                <pixm:thrustSetting uom="PCT_N1">85.0</pixm:thrustSetting>
+                <pixm:flightSegment>4</pixm:flightSegment>
+                <pixm:pressureAltitude uom="FT">2820.0</pixm:pressureAltitude>
+                <pixm:timeElapsed uom="SEC">249.9213314</pixm:timeElapsed>
+                <pixm:gearPosition>Up</pixm:gearPosition>
+              </pixm:profilePoint>
+            </pixm:oeiGrossPerformanceProfile>
+          </pixm:oeiGrossProfile>
+        </pixm:TakeoffResponseTimeSlice>
+      </pixm:timeSlice>
+    </pixm:TakeoffResponse>
+  </gml:featureMember>
+
+</gml:FeatureCollection>

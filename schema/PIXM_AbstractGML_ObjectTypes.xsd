@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pixm="http://www.pixm.aero/schema/0.1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gmd="http://www.isotc211.org/2005/gmd" targetNamespace="http://www.pixm.aero/schema/0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.1">
+
+	<!--====================================================================-->
+	<!--Schema Imports and Includes-->
+	<!--====================================================================-->
+	<!--==== IMPORT GML 3.2 ====-->
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<!--==== IMPORT ISO19139 METADATA SCHEMA ====-->
+	<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
+	<!--====================================================================-->
+	<!--Base PIXM Feature/Object Constructs-->
+	<!--====================================================================-->
+	<complexType name="AbstractPIXMFeatureBaseType" abstract="true">
+		<annotation>
+			<documentation>This derives from gml:DynamicFeatureType, as all PIXM features are expected to have temporal properties modeled using the Timeslice model. While the GML specification does not mandate that dynamic features derive from gml:DynamicFeatureType, many GML-aware applications may only detect a dynamic feature by this type hierarchy. Note that all temporal properties of gml:DynamicFeatureType are removed during this restriction, because they will be added for each PIXM feature specifically, based on the TimeSlice model</documentation>
+		</annotation>
+		<complexContent>
+			<restriction base="gml:DynamicFeatureType">
+				<sequence>
+					<sequence>
+						<sequence>
+							<element ref="gml:description" minOccurs="0"/>
+							<element ref="gml:identifier" minOccurs="0"/>
+							<element ref="gml:name" minOccurs="0" maxOccurs="unbounded"/>
+						</sequence>
+					</sequence>
+					<sequence>
+						<element ref="gml:boundedBy" minOccurs="0"/>
+					</sequence>
+				</sequence>
+				<attribute ref="gml:id" use="required"/>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="AbstractPIXMFeatureType" abstract="true">
+		<annotation>
+			<documentation>Adds the FeatureMetadata, which is common to all PIXM features</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="pixm:AbstractPIXMFeatureBaseType">
+				<sequence>
+					<element name="featureMetadata" type="pixm:FeatureMetadataPropertyType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="AbstractPIXMFeature" type="pixm:AbstractPIXMFeatureType" abstract="true" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>Substitution head for PIXM features.</documentation>
+		</annotation>
+	</element>
+	<complexType name="AbstractPIXMObjectType" abstract="true">
+		<annotation>
+			<documentation>Base type for PIXM complex types that are NOT features. This may include different configuration items and response arrays. It derives from AbstractGMLType so that PIXM objects are recognised as GML objects, thus ensuring that GML-aware applications recognise them properly. Retains only the mandatory gml:id attribute.</documentation>
+		</annotation>
+		<complexContent>
+			<restriction base="gml:AbstractGMLType">
+				<sequence>
+					<sequence/>
+				</sequence>
+				<attribute ref="gml:id" use="required"/>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<element name="AbstractPIXMObject" type="pixm:AbstractPIXMObjectType" abstract="true" substitutionGroup="gml:AbstractGML">
+		<annotation>
+			<documentation>Substitution head for PIXM objects.</documentation>
+		</annotation>
+	</element>
+	<complexType name="AbstractPIXMPropertyType" abstract="true">
+		<annotation>
+			<documentation>It provides a basis for deriving PIXM feature/object properties. It defines the nilReason attribute.</documentation>
+		</annotation>
+		<attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+	</complexType>
+	<!--====================================================================-->
+	<!--TimeSlice-->
+	<!--====================================================================-->
+	<complexType name="AbstractPIXMTimeSliceBaseType" abstract="true">
+		<annotation>
+			<documentation>Base type of PIXM Timeslices.  Removes option attributes that are not used in PIXM.</documentation>
+		</annotation>
+		<complexContent>
+			<restriction base="gml:AbstractTimeSliceType">
+				<sequence>
+					<sequence/>
+					<sequence>
+						<annotation>
+							<documentation>The efffectivity of the TimeSlice.</documentation>
+						</annotation>
+						<element ref="gml:validTime"/>
+					</sequence>
+				</sequence>
+				<attribute ref="gml:id" use="required"/>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="AbstractPIXMTimeSliceType" abstract="true">
+		<annotation>
+			<documentation>Adds in the PIXM specific properties, such as 'interpretation'.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="pixm:AbstractPIXMTimeSliceBaseType">
+				<sequence>
+					<element ref="pixm:interpretation"/>
+					<element ref="pixm:sequenceNumber" minOccurs="0"/>
+					<element ref="pixm:correctionNumber" minOccurs="0"/>
+					<element name="timeSliceMetadata" type="pixm:FeatureTimeSliceMetadataPropertyType" minOccurs="0"/>
+					<element ref="pixm:featureLifetime" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!--====================================================================-->
+	<!--Feature collections-->
+	<!--====================================================================-->
+	<complexType name="AbstractPIXMMessageBaseType" abstract="true">
+		<complexContent>
+			<extension base="pixm:AbstractPIXMFeatureBaseType">
+				<sequence>
+					<element ref="pixm:sequenceNumber" minOccurs="0"/>
+					<element name="messageMetadata" type="pixm:MessageMetadataPropertyType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AbstractPIXMMessageType" abstract="true">
+		<complexContent>
+			<extension base="pixm:AbstractPIXMMessageBaseType">
+				<attributeGroup ref="gml:AggregationAttributeGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!--====================================================================-->
+	<!--Feature/Object Extensions-->
+	<!--====================================================================-->
+	<element name="AbstractExtension" type="pixm:AbstractExtensionType" abstract="true"/>
+	<complexType name="AbstractExtensionType" abstract="true">
+		<complexContent>
+			<extension base="pixm:AbstractPIXMObjectType"/>
+		</complexContent>
+	</complexType>
+	<!--====================================================================-->
+	<!--Feature and TimeSlice Properties-->
+	<!--====================================================================-->
+	<element name="interpretation">
+		<annotation>
+			<documentation>Property indicating how the timeslice is to be interpreted.  See the PIXM Temporality model for details.</documentation>
+		</annotation>
+		<simpleType>
+			<restriction base="string">
+				<enumeration value="BASELINE"/>
+				<enumeration value="SNAPSHOT"/>
+				<enumeration value="TEMPDELTA"/>
+				<enumeration value="PERMDELTA"/>
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="sequenceNumber">
+		<annotation>
+			<documentation>Used for the identification of the Time Slice concerned. See the PIXM Temporality model for details.</documentation>
+		</annotation>
+		<simpleType>
+			<restriction base="unsignedInt"/>
+		</simpleType>
+	</element>
+	<element name="correctionNumber">
+		<annotation>
+			<documentation>Used for indicating the order of the corrections of a Time Slice. See the PIXM Temporality model for details.</documentation>
+		</annotation>
+		<simpleType>
+			<restriction base="unsignedInt"/>
+		</simpleType>
+	</element>
+	<element name="featureLifetime" type="gml:TimePrimitivePropertyType">
+		<annotation>
+			<documentation>The start and end of life of the feature. See the PIXM Temporality model for details.</documentation>
+		</annotation>
+	</element>
+	<!--====================================================================-->
+	<!--Base PIXM Metadata Property Types-->
+	<!--====================================================================-->
+	<complexType name="FeatureMetadataPropertyType">
+		<complexContent>
+			<extension base="gml:AbstractMetadataPropertyType">
+				<sequence minOccurs="0">
+					<element ref="gmd:MD_Metadata"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="FeatureTimeSliceMetadataPropertyType">
+		<complexContent>
+			<extension base="gml:AbstractMetadataPropertyType">
+				<sequence minOccurs="0">
+					<element ref="gmd:MD_Metadata"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="MessageMetadataPropertyType">
+		<complexContent>
+			<extension base="gml:AbstractMetadataPropertyType">
+				<sequence minOccurs="0">
+					<element ref="gmd:MD_Metadata"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

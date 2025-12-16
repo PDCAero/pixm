@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:pixm="http://www.pixm.aero/schema/0.1"
+  xsi:schemaLocation="
+    http://www.opengis.net/gml/3.2 schemas/gml/3.2.1/gml.xsd
+    http://www.pixm.aero/schema/0.1 PIXM_Features.XSD">
+
+  <!-- TakeoffRequest Feature -->
+  <gml:featureMember>
+    <pixm:TakeoffRequest gml:id="to-req-28R">
+      <pixm:timeSlice>
+        <pixm:TakeoffRequestTimeSlice gml:id="to-req-28R-ts">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="tp-to-req-28R">
+              <gml:beginPosition>2025-06-11T04:40:00Z</gml:beginPosition>
+              <gml:endPosition>2025-06-11T05:10:00Z</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+
+          <pixm:takeoffRequestId>e9e2e3b2-6e7a-4e7c-8b2a-2e7c9b2e3e7a</pixm:takeoffRequestId>
+          <pixm:userId>ad1ce2f3-4567-89ab-cdef-1234567890ab</pixm:userId>
+          <pixm:contextUsage>Demonstration - 28R</pixm:contextUsage>
+
+          <pixm:inputMaxWeight uom="LB">177000</pixm:inputMaxWeight>
+          <pixm:maxWeightLimitSetting>MAX</pixm:maxWeightLimitSetting>
+          <pixm:outputIncludesAlignDist>YES</pixm:outputIncludesAlignDist>
+          <pixm:outputTracefile>YES</pixm:outputTracefile>
+          <pixm:outputTypeSelection>FULL</pixm:outputTypeSelection>
+          <pixm:performAllEngineCalc>NO</pixm:performAllEngineCalc>
+          <pixm:performDryCheck>NO</pixm:performDryCheck>
+
+          <pixm:aircraftConfiguration>
+            <pixm:timeSlice>
+              <pixm:aircraftConfigurationTimeSlice>
+                <gml:validTime>
+                  <gml:TimePeriod gml:id="tp-to-req-28R">
+                    <gml:beginPosition>2025-06-11T04:40:00Z</gml:beginPosition>
+                    <gml:endPosition>2025-06-11T05:10:00Z</gml:endPosition>
+                  </gml:TimePeriod>
+                </gml:validTime>
+                <pixm:slatFlapOptimizationChoice>OPTIMUM</pixm:slatFlapOptimizationChoice>
+                <pixm:airConditioningECSBleed>OFF</pixm:airConditioningECSBleed>
+                <pixm:antiIceDeIce>OFF</pixm:antiIceDeIce>
+                <pixm:groundSpoilers>ARMED</pixm:groundSpoilers>
+                <pixm:antiSkid>ON</pixm:antiSkid>
+                <pixm:thrustReverseCredit>ALL_OPERATING</pixm:thrustReverseCredit>
+                <pixm:noseGearPositionAfterFirstSeg>RETRACTED</pixm:noseGearPositionAfterFirstSeg>
+                <pixm:mainGearPositionAfterFirstSeg>RETRACTED</pixm:mainGearPositionAfterFirstSeg>
+                <pixm:apu>OFF</pixm:apu>
+                <pixm:powerManagementSystem>NORMAL</pixm:powerManagementSystem>
+                <pixm:tireType>NORMAL</pixm:tireType>
+                <pixm:tireSpeed uom="MPH">225</pixm:tireSpeed>
+                <pixm:mainNoseBrakesConfig>ALL_OPERATING</pixm:mainNoseBrakesConfig>
+              </pixm:aircraftConfigurationTimeSlice>
+            </pixm:timeSlice>
+
+          </pixm:aircraftConfiguration>
+
+          <pixm:speedSettings>
+            <pixm:V1VrChoice>BALANCED_PLUS</pixm:V1VrChoice>
+            <pixm:V2VSChoice>OPTIMUM</pixm:V2VSChoice>
+          </pixm:speedSettings>
+
+          <pixm:runwaySettings gml:id="runway-28R-sfo">
+            <pixm:timeSlice>
+              <pixm:runwaySettingsTimeSlice>
+                <gml:validTime>
+                  <gml:TimePeriod gml:id="tp-28R-perm">
+                    <gml:beginPosition>2025-01-01T00:00:00Z</gml:beginPosition>
+                    <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+                </gml:validTime>
+                <pixm:alignDistAsda uom="FT">90</pixm:alignDistAsda>
+                <pixm:alignDistToraToda uom="FT">90</pixm:alignDistToraToda>
+                <pixm:performanceRunway>
+                  <pixm:runwayIdent>28R</pixm:runwayIdent>
+                  <pixm:runwayName>28R-BASE</pixm:runwayName>
+                  <pixm:tora uom="FT">11870</pixm:tora>
+                  <pixm:toda uom="FT">11870</pixm:toda>
+                  <pixm:asda uom="FT">11870</pixm:asda>
+                  <pixm:elevation uom="FT">13</pixm:elevation>
+                  <pixm:perfRunwaySurface>GROOVED_POROUS</pixm:perfRunwaySurface>
+                  <pixm:runwayWidth uom="FT">150</pixm:runwayWidth>
+                  <pixm:todaSlope>-0.23</pixm:todaSlope>
+                  <pixm:asdaSlope>-0.23</pixm:asdaSlope>
+                  <pixm:obstacleSet xlink:href="#obs-set-28R"/>
+                </pixm:performanceRunway>
+              </pixm:runwaySettingsTimeSlice>
+            </pixm:timeSlice>
+          </pixm:runwaySettings>
+
+          <pixm:flightPathSettings>
+            <pixm:flightPathChoice>SECSEG_ONLY</pixm:flightPathChoice>
+            <pixm:levelOffHeightChoice>MAX_AND_MIN</pixm:levelOffHeightChoice>
+            <pixm:lowestLevelOffHeightValue uom="FT">1000</pixm:lowestLevelOffHeightValue>
+            <pixm:screenHeight uom="FT">35</pixm:screenHeight>
+            <pixm:secondSegGradientChoice>NORMAL</pixm:secondSegGradientChoice>
+          </pixm:flightPathSettings>
+
+          <pixm:cgConfiguration>
+            <pixm:forwardCGLimitPositionSetting>STANDARD</pixm:forwardCGLimitPositionSetting>
+          </pixm:cgConfiguration>
+
+          <pixm:thrustSettings>
+            <pixm:thrustTimeLimit uom="MIN">10</pixm:thrustTimeLimit>
+          </pixm:thrustSettings>
+
+          <pixm:environmentalSettings>
+            <pixm:timeSlice>
+              <pixm:environmentalSettingsTimeSlice>
+                <gml:validTime>
+                  <gml:TimePeriod gml:id="tp-to-req-28R">
+                    <gml:beginPosition>2025-06-11T00:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2025-06-11T23:00:00Z</gml:endPosition>
+                  </gml:TimePeriod>
+                </gml:validTime>
+                <pixm:inputTemperature uom="C">15</pixm:inputTemperature>
+                <pixm:runwayWindComponent uom="KT">0</pixm:runwayWindComponent>
+                <pixm:crosswindComponent uom="KT">0</pixm:crosswindComponent>
+                <pixm:airportAltitudeAsAltitude uom="FT">13</pixm:airportAltitudeAsAltitude>
+                <pixm:useISADev>false</pixm:useISADev>
+                <pixm:visibilitySetting>NORMAL</pixm:visibilitySetting>
+              </pixm:environmentalSettingsTimeSlice>
+            </pixm:timeSlice>
+          </pixm:environmentalSettings>
+
+        </pixm:TakeoffRequestTimeSlice>
+      </pixm:timeSlice>
+    </pixm:TakeoffRequest>
+  </gml:featureMember>
+    <!-- ObstacleSet Feature for 28R -->
+  <gml:featureMember>
+    <pixm:obstacleSet gml:id="obs-set-28R">
+      <pixm:timeSlice>
+        <pixm:obstacleSetTimeSlice gml:id="obs-set-28R-ts">
+          <gml:validTime>
+              <gml:TimePeriod gml:id="tp-obs-set-28R">
+                <gml:beginPosition>2025-06-11T00:00:00Z</gml:beginPosition>
+                <gml:endPosition indeterminatePosition="unknown"/>
+              </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:referencePointName>DER</pixm:referencePointName>
+          <pixm:numObs>18</pixm:numObs>
+
+          <!-- Basic Obstacle Definitions -->
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">7</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">627</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Localizer</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-034143"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">35</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">1166</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Building</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-034259"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">41</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">2034</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Pole</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-034951"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">48</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">2400</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Pole</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-034963"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">54</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">2441</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Pole</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-034965"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">66</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">2719</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Pole</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-035347"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">76</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">3479</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Pole</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-156120"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">95</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">3661</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Transmission Tower</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-041715"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">100</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">6390</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Pole</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-038789"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">132</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">7408</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Building</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-314990"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">133</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">12218</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Tower</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-021690"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">162</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">15997</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Pole</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-308280"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">273</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">17455</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Tree</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-104565"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">355</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">18855</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Building</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-020717"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">448</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">19100</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Transmission Line</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-xmsn-01"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">592</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">23791</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Pole</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-021527"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">684</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">27190</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Tower</pixm:type>
+              <pixm:sourceObstacle xlink:href="#urn:uuid:obs-06-148024"/>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+              <pixm:geomHeight uom="FT">806</pixm:geomHeight>
+              <pixm:longitudinalDistance uom="FT">31768</pixm:longitudinalDistance>
+              <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+              <pixm:type>Terrain+Trees</pixm:type>
+          </pixm:obstacleDefinition>
+          <pixm:splayDefinition>
+            <pixm:expandedSplayForTurns>false</pixm:expandedSplayForTurns>
+            <pixm:initialHalfWidth uom="FT">300</pixm:initialHalfWidth>
+            <pixm:maxTypicalHalfWidth uom="FT">2000</pixm:maxTypicalHalfWidth>
+            <pixm:oeiSplaySelection>FAA_AC120-91</pixm:oeiSplaySelection>
+            <pixm:oeiSplayStart>END_TODA</pixm:oeiSplayStart>
+            <pixm:splayTypicalGrowthRate>0.06125</pixm:splayTypicalGrowthRate>
+            <pixm:geometry>
+              <gml:MultiSurface srsName="urn:ogc:def:crs:ESRI::103893" gml:id="28r_straight_eosid.geom.0">
+                <gml:surfaceMember>
+                  <gml:Polygon gml:id="28r_straight_eosid.geom.0.0">
+                    <gml:exterior>
+                      <gml:LinearRing>
+                        <gml:posList>
+                          6013250.57789282 2056684.66022232 
+                          6009050.46373301 2059008.22405504 
+                          5991427.07282764 2066814.92691277 
+                          5924925.24513215 2103604.65114635 
+                          5926861.54640761 2107104.74734085 
+                          5993363.37410309 2070315.02310727 
+                          6009340.90921219 2059533.23832516 
+                          6013541.02337192 2057209.67449229 
+                          6013250.57789282 2056684.66022232
+                        </gml:posList>
+                      </gml:LinearRing>
+                    </gml:exterior>
+                  </gml:Polygon>
+                </gml:surfaceMember>
+              </gml:MultiSurface>
+            </pixm:geometry>
+          </pixm:splayDefinition>
+        </pixm:obstacleSetTimeSlice>
+      </pixm:timeSlice>
+    </pixm:obstacleSet>
+  </gml:featureMember>
+
+
+
+  <!-- Obstacle References -->
+
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-034143">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-034143">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-034143">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">13</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-034143</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-034143" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.62953886 -122.3953111</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-034259">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-034259">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-034259">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">41</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-034259</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-034259" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.63091108 -122.3965833</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-034951">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-034951">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-034951">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">47</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-034951</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-034951" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.63091108 -122.3965833</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-034963">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-034963">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-034963">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">54</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-034963</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-034963" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.63206940 -122.40063050</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-034965">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-034965">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-034965">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">60</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-034965</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-034965" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.63191110 -122.40089720</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-035347">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-035347">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-035347">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">72</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-035347</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-035347" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.63160280 -122.40218610</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+   <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-156120">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-156120">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-156120">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">82</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-156120</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-156120" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.631350 -122.406000</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-041715">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-041715">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-041715">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">101</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-041715</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-041715" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.631000 -122.407800</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-038789">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-038789">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-038789">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">106</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-038789</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-038789" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.630000 -122.410500</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-314990">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-314990">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-314990">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">138</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-314990</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-314990" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.6287 -122.4132</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-021690">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-021690">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-021690">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">139</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-021690</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-021690" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.6271 -122.4158</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-308280">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-308280">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-308280">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">168</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-308280</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-308280" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.6243 -122.4199</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-104565">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-104565">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-104565">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">279</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-104565</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-104565" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.6226 -122.4233</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-020717">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-020717">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-020717">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">361</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-020717</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-020717" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.6217 -122.4262</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-021527">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-021527">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-021527">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">598</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-021527</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-021527" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.6185 -122.4324</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+
+  <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-06-148024">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-06-148024">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-06-148024">
+              <gml:beginPosition>2025-06-11</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">690</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:identifier>06-148024</pixm:identifier>
+          <pixm:geometry>
+            <gml:Point gml:id="pt-obs-06-148024" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>37.6150 -122.4376</gml:pos>
+            </gml:Point>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+    <gml:featureMember>
+    <pixm:Obstacle gml:id="urn:uuid:obs-xmsn-01">
+      <pixm:timeSlice>
+        <pixm:ObstacleTimeSlice gml:id="obs-ts-xmsn-01">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="obs-period-xmsn-01">
+              <gml:beginPosition>2016-04-25</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:amslHeight uom="FT">454</pixm:amslHeight>
+          <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+          <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+          <pixm:source>PGE 115 kV Powerlines</pixm:source>
+          <pixm:geometry>
+            <gml:MultiCurve srsName="urn:ogc:def:crs:EPSG::4326" gml:id="28r_pwrln.geom.0">
+              <gml:curveMember>
+                <gml:LineString gml:id="28r_pwrln.geom.0.0">
+                  <gml:posList srsDimension="3">
+                    37.6509676761707 -122.454075251876 430
+                    37.6509564706144 -122.453679282583 430
+                    37.6524891602195 -122.453279566418 404
+                    37.6544051409627 -122.452271304529 335
+                    37.6558037816553 -122.450752368368 284
+                    37.6573755926155 -122.44902963052 246
+                    37.6587540720545 -122.447517674269 213
+                    37.6602865772434 -122.445836178076 210
+                    37.6618973131982 -122.444059566464 200
+                    37.6624094867437 -122.442755810949 192
+                    37.6632826605902 -122.442132714315 172
+                    37.6636716600369 -122.441668373348 169
+                    37.6642729726184 -122.440964676274 170
+                    37.664825817096 -122.440226429994 197
+                    37.6655736379775 -122.439345201564 211
+                    37.6666285758592 -122.438095811193 228
+                    37.6677103156237 -122.436812353112 240
+                    37.6691585320501 -122.435112196215 277
+                    37.6708653655957 -122.433084881875 358
+                    37.6749018650152 -122.432325531474 504
+                    37.6779958006398 -122.430994504904 804
+                    37.6793788504412 -122.430406465923 991
+                    37.6809730939119 -122.429606657197 1142
+                    37.6828512785755 -122.42867053901 1221
+                    37.6846374069299 -122.427803161704 1080
+                    37.6862024281529 -122.42704399905 902
+                    37.6896678355187 -122.425312385848 524
+                  </gml:posList>
+                </gml:LineString>
+              </gml:curveMember>
+            </gml:MultiCurve>
+          </pixm:geometry>
+        </pixm:ObstacleTimeSlice>
+      </pixm:timeSlice>
+    </pixm:Obstacle>
+  </gml:featureMember>
+
+</gml:FeatureCollection>

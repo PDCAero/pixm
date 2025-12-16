@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          targetNamespace="http://www.pixm.aero/schema/0.1"
+           xmlns="http://example.com/datatypes"
+           xmlns:pixm="http://www.pixm.aero/schema/0.1"
+           xmlns:gml="http://www.opengis.net/gml/3.2"
+           elementFormDefault="qualified">
+  <xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <xs:include schemaLocation="PIXM_Codelists.xsd"/>
+  <xs:complexType name="CodeACorECSBleedType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeACorECSBleedBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeAeoThrustSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeAeoThrustSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeAirportHeliportType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeAirportHeliportBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeAirspeedType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeAirspeedBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeAltitudeUseType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeAltitudeUseBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeAntiIceDeIceSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeAntiIceDeIceSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeAntiSkidSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeAntiSkidSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeApproachType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeApproachBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeApproachCategoryType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeApproachCategoryBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeApproachClimbGradSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeApproachClimbGradSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeApproachClimbSpeedSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeApproachClimbSpeedSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeBrakeEnergyChoiceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeBrakeEnergyChoiceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeBrakesConfigurationType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeBrakesConfigurationBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeBrakingActionType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeBrakingActionBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeBrakingMuCalcSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeBrakingMuCalcSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeCardinalDirectionType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeCardinalDirectionBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeCenterGearBrakesType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeCenterGearBrakesBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeContaminationType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeContaminationBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeCourseType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeCourseBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeDeclaredDistanceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeDeclaredDistanceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeDestinationAlternateSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeDestinationAlternateSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeDistanceVerticalUomType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeDistanceVerticalUomBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeEngineDrivenPumpInopType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeEngineDrivenPumpInopBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeEngineInoperativeSelectionType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeEngineInoperativeSelectionBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeEngineStatusType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeEngineStatusBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeEquipmentConditionType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeEquipmentConditionBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeFinalSegObsClearanceMethodChoiceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeFinalSegObsClearanceMethodChoiceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeFlightPathChoiceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeFlightPathChoiceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeForwardCGLimitPositionType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeForwardCGLimitPositionBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeFrictionDeviceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeFrictionDeviceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeFrictionEstimateType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeFrictionEstimateBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeGradientLossApplicationType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeGradientLossApplicationBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeGroundSpoilerSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeGroundSpoilerSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeHeightReferenceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeHeightReferenceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeLandingClimbGradSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeLandingClimbGradSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeLandingClimbSpeedSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeLandingClimbSpeedSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeLandingGearPositionType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeLandingGearPositionBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeLandingLightsAutoRetractType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeLandingLightsAutoRetractBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeLandingCalculationModeType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeLandingCalculationModeBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeLandingCalculationTypeType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeLandingCalculationTypeBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeLandingCategoryChoiceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeLandingCategoryChoiceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeLandingErrorType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeLandingErrorBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeLandingLimitType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeLandingLimitBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeLandingRequestType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeLandingRequestBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeLandingSlatFlapOptimizationType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeLandingSlatFlapOptimizationBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeLevelOffHeightChoiceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeLevelOffHeightChoiceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeMaxAssumedTempSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeMaxAssumedTempSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeMaxStoppingMarginType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeMaxStoppingMarginBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeMaxWeightLimitSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeMaxWeightLimitSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeMinWeightDistanceFlagType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeMinWeightDistanceFlagBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeMeteoConditionsType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeMeteoConditionsBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeMinV1RestrictionChoiceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeMinV1RestrictionChoiceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeMuCalculationType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeMuCalculationBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeNormalSelectedType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeNormalSelectedBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeNumInopType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeNumInopBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeObstacleDatumType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeObstacleDatumBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeOeiFerryFlightType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeOeiFerryFlightBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeOeiSplaySelectionType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeOeiSplaySelectionBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeOeiSplayStartType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeOeiSplayStartBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeOnOffType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeOnOffBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeOpLDOptionType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeOpLDOptionBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeOutputTypeSelectionType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeOutputTypeSelectionBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodePavementBehaviourType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodePavementBehaviourBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodePavementSubgradeType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodePavementSubgradeBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodePerformAllEngineCalcType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodePerformAllEngineCalcBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodePerfRunwaySurfaceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodePerfRunwaySurfaceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeReducedThrustMethodType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeReducedThrustMethodBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeRelativePositionType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeRelativePositionBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeSecSegGradientChoiceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeSecSegGradientChoiceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeSlatFlapOptimizationType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeSlatFlapOptimizationBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeStartTakeoffThrustType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeStartTakeoffThrustBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeTakeoffThrustPowerSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeTakeoffThrustPowerSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeThresholdSpeedSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeThresholdSpeedSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeThresholdTouchdownDistType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeThresholdTouchdownDistBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeThrustRevDelayType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeThrustRevDelayBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeThrustReverseLevelType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeThrustReverseLevelBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeThrustReverseSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeThrustReverseSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeThrustSettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeThrustSettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeTimeReferenceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeTimeReferenceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeTireProfileType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeTireProfileBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeTireTypeType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeTireTypeBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeTOCalculationOptionType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeTOCalculationOptionBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeTOLimitType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeTOLimitBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeTurnStartType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeTurnStartBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeV1VRChoiceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeV1VRChoiceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeV1VRRangeChoiceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeV1VRRangeChoiceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeV2VSChoiceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeV2VSChoiceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeVerticalReferenceType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeVerticalReferenceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeVerticalStructureType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeVerticalStructureBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeVerticalStructureMarkingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeVerticalStructureMarkingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeVerticalStructureMaterialType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeVerticalStructureMaterialBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeVisibilitySettingType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeVisibilitySettingBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeYesNoType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeYesNoBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="AlphaType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AlphanumericType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([A-Z]|\d)*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Character1Type">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([A-Z]|[0-9])+([ \+\-/]*([A-Z]|[0-9])+)*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Character2Type">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="Character3Type">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([A-Z]|[0-9]|[, !&quot;&amp;#$%'\(\)\*\+\-\./:;&lt;=>\?@\[\\\]\^_\|\{\}])*"/>
+    </xs:restriction>
+  </xs:simpleType>
+	<xs:simpleType name="DateBaseType">
+		<xs:restriction base="xs:date"/>
+	</xs:simpleType>
+	<xs:simpleType name="DateMonthDayBaseType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(((0[1-9])|(1[0-9])|(2[0-9]))\-((0[1-9])|10|11|12))|(30\-(01|03|04|05|06|07|08|09|10|11|12))|(31\-(01|03|05|07|08|10|12))|SDLST|EDLST"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DateMonthDayType">
+		<xs:simpleContent>
+			<xs:extension base="pixm:DateMonthDayBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="DateTimeBaseType">
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+	<xs:complexType name="DateTimeType">
+		<xs:simpleContent>
+			<xs:extension base="pixm:DateTimeBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="DateType">
+		<xs:simpleContent>
+			<xs:extension base="pixm:DateBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="DateYearBaseType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-9][0-9][0-9][0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DateYearType">
+		<xs:simpleContent>
+			<xs:extension base="pixm:DateYearBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="NoNumberBaseType">
+		<xs:restriction base="xs:unsignedInt"/>
+	</xs:simpleType>
+	<xs:complexType name="NoNumberType">
+		<xs:simpleContent>
+			<xs:extension base="pixm:NoNumberBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="NoSequenceBaseType">
+		<xs:restriction base="xs:unsignedInt"/>
+	</xs:simpleType>
+	<xs:complexType name="NoSequenceType">
+		<xs:simpleContent>
+			<xs:extension base="pixm:NoSequenceBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="TextDesignatorBaseType">
+		<xs:restriction base="pixm:Character3Type">
+			<xs:maxLength value="16"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="TextDesignatorType">
+		<xs:simpleContent>
+			<xs:extension base="pixm:TextDesignatorBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>  
+  	<xs:simpleType name="TextNoteBaseType">
+		<xs:restriction base="pixm:Character2Type">
+			<xs:maxLength value="10000"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="TextNoteType">
+		<xs:simpleContent>
+			<xs:extension base="pixm:TextNoteBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+				<xs:attribute name="lang" type="xs:language"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+  	<xs:simpleType name="TextRemarkBaseType">
+		<xs:restriction base="pixm:Character2Type">
+			<xs:maxLength value="5000"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="TextRemarkType">
+		<xs:simpleContent>
+			<xs:extension base="pixm:TextRemarkBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="TextSIDSTARDesignatorBaseType">
+		<xs:restriction base="pixm:Character1Type">
+			<xs:maxLength value="7"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="TextSIDSTARDesignatorType">
+		<xs:simpleContent>
+			<xs:extension base="pixm:TextSIDSTARDesignatorBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="TimeBaseType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(([0-1][0-9]|2[0-3]):[0-5][0-9])|(24:00)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="TimeType">
+		<xs:simpleContent>
+			<xs:extension base="pixm:TimeBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+  <xs:complexType name="XHTMLType">
+		<xs:sequence>
+			<xs:any namespace="http://www.w3.org/1999/xhtml" processContents="skip" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+	</xs:complexType>
+</xs:schema>

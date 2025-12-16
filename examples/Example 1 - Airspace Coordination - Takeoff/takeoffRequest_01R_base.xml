@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:pixm="http://www.pixm.aero/schema/0.1"
+  xsi:schemaLocation="
+    http://www.opengis.net/gml/3.2 schemas/gml/3.2.1/gml.xsd
+    http://www.pixm.aero/schema/0.1 PIXM_Features.XSD">
+
+
+  <!-- TakeoffRequest Feature -->
+  <gml:featureMember>
+    <pixm:TakeoffRequest gml:id="to-req-01R">
+      <pixm:timeSlice>
+        <pixm:TakeoffRequestTimeSlice gml:id="to-req-01R-ts">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="tp-to-req-01R">
+              <gml:beginPosition>2025-12-03T13:40:00Z</gml:beginPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+
+          <pixm:takeoffRequestId>0abcd1234-5678-90ab-cdef-1234567890ab</pixm:takeoffRequestId>
+          <pixm:calculatorId>c9e2f7b2-4e1a-4c3a-9f7e-2a1b4e6d8c3f</pixm:calculatorId>
+          <pixm:userId>ad1ce2f3-4567-89ab-cdef-1234567890ab</pixm:userId>
+          <pixm:contextUsage>Demonstration - 01R Base</pixm:contextUsage>
+
+          <pixm:inputMaxWeight uom="LB">177000</pixm:inputMaxWeight>
+          <pixm:maxWeightLimitSetting>FIXED</pixm:maxWeightLimitSetting>
+          <pixm:outputIncludesAlignDist>true</pixm:outputIncludesAlignDist>
+          <pixm:outputTracefile>false</pixm:outputTracefile>
+          <pixm:outputTypeSelection>FULL</pixm:outputTypeSelection>
+          <pixm:performAllEngineCalc>false</pixm:performAllEngineCalc>
+          <pixm:performDryCheck>false</pixm:performDryCheck>
+
+          <pixm:aircraftConfiguration>
+            <pixm:timeSlice>
+              <pixm:aircraftConfigurationTimeSlice>
+                <gml:validTime>
+                  <gml:TimePeriod gml:id="tp-to-req-01R">
+                    <gml:beginPosition>2025-12-03T13:40:00Z</gml:beginPosition>
+                  </gml:TimePeriod>
+                </gml:validTime>
+                <pixm:slatFlapOptimizationChoice>OPTIMUM</pixm:slatFlapOptimizationChoice>
+                <pixm:airConditioningECSBleed>OFF</pixm:airConditioningECSBleed>
+                <pixm:antiIceDeIce>OFF</pixm:antiIceDeIce>
+                <pixm:groundSpoilers>ARMED</pixm:groundSpoilers>
+                <pixm:antiSkid>ON</pixm:antiSkid>
+                <pixm:thrustReverseCredit>ALL_OPERATING</pixm:thrustReverseCredit>
+                <pixm:noseGearPositionAfterFirstSeg>RETRACTED</pixm:noseGearPositionAfterFirstSeg>
+                <pixm:mainGearPositionAfterFirstSeg>RETRACTED</pixm:mainGearPositionAfterFirstSeg>
+                <pixm:apu>OFF</pixm:apu>
+                <pixm:powerManagementSystem>NORMAL</pixm:powerManagementSystem>
+                <pixm:tireType>NORMAL</pixm:tireType>
+                <pixm:tireSpeed uom="MPH">225</pixm:tireSpeed>
+                <pixm:mainNoseBrakesConfig>ALL_OPERATING</pixm:mainNoseBrakesConfig>
+              </pixm:aircraftConfigurationTimeSlice>
+            </pixm:timeSlice>
+          </pixm:aircraftConfiguration>
+
+          <pixm:speedSettings>
+            <pixm:V1VrChoice>BALANCED_PLUS</pixm:V1VrChoice>
+            <pixm:V2VSChoice>OPTIMUM</pixm:V2VSChoice>
+          </pixm:speedSettings>
+
+          <pixm:runwaySettings gml:id="runway-01R-sfo">
+            <pixm:timeSlice>
+              <pixm:runwaySettingsTimeSlice>
+                <gml:validTime>
+                  <gml:TimePeriod gml:id="tp-runway-01R-base">
+                    <gml:beginPosition>2025-12-03T13:40:00Z</gml:beginPosition>
+                  </gml:TimePeriod>
+                </gml:validTime>
+                <pixm:interpretation>BASELINE</pixm:interpretation>
+                <pixm:alignDistAsda uom="FT">90</pixm:alignDistAsda>
+                <pixm:alignDistToraToda uom="FT">90</pixm:alignDistToraToda>
+                <pixm:performanceRunway>
+                  <pixm:runwayIdent>01R</pixm:runwayIdent>
+                  <pixm:runwayName>01R-BASE</pixm:runwayName>
+                  <pixm:tora uom="FT">8650</pixm:tora>
+                  <pixm:toda uom="FT">8650</pixm:toda>
+                  <pixm:asda uom="FT">8650</pixm:asda>
+                  <pixm:elevation uom="FT">13</pixm:elevation>
+                  <pixm:perfRunwaySurface>GROOVED_POROUS</pixm:perfRunwaySurface>
+                  <pixm:runwayWidth uom="FT">150</pixm:runwayWidth>
+                  <pixm:todaSlope>-0.23</pixm:todaSlope>
+                  <pixm:asdaSlope>-0.23</pixm:asdaSlope>
+                  <pixm:obstacleSet xlink:href="#obs-set-01R-base"/>
+                  <pixm:contamDefinition>
+                    <pixm:contamType>DRY</pixm:contamType>
+                  </pixm:contamDefinition>
+                </pixm:performanceRunway>
+              </pixm:runwaySettingsTimeSlice>
+            </pixm:timeSlice>
+          </pixm:runwaySettings>
+
+          <pixm:flightPathSettings>
+            <pixm:flightPathChoice>SECSEG_ONLY</pixm:flightPathChoice>
+            <pixm:levelOffHeightChoice>MAX_AND_MIN</pixm:levelOffHeightChoice>
+            <pixm:lowestLevelOffHeightValue uom="FT">1000</pixm:lowestLevelOffHeightValue>
+            <pixm:screenHeight uom="FT">35</pixm:screenHeight>
+            <pixm:secondSegGradientChoice>NORMAL</pixm:secondSegGradientChoice>
+          </pixm:flightPathSettings>
+
+          <pixm:cgConfiguration>
+            <pixm:forwardCGLimitPositionSetting>STANDARD</pixm:forwardCGLimitPositionSetting>
+          </pixm:cgConfiguration>
+
+          <pixm:thrustSettings>
+            <pixm:thrustTimeLimit uom="MIN">10</pixm:thrustTimeLimit>
+          </pixm:thrustSettings>
+
+          <pixm:environmentalSettings>
+            <pixm:timeSlice>
+              <pixm:environmentalSettingsTimeSlice>
+                <gml:validTime>
+                  <gml:TimePeriod gml:id="tp-to-req-01R-env">
+                    <gml:beginPosition>2025-12-03T13:40:00Z</gml:beginPosition>
+                    <gml:endPosition>2025-12-03T14:20:00Z</gml:endPosition>
+                  </gml:TimePeriod>
+                </gml:validTime>
+                <pixm:inputTemperature uom="C">15</pixm:inputTemperature>
+                <pixm:runwayWindComponent uom="KT">0</pixm:runwayWindComponent>
+                <pixm:crosswindComponent uom="KT">3</pixm:crosswindComponent>
+                <pixm:airportAltitudeAsAltitude uom="FT">13</pixm:airportAltitudeAsAltitude>
+                <pixm:useISADev>false</pixm:useISADev>
+                <pixm:visibilitySetting>NORMAL</pixm:visibilitySetting>
+              </pixm:environmentalSettingsTimeSlice>
+            </pixm:timeSlice>
+          </pixm:environmentalSettings>
+
+        </pixm:TakeoffRequestTimeSlice>
+      </pixm:timeSlice>
+    </pixm:TakeoffRequest>
+  </gml:featureMember>
+
+ <!-- ObstacleSet Feature -->
+  <gml:featureMember>
+    <pixm:ObstacleSet gml:id="obs-set-01R-base">
+      <pixm:timeSlice>
+        <pixm:ObstacleSetTimeSlice gml:id="obs-set-01R-base-ts">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="tp-obs-set-01R-base">
+              <gml:beginPosition>2025-12-11T04:40:00Z</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+          <pixm:referencePointName>DER</pixm:referencePointName>
+          <pixm:numObs>5</pixm:numObs>
+
+          <!-- Obstacle Definitions -->
+          <pixm:obstacleDefinition>
+            <pixm:geomHeight uom="FT">7</pixm:geomHeight>
+            <pixm:longitudinalDistance uom="FT">488</pixm:longitudinalDistance>
+            <pixm:lateralDistance uom="FT">0</pixm:lateralDistance>
+            <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+            <pixm:sourceObstacle gml:id="urn:uuid:obs-06-034038">
+                <pixm:timeSlice xlink:href="#urn:uuid:obs-06-034038-ts"/>
+            </pixm:sourceObstacle>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+            <pixm:geomHeight uom="FT">43</pixm:geomHeight>
+            <pixm:longitudinalDistance uom="FT">3702</pixm:longitudinalDistance>
+            <pixm:lateralDistance uom="FT">0</pixm:lateralDistance>
+            <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+            <pixm:sourceObstacle gml:id="urn:uuid:obs-06-033971">
+              <pixm:timeSlice xlink:href="#urn:uuid:obs-06-033971-ts"/>
+            </pixm:sourceObstacle>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+            <pixm:geomHeight uom="FT">139</pixm:geomHeight>
+            <pixm:longitudinalDistance uom="FT">19755</pixm:longitudinalDistance>
+            <pixm:lateralDistance uom="FT">0</pixm:lateralDistance>
+            <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+            <pixm:sourceObstacle gml:id="FairwaySouthGeom">
+                <pixm:timeSlice xlink:href="#FairwaySouthGeom-ts"/>
+            </pixm:sourceObstacle>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+            <pixm:geomHeight uom="FT">189</pixm:geomHeight>
+            <pixm:longitudinalDistance uom="FT">27205</pixm:longitudinalDistance>
+            <pixm:lateralDistance uom="FT">0</pixm:lateralDistance>
+            <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+            <pixm:sourceObstacle gml:id="AnchorageAreaGeom">
+              <pixm:timeSlice xlink:href="#AnchorageAreaGeom-ts"/>
+            </pixm:sourceObstacle>
+          </pixm:obstacleDefinition>
+          <pixm:obstacleDefinition>
+            <pixm:geomHeight uom="FT">1764</pixm:geomHeight>
+            <pixm:longitudinalDistance uom="FT">93283</pixm:longitudinalDistance>
+            <pixm:lateralDistance uom="FT">0</pixm:lateralDistance>
+            <pixm:obstacleDatum>DER</pixm:obstacleDatum>
+            <pixm:sourceObstacle gml:id="urn:uuid:obs-06-030920">
+              <pixm:timeSlice xlink:href="#urn:uuid:obs-06-030920-ts"/>
+            </pixm:sourceObstacle>
+          </pixm:obstacleDefinition>
+          <!-- Splay Definition -->
+          <pixm:splayDefinition xlink:href="#StraightOutGeom01R"/>
+        </pixm:ObstacleSetTimeSlice>
+      </pixm:timeSlice>
+    </pixm:ObstacleSet>
+  </gml:featureMember>
+
+  <gml:featureMember>
+    <pixm:splayDefinition gml:id="StraightOutGeom01R">            
+      <pixm:expandedSplayForTurns>false</pixm:expandedSplayForTurns>
+      <pixm:initialHalfWidth uom="FT">300</pixm:initialHalfWidth>
+      <pixm:maxTypicalHalfWidth uom="FT">2000</pixm:maxTypicalHalfWidth>
+      <pixm:oeiSplaySelection>FAA_AC120-91</pixm:oeiSplaySelection>
+      <pixm:oeiSplayStart>END_TODA</pixm:oeiSplayStart>
+      <pixm:splayTypicalGrowthRate>0.06125</pixm:splayTypicalGrowthRate>
+      <pixm:geometry>
+        <gml:MultiSurface gml:id="StraightOutGeom01R">
+          <gml:surfaceMember>
+            <gml:Polygon gml:id="polygon1">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:posList srsDimension="2">
+                    6020732.348671356 2056431.0976124124
+                    6023055.910271987 2060631.2130070373
+                    6030862.615924228 2078254.6025991335
+                    6067652.341626709 2144756.4294820046
+                    6071152.437778439 2142820.1281292415
+                    6034362.712075958 2076318.3012463714
+                    6023580.92469579 2060340.7678072925
+                    6021257.363095703 2056140.6524123668
+                    6020732.348671356 2056431.0976124124
+                  </gml:posList>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </gml:surfaceMember>
+        </gml:MultiSurface>
+      </pixm:geometry>
+    </pixm:splayDefinition>
+  </gml:featureMember>
+
+  <!-- Individual Obstacles with timeSlice -->
+  <gml:featureMember>
+    <pixm:ObstacleTimeSlice gml:id="obs-06-034038-ts">
+      <gml:validTime>
+        <gml:TimePeriod>
+          <gml:beginPosition>2025-06-01T00:00:00Z</gml:beginPosition>
+          <gml:endPosition indeterminatePosition="unknown"/>
+        </gml:TimePeriod>
+      </gml:validTime>
+      <pixm:interpretation>BASELINE</pixm:interpretation>
+      <pixm:sequenceNumber>1</pixm:sequenceNumber>
+      <pixm:identifier>urn:uuid:obs-06-034038</pixm:identifier>
+      <pixm:contextUsage>PIXM Test</pixm:contextUsage>
+      <pixm:lifecycleStageStatus>ACTIVE</pixm:lifecycleStageStatus>
+      <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+      <pixm:name>06-034038</pixm:name>
+      <pixm:type>FENCE</pixm:type>
+      <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+      <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+      <pixm:aglHeight uom="FT">4</pixm:aglHeight>
+      <pixm:amslHeight uom="FT">15</pixm:amslHeight>
+      <pixm:studyNumber>N/A</pixm:studyNumber>
+      <pixm:position>
+        <gml:Point gml:id="obs5440" srsName="urn:ogc:def:crs:OGC:1.3:CRS84">
+          <gml:pos>37.62856390 -122.36626110 15.0</gml:pos>
+        </gml:Point>
+      </pixm:position>
+    </pixm:ObstacleTimeSlice>
+  </gml:featureMember>
+
+  <gml:featureMember>
+    <pixm:ObstacleTimeSlice gml:id="obs-06-033971-ts">
+      <gml:validTime>
+        <gml:TimePeriod>
+          <gml:beginPosition>2025-06-01T00:00:00Z</gml:beginPosition>
+          <gml:endPosition indeterminatePosition="unknown"/>
+        </gml:TimePeriod>
+      </gml:validTime>
+      <pixm:interpretation>BASELINE</pixm:interpretation>
+      <pixm:sequenceNumber>1</pixm:sequenceNumber>
+      <pixm:identifier>urn:uuid:obs-06-033971</pixm:identifier>
+      <pixm:contextUsage>PIXM Test</pixm:contextUsage>
+      <pixm:lifecycleStageStatus>ACTIVE</pixm:lifecycleStageStatus>
+      <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+      <pixm:name>06-033971</pixm:name>
+      <pixm:type>POLE</pixm:type>
+      <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
+      <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
+      <pixm:aglHeight uom="FT">51</pixm:aglHeight>
+      <pixm:amslHeight uom="FT">51</pixm:amslHeight>
+      <pixm:studyNumber>N/A</pixm:studyNumber>
+      <pixm:position>
+        <gml:Point gml:id="obs5457" srsName="urn:ogc:def:crs:OGC:1.3:CRS84">
+          <gml:pos>37.63637220 -122.36108610 51.0</gml:pos>
+        </gml:Point>
+      </pixm:position>
+    </pixm:ObstacleTimeSlice>
+  </gml:featureMember>
+  <gml:featureMember>
+
+    <pixm:ObstacleTimeSlice gml:id="FairwaySouthGeom-ts">
+      <gml:validTime>
+        <gml:TimePeriod>
+          <gml:beginPosition>2025-06-01T00:00:00Z</gml:beginPosition>
+          <gml:endPosition indeterminatePosition="unknown"/>
+        </gml:TimePeriod>
+      </gml:validTime>
+      <pixm:name>Fairway South</pixm:name>
+      <pixm:type>SHIP</pixm:type>
+      <pixm:horizontalAccuracy uom="FT" nilReason="unknown"/>
+      <pixm:verticalAccuracy uom="FT" nilReason="unknown"/>
+      <pixm:aglHeight uom="FT">150</pixm:aglHeight>
+      <pixm:amslHeight uom="FT">150</pixm:amslHeight>
+      <pixm:studyNumber>ENC data</pixm:studyNumber>
+      <pixm:position>
+        <gml:MultiSurface>
+          <gml:surfaceMember>
+            <gml:Polygon gml:id="polygon1">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:posList srsDimension="3">
+                      6039118.492185568 2054764.858248508 150.0
+                      6039001.710178066 2054720.3132943842 150.0
+                      6038884.899526821 2054675.8058074107 150.0
+                      6037135.811194062 2059259.5045658133 150.0
+                      6036974.984829938 2059681.063353727 150.0
+                      6036752.537647931 2060264.1663266656 150.0
+                      6035105.841499382 2064581.529804436 150.0
+                      6035060.630883302 2064700.149004035 150.0
+                      6034818.019115213 2065336.2870614585 150.0
+                      6033707.444132114 2068249.127150138 150.0
+                      6033475.7236682465 2068856.9156355462 150.0
+                      6032952.363903541 2070229.904322737 150.0
+                      6032507.071717919 2071398.237241611 150.0
+                      6030298.632581263 2077194.0451074715 150.0
+                      6029945.064209331 2078122.231633712 150.0
+                      6029662.966052174 2078862.88343056 150.0
+                      6028848.7391829295 2081000.7204301553 150.0
+                      6028825.322148979 2081062.1826462427 150.0
+                      6028320.973010746 2082386.6480291665 150.0
+                      6028198.62184719 2082707.9777854863 150.0
+                      6028315.420194197 2082752.510795204 150.0
+                      6028432.218150185 2082797.0443097684 150.0
+                      6028549.015715159 2082841.5783291757 150.0
+                      6028665.812172321 2082886.0764488091 150.0
+                      6028860.036912262 2082376.0326531038 150.0
+                      6029417.274259558 2080912.766087165 150.0
+                      6030100.622646329 2079118.5405832664 150.0
+                      6031065.414494878 2076585.8218429657 150.0
+                      6031937.776712379 2074296.2243215637 150.0
+                      6032670.461138599 2072373.4998289903 150.0
+                      6033041.857171252 2071399.0463107019 150.0
+                      6036682.444307988 2061850.808458086 150.0
+                      6039352.112238025 2054853.9121481623 150.0
+                      6039235.302056099 2054809.3667439306 150.0
+                      6039118.492185568 2054764.858248508 150.0
+                  </gml:posList>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </gml:surfaceMember>
+        </gml:MultiSurface>
+      </pixm:position>
+    </pixm:ObstacleTimeSlice>
+  </gml:featureMember>
+  <gml:featureMember>
+
+    <pixm:ObstacleTimeSlice gml:id="AnchorageAreaGeom-ts">
+      <gml:validTime>
+        <gml:TimePeriod>
+          <gml:beginPosition>2025-06-01T00:00:00Z</gml:beginPosition>
+          <gml:endPosition indeterminatePosition="unknown"/>
+        </gml:TimePeriod>
+      </gml:validTime>
+      <pixm:name>Primary Anchorage Area</pixm:name>
+      <pixm:type>ANCHORAGE_AREA</pixm:type>
+      <pixm:horizontalAccuracy uom="FT" nilReason="unknown"/>
+      <pixm:verticalAccuracy uom="FT" nilReason="unknown"/>
+      <pixm:aglHeight uom="FT">200</pixm:aglHeight>
+      <pixm:amslHeight uom="FT">200</pixm:amslHeight>
+      <pixm:studyNumber>ENC data</pixm:studyNumber>
+      <pixm:position>
+        <gml:MultiSurface gml:id="PrimaryAnchorageGeom">
+          <gml:surfaceMember>
+            <gml:Polygon gml:id="polygon1">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:posList srsDimension="3">
+                    6036335.404319272 2080732.090491254 200.0 
+                    6036319.703563801 2080732.5016300057 200.0 
+                    6036267.4215209605 2080735.2416157676 200.0 
+                    6036251.763800168 2080736.4739051189 200.0 
+                    6033473.35271003 2080966.4331868766 200.0 
+                    6030738.493430763 2081202.0155953777 200.0 
+                    6030686.426438409 2081207.4880567912 200.0 
+                    6030670.854669021 2081209.5381191229 200.0 
+                    6030619.1454391675 2081217.7280565526 200.0
+                    6030603.70230232 2081220.5902727866 200.0 
+                    6030552.492566355 2081231.4752381877 200.0 
+                    6030537.220390614 2081235.1417631882 200.0 
+                    6030486.650510927 2081248.691921612 200.0 
+                    6030471.591156264 2081253.1527056885 200.0 
+                    6030421.799741324 2081269.330917105 200.0 
+                    6030406.994484383 2081274.5737335589 200.0 
+                    6030358.118008986 2081293.3356546226 200.0 
+                    6030343.607429949 2081299.346133258 200.0 
+                    6030295.779861171 2081320.6403388262 200.0 
+                    6030281.6037325235 2081327.4020053393 200.0 
+                    6030234.956162339 2081351.1701295064 200.0 
+                    6030221.1533398675 2081358.664450639 200.0 
+                    6030175.813626138 2081384.8413465659 200.0 
+                    6030162.421942416 2081393.0477809047 200.0 
+                    6030118.514357987 2081421.5616996312 200.0 
+                    6030105.570518692 2081430.45775391 200.0 
+                    6030063.215411328 2081461.230540689 200.0 
+                    6030050.754894622 2081470.791831442 200.0 
+                    6030010.06835669 2081503.7391402244 200.0 
+                    6029998.125315983 2081513.9394606177 200.0 
+                    6029959.218866413 2081548.970985159 200.0 
+                    6029947.826036751 2081559.7823768232 200.0 
+                    6029910.806315484 2081596.8020980905 200.0 
+                    6029899.99492382 2081608.1949277532 200.0 
+                    6029864.963399275 2081647.101377326 200.0 
+                    6029854.763078882 2081659.0444180327 200.0 
+                    6029821.815770109 2081699.7309559523 200.0 
+                    6029812.254479356 2081712.1914726584 200.0 
+                    6029781.481692563 2081754.546580043 200.0 
+                    6029772.585638284 2081767.4904193385 200.0 
+                    6029744.071719567 2081811.3980037514 200.0 
+                    6029735.865285229 2081824.7896874724 200.0 
+                    6029709.688389298 2081870.129401209 200.0 
+                    6029702.194068165 2081883.9322236816 200.0 
+                    6029678.425944004 2081930.579793853 200.0 
+                    6029671.664277491 2081944.7559224998 200.0 
+                    6029650.370071913 2081992.583491299 200.0 
+                    6029644.359593278 2082007.094070337 200.0 
+                    6029625.597672225 2082055.9705457047 200.0 
+                    6029620.354855771 2082070.7758026451 200.0 
+                    6029604.176644352 2082120.5672175896 200.0 
+                    6029599.715860276 2082135.6265722525 200.0 
+                    6029586.1657018345 2082186.1964520058 200.0 
+                    6024168.123497797 2103968.4002388944 200.0 6023280.248157046 2107549.019849382 200.0 6023276.583274652 2107564.2851831745 200.0 6023265.69830926 2107615.494919097 200.0 6023262.837375302 2107630.931137405 200.0 6023254.647437871 2107682.640367262 200.0 6023252.598293969 2107698.2051604837 200.0 6023247.125832558 2107750.2721528173 200.0 6023245.894095273 2107765.9228589362 200.0 6023243.154109509 2107818.204901797 200.0 6023242.743154948 2107833.898623316 200.0 6023242.743154948 2107886.252415258 200.0 6023243.154109509 2107901.946136777 200.0 6023245.894095273 2107954.228179638 200.0 6023247.125832558 2107969.8788857567 200.0 6023252.598293969 2108021.9458780903 200.0 6023254.647437871 2108037.510671312 200.0 6023262.837375302 2108089.219901169 200.0 6023265.69830926 2108104.656119477 200.0 6023276.583274652 2108155.8658553995 200.0 6023280.248157046 2108171.131189192 200.0 6023293.798315476 2108221.701068906 200.0 6023298.257101117 2108236.7536769644 200.0 6023314.435312545 2108286.5450919396 200.0 6023319.6757802125 2108301.343716112 200.0 6023338.437701274 2108350.2201914974 200.0 6023344.44548721 2108364.7242697827 200.0 6023365.739692771 2108412.551838543 200.0 6023372.498330051 2108426.7216162714 200.0 6023396.266454193 2108473.369186411 200.0 6023403.757417862 2108487.165825207 200.0 6023429.934313847 2108532.505539035 200.0 6023438.137071696 2108545.8912232695 200.0 6023466.650990376 2108589.7988076257 200.0 6023475.543059215 2108602.73684807 200.0 6023506.315846005 2108645.0919554504 200.0 6023515.872853291 2108657.5468898336 200.0 6023548.8201620905 2108698.2334277853 200.0 6023559.015912731 2108710.171117999 200.0 6023594.047437249 2108749.0775675424 200.0 6023604.8539854 2108760.465293207 200.0 6023641.873706673 2108797.485014482 200.0 6023653.261432338 2108808.291562633 200.0 6023692.167881899 2108843.323087167 200.0 6023704.105572112 2108853.5188378072 200.0 6023744.792110057 2108886.4661466014 200.0 6023757.24704444 2108896.0231538876 200.0 6023799.602151811 2108926.795940671 200.0 6023812.540192255 2108935.68800951 200.0 6023856.44777666 2108964.201928221 200.0 6023869.833460895 2108972.40468607 200.0 6023915.173174678 2108998.581582027 200.0 6023928.969813474 2109006.072545697 200.0 6023975.617383601 2109029.840669834 200.0 6023989.787161329 2109036.5993071143 200.0 6024037.614730149 2109057.893512701 200.0 6024052.118808434 2109063.9012986366 200.0 6024100.995283774 2109082.663219679 200.0 6024115.793907946 2109087.9036873467 200.0 6024165.585322939 2109104.0818987815 200.0 6024180.637930998 2109108.5406844225 200.0 6024231.207810682 2109122.0908428445 200.0 6024246.473144475 2109125.7557252385 200.0 6024297.682880414 2109136.640690634 200.0 6024313.119098721 2109139.5016245926 200.0 6024364.828328583 2109147.691562024 200.0 6024380.393121805 2109149.740705926 200.0 6024432.460114168 2109155.213167341 200.0 6024448.110820287 2109156.4449046254 200.0 6024500.392863119 2109159.1848903866 200.0 6024516.086584638 2109159.5958449477 200.0 6024568.440376579 2109159.5958449477 200.0 6024584.134098098 2109159.1848903866 200.0 6024636.41614093 2109156.4449046254 200.0 6030126.404479827 2108762.6976043815 200.0 6030142.055185946 2108761.465867097 200.0 6030194.122178309 2108755.993405682 200.0 6030209.68697153 2108753.94426178 200.0 6030261.396201393 2108745.7543243486 200.0 6030276.8324197 2108742.89339039 200.0 6030328.042155638 2108732.0084249945 200.0 6030343.307489431 2108728.3435426005 200.0 6030393.877369116 2108714.7933841785 200.0 6030408.929977175 2108710.3345985375 200.0 6030458.721392168 2108694.156387103 200.0 6030473.52001634 2108688.915919435 200.0 6030522.396491679 2108670.1539983926 200.0 6030536.900569965 2108664.146212457 200.0 6030584.728138785 2108642.8520068703 200.0 6030598.897916513 2108636.09336959 200.0 6030645.545486639 2108612.325245453 200.0 6030659.342125435 2108604.834281783 200.0 6030704.681839218 2108578.657385826 200.0 6030718.067523453 2108570.454627977 200.0 6030761.975107859 2108541.940709266 200.0 6030774.913148303 2108533.048640427 200.0 6030817.268255673 2108502.2758536437 200.0 6030829.723190057 2108492.7188463574 200.0 6030870.409728002 2108459.7715375633 200.0 6030882.347418215 2108449.575786923 200.0 6030921.253867776 2108414.544262389 200.0 6030932.64159344 2108403.737714238 200.0 6030969.661314714 2108366.7179929633 200.0 6030980.467862865 2108355.3302672985 200.0 6031015.4993873825 2108316.423817755 200.0 6031025.695138023 2108304.4861275414 200.0 6031058.6424468225 2108263.7995895897 200.0 6031068.199454108 2108251.3446552064 200.0 6031098.972240899 2108208.989547826 200.0 6031107.864309737 2108196.0515073817 200.0 6031136.378228418 2108152.1439230256 200.0 6031144.580986267 2108138.758238791 200.0 6031170.757882251 2108093.418524963 200.0 6031178.248845921 2108079.621886167 200.0 6031202.016970063 2108032.9743160275 200.0 6031208.775607343 2108018.804538299 200.0 6031230.069812904 2107970.9769695387 200.0 6031236.07759884 2107956.4728912534 200.0 6031254.839519901 2107907.596415868 200.0 6031260.079987569 2107892.7977916957 200.0 6031276.258198997 2107843.0063767205 200.0 6031280.716984638 2107827.953768662 200.0 6031294.267143068 2107777.3838889482 200.0 6034962.852663218 2093052.961638051 200.0 6036733.701331355 2085941.1218457588 200.0 6037623.726359238 2082342.8356720824 200.0 6037627.392884238 2082327.5634963412 200.0 6037638.277849622 2082276.3537604501 200.0 6037641.140065856 2082260.9106236033 200.0 6037649.330003292 2082209.2013937065 200.0 6037651.380065624 2082193.6296243183 200.0 6037656.852527034 2082141.5626320015 200.0 6037658.084816385 2082125.9049112096 200.0 6037660.824802148 2082073.6228683523 200.0 6037661.2359409 2082057.922112881 200.0 6037661.2359409 2082005.5683209484 200.0 6037660.824802148 2081989.867565477 200.0 6037658.084816385 2081937.5855226198 200.0 6037656.852527034 2081921.927801828 200.0 6037651.380065624 2081869.860809511 200.0 6037649.330003292 2081854.2890401229 200.0 6037641.140065856 2081802.579810226 200.0 6037638.277849622 2081787.1366733792 200.0 6037627.392884238 2081735.9269374881 200.0 6037623.726359238 2081720.654761747 200.0 6037610.176200797 2081670.0848819937 200.0 6037605.71541672 2081655.0255273308 200.0 6037589.537205301 2081605.2341123864 200.0 6037584.294388847 2081590.428855446 200.0 6037565.532467795 2081541.5523800782 200.0 6037559.521989159 2081527.0418010403 200.0 6037538.227783581 2081479.214232241 200.0 6037531.466117068 2081465.0381035942 200.0 6037507.697992908 2081418.3905334228 200.0 6037500.203671775 2081404.5877109503 200.0 6037474.026775843 2081359.2479972136 200.0 6037465.820341505 2081345.8563134926 200.0 6037437.306422789 2081301.9487290797 200.0 6037428.41036851 2081289.0048897841 200.0 6037397.637581716 2081246.6497823996 200.0 6037388.076290963 2081234.1892656935 200.0 6037355.12898219 2081193.502727774 200.0 6037344.928661797 2081181.5596870673 200.0 6037309.897137253 2081142.6532374944 200.0 6037299.085745588 2081131.2604078318 200.0 6037262.066024321 2081094.2406865645 200.0 6037250.673194659 2081083.4292949003 200.0 6037211.76674509 2081048.397770359 200.0 6037199.823704382 2081038.1974499656 200.0 6037159.137166451 2081005.2501411831 200.0 6037146.676649745 2080995.6888504303 200.0 6037104.32154238 2080964.9160636512 200.0 6037091.377703086 2080956.0200093724 200.0 6037047.470118657 2080927.506090646 200.0 6037034.078434935 2080919.299656307 200.0 6036988.738721205 2080893.1227603802 200.0 6036974.935898733 2080885.6284392476 200.0 6036928.288328549 2080861.8603150805 200.0 6036914.112199902 2080855.0986485675 200.0 6036866.284631124 2080833.8044429992 200.0 6036851.774052086 2080827.7939643639 200.0 6036802.89757669 2080809.0320433 200.0 6036788.092319748 2080803.7892268463 200.0 6036738.300904809 2080787.6110154297 200.0 6036723.241550146 2080783.1502313532 200.0 6036672.671670458 2080769.6000729294 200.0 6036657.399494718 2080765.933547929 200.0 6036606.1897587525 2080755.0485825278 200.0 6036590.746621905 2080752.1863662938 200.0 6036539.037392051 2080743.996428864 200.0 6036523.4656226635 2080741.9463665325 200.0 6036471.39863031 2080736.4739051189 200.0 6036455.740909518 2080735.2416157676 200.0 6036403.458866677 2080732.5016300057 200.0 6036387.758111206 2080732.090491254 200.0 6036335.404319272 2080732.090491254 200.0
+                  </gml:posList>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </gml:surfaceMember>
+        </gml:MultiSurface>
+      </pixm:position>
+    </pixm:ObstacleTimeSlice>
+  </gml:featureMember>
+  <gml:featureMember>
+
+    <pixm:ObstacleTimeSlice gml:id="obs-06-030920-ts">
+      <gml:validTime>
+        <gml:TimePeriod>
+          <gml:beginPosition>2020-01-01T00:00:00Z</gml:beginPosition>
+          <gml:endPosition indeterminatePosition="unknown"/>
+        </gml:TimePeriod>
+      </gml:validTime>
+      <pixm:interpretation>BASELINE</pixm:interpretation>
+      <pixm:sequenceNumber>1</pixm:sequenceNumber>
+      <pixm:identifier>urn:uuid:obs-06-030920</pixm:identifier>
+      <pixm:contextUsage>PIXM Test</pixm:contextUsage>
+      <pixm:lifecycleStageStatus>ACTIVE</pixm:lifecycleStageStatus>
+      <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+      <pixm:name>06-030920</pixm:name>
+      <pixm:type>TOWER</pixm:type>
+      <pixm:horizontalAccuracy uom="FT">500</pixm:horizontalAccuracy>
+      <pixm:verticalAccuracy uom="FT">125</pixm:verticalAccuracy>
+      <pixm:aglHeight uom="FT">161</pixm:aglHeight>
+      <pixm:amslHeight uom="FT">1620</pixm:amslHeight>
+      <pixm:studyNumber>2011-AWP-8059-OE</pixm:studyNumber>
+      <pixm:position>
+        <gml:Point gml:id="obs1246" srsName="urn:ogc:def:crs:OGC:1.3:CRS84">
+          <gml:pos>37.85249720 -122.20951390 1620.0</gml:pos>
+        </gml:Point>
+      </pixm:position>
+    </pixm:ObstacleTimeSlice>
+  </gml:featureMember>
+</gml:FeatureCollection>
+
