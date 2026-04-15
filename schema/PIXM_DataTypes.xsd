@@ -483,13 +483,6 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="CodeSecSegGradientChoiceType">
-    <xs:simpleContent>
-      <xs:extension base="pixm:CodeSecSegGradientChoiceBaseType">
-        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
   <xs:complexType name="CodeSlatFlapOptimizationType">
     <xs:simpleContent>
       <xs:extension base="pixm:CodeSlatFlapOptimizationBaseType">
@@ -816,4 +809,40 @@
 		</xs:sequence>
 		<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
 	</xs:complexType>
+  <xs:complexType name="AirspeedType">
+    <xs:annotation>
+        <xs:documentation>A complex type representing airspeed data, including the type of airspeed, a descriptive name, and the speed value with units.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="airspeedType" type="pixm:CodeAirspeedType" minOccurs="1">
+            <xs:annotation>
+                <xs:documentation>Indicates the type of airspeed (e.g., CAS, TAS, IAS, EAS).</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        
+        <xs:element name="speedName" type="xs:string" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>A descriptive name for the specific airspeed value.</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        
+        <xs:element name="valSpeed" type="pixm:ValSpeedType" minOccurs="1">
+            <xs:annotation>
+                <xs:documentation>The numerical value of the speed along with its unit of measure.</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="UniversallyUniqueIdentifierType">
+    <xs:annotation>
+        <xs:documentation>
+            A Universally Unique Identifier (UUID) as defined by RFC 4122.
+            This type enforces the standard 8-4-4-4-12 hexadecimal format.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
+    </xs:restriction>
+</xs:simpleType>
 </xs:schema>

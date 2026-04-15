@@ -1110,7 +1110,16 @@
       </xs:simpleType>
     </xs:union>
   </xs:simpleType>
-
+  <xs:simpleType name="CodeStartTakeoffThrustBaseType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MTO"/>
+          <xs:enumeration value="NORMAL"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
   <xs:simpleType name="CodeSlatFlapOptimizationBaseType">
     <xs:union>
       <xs:simpleType>

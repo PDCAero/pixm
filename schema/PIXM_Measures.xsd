@@ -43,6 +43,20 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:simpleType name="ValBrakeEnergyBaseType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ValBrakeEnergyType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:ValBrakeEnergyBaseType">
+        <xs:attribute name="uom" type="pixm:UomBrakeEnergyType"/>
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="ValDepthBaseType">
     <xs:restriction base="xs:decimal"/>
@@ -177,6 +191,20 @@
 		</xs:simpleContent>
 	</xs:complexType>
 
+  <xs:simpleType name="ValMuBaseType">
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0.0"/>
+      <xs:maxExclusive value="1.0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ValMuType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:ValMuBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="ValPCNBaseType">
     <xs:restriction base="xs:decimal">
@@ -224,6 +252,20 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:simpleType name="ValRunwayEntryAngleBaseType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="180"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ValRunwayEntryAngleType">
+    <xs:simpleContent>
+      <xs:extension base="pixm:ValRunwayEntryAngleBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="ValSlopeBaseType">
     <xs:restriction base="xs:decimal">
@@ -273,6 +315,22 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:simpleType name="ValThrustSettingBaseType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  
+
+  <xs:complexType name="ValThrustSettingType">
+    <xs:simpleContent>
+      <xs:extension base="ValThrustSettingBaseType">
+        <xs:attribute name="uom" type="pixm:UomThrustSettingType"/>
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 
   <xs:simpleType name="ValWeightBaseType">
     <xs:restriction base="xs:decimal">
