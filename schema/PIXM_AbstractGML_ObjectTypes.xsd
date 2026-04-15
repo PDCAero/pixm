@@ -45,6 +45,7 @@
 			</extension>
 		</complexContent>
 	</complexType>
+	
 	<element name="AbstractPIXMFeature" type="pixm:AbstractPIXMFeatureType" abstract="true" substitutionGroup="gml:AbstractFeature">
 		<annotation>
 			<documentation>Substitution head for PIXM features.</documentation>
@@ -96,6 +97,7 @@
 			</restriction>
 		</complexContent>
 	</complexType>
+
 	<complexType name="AbstractPIXMTimeSliceType" abstract="true">
 		<annotation>
 			<documentation>Adds in the PIXM specific properties, such as 'interpretation'.</documentation>
@@ -108,10 +110,19 @@
 					<element ref="pixm:correctionNumber" minOccurs="0"/>
 					<element name="timeSliceMetadata" type="pixm:FeatureTimeSliceMetadataPropertyType" minOccurs="0"/>
 					<element ref="pixm:featureLifetime" minOccurs="0"/>
+					<element ref="pixm:source" minOccurs="0"/>
+					<element ref="pixm:lastRevision" minOccurs="0"/>
+                    <!-- TODO: Add documentation for the timesheet element -->
 				</sequence>
 			</extension>
 		</complexContent>
 	</complexType>
+	<element name="AbstractPIXMTimeSliceType" type="pixm:AbstractPIXMTimeSliceType" abstract="true">
+		<annotation>
+			<documentation>Substitution head for PIXM timeslices.</documentation>
+		</annotation>
+	</element>
+
 	<!--====================================================================-->
 	<!--Feature collections-->
 	<!--====================================================================-->
@@ -178,6 +189,21 @@
 			<documentation>The start and end of life of the feature. See the PIXM Temporality model for details.</documentation>
 		</annotation>
 	</element>
+	<element name="source" type="string">
+		<annotation>
+			<documentation>The publishing entity of the data element.</documentation>
+		</annotation>
+	</element>
+	<element name="lastRevision" type="dateTime">
+		<annotation>
+			<documentation>The last time an update to the entity was produced.</documentation>
+		</annotation>
+	</element>
+	<!--<element name="timesheet" type="pixm:Timesheet">
+		<annotation>
+			<documentation>The timesheet element is used to reflect complex temporal events that may be reoccuring on a scheduled basis.</documentation>
+		</annotation>
+	</element>-->
 	<!--====================================================================-->
 	<!--Base PIXM Metadata Property Types-->
 	<!--====================================================================-->
