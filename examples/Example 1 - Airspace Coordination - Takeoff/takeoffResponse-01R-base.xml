@@ -64,10 +64,10 @@
 
           <!-- Thrust Settings -->
           <pixm:thrustSettings>
-            <pixm:isTempInActualRange>true</pixm:isTempInActualRange>
-            <pixm:isTempInAssumedRange>true</pixm:isTempInAssumedRange>
+            <pixm:isTempInActualRange>TRUE</pixm:isTempInActualRange>
+            <pixm:isTempInAssumedRange>TRUE</pixm:isTempInAssumedRange>
             <pixm:primaryTOThrustSetting uom="PCT_N1">101.26</pixm:primaryTOThrustSetting>
-            <pixm:thrustTimeLimitEncountered>false</pixm:thrustTimeLimitEncountered>
+            <pixm:thrustTimeLimitEncountered>FALSE</pixm:thrustTimeLimitEncountered>
           </pixm:thrustSettings>
 
           <!-- Runway Result -->

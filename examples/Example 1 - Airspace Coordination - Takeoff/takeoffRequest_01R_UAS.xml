@@ -11,9 +11,9 @@
 
   <!-- TakeoffRequest Feature -->
   <gml:featureMember>
-    <pixm:TakeoffRequest gml:id="to-req-01R-uas">
+    <pixm:takeoffRequest gml:id="to-req-01R-uas">
       <pixm:timeSlice>
-        <pixm:TakeoffRequestTimeSlice gml:id="to-req-01R-ts">
+        <pixm:takeoffRequestTimeSlice gml:id="to-req-01R-ts">
           <gml:validTime>
             <gml:TimePeriod gml:id="tp-to-req-01R">
               <gml:beginPosition>2025-12-03T13:40:00Z</gml:beginPosition>
@@ -146,9 +146,9 @@
             </pixm:timeSlice>
           </pixm:environmentalSettings>
 
-        </pixm:TakeoffRequestTimeSlice>
+        </pixm:takeoffRequestTimeSlice>
       </pixm:timeSlice>
-    </pixm:TakeoffRequest>
+    </pixm:takeoffRequest>
   </gml:featureMember>
 
  <!-- ObstacleSet Feature -->

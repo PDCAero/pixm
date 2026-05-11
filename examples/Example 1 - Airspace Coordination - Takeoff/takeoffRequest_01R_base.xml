@@ -29,12 +29,11 @@
 
           <pixm:inputMaxWeight uom="LB">177000</pixm:inputMaxWeight>
           <pixm:maxWeightLimitSetting>FIXED</pixm:maxWeightLimitSetting>
-          <pixm:outputIncludesAlignDist>true</pixm:outputIncludesAlignDist>
-          <pixm:outputTracefile>false</pixm:outputTracefile>
+          <pixm:outputIncludesAlignDist>TRUE</pixm:outputIncludesAlignDist>
+          <pixm:outputTracefile>FALSE</pixm:outputTracefile>
           <pixm:outputTypeSelection>FULL</pixm:outputTypeSelection>
-          <pixm:performAllEngineCalc>false</pixm:performAllEngineCalc>
-          <pixm:performDryCheck>false</pixm:performDryCheck>
-
+          <pixm:performAllEngineCalc>FALSE</pixm:performAllEngineCalc>
+          <pixm:performDryCheck>FALSE</pixm:performDryCheck>
           <pixm:aircraftConfiguration>
             <pixm:timeSlice>
               <pixm:aircraftConfigurationTimeSlice>

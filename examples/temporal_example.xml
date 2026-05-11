@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:pixm="http://www.pixm.aero/schema/0.1"
+  xsi:schemaLocation="http://www.opengis.net/gml/3.2 schemas/gml/3.2.1/gml.xsd http://www.pixm.aero/schema/0.1 PIXM_Features.XSD">
+
+  <gml:featureMember>
+    <pixm:TakeoffRequest gml:id="to-req-01R">
+      <pixm:timeSlice>
+        <pixm:TakeoffRequestTimeSlice gml:id="to-req-01R-ts">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="tp-to-req-01R">
+              <gml:beginPosition>2025-12-03T13:40:00Z</gml:beginPosition>
+              <gml:endPosition>2025-12-03T13:55:00Z</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <pixm:interpretation>BASELINE</pixm:interpretation>
+          <pixm:sequenceNumber>1</pixm:sequenceNumber>
+
+          <!-- assume additional necessary elements here -->
+
+          <pixm:runwaySettings gml:id="runway-01R-sfo">
+            <pixm:timeSlice>
+              <pixm:runwaySettingsTimeSlice>
+                <gml:validTime>
+                  <gml:TimePeriod gml:id="tp-runway-01R-base">
+                    <gml:beginPosition>2025-12-03T13:40:00Z</gml:beginPosition>
+                    <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+                </gml:validTime>
+                <pixm:interpretation>BASELINE</pixm:interpretation>
+                <pixm:alignDistAsda uom="FT">90</pixm:alignDistAsda>
+                <pixm:alignDistToraToda uom="FT">90</pixm:alignDistToraToda>
+                <pixm:performanceRunway gml:id="perf-runway-01R-base">
+                  <pixm:timeSlice>
+                    <pixm:performanceRunwayTimeSlice gml:id="perf-runway-01R-base-ts">
+                        <gml:validTime>
+                            <gml:TimePeriod gml:id="tp-runway-01R-base">
+                                <gml:beginPosition>2025-12-03T13:40:00Z</gml:beginPosition>
+                                <gml:endPosition indeterminatePosition="unknown"/>
+                            </gml:TimePeriod>
+                        </gml:validTime>
+                        <pixm:runwayIdent>01R</pixm:runwayIdent>
+                        <pixm:runwayName>01R-BASE</pixm:runwayName>
+                        <pixm:tora uom="FT">8650</pixm:tora>
+                        <pixm:toda uom="FT">8650</pixm:toda>
+                        <pixm:asda uom="FT">8650</pixm:asda>
+                        <pixm:elevation uom="FT">13</pixm:elevation>
+                        <pixm:perfRunwaySurface>GROOVED_POROUS</pixm:perfRunwaySurface>
+                        <pixm:runwayWidth uom="FT">150</pixm:runwayWidth>
+                        <pixm:todaSlope>-0.23</pixm:todaSlope>
+                        <pixm:asdaSlope>-0.23</pixm:asdaSlope>
+                        <pixm:obstacleSet xlink:href="#obs-set-01R-base"/>
+                        <pixm:contamDefinition>
+                            <pixm:contamType>DRY</pixm:contamType>
+                        </pixm:contamDefinition>
+                    </pixm:performanceRunwayTimeSlice>
+                  </pixm:timeSlice>
+                  <pixm:timeSlice>
+                    <pixm:performanceRunwayTimeSlice gml:id="perf-runway-01R-temp-ts">
+                      <gml:validTime>
+                        <gml:TimePeriod gml:id="tp-runway-temp">
+                            <gml:beginPosition>2026-01-15T00:00:00Z</gml:beginPosition>
+                            <gml:endPosition>2026-01-22T23:59:59Z</gml:endPosition>
+                        </gml:TimePeriod>
+                      </gml:validTime>
+                      <pixm:interpretation>TEMPDELTA</pixm:interpretation>
+                      <pixm:sequenceNumber>2</pixm:sequenceNumber>
+                      <pixm:source>NOTAM A1234/26</pixm:source>
+                      <pixm:tora uom="FT">7000</pixm:tora>
+                      <pixm:toda uom="FT">7000</pixm:toda>
+                      <pixm:asda uom="FT">7000</pixm:asda>
+                      <pixm:lda uom="FT">7000</pixm:lda>
+                      <pixm:obstacleSet xlink:href="#obs-set-01R-temp2"/>
+                    </pixm:performanceRunwayTimeSlice>
+                  </pixm:timeSlice>
+                  <pixm:timeSlice>
+                    <pixm:performanceRunwayTimeSlice gml:id="perf-runway-01R-temp-ts">
+                      <gml:validTime>
+                        <gml:TimePeriod gml:id="tp-runway-temp">
+                            <gml:beginPosition>2026-01-18T06:00:00Z</gml:beginPosition>
+                            <gml:endPosition>2026-01-18T09:00:00Z</gml:endPosition>
+                        </gml:TimePeriod>
+                      </gml:validTime>
+                      <pixm:interpretation>TEMPDELTA</pixm:interpretation>
+                      <pixm:sequenceNumber>3</pixm:sequenceNumber>
+                      <pixm:contamDefinition>
+                        <pixm:contamType>WET</pixm:contamType>
+                      </pixm:contamDefinition>
+                    </pixm:performanceRunwayTimeSlice>
+                  </pixm:timeSlice>
+                  <pixm:timeSlice>
+                    <pixm:performanceRunwayTimeSlice gml:id="perf-runway-01R-perm-ts">
+                        <gml:validTime>
+                            <gml:TimePeriod gml:id="tp-runway-perm">
+                                <gml:beginPosition>2026-01-23T00:00:00Z</gml:beginPosition>
+                                <gml:endPosition indeterminatePosition="unknown"/>
+                            </gml:TimePeriod>
+                        </gml:validTime>
+                        <pixm:interpretation>PERMDELTA</pixm:interpretation>
+                        <pixm:sequenceNumber>4</pixm:sequenceNumber>
+                        <pixm:tora uom="FT">9500</pixm:tora>
+                        <pixm:toda uom="FT">9500</pixm:toda>
+                        <pixm:asda uom="FT">9250</pixm:asda>
+                        <pixm:lda uom="FT">9250</pixm:lda>
+                        <pixm:obstacleSet xlink:href="#obs-set-01R-perm3"/>
+                      </pixm:performanceRunwayTimeSlice>
+                    </pixm:timeSlice>
+                  </pixm:timeSlice>
+                </pixm:performanceRunway>
+              </pixm:runwaySettingsTimeSlice>
+            </pixm:timeSlice>
+          </pixm:runwaySettings>
+
+            <pixm:timeSlice>
+              <pixm:runwaySettingsTimeSlice gml:id="runway-temp-reduction">
+
+              </pixm:runwaySettingsTimeSlice>
+            </pixm:timeSlice>
+
+            <pixm:timeSlice>
+              <pixm:runwaySettingsTimeSlice gml:id="runway-perm-extension">
+                <gml:validTime>
+                  <gml:TimePeriod gml:id="tp-runway-v2">
+                    <gml:beginPosition>2026-06-01T00:00:00Z</gml:beginPosition>
+                    <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+                </gml:validTime>
+                <pixm:interpretation>PERMDELTA</pixm:interpretation>
+                <pixm:sequenceNumber>3</pixm:sequenceNumber>
+                <pixm:performanceRunway>
+                  <pixm:tora uom="FT">9000</pixm:tora>
+                  <pixm:asda uom="FT">9000</pixm:asda>
+                  <pixm:runwayName>01R-EXTENDED</pixm:runwayName>
+                </pixm:performanceRunway>
+              </pixm:runwaySettingsTimeSlice>
+            </pixm:timeSlice>
+
+          </pixm:runwaySettings>
+        </pixm:TakeoffRequestTimeSlice>
+      </pixm:timeSlice>
+    </pixm:TakeoffRequest>
+  </gml:featureMember>
+</gml:FeatureCollection>
