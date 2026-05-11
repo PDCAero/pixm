@@ -1674,23 +1674,31 @@
 	</xs:complexType>
 	
 	<!-- LandingRequest -->
-	<xs:element name="LandingRequestTimeSlice" type="pixm:LandingRequestTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="landingRequestTimeSlice" type="pixm:LandingRequestTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
 	<xs:element name="LandingRequest" type="pixm:LandingRequestType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="LandingRequestTimeSliceType">
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMTimeSliceType">
 	      <xs:sequence>
-	        <xs:element name="inputMaxWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
-	        <xs:element name="maxWeightLimitSetting" type="pixm:CodeMaxWeightLimitSettingType" minOccurs="0" maxOccurs="1"/>
-	        <xs:element name="minWeightDistanceFlag" type="pixm:CodeMinWeightDistanceFlagType" minOccurs="0" maxOccurs="1"/>
-	        <xs:element name="outputIncludesAlignDist" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
-	        <xs:element name="outputTraceFile" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
-	        <xs:element name="outputTypeSelection" type="pixm:CodeOutputTypeSelectionType" minOccurs="0" maxOccurs="1"/>
-	        <xs:element name="performAllEngineCalc" type="pixm:CodePerformAllEngineCalcType" minOccurs="0" maxOccurs="1"/>
-	        <xs:element name="performDryCheck" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+		  	<xs:element name="approachClimbGradSetting" type="pixm:CodeApproachClimbGradSettingType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="approachClimbGrad" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="approachCategorySetting" type="pixm:CodeApproachCategoryType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="autolandContaminatedDistanceFactor" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="calculationType" type="pixm:CodeLandingCalculationTypeType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="destinationAlternateSetting" type="pixm:CodeDestinationAlternateSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="inputMaxWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="landingCalculationMode" type="pixm:CodeLandingCalculationModeType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="landingCategoryChoice" type="pixm:CodeLandingCategoryChoiceType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="landingClimbGradSetting" type="pixm:CodeLandingClimbGradSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="landingProcedure" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="maxWeightLimitSetting" type="pixm:CodeMaxWeightLimitSettingType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="performObsClearance" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="performWetCheck" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="regulatoryRunwayFraction" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="requestType" type="pixm:CodeLandingRequestType" minOccurs="1" maxOccurs="1"/>
 	        <xs:element name="landingRequestId" type="xs:string" minOccurs="0" maxOccurs="1"/>
 	        <xs:element name="userId" type="xs:string" minOccurs="0" maxOccurs="1"/>
-	        <xs:element name="zeroFuelWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
+	        <xs:element name="weightValForCriticalTemp" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1"/>
 	        <xs:element name="aircraftConfiguration" type="pixm:LandingAircraftConfigurationSettingsType" minOccurs="0" maxOccurs="unbounded"/>
 	        <xs:element name="cgConfiguration" type="pixm:LandingCGConfigurationSettingsType" minOccurs="0" maxOccurs="unbounded"/>
 	        <xs:element name="environmentalSettings" type="pixm:LandingEnvironmentalSettingsType" minOccurs="0" maxOccurs="unbounded"/>
