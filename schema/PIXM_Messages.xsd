@@ -60,8 +60,8 @@
 		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:element name="PIXMStatusMessageTimeSlice" type="pixm:PIXMStatusMessageTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
-	<xs:complexType name="PIXMStatusMessageTimeSliceType" abstract="true">
+	<xs:element name="PIXMMessageTimeSlice" type="pixm:PIXMMessageTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:complexType name="PIXMMessageTimeSliceType" abstract="true">
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
 				<xs:sequence>
@@ -73,8 +73,8 @@
 		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:element name="PIXMStatusMessage" type="pixm:PIXMStatusMessageType" abstract="true" substitutionGroup="pixm:AbstractPIXMFeature"/>
-	<xs:complexType name="PIXMStatusMessageType" abstract="true">
+	<xs:element name="PIXMMessage" type="pixm:PIXMMessageType" abstract="true" substitutionGroup="pixm:AbstractPIXMFeature"/>
+	<xs:complexType name="PIXMMessageType" abstract="true">
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType"/>
 		</xs:complexContent>
@@ -143,10 +143,10 @@
 	</xs:complexType>
 
 	<!-- RunwayStatusMessage -->
-	<xs:element name="SimpleRunwayStatusMessageTimeSlice" type="pixm:SimpleRunwayStatusMessageTimeSliceType" substitutionGroup="pixm:PIXMStatusMessageTimeSlice"/>
+	<xs:element name="SimpleRunwayStatusMessageTimeSlice" type="pixm:SimpleRunwayStatusMessageTimeSliceType" substitutionGroup="pixm:PIXMMessageTimeSlice"/>
 	<xs:complexType name="SimpleRunwayStatusMessageTimeSliceType">
 		<xs:complexContent>
-			<xs:extension base="pixm:PIXMStatusMessageTimeSliceType">
+			<xs:extension base="pixm:PIXMMessageTimeSliceType">
 				<xs:sequence>
 					<xs:element name="airportId" type="aixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="runwayEndStatus" type="pixm:RunwayEndStatusType" minOccurs="0" maxOccurs="unbounded"/>
@@ -155,10 +155,10 @@
 		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:element name="SimpleRunwayStatusMessage" type="pixm:SimpleRunwayStatusMessageType" substitutionGroup="pixm:PIXMStatusMessage"/>
+	<xs:element name="SimpleRunwayStatusMessage" type="pixm:SimpleRunwayStatusMessageType" substitutionGroup="pixm:PIXMMessage"/>
 	<xs:complexType name="SimpleRunwayStatusMessageType">
 		<xs:complexContent>
-			<xs:extension base="pixm:PIXMStatusMessageType">
+			<xs:extension base="pixm:PIXMMessageType">
 				<xs:sequence>
 					<xs:element name="timeSlice" type="pixm:SimpleRunwayStatusMessageTimeSliceType" maxOccurs="unbounded"/>
 				</xs:sequence>
