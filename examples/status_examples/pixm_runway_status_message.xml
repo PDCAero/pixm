@@ -1,0 +1,58 @@
+<pixm:SimpleRunwayStatusMessage xmlns:pixm="http://www.pixm.aero/schema/0.1" 
+                               xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="rs_msg_1">
+    <pixm:timeSlice>
+        <pixm:SimpleRunwayStatusMessageTimeSlice gml:id="rs_msg_ts_1">
+            <gml:validTime>
+                <gml:TimePeriod gml:id="tp_msg_1">
+                    <gml:beginPosition>2026-05-01T00:00:00Z</gml:beginPosition>
+                    <gml:endPosition indeterminatePosition="unknown"/>
+                </gml:TimePeriod>
+            </gml:validTime>
+            <pixm:interpretation>BASELINE</pixm:interpretation>
+
+            <!-- Message Metadata -->
+            <pixm:messageId>msg-778899-aabbcc</pixm:messageId>
+            <pixm:serviceStatusCode>200</pixm:serviceStatusCode>
+            <pixm:sourceId>LSZH_AOP_GATEWAY</pixm:sourceId>
+
+            <!-- Message Content -->
+            <pixm:airportId>LSZH</pixm:airportId>
+
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>true</pixm:openLanding>
+                <pixm:openTakeoff>true</pixm:openTakeoff>
+                <pixm:runwayEndId>16</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>true</pixm:openLanding>
+                <pixm:openTakeoff>true</pixm:openTakeoff>
+                <pixm:runwayEndId>34</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>true</pixm:openLanding>
+                <pixm:openTakeoff>true</pixm:openTakeoff>
+                <pixm:runwayEndId>14</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>true</pixm:openLanding>
+                <pixm:openTakeoff>true</pixm:openTakeoff>
+                <pixm:runwayEndId>32</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>true</pixm:openLanding>
+                <pixm:openTakeoff>true</pixm:openTakeoff>
+                <pixm:runwayEndId>10</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>true</pixm:openLanding>
+                <pixm:openTakeoff>true</pixm:openTakeoff>
+                <pixm:runwayEndId>28</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+        </pixm:SimpleRunwayStatusMessageTimeSlice>
+    </pixm:timeSlice>
+</pixm:SimpleRunwayStatusMessage>

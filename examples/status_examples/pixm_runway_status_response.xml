@@ -1,0 +1,88 @@
+<pixm:SimpleRunwayStatusResponse xmlns:pixm="http://www.pixm.aero/schema/0.1" 
+                          xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="rs_resp_1">
+    <pixm:timeSlice>
+        <pixm:SimpleRunwayStatusResponseTimeSlice gml:id="rs_resp_ts_1">
+            <gml:validTime>
+                <gml:TimePeriod gml:id="tp_current">
+                    <gml:beginPosition>2026-05-01T00:00:00Z</gml:beginPosition>
+                    <gml:endPosition indeterminatePosition="unknown"/>
+                </gml:TimePeriod>
+            </gml:validTime>
+            <pixm:interpretation>BASELINE</pixm:interpretation>
+
+            <pixm:errorMessage></pixm:errorMessage>
+            <pixm:providerId>LSZH_AOP_SYSTEM</pixm:providerId>
+            <pixm:requestId>b802d439-e9f3-49f9-96e1-0153b837e113</pixm:requestId>
+            <pixm:responseId>b802d439-e9f3-49f9-96e1-0153b837eabc</pixm:responseId>
+            <pixm:responseTimestamp>2026-05-01T00:00:00Z</pixm:responseTimestamp>
+            <pixm:success>true</pixm:success>
+            <pixm:airportId>LSZH</pixm:airportId>
+
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>true</pixm:openLanding>
+                <pixm:openTakeoff>true</pixm:openTakeoff>
+                <pixm:runwayEndId>16</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>true</pixm:openLanding>
+                <pixm:openTakeoff>true</pixm:openTakeoff>
+                <pixm:runwayEndId>34</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>true</pixm:openLanding>
+                <pixm:openTakeoff>true</pixm:openTakeoff>
+                <pixm:runwayEndId>14</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>true</pixm:openLanding>
+                <pixm:openTakeoff>true</pixm:openTakeoff>
+                <pixm:runwayEndId>32</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>true</pixm:openLanding>
+                <pixm:openTakeoff>true</pixm:openTakeoff>
+                <pixm:runwayEndId>10</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>true</pixm:openLanding>
+                <pixm:openTakeoff>true</pixm:openTakeoff>
+                <pixm:runwayEndId>28</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+        </pixm:SimpleRunwayStatusResponseTimeSlice>
+    </pixm:timeSlice>
+
+    <pixm:timeSlice>
+        <pixm:SimpleRunwayStatusResponseTimeSlice gml:id="rs_resp_ts_2">
+            <gml:validTime>
+                <gml:TimePeriod gml:id="tp_next">
+                    <gml:beginPosition>2026-05-10T00:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2026-05-10T00:06:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </gml:validTime>
+            <pixm:interpretation>TEMPDELTA</pixm:interpretation>
+            
+            <pixm:providerId>LSZH_AOP_SYSTEM</pixm:providerId>
+            <pixm:requestId>b802d439-e9f3-49f9-96e1-0153b837e113</pixm:requestId>
+            <pixm:responseId>b802d439-e9f3-49f9-96e1-0153b837eabc</pixm:responseId>
+            <pixm:responseTimestamp>2026-05-01T00:00:00Z</pixm:responseTimestamp>
+            <pixm:success>true</pixm:success>
+            <pixm:airportId>LSZH</pixm:airportId>
+            
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>false</pixm:openLanding>
+                <pixm:openTakeoff>false</pixm:openTakeoff>
+                <pixm:runwayEndId>16</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+            <pixm:runwayEndStatus>
+                <pixm:openLanding>false</pixm:openLanding>
+                <pixm:openTakeoff>false</pixm:openTakeoff>
+                <pixm:runwayEndId>34</pixm:runwayEndId>
+            </pixm:runwayEndStatus>
+        </pixm:SimpleRunwayStatusResponseTimeSlice>
+    </pixm:timeSlice>
+</pixm:SimpleRunwayStatusResponse>

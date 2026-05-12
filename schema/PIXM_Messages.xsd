@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:aixm="http://www.aixm.aero/schema/5.1.1" 
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	targetNamespace="http://www.pixm.aero/schema/0.1"
+	xmlns="http://www.pixm.aero/schema/0.1"
+	xmlns:pixm="http://www.pixm.aero/schema/0.1"
+	elementFormDefault="qualified">
+
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<xs:import namespace="http://www.aixm.aero/schema/5.1.1" schemaLocation="../../schema/xsd/aixm/AIXM_Features.xsd"/>
+	
+	<!-- Include the main PIXM types to access base TimeSlice and Feature types -->
+	<xs:include schemaLocation="PIXM_Features.XSD"/>
+
+	<!-- ========================================================== -->
+	<!-- Abstract Base Types for Messages/Requests                  -->
+	<!-- ========================================================== -->
+
+	<xs:element name="PIXMRequestTimeSlice" type="pixm:PIXMRequestTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:complexType name="PIXMRequestTimeSliceType" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="requesterId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="requestId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="requestTimestamp" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="PIXMRequest" type="pixm:PIXMRequestType" abstract="true" substitutionGroup="pixm:AbstractPIXMFeature"/>
+	<xs:complexType name="PIXMRequestType" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="PIXMResponseTimeSlice" type="pixm:PIXMResponseTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:complexType name="PIXMResponseTimeSliceType" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="errorMessage" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="providerId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="requestId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="responseId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="responseTimestamp" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="success" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="PIXMResponse" type="pixm:PIXMResponseType" abstract="true" substitutionGroup="pixm:AbstractPIXMFeature"/>
+	<xs:complexType name="PIXMResponseType" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="PIXMStatusMessageTimeSlice" type="pixm:PIXMStatusMessageTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:complexType name="PIXMStatusMessageTimeSliceType" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="messageId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="serviceStatusCode" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="sourceId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="PIXMStatusMessage" type="pixm:PIXMStatusMessageType" abstract="true" substitutionGroup="pixm:AbstractPIXMFeature"/>
+	<xs:complexType name="PIXMStatusMessageType" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- ========================================================== -->
+	<!-- Concrete Message Types                                     -->
+	<!-- ========================================================== -->
+
+	<xs:element name="SimpleRunwayEndStatus" type="pixm:SimpleRunwayEndStatusType"/>
+	<xs:complexType name="SimpleRunwayEndStatusType">
+		<xs:sequence>
+			<xs:element name="openLanding" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="openTakeoff" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="runwayEndId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- RunwayStatusRequest -->
+	<xs:element name="SimpleRunwayStatusRequestTimeSlice" type="pixm:SimpleRunwayStatusRequestTimeSliceType" substitutionGroup="pixm:PIXMRequestTimeSlice"/>
+	<xs:complexType name="SimpleRunwayStatusRequestTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:PIXMRequestTimeSliceType">
+				<xs:sequence>
+					<xs:element name="airportId" type="aixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="provideNextExpectedChange" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="timeInstant" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="SimpleRunwayStatusRequest" type="pixm:SimpleRunwayStatusRequestType" substitutionGroup="pixm:PIXMRequest"/>
+	<xs:complexType name="SimpleRunwayStatusRequestType">
+		<xs:complexContent>
+			<xs:extension base="pixm:PIXMRequestType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:SimpleRunwayStatusRequestTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- RunwayStatusResponse -->
+	<xs:element name="SimpleRunwayStatusResponseTimeSlice" type="pixm:SimpleRunwayStatusResponseTimeSliceType" substitutionGroup="pixm:PIXMResponseTimeSlice"/>
+	<xs:complexType name="SimpleRunwayStatusResponseTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:PIXMResponseTimeSliceType">
+				<xs:sequence>
+					<xs:element name="airportId" type="aixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="runwayEndStatus" type="pixm:RunwayEndStatusType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="SimpleRunwayStatusResponse" type="pixm:SimpleRunwayStatusResponseType" substitutionGroup="pixm:PIXMResponse"/>
+	<xs:complexType name="SimpleRunwayStatusResponseType">
+		<xs:complexContent>
+			<xs:extension base="pixm:PIXMResponseType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:SimpleRunwayStatusResponseTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- RunwayStatusMessage -->
+	<xs:element name="SimpleRunwayStatusMessageTimeSlice" type="pixm:SimpleRunwayStatusMessageTimeSliceType" substitutionGroup="pixm:PIXMStatusMessageTimeSlice"/>
+	<xs:complexType name="SimpleRunwayStatusMessageTimeSliceType">
+		<xs:complexContent>
+			<xs:extension base="pixm:PIXMStatusMessageTimeSliceType">
+				<xs:sequence>
+					<xs:element name="airportId" type="aixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="runwayEndStatus" type="pixm:RunwayEndStatusType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="SimpleRunwayStatusMessage" type="pixm:SimpleRunwayStatusMessageType" substitutionGroup="pixm:PIXMStatusMessage"/>
+	<xs:complexType name="SimpleRunwayStatusMessageType">
+		<xs:complexContent>
+			<xs:extension base="pixm:PIXMStatusMessageType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:SimpleRunwayStatusMessageTimeSliceType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>
