@@ -1,0 +1,158 @@
+<message:AIXMBasicMessage xmlns:message="http://www.aixm.aero/schema/5.1.1/message" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gss="http://www.isotc211.org/2005/gss" xmlns:aixm="http://www.aixm.aero/schema/5.1.1" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aixm.aero/schema/5.1.1/message http://www.aixm.aero/schema/5.1.1/message/AIXM_BasicMessage.xsd" gml:id="M0000001">
+	<gml:boundedBy>
+		<gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326">
+			<gml:lowerCorner>-32.0886111111111 -47.0</gml:lowerCorner>
+			<gml:upperCorner>57.690815969999996 52.4283333333333</gml:upperCorner>
+		</gml:Envelope>
+	</gml:boundedBy>
+	<message:hasMember>
+		<aixm:RunwayDirection gml:id="uuid.b802d439-e9f3-49f9-96e1-0153b837e113">
+            <aixm:timeSlice>
+                <aixm:RunwayDirectionTimeSlice gml:id="RDN_LSZH_16_STATUS">
+                    <gml:validTime>
+                        <gml:TimePeriod gml:id="vtILURU97">
+                            <gml:beginPosition>2026-05-01T00:00:00Z</gml:beginPosition>
+                            <gml:endPosition indeterminatePosition="unknown"/>
+                        </gml:TimePeriod>
+                    </gml:validTime>
+                    <aixm:interpretation>BASELINE</aixm:interpretation>
+					<aixm:designator>16</aixm:designator>
+                    <aixm:sequenceNumber>1</aixm:sequenceNumber>
+                    <aixm:availability>
+                        <aixm:operationalStatus>NORMAL</aixm:operationalStatus>
+                    </aixm:availability>
+                </aixm:RunwayDirectionTimeSlice>
+            </aixm:timeSlice>
+			<aixm:timeSlice>
+                <aixm:RunwayDirectionTimeSlice gml:id="RDN_LSZH_16_NEXT">
+                    <gml:validTime>
+                        <gml:TimePeriod gml:id="vtILURU97">
+                            <gml:beginPosition>2026-05-01T00:00:00Z</gml:beginPosition>
+                            <gml:endPosition>2026-05-01T00:06:00Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </gml:validTime>
+                    <aixm:interpretation>TEMPDELTA</aixm:interpretation>
+                    <aixm:sequenceNumber>2</aixm:sequenceNumber>
+                    <aixm:availability>
+                        <aixm:operationalStatus>CLOSED</aixm:operationalStatus>
+                    </aixm:availability>
+                </aixm:RunwayDirectionTimeSlice>
+            </aixm:timeSlice>
+		</aixm:RunwayDirection>
+	</message:hasMember>
+	<message:hasMember>
+		<aixm:RunwayDirection gml:id="uuid.b802d439-e9f3-49f9-96e1-0153b837e113">
+            <aixm:timeSlice>
+                <aixm:RunwayDirectionTimeSlice gml:id="RDN_LSZH_34_STATUS">
+                    <gml:validTime>
+                        <gml:TimePeriod gml:id="vtILURU97">
+                            <gml:beginPosition>2026-05-01T00:00:00Z</gml:beginPosition>
+                            <gml:endPosition indeterminatePosition="unknown"/>
+                        </gml:TimePeriod>
+                    </gml:validTime>
+                    <aixm:interpretation>BASELINE</aixm:interpretation>
+					<aixm:designator>34</aixm:designator>
+                    <aixm:sequenceNumber>1</aixm:sequenceNumber>
+                    <aixm:availability>
+                        <aixm:operationalStatus>NORMAL</aixm:operationalStatus>
+                    </aixm:availability>
+                </aixm:RunwayDirectionTimeSlice>
+            </aixm:timeSlice>
+			<aixm:timeSlice>
+                <aixm:RunwayDirectionTimeSlice gml:id="RDN_LSZH_34_NEXT">
+                    <gml:validTime>
+                        <gml:TimePeriod gml:id="vtILURU97">
+                            <gml:beginPosition>2026-05-01T00:00:00Z</gml:beginPosition>
+                            <gml:endPosition>2026-05-01T00:06:00Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </gml:validTime>
+                    <aixm:interpretation>TEMPDELTA</aixm:interpretation>
+                    <aixm:sequenceNumber>2</aixm:sequenceNumber>
+                    <aixm:availability>
+                        <aixm:operationalStatus>CLOSED</aixm:operationalStatus>
+                    </aixm:availability>
+                </aixm:RunwayDirectionTimeSlice>
+            </aixm:timeSlice>
+		</aixm:RunwayDirection>
+	</message:hasMember>
+	<message:hasMember>
+		<aixm:RunwayDirection gml:id="uuid.b802d439-e9f3-49f9-96e1-0153b837e113">
+            <aixm:timeSlice>
+                <aixm:RunwayDirectionTimeSlice gml:id="RDN_LSZH_14_STATUS">
+                    <gml:validTime>
+                        <gml:TimePeriod gml:id="vtILURU97">
+                            <gml:beginPosition>2026-05-01T00:00:00Z</gml:beginPosition>
+                            <gml:endPosition indeterminatePosition="unknown"/>
+                        </gml:TimePeriod>
+                    </gml:validTime>
+                    <aixm:interpretation>BASELINE</aixm:interpretation>
+					<aixm:designator>14</aixm:designator>
+                    <aixm:sequenceNumber>1</aixm:sequenceNumber>
+                    <aixm:availability>
+                        <aixm:operationalStatus>NORMAL</aixm:operationalStatus>
+                    </aixm:availability>
+                </aixm:RunwayDirectionTimeSlice>
+            </aixm:timeSlice>
+		</aixm:RunwayDirection>
+	</message:hasMember>
+	<message:hasMember>
+		<aixm:RunwayDirection gml:id="uuid.b802d439-e9f3-49f9-96e1-0153b837e113">
+            <aixm:timeSlice>
+                <aixm:RunwayDirectionTimeSlice gml:id="RDN_LSZH_32_STATUS">
+                    <gml:validTime>
+                        <gml:TimePeriod gml:id="vtILURU97">
+                            <gml:beginPosition>2026-05-01T00:00:00Z</gml:beginPosition>
+                            <gml:endPosition indeterminatePosition="unknown"/>
+                        </gml:TimePeriod>
+                    </gml:validTime>
+                    <aixm:interpretation>BASELINE</aixm:interpretation>
+					<aixm:designator>32</aixm:designator>
+                    <aixm:sequenceNumber>1</aixm:sequenceNumber>
+                    <aixm:availability>
+                        <aixm:operationalStatus>NORMAL</aixm:operationalStatus>
+                    </aixm:availability>
+                </aixm:RunwayDirectionTimeSlice>
+            </aixm:timeSlice>
+		</aixm:RunwayDirection>
+	</message:hasMember>
+	<message:hasMember>
+		<aixm:RunwayDirection gml:id="uuid.b802d439-e9f3-49f9-96e1-0153b837e113">
+            <aixm:timeSlice>
+                <aixm:RunwayDirectionTimeSlice gml:id="RDN_LSZH_10_STATUS">
+                    <gml:validTime>
+                        <gml:TimePeriod gml:id="vtILURU97">
+                            <gml:beginPosition>2026-05-01T00:00:00Z</gml:beginPosition>
+                            <gml:endPosition indeterminatePosition="unknown"/>
+                        </gml:TimePeriod>
+                    </gml:validTime>
+                    <aixm:interpretation>BASELINE</aixm:interpretation>
+					<aixm:designator>10</aixm:designator>
+                    <aixm:sequenceNumber>1</aixm:sequenceNumber>
+                    <aixm:availability>
+                        <aixm:operationalStatus>NORMAL</aixm:operationalStatus>
+                    </aixm:availability>
+                </aixm:RunwayDirectionTimeSlice>
+            </aixm:timeSlice>
+		</aixm:RunwayDirection>
+	</message:hasMember>
+	<message:hasMember>
+		<aixm:RunwayDirection gml:id="uuid.b802d439-e9f3-49f9-96e1-0153b837e113">
+            <aixm:timeSlice>
+                <aixm:RunwayDirectionTimeSlice gml:id="RDN_LSZH_28_STATUS">
+                    <gml:validTime>
+                        <gml:TimePeriod gml:id="vtILURU97">
+                            <gml:beginPosition>2026-05-01T00:00:00Z</gml:beginPosition>
+                            <gml:endPosition indeterminatePosition="unknown"/>
+                        </gml:TimePeriod>
+                    </gml:validTime>
+                    <aixm:interpretation>BASELINE</aixm:interpretation>
+					<aixm:designator>28</aixm:designator>
+                    <aixm:sequenceNumber>1</aixm:sequenceNumber>
+                    <aixm:availability>
+                        <aixm:operationalStatus>NORMAL</aixm:operationalStatus>
+                    </aixm:availability>
+                </aixm:RunwayDirectionTimeSlice>
+            </aixm:timeSlice>
+		</aixm:RunwayDirection>
+	</message:hasMember>
+</message:AIXMBasicMessage>
