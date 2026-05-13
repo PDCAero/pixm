@@ -31,7 +31,7 @@
 					<aixm:lengthAccuracy uom="M">1</aixm:lengthAccuracy>
 					<aixm:nominalWidth uom="M">60.0</aixm:nominalWidth>
 					<aixm:widthAccuracy uom="M">1</aixm:widthAccuracy>
-					<aixm:lengthStrip uom="M">4000.0</aixm:lengthStrip>
+					<aixm:lengthStrip uom="M">3820.0</aixm:lengthStrip>
 					<aixm:widthStrip uom="M">300.0</aixm:widthStrip>
 					<aixm:surfaceProperties>
 						<aixm:SurfaceCharacteristics gml:id="SCH_LSZH_RWY_16_34">
@@ -163,7 +163,7 @@
 					<aixm:lengthAccuracy uom="M">1</aixm:lengthAccuracy>
 					<aixm:nominalWidth uom="M">60.0</aixm:nominalWidth>
 					<aixm:widthAccuracy uom="M">1</aixm:widthAccuracy>
-					<aixm:lengthStrip uom="M">3600.0</aixm:lengthStrip>
+					<aixm:lengthStrip uom="M">3420.0</aixm:lengthStrip>
 					<aixm:widthStrip uom="M">300.0</aixm:widthStrip>
 					<aixm:surfaceProperties>
 						<aixm:SurfaceCharacteristics gml:id="SCH_LSZH_RWY_14_32">
@@ -265,8 +265,8 @@
 					<aixm:lengthAccuracy uom="M">1</aixm:lengthAccuracy>
 					<aixm:nominalWidth uom="M">60.0</aixm:nominalWidth>
 					<aixm:widthAccuracy uom="M">1</aixm:widthAccuracy>
-					<aixm:lengthStrip uom="M">2800.0</aixm:lengthStrip>
-					<aixm:widthStrip uom="M">300.0</aixm:widthStrip>
+					<aixm:lengthStrip uom="M">2620.0</aixm:lengthStrip>
+					<aixm:widthStrip uom="M">150.0</aixm:widthStrip>
 					<aixm:surfaceProperties>
 						<aixm:SurfaceCharacteristics gml:id="SCH_LSZH_RWY_10_28">
 							<aixm:composition>ASPH</aixm:composition>
