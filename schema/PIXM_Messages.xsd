@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-	xmlns:aixm="http://www.aixm.aero/schema/5.1.1" 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:aixm="http://www.aixm.aero/schema/5.1.1"
 	xmlns:gml="http://www.opengis.net/gml/3.2"
 	targetNamespace="http://www.pixm.aero/schema/0.1"
 	xmlns="http://www.pixm.aero/schema/0.1"
@@ -9,7 +9,7 @@
 
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
 	<xs:import namespace="http://www.aixm.aero/schema/5.1.1" schemaLocation="../../schema/xsd/aixm/AIXM_Features.xsd"/>
-	
+
 	<!-- Include the main PIXM types to access base TimeSlice and Feature types -->
 	<xs:include schemaLocation="PIXM_Features.XSD"/>
 
@@ -19,12 +19,27 @@
 
 	<xs:element name="PIXMRequestTimeSlice" type="pixm:PIXMRequestTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
 	<xs:complexType name="PIXMRequestTimeSliceType" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Abstract base type for PIXM request time slices, providing common request identification and timing fields.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
 				<xs:sequence>
-					<xs:element name="requesterId" type="xs:string" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="requestId" type="xs:string" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="requestTimestamp" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="requesterId" type="pixm:UniversallyUniqueIdentifierType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>UUID identifying the requester (system or client) submitting the request.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="requestId" type="pixm:UniversallyUniqueIdentifierType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>UUID uniquely identifying this request instance. Used to correlate with the corresponding response.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="requestTimestamp" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>UTC timestamp at which the request was generated, expressed as ISO 8601 dateTime with at least second-level precision (e.g. 2024-01-15T13:45:00Z).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -32,6 +47,9 @@
 
 	<xs:element name="PIXMRequest" type="pixm:PIXMRequestType" abstract="true" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="PIXMRequestType" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Abstract base feature type for PIXM requests.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType"/>
 		</xs:complexContent>
@@ -39,15 +57,42 @@
 
 	<xs:element name="PIXMResponseTimeSlice" type="pixm:PIXMResponseTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
 	<xs:complexType name="PIXMResponseTimeSliceType" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Abstract base type for PIXM response time slices, providing common response identification, status, and correlation fields.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
 				<xs:sequence>
-					<xs:element name="errorMessage" type="xs:string" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="providerId" type="xs:string" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="requestId" type="xs:string" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="responseId" type="xs:string" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="responseTimestamp" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="success" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="errorMessage" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Human-readable error description. Should be populated when success is false.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="providerId" type="pixm:UniversallyUniqueIdentifierType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>UUID identifying the service provider that generated this response.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="requestId" type="pixm:UniversallyUniqueIdentifierType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Echo of the requestId from the originating request, used for request/response correlation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="responseId" type="pixm:UniversallyUniqueIdentifierType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>UUID uniquely identifying this response instance.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="responseTimestamp" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>UTC timestamp at which the response was generated, expressed as ISO 8601 dateTime (e.g. 2024-01-15T13:45:00Z).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="success" type="xs:boolean" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates whether the request was processed successfully. When false, errorMessage should be populated.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -55,6 +100,9 @@
 
 	<xs:element name="PIXMResponse" type="pixm:PIXMResponseType" abstract="true" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="PIXMResponseType" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Abstract base feature type for PIXM responses.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType"/>
 		</xs:complexContent>
@@ -62,12 +110,27 @@
 
 	<xs:element name="PIXMMessageTimeSlice" type="pixm:PIXMMessageTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
 	<xs:complexType name="PIXMMessageTimeSliceType" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Abstract base type for unsolicited PIXM message time slices, carrying identification and service status fields.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
 				<xs:sequence>
-					<xs:element name="messageId" type="xs:string" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="serviceStatusCode" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="sourceId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="messageId" type="pixm:UniversallyUniqueIdentifierType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>UUID uniquely identifying this message instance.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="serviceStatusCode" type="xs:positiveInteger" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Numeric code indicating the service status at time of message generation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="sourceId" type="pixm:UniversallyUniqueIdentifierType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>UUID identifying the originating source system that produced this message.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -75,6 +138,9 @@
 
 	<xs:element name="PIXMMessage" type="pixm:PIXMMessageType" abstract="true" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="PIXMMessageType" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Abstract base feature type for unsolicited PIXM messages.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType"/>
 		</xs:complexContent>
@@ -86,22 +152,52 @@
 
 	<xs:element name="SimpleRunwayEndStatus" type="pixm:SimpleRunwayEndStatusType"/>
 	<xs:complexType name="SimpleRunwayEndStatusType">
+		<xs:annotation>
+			<xs:documentation>Conveys the operational status of a single runway end, indicating whether it is open for landing and/or takeoff operations.</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="openLanding" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="openTakeoff" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="runwayEndId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="openLanding" type="xs:boolean" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>True if the runway end is open for landing operations; false if closed.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="openTakeoff" type="xs:boolean" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>True if the runway end is open for takeoff operations; false if closed.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="runwayEndId" type="aixm:TextDesignatorType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Runway end designator (e.g. "28L", "09R") identifying the specific runway end.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 
 	<!-- RunwayStatusRequest -->
 	<xs:element name="SimpleRunwayStatusRequestTimeSlice" type="pixm:SimpleRunwayStatusRequestTimeSliceType" substitutionGroup="pixm:PIXMRequestTimeSlice"/>
 	<xs:complexType name="SimpleRunwayStatusRequestTimeSliceType">
+		<xs:annotation>
+			<xs:documentation>Time slice for a request to retrieve the operational status of runways at a specified airport, optionally at a specific effective time.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="pixm:PIXMRequestTimeSliceType">
 				<xs:sequence>
-					<xs:element name="airportId" type="aixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="provideNextExpectedChange" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="timeInstant" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="airportId" type="aixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>ICAO or IATA designator of the airport for which runway status is requested.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="provideNextExpectedChange" type="xs:boolean" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>When true, requests that the response include the next anticipated change to runway status.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="timeInstant" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Effective UTC date/time for which runway status is requested. If omitted, the current operational state is returned.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -109,6 +205,9 @@
 
 	<xs:element name="SimpleRunwayStatusRequest" type="pixm:SimpleRunwayStatusRequestType" substitutionGroup="pixm:PIXMRequest"/>
 	<xs:complexType name="SimpleRunwayStatusRequestType">
+		<xs:annotation>
+			<xs:documentation>Feature encapsulating one or more time slices for a simple runway status request.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="pixm:PIXMRequestType">
 				<xs:sequence>
@@ -121,11 +220,22 @@
 	<!-- RunwayStatusResponse -->
 	<xs:element name="SimpleRunwayStatusResponseTimeSlice" type="pixm:SimpleRunwayStatusResponseTimeSliceType" substitutionGroup="pixm:PIXMResponseTimeSlice"/>
 	<xs:complexType name="SimpleRunwayStatusResponseTimeSliceType">
+		<xs:annotation>
+			<xs:documentation>Time slice carrying the runway status response payload for a specific airport, including per-runway-end operational status.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="pixm:PIXMResponseTimeSliceType">
 				<xs:sequence>
-					<xs:element name="airportId" type="aixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="runwayEndStatus" type="pixm:RunwayEndStatusType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="airportId" type="aixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>ICAO or IATA designator of the airport to which this runway status applies.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="runwayEndStatus" type="pixm:SimpleRunwayEndStatusType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Operational status for each runway end at the airport. Multiple entries are expected when more than one runway end is reported.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -133,6 +243,9 @@
 
 	<xs:element name="SimpleRunwayStatusResponse" type="pixm:SimpleRunwayStatusResponseType" substitutionGroup="pixm:PIXMResponse"/>
 	<xs:complexType name="SimpleRunwayStatusResponseType">
+		<xs:annotation>
+			<xs:documentation>Feature encapsulating one or more time slices for a simple runway status response.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="pixm:PIXMResponseType">
 				<xs:sequence>
@@ -145,11 +258,22 @@
 	<!-- RunwayStatusMessage -->
 	<xs:element name="SimpleRunwayStatusMessageTimeSlice" type="pixm:SimpleRunwayStatusMessageTimeSliceType" substitutionGroup="pixm:PIXMMessageTimeSlice"/>
 	<xs:complexType name="SimpleRunwayStatusMessageTimeSliceType">
+		<xs:annotation>
+			<xs:documentation>Time slice carrying an unsolicited runway status message payload for a specific airport.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="pixm:PIXMMessageTimeSliceType">
 				<xs:sequence>
-					<xs:element name="airportId" type="aixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="runwayEndStatus" type="pixm:RunwayEndStatusType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="airportId" type="aixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>ICAO or IATA designator of the airport to which this runway status message pertains.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="runwayEndStatus" type="pixm:SimpleRunwayEndStatusType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Operational status for each runway end. Multiple entries are expected when more than one runway end is reported.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -157,6 +281,9 @@
 
 	<xs:element name="SimpleRunwayStatusMessage" type="pixm:SimpleRunwayStatusMessageType" substitutionGroup="pixm:PIXMMessage"/>
 	<xs:complexType name="SimpleRunwayStatusMessageType">
+		<xs:annotation>
+			<xs:documentation>Feature encapsulating one or more time slices for an unsolicited simple runway status message.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="pixm:PIXMMessageType">
 				<xs:sequence>
