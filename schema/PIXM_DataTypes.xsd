@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
           targetNamespace="http://www.pixm.aero/schema/0.1"
-           xmlns="http://example.com/datatypes"
+           xmlns="http://www.pixm.aero/schema/0.1"
            xmlns:pixm="http://www.pixm.aero/schema/0.1"
            xmlns:gml="http://www.opengis.net/gml/3.2"
-           elementFormDefault="qualified">
+           elementFormDefault="qualified"
+           version="0.5">
   <xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
   <xs:include schemaLocation="PIXM_Codelists.xsd"/>
   <xs:complexType name="CodeACorECSBleedType">
