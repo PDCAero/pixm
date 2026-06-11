@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pixm="http://www.pixm.aero/schema/0.1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gmd="http://www.isotc211.org/2005/gmd" targetNamespace="http://www.pixm.aero/schema/0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.1">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pixm="http://www.pixm.aero/schema/0.1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gmd="http://www.isotc211.org/2005/gmd" targetNamespace="http://www.pixm.aero/schema/0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.5">
 
 	<!--====================================================================-->
 	<!--Schema Imports and Includes-->
@@ -88,7 +88,7 @@
 					<sequence/>
 					<sequence>
 						<annotation>
-							<documentation>The efffectivity of the TimeSlice.</documentation>
+							<documentation>The effectivity of the TimeSlice.</documentation>
 						</annotation>
 						<element ref="gml:validTime"/>
 					</sequence>
@@ -112,7 +112,6 @@
 					<element ref="pixm:featureLifetime" minOccurs="0"/>
 					<element ref="pixm:source" minOccurs="0"/>
 					<element ref="pixm:lastRevision" minOccurs="0"/>
-                    <!-- TODO: Add documentation for the timesheet element -->
 				</sequence>
 			</extension>
 		</complexContent>
@@ -199,11 +198,6 @@
 			<documentation>The last time an update to the entity was produced.</documentation>
 		</annotation>
 	</element>
-	<!--<element name="timesheet" type="pixm:Timesheet">
-		<annotation>
-			<documentation>The timesheet element is used to reflect complex temporal events that may be reoccuring on a scheduled basis.</documentation>
-		</annotation>
-	</element>-->
 	<!--====================================================================-->
 	<!--Base PIXM Metadata Property Types-->
 	<!--====================================================================-->

@@ -4,7 +4,8 @@
            xmlns="http://www.pixm.aero/schema/0.1"
            xmlns:pixm="http://www.pixm.aero/schema/0.1"
            xmlns:gml="http://www.opengis.net/gml/3.2"
-           elementFormDefault="qualified">
+           elementFormDefault="qualified"
+           version="0.5">
   <xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
   <xs:include schemaLocation="PIXM_UoM.xsd"/>
   <xs:include schemaLocation="PIXM_DataTypes.xsd"/>
@@ -20,7 +21,7 @@
   <xs:complexType name="ValAngleType">
     <xs:simpleContent>
       <xs:extension base="pixm:ValAngleBaseType">
-        <xs:attribute name="uom" type="pixm:UomDistanceType"/>
+        <xs:attribute name="uom" type="pixm:UomAngleType"/>
         <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
       </xs:extension>
     </xs:simpleContent>
@@ -37,7 +38,7 @@
   <xs:complexType name="ValBearingType">
     <xs:simpleContent>
       <xs:extension base="pixm:ValBearingBaseType">
-        <xs:attribute name="uom" type="pixm:UomDistanceType"/>
+        <xs:attribute name="uom" type="pixm:UomAngleType"/>
         <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
       </xs:extension>
     </xs:simpleContent>
@@ -83,7 +84,7 @@
 	</xs:simpleType>
   <xs:complexType name="ValDistanceSignedType">
     <xs:simpleContent>
-      <xs:extension base="ValDistanceSignedBaseType">
+      <xs:extension base="pixm:ValDistanceSignedBaseType">
         <xs:attribute name="uom" type="pixm:UomDistanceType"/>
         <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
 			</xs:extension>
@@ -92,7 +93,7 @@
 
   <xs:complexType name="ValDistanceType">
     <xs:simpleContent>
-      <xs:extension base="ValDistanceBaseType">
+      <xs:extension base="pixm:ValDistanceBaseType">
         <xs:attribute name="uom" type="pixm:UomDistanceType"/>
         <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
 			</xs:extension>
@@ -107,7 +108,7 @@
 
   <xs:complexType name="ValDistanceVerticalType">
     <xs:simpleContent>
-      <xs:extension base="ValDistanceVerticalBaseType">
+      <xs:extension base="pixm:ValDistanceVerticalBaseType">
         <xs:attribute name="uom" type="pixm:UomDistanceVerticalType"/>
         <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
 			</xs:extension>
@@ -121,7 +122,7 @@
 
   <xs:complexType name="ValDurationType">
     <xs:simpleContent>
-      <xs:extension base="ValDurationBaseType">
+      <xs:extension base="pixm:ValDurationBaseType">
         <xs:attribute name="uom" type="pixm:UomDurationType"/>
         <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
 			</xs:extension>
@@ -137,7 +138,7 @@
 
   <xs:complexType name="ValFLType">
     <xs:simpleContent>
-      <xs:extension base="ValFLBaseType">
+      <xs:extension base="pixm:ValFLBaseType">
         <xs:attribute name="uom" type="pixm:UomFLType"/>
         <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
 			</xs:extension>
@@ -214,7 +215,7 @@
 
 	<xs:complexType name="ValPCNType">
 	  <xs:simpleContent>
-	    <xs:extension base="ValPCNBaseType">
+	    <xs:extension base="pixm:ValPCNBaseType">
 	      <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -325,7 +326,7 @@
 
   <xs:complexType name="ValThrustSettingType">
     <xs:simpleContent>
-      <xs:extension base="ValThrustSettingBaseType">
+      <xs:extension base="pixm:ValThrustSettingBaseType">
         <xs:attribute name="uom" type="pixm:UomThrustSettingType"/>
         <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
 			</xs:extension>

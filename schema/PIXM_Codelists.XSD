@@ -2,7 +2,8 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:pixm="http://www.pixm.aero/schema/0.1"
            targetNamespace="http://www.pixm.aero/schema/0.1"
-           elementFormDefault="qualified">
+           elementFormDefault="qualified"
+           version="0.5">
 
 
   <xs:simpleType name="CodeACorECSBleedBaseType">
@@ -333,7 +334,7 @@
           <xs:enumeration value="DRY"/>
           <xs:enumeration value="DRY_SNOW"/>
           <xs:enumeration value="FROST"/>
-          <xs:enumeration value="GRAS"/>
+          <xs:enumeration value="GRASS"/>
           <xs:enumeration value="ICE"/>
           <xs:enumeration value="LOOSE_SAND"/>
           <xs:enumeration value="NONE"/>
@@ -1253,7 +1254,7 @@
           <xs:enumeration value="UTC-8"/>
           <xs:enumeration value="UTC-9"/>
           <xs:enumeration value="UTC-9:30"/>
-          <xs:enumeration value="UTC:+9:30"/>
+          <xs:enumeration value="UTC+9:30"/>
           <xs:enumeration value="UTC+1"/>
           <xs:enumeration value="UTC+10"/>
           <xs:enumeration value="UTC+10:30"/>

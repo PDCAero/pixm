@@ -328,8 +328,8 @@
         <pixm:ObstacleTimeSlice gml:id="obs-ts-28r_twyz_notam">
           <gml:validTime>
             <gml:TimePeriod gml:id="obs-period-28r_twyz_notam">
-              <gml:beginPosition>2025-06-11</gml:beginPosition>
-              <gml:endPosition indeterminatePosition="unknown"/>
+              <gml:beginPosition>2025-06-11 23:00:00Z</gml:beginPosition>
+              <gml:endPosition>2025-09-11 23:00:00Z</gml:endPosition>
             </gml:TimePeriod>
           </gml:validTime>
           <pixm:interpretation>BASELINE</pixm:interpretation>
@@ -337,7 +337,7 @@
           <pixm:amslHeight uom="FT">13</pixm:amslHeight>
           <pixm:horizontalAccuracy uom="FT">20</pixm:horizontalAccuracy>
           <pixm:verticalAccuracy uom="FT">3</pixm:verticalAccuracy>
-          <pixm:source>SFO ADIP Pull JUN25</pixm:source>
+          <pixm:source>SFO NOTAM 1/11111 JUN25</pixm:source>
           <pixm:identifier>06-034143</pixm:identifier>
           <pixm:geometry>
             <gml:MultiSurface srsName="urn:ogc:def:crs:ESRI::103893" gml:id="28r_twyz_notam.geom.0">

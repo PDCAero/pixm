@@ -113,7 +113,7 @@ v          <pixm:oeiGrossProfile>
                         <pixm:flightSegment>0</pixm:flightSegment>
                         <pixm:pressureAltitude uom="FT">13.0</pixm:pressureAltitude>
                         <pixm:timeElapsed uom="SEC">0.0</pixm:timeElapsed>
-                        <pixm:gearPosition>Down</pixm:gearPosition>
+                        <pixm:gearPosition>EXTENDED</pixm:gearPosition>
                     </pixm:profilePoint>
                     <pixm:profilePoint>
                         <pixm:position>
@@ -134,7 +134,7 @@ v          <pixm:oeiGrossProfile>
                         <pixm:flightSegment>1</pixm:flightSegment>
                         <pixm:pressureAltitude uom="FT">9.05207</pixm:pressureAltitude>
                         <pixm:timeElapsed uom="SEC">36.73426394</pixm:timeElapsed>
-                        <pixm:gearPosition>Down</pixm:gearPosition>
+                        <pixm:gearPosition>EXTENDED</pixm:gearPosition>
                     </pixm:profilePoint>
                     <pixm:profilePoint>
                       <pixm:position>
@@ -155,7 +155,7 @@ v          <pixm:oeiGrossProfile>
                       <pixm:flightSegment>1</pixm:flightSegment>
                       <pixm:pressureAltitude uom="FT">43.59294</pixm:pressureAltitude>
                       <pixm:timeElapsed uom="SEC">41.02550011</pixm:timeElapsed>
-                      <pixm:gearPosition>Down</pixm:gearPosition>
+                      <pixm:gearPosition>EXTENDED</pixm:gearPosition>
                     </pixm:profilePoint>
                     <pixm:profilePoint>
                         <pixm:position>
@@ -176,7 +176,7 @@ v          <pixm:oeiGrossProfile>
                         <pixm:flightSegment>2</pixm:flightSegment>
                         <pixm:pressureAltitude uom="FT">77.6</pixm:pressureAltitude>
                         <pixm:timeElapsed uom="SEC">47.08452407</pixm:timeElapsed>
-                        <pixm:gearPosition>Down</pixm:gearPosition>
+                        <pixm:gearPosition>EXTENDED</pixm:gearPosition>
                     </pixm:profilePoint>
                     <pixm:profilePoint>
                         <pixm:position>

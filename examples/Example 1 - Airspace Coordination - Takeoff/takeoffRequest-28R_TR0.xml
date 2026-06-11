@@ -103,8 +103,8 @@
             <pixm:turnDefinition>
               <pixm:turnId>1</pixm:turnId>
               <pixm:fixedBankAngle uom="DEG">15</pixm:fixedBankAngle>
-              <pixm:gradientLoossApplicationType>SPECIFIED</pixm:gradientLoossApplicationType>
-              <pixm:fixedGradientLossValue>0.05</pixm:fixedGradientLossValue>
+              <pixm:gradientLossApplicationType>SPECIFIED</pixm:gradientLossApplicationType>
+              <pixm:fixedGradientLossValue>0.4</pixm:fixedGradientLossValue>
               <pixm:turnStartType>DISTANCE</pixm:turnStartType>
               <pixm:turnStartDistance uom="FT">3000</pixm:turnStartDistance>
               <pixm:turnEndHeadingChange uom="DEG">14</pixm:turnEndHeadingChange>
@@ -284,8 +284,8 @@
         <pixm:ObstacleTimeSlice gml:id="obs-ts-28r_twyz_notam">
           <gml:validTime>
             <gml:TimePeriod gml:id="obs-period-28r_twyz_notam">
-              <gml:beginPosition>2025-06-11</gml:beginPosition>
-              <gml:endPosition indeterminatePosition="unknown"/>
+              <gml:beginPosition>2025-06-11 12:00:00Z</gml:beginPosition>
+              <gml:endPosition>2025-09-11 12:00:00Z</gml:endPosition>
             </gml:TimePeriod>
           </gml:validTime>
           <pixm:interpretation>BASELINE</pixm:interpretation>
