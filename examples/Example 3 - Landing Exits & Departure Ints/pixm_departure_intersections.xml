@@ -1,0 +1,1974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection xmlns:pixm="http://www.pixm.aero/pixm/1.0"
+                        xmlns:aixm="http://www.aixm.aero/schema/5.1.1"
+                        xmlns:gml="http://www.opengis.net/gml/3.2"
+                        gml:id="fc_departure_intersections_all">
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_c8ff2f82-e28f-4870-97c7-8bdd3c85026b">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_c1a4d07b-2e52-477a-9a7e-97ef6fe59e8c">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_a2c5cc25-e79f-4a1b-bd4b-d92efa6aefce">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>B9</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>10</pixm:runwayEndDesignator>
+                  <pixm:description>CL Intersection with Runway</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>10_B9</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1390.736525</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45892498 8.537672986</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2485.4</pixm:tora>
+                      <pixm:toda uom="M">2545.4</pixm:toda>
+                      <pixm:asda uom="M">2485.4</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_6af58a42-e04a-41c4-97ae-af8265828781">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_30a875de-1c82-41dc-ab9b-46e8369b07ec">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_75578f7e-dbbe-4c7e-864d-da9bc2d4cf5b">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_6b38ee8b-e96d-4f97-8d1e-a4c761909d5d">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>B9</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>10</pixm:runwayEndDesignator>
+                  <pixm:description>Leading Edge Fillet B9</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>10_B9</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1389.874584</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45888859 8.538187161</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2446.4</pixm:tora>
+                      <pixm:toda uom="M">2506.4</pixm:toda>
+                      <pixm:asda uom="M">2446.4</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_bc75e2ca-8077-46bb-9a8e-57de95791c65">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_76f38703-2360-4a3e-b916-90c2bc5a4287">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_497a27d1-46d4-4f96-8d92-8ee17960960f">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_078d27d4-396d-4cc5-940a-2981a2ce364b">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>L9</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>10</pixm:runwayEndDesignator>
+                  <pixm:description>Leading Edge Fillet L9</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>10_L9</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1389.423723</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45886952 8.538456511</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2426</pixm:tora>
+                      <pixm:toda uom="M">2486</pixm:toda>
+                      <pixm:asda uom="M">2426</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_79a6281b-1f92-417e-9045-12da96cea872">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_bb73f4e1-ae06-4497-bdd8-facf809e41e0">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_6bd11967-d124-45bd-8dda-3f3352d3032f">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_14b278a2-dc6a-4bb5-9ca7-e445e670a7df">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>B7</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>10</pixm:runwayEndDesignator>
+                  <pixm:description>Trailing Edge Fillet B7</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>10_B7</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1382.753627</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45858761 8.542437956</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2124.2</pixm:tora>
+                      <pixm:toda uom="M">2184.2</pixm:toda>
+                      <pixm:asda uom="M">2124.2</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_b0d745f3-529a-4715-b3cb-350150b489b9">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">30</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_80780628-da2f-45ac-8618-2d015704ac3b">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_5630ea91-802f-44f9-9b18-9c56b7b97db5">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_4919d2ea-258b-443d-bcfb-65463932451f">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>B7</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>10</pixm:runwayEndDesignator>
+                  <pixm:description>Direct and corresponds to Leading Edge Fillet of B7</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>10_B7</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1380.61532</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45847 8.54405</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2000</pixm:tora>
+                      <pixm:toda uom="M">2060</pixm:toda>
+                      <pixm:asda uom="M">2000</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_0f18d423-be5c-4d39-8ba1-4fb14a624c70">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">30</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_cf750e83-4e92-469d-8480-034685004e91">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_bc06063d-69a3-4d80-843c-eca8ede84cee">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_49f09ece-12a8-46de-b59c-cffb14568a80">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>L7</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>10</pixm:runwayEndDesignator>
+                  <pixm:description>Trailing Edge Fillet L7</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>10_L7</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1380.704447</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45847918 8.543968794</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2008.1</pixm:tora>
+                      <pixm:toda uom="M">2068.1</pixm:toda>
+                      <pixm:asda uom="M">2008.1</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_026d3eb6-6de6-4225-9b73-b08c1608d476">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">30</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_df975d22-44dc-4554-ba8a-0bc3cdbd7630">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_61328840-effb-44e3-8f8a-03bcb4879c79">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_d81c4fc2-4f39-4c44-bcf3-21ff0761b88d">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>L7</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>10</pixm:runwayEndDesignator>
+                  <pixm:description>Direct and corresponds to CL intersection for L7</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>10_L7</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1379.622019</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45837 8.54543</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">1900</pixm:tora>
+                      <pixm:toda uom="M">1960</pixm:toda>
+                      <pixm:asda uom="M">1900</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_0b3c4644-ff79-4df9-aaa0-bc240a4b8418">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">30</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_f3829dcb-c25c-43ea-8dbb-5da444e87e63">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_1c4494c8-4989-47d7-841c-0a2d786c8f16">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_21b78ac9-b8c2-48b7-ab2c-2776b8c1fb13">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>10</pixm:runwayEndDesignator>
+                  <pixm:description>Trailing Edge Fillet TWY E North</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>10_E</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1385.512672</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45801881 8.550465091</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">1515.6</pixm:tora>
+                      <pixm:toda uom="M">1575.6</pixm:toda>
+                      <pixm:asda uom="M">1515.6</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_aebd1e9b-7962-4c4a-b256-5a4d1531d3fe">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">60</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_e94f0737-e734-4174-9fcc-51de38b63ae2">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_b0133818-b7bf-4e2b-a53d-90fcabe2c576">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_be1fbdb5-4e02-4f43-b207-9c4cb2d2cf69">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>10</pixm:runwayEndDesignator>
+                  <pixm:description>Direct</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>10_E</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1386.320589</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45798 8.55093</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">1480</pixm:tora>
+                      <pixm:toda uom="M">1540</pixm:toda>
+                      <pixm:asda uom="M">1480</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_1c6db0fd-e8e4-413a-81ed-7eb766639c1d">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">60</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_06b179b4-9bb7-46f6-90cb-c85ad62baedc">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_5f0a960f-83b2-4dcd-ac6a-74ea27297c84">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_76b6839f-09c6-4149-8fea-e36025b5dd2d">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>10</pixm:runwayEndDesignator>
+                  <pixm:description>Trailing Edge Fillet TWY E South</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>10_E</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1386.424983</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45798118 8.55099587</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">1475.4</pixm:tora>
+                      <pixm:toda uom="M">1535.4</pixm:toda>
+                      <pixm:asda uom="M">1475.4</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_92401c0b-4db1-44a7-a3bd-71b89d784917">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">120</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_c59c9196-7451-4ac0-bf4e-ba7fd422e2fb">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_75a6f252-8c75-40f4-bb58-0a638226610a">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_31d24b63-950a-44dd-88af-34f12fd0a68d">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>10</pixm:runwayEndDesignator>
+                  <pixm:description>Leading Edge Fillet TWY E North</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>10_E</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1387.130208</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45795216 8.551405091</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">1444.325</pixm:tora>
+                      <pixm:toda uom="M">1504.325</pixm:toda>
+                      <pixm:asda uom="M">1444.325</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_982b1160-d1f5-414c-a58d-438a21c56e62">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">60</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_4d481287-ebd7-433e-965e-c11be5558b01">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_11492872-9414-47fe-ad69-34e8f1d612f0">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_a8ffaa3a-6649-4f64-889f-38d982c8382d">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>10</pixm:runwayEndDesignator>
+                  <pixm:description>Trailing Edge Fillet TWY E South</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>10_E</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1388.565056</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45789303 8.552239083</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">1381.1</pixm:tora>
+                      <pixm:toda uom="M">1441.1</pixm:toda>
+                      <pixm:asda uom="M">1381.1</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_a842022a-6128-4d97-a897-b9d9f6323e12">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">120</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_cb54eccc-72e7-41c7-b919-418ad5ac51e3">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_4c94488d-a89b-4d99-bbfe-e63f6ef97f57">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_42d18504-ae13-47d3-9eaa-b6daef5a6289">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>A9</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>28</pixm:runwayEndDesignator>
+                  <pixm:description>CL Intersection with Runway</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>28_A9</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1416.919384</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.4566127 8.570274254</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2486.5</pixm:tora>
+                      <pixm:toda uom="M">2546.5</pixm:toda>
+                      <pixm:asda uom="M">2486.5</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_7f17bfa6-8005-4b4d-9c30-6d7915e93a52">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_fcc208ad-c222-4aab-9724-4b0acf1f70b0">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_a1b1e482-010e-4bc2-baea-77aeb2d414d0">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_257a7cb1-ec83-471a-a9f0-e95f9c780989">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>A9</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>28</pixm:runwayEndDesignator>
+                  <pixm:description>Leading Edge Fillet TWY A9</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>28_A9</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1415.554755</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45665738 8.569645559</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2438.8</pixm:tora>
+                      <pixm:toda uom="M">2498.8</pixm:toda>
+                      <pixm:asda uom="M">2438.8</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_e0c69ef2-26ee-4518-a6cd-7a1f4acd68ea">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_5963dced-feac-49f4-9f78-05111ecad9b1">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_3f408572-aeaf-44a5-a7c3-748e44fb0d42">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_2b4b3c55-0896-4fb5-9079-f84a779b3d6f">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>K</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>28</pixm:runwayEndDesignator>
+                  <pixm:description>Trailing Edge Fillet Twy K</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>28_K</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1404.465631</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45711616 8.563187178</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">1949.2</pixm:tora>
+                      <pixm:toda uom="M">2009.2</pixm:toda>
+                      <pixm:asda uom="M">1949.2</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_7dba9b70-9eaf-449a-b31a-105a7bb0014f">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_31db72b1-2e44-4fa4-80e4-256f0b466b7a">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_ab3c5d2f-a255-440e-bd5e-d27f8038786d">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_2aaa6cb4-dcf9-4e3b-b844-47378d3ebb1a">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>K</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>28</pixm:runwayEndDesignator>
+                  <pixm:description>Direct</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>28_K</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1403.752349</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45716 8.56255</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">1900</pixm:tora>
+                      <pixm:toda uom="M">1960</pixm:toda>
+                      <pixm:asda uom="M">1900</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_192dffc3-804f-4f29-89b0-ae450e61a2bb">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_e736e099-7f1a-495e-840a-d91ae98b06af">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_5797f4c1-146c-4d78-bf8a-11fa25c04dc2">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_82564861-436e-4b4f-9f90-85fcaf3b4829">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>K</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>28</pixm:runwayEndDesignator>
+                  <pixm:description>CL Intersection with Runway</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>28_K</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1404.019105</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45714495 8.562781716</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">1918.4</pixm:tora>
+                      <pixm:toda uom="M">1978.4</pixm:toda>
+                      <pixm:asda uom="M">1918.4</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_cd5bb45b-cf42-44ef-9352-34273797e352">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_a91432d0-cd97-4e83-9647-3a7e6c5a1ee4">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_37537b98-5387-4905-8e92-127df8f885f8">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_4546dc94-2d47-4302-9e29-bee1731c2dcf">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>K</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>28</pixm:runwayEndDesignator>
+                  <pixm:description>Leading Edge Fillet Twy K</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>28_K</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1403.32902</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45718947 8.562154618</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">1870.8</pixm:tora>
+                      <pixm:toda uom="M">1930.8</pixm:toda>
+                      <pixm:asda uom="M">1870.8</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_03e9df8c-54fd-4157-86f1-d5414e94340e">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_22931975-9ca4-4224-be61-af308eb21b04">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_21e46ce6-224b-4a34-a884-910ca9ce9723">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_1f4595cc-241e-4c35-b5d6-95d78e2d4366">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>H3</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>32</pixm:runwayEndDesignator>
+                  <pixm:description>CL Intersection between Twy H3 and Rwy 32, also corresponds to leading edge of Twy H3 Fillet</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>32_H3</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1401.758253</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.46197152 8.56353384</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">3197</pixm:tora>
+                      <pixm:toda uom="M">3257</pixm:toda>
+                      <pixm:asda uom="M">3197</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_4b7f71dd-3d0f-463c-a61d-e1f924ea0173">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>A</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">50</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_ab6ff3fe-f8b4-4452-8596-f9d539ed007e">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_de81ab29-71cb-4166-aa4e-d409685923f1">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_a83145cb-6cc5-4479-af51-89b7e51ec6ad">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>H3</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>32</pixm:runwayEndDesignator>
+                  <pixm:description>Trailing edge fillet of Twy H3</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>32_H3</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1402.542</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.46168855 8.563919797</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">3240</pixm:tora>
+                      <pixm:toda uom="M">3300</pixm:toda>
+                      <pixm:asda uom="M">3240</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_b2cd6503-8a00-4158-b707-066ab4813849">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>A</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">50</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_e6802743-9c53-435f-a58a-e476d35bf9bb">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_903ab9da-9099-4a1b-a35d-cc5e0c9d1618">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_6ab68360-9739-47a2-86d2-c4027bd6b803">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>H2</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>32</pixm:runwayEndDesignator>
+                  <pixm:description>Direct, also corresponds to CL intersection</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>32_H2</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1392.6996</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.46525307 8.559057409</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2700</pixm:tora>
+                      <pixm:toda uom="M">2760</pixm:toda>
+                      <pixm:asda uom="M">2700</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_1bf3dd0a-c110-4094-9fa2-88bd0fc9b083">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">50</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_90b1f358-06d2-4079-867c-75d2b67553b6">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_e99ea971-3ad4-4510-8dfd-101836cb4151">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_d455f59e-366c-4e6d-8d3d-13320e320e92">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>H2</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>32</pixm:runwayEndDesignator>
+                  <pixm:description>Trailing edge fillet of Twy H2</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>32_H2</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1394.713647</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.46452403 8.560051976</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2810.5</pixm:tora>
+                      <pixm:toda uom="M">2870.5</pixm:toda>
+                      <pixm:asda uom="M">2810.5</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_4c2cac35-35a2-4658-a267-0bb89ed1c8ca">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">30</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_7e1ce5a4-9785-4d48-b570-19be4a00aec5">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_36567524-e8c1-456c-bcd8-f7023af19e34">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_ea1ede30-8b64-4f86-abc6-3d8fb438735f">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>H2</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>32</pixm:runwayEndDesignator>
+                  <pixm:description>Leading Edge Fillet of Twy H2</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>32_H2</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1392.110879</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.4654667 8.558765958</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2667.7</pixm:tora>
+                      <pixm:toda uom="M">2727.7</pixm:toda>
+                      <pixm:asda uom="M">2667.7</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_d188dc8a-6db0-47dd-a05f-f0806774239a">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">30</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_8021870c-909b-4f60-aaef-dd7c13787532">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_307ab28f-8d2f-41c1-be6f-8e981b3e4c1d">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_060c043a-87cb-463e-9170-d8c852e5d430">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>H1</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>32</pixm:runwayEndDesignator>
+                  <pixm:description>Direct</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>32_H1</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1385.408933</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.46789385 8.555454488</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2300</pixm:tora>
+                      <pixm:toda uom="M">2360</pixm:toda>
+                      <pixm:asda uom="M">2300</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_e7fb4e14-2f20-4ae6-a213-56cf0baf57dd">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">30</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_591582f9-db9e-4d0d-96ca-2af5c89dc001">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_c5b8d4e4-78e4-45ae-a985-6f5502178652">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_5b385772-b731-4b2d-b319-78e6c033d546">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>H1</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>32</pixm:runwayEndDesignator>
+                  <pixm:description>Trailing edge fillet of Twy H1</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>32_H1</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1389.214661</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.46651552 8.557335053</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2508.8</pixm:tora>
+                      <pixm:toda uom="M">2568.8</pixm:toda>
+                      <pixm:asda uom="M">2508.8</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_f85295d0-0839-465a-bed7-44ec922d4b1c">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">30</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_dfad60d7-a1ff-466d-9882-7e7bfbc246fa">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_6dcb1952-1f6c-4240-b81f-5cf70069c21e">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_a3205a54-fb3c-489e-9f38-6bea2fe88b03">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>H1</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>32</pixm:runwayEndDesignator>
+                  <pixm:description>CL Intersection between Twy H1 and Rwy 32</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>32_H1</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1387.233423</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.46723298 8.556355133</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2400.1</pixm:tora>
+                      <pixm:toda uom="M">2460.1</pixm:toda>
+                      <pixm:asda uom="M">2400.1</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_91bfedeb-a885-4ed2-95dc-3647cecf365e">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">30</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_fd1fdbb6-6339-407a-943b-74592ccd9737">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_06f3e962-e415-4b4b-998b-3b3006d5898f">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_01998be9-567e-40c4-a41d-9cbb6f47177f">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>H1</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>32</pixm:runwayEndDesignator>
+                  <pixm:description>Leading Edge Fillet of Twy H1</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>32_H1</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1386.79416</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.46739148 8.556139931</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2376</pixm:tora>
+                      <pixm:toda uom="M">2436</pixm:toda>
+                      <pixm:asda uom="M">2376</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_ea38fe57-8c87-4340-8fd4-7ebd115df36d">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">30</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_3ca9de3d-9fb9-4e74-afed-0e682a4d471b">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_5d2cb223-0777-4cde-b7cb-1ae0df67cc61">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_01bd141f-7b25-4bc5-99b2-f9d80ff92e80">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E1</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>16</pixm:runwayEndDesignator>
+                  <pixm:description>CL Intersection Between Twy E1 and Rwy 16</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>16_E1</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1389.322271</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.47549776 8.536085035</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">3673.5</pixm:tora>
+                      <pixm:toda uom="M">3733.5</pixm:toda>
+                      <pixm:asda uom="M">3673.5</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_33cf716a-37ed-427a-b9a2-b091089ff876">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">45</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_fb26b307-17e2-41cd-8f91-1ebb79b43757">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_498adc41-f050-49a2-9160-2401091cda70">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_40f77fff-eaa4-4bb0-97c6-dd3f935cbef8">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E2</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>16</pixm:runwayEndDesignator>
+                  <pixm:description>Leading Edge Fillet of Twy E2</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>16_E2</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1388.497488</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.47523513 8.536265976</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">3641.25</pixm:tora>
+                      <pixm:toda uom="M">3701.25</pixm:toda>
+                      <pixm:asda uom="M">3641.25</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_041309d1-0182-4d53-8a55-fe530a26b7ff">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_e0dcba9a-5c14-44e2-aa83-f723636deb78">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_b726fe7b-fcf1-4d77-9f65-d3a6b161fe9a">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_4dd46ca6-a3a6-463c-b759-3247aa6e5144">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E3</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>16</pixm:runwayEndDesignator>
+                  <pixm:description>Direct</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>16_E3</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1374.6552</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.47000968 8.539865702</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">3000</pixm:tora>
+                      <pixm:toda uom="M">3060</pixm:toda>
+                      <pixm:asda uom="M">3000</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_1a22ed77-2327-48a9-8bdf-427da2ea9ed2">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_8acc35f9-10c8-4071-b78b-28e30ae0e025">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_0cf6415d-1dd9-4f55-a3bc-7434bd90159c">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_2c92b393-c073-417a-80f3-9e7231dc85bb">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E3</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>16</pixm:runwayEndDesignator>
+                  <pixm:description>Leading Edge of Fillet for Twy E3</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>16_E3</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1374.6552</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.4695624 8.540173788</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2925</pixm:tora>
+                      <pixm:toda uom="M">2985</pixm:toda>
+                      <pixm:asda uom="M">2925</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_7d70c2b5-6c49-433b-b2ce-071bdc93fa62">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_aaa59ea6-53b7-453c-b623-665744201e1c">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_7490cfbf-9bfe-42f9-91b0-26bbec559660">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_05076c60-13ad-46f0-9ebf-ae7414be32ee">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E9</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>34</pixm:runwayEndDesignator>
+                  <pixm:description>Centline Intersection with Twy E9</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>34_E9</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1385.097525</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.44567427 8.556621295</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">3686.1</pixm:tora>
+                      <pixm:toda uom="M">3746.1</pixm:toda>
+                      <pixm:asda uom="M">3686.1</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_935837fa-a0d2-4392-a9aa-3a7fe8a28599">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_bd7abb41-ea6e-48ed-8523-df43b344d102">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_af2bab6b-ad75-4f9f-ac01-0368bbb5aa74">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_ceab7eac-b581-4c3e-b1ce-bcd90d35570a">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E9</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>34</pixm:runwayEndDesignator>
+                  <pixm:description>Leading Edge of Fillet with Twy E9</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>34_E9</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1385.585148</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.44624038 8.556231672</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">3616.6</pixm:tora>
+                      <pixm:toda uom="M">3676.6</pixm:toda>
+                      <pixm:asda uom="M">3616.6</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_2220ecb8-24e5-4695-8bc6-40f1012f704f">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_1bf87975-54b0-450c-8664-434998dcf90d">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_ce80e377-8b20-4845-baf7-dc850ed7ddba">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_d5125f32-6567-4ac4-affa-9fcba9311dfe">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E8/R8</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>34</pixm:runwayEndDesignator>
+                  <pixm:description>Direct</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>34_E8_R8</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1387.7784</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.44906484 8.55428642</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">3270</pixm:tora>
+                      <pixm:toda uom="M">3330</pixm:toda>
+                      <pixm:asda uom="M">3270</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_f8e2826c-61f8-48f2-a195-6223da550708">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_4f21cace-230a-4a06-89a5-a104f83d2e50">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_cbfef107-d50f-476e-8d83-23737ba4feef">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_656c556b-85fb-4e2e-a184-cf9e3133dfcf">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E8/R8</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>34</pixm:runwayEndDesignator>
+                  <pixm:description>Trailing Edge of fillet for Twy R8/E8</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>34_E8_R8</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1387.663482</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.44865445 8.554569045</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">3320.379</pixm:tora>
+                      <pixm:toda uom="M">3380.379</pixm:toda>
+                      <pixm:asda uom="M">3320.379</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_75cc1e5a-1b57-4081-8f6e-5743a357b294">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_46be4aba-b0af-4d01-b6d7-c495dca815f9">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_05748672-142f-43fe-8999-80c63e343ffc">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_666df413-8fd3-46ef-9f02-b9fb700ce7c6">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E8/R8</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>34</pixm:runwayEndDesignator>
+                  <pixm:description>Centerline Intersection between Twy R8/E8 and Rwy 34</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>34_E8_R8</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1387.7784</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.44892537 8.55438247</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">3287.1</pixm:tora>
+                      <pixm:toda uom="M">3347.1</pixm:toda>
+                      <pixm:asda uom="M">3287.1</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_fd5f7680-d74c-4a81-a7ce-88ceae464b60">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_f11f83de-f0b4-402a-a3c8-cf8f89baf79b">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_e2a5c727-0513-4856-a5b2-d58367d5736a">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_b10921d2-c260-4c8b-9651-5d4a528635a2">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E8/R8</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>34</pixm:runwayEndDesignator>
+                  <pixm:description>Leading Edge of Fillet with Twy E8</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>34_E8_R8</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1387.7784</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.44906484 8.55428642</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">3270.19</pixm:tora>
+                      <pixm:toda uom="M">3330.19</pixm:toda>
+                      <pixm:asda uom="M">3270.19</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_a4318b55-86d7-432e-a9d1-86f119304efe">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">90</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_f69d86b3-d1c4-48c1-b2f3-0b6940df8c93">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_025a9bef-a029-40f4-bfeb-5a27ebee5dfc">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_71f19b71-35a7-427b-96c9-609f2aa49121">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E7/R7</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>34</pixm:runwayEndDesignator>
+                  <pixm:description>Direct, which is very close to the centerline intersection from Twy E7</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>34_E7_R7</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1384.459002</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45476956 8.550359847</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2570</pixm:tora>
+                      <pixm:toda uom="M">3060</pixm:toda>
+                      <pixm:asda uom="M">2570</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_3569decf-026a-4920-8059-c5875685167d">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">35</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_56505373-53ec-4052-9adf-7db837e202ec">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_6be5b80a-305f-478b-9121-0f6894b07d72">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_85e880e1-7645-4c1d-93d5-d9bf29c82e59">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E7/R7</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>34</pixm:runwayEndDesignator>
+                  <pixm:description>Trailing Edge of fillet for Twy R8/E8</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>34_E7_R7</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1385.552975</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45361502 8.551154578</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2711.715</pixm:tora>
+                      <pixm:toda uom="M">2771.715</pixm:toda>
+                      <pixm:asda uom="M">2711.715</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_b390a6fe-22dd-4820-98aa-2dfc5088d114">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">35</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_4bd84a35-f76b-4bfa-a9d5-1173c2a73ea9">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_c71455a6-0f07-4f15-9695-ca042fb8bdb4">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_09ff0a86-bf36-4974-a18c-c9da8fa5c8ae">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E7/R7</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>34</pixm:runwayEndDesignator>
+                  <pixm:description>Centerline Intersection with Twy E7</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>34_E7_R7</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1384.503776</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45472207 8.550392541</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2575.8</pixm:tora>
+                      <pixm:toda uom="M">2635.8</pixm:toda>
+                      <pixm:asda uom="M">2575.8</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_7167afa1-76ff-4470-8e7d-15b3209ad09a">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">35</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+  <gml:featureMember>
+    <pixm:DepartureIntersection gml:id="ext_uuid_6f5c47d8-109c-4b12-af95-bb5fba0e8eee">
+      <pixm:airportId>LSZH</pixm:airportId>
+      <pixm:timeSlice>
+          <pixm:DepartureIntersectionTimeSlice gml:id="ts_uuid_960d1ffa-d02b-47b0-bc82-fa8a721afe44">
+              <gml:validTime>
+                  <gml:TimePeriod gml:id="tp_uuid_e119ac7e-823f-4e1d-a750-1f9fa1c80d3b">
+                      <gml:beginPosition>2026-01-01T00:00:00Z</gml:beginPosition>
+                      <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+              </gml:validTime>
+              <pixm:interpretation>BASELINE</pixm:interpretation>
+  
+              <pixm:DepartureIntersection>
+                  <pixm:intersectionDesignator>E7/R7</pixm:intersectionDesignator>
+                  <pixm:runwayEndDesignator>34</pixm:runwayEndDesignator>
+                  <pixm:description>Leading Edge of Twy E6 Fillet</pixm:description>
+                  <aixm:runwayReferencePoint>
+                      <aixm:designator>34_E7_R7</aixm:designator>
+                      <aixm:role>START_RUN</aixm:role>
+                      <aixm:location>
+                          <aixm:elevation uom="FT">1384.127835</aixm:elevation>
+                          <aixm:verticalDatum>NAVD88</aixm:verticalDatum>
+                          <aixm:point>
+                              <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">47.45511979 8.55011876</gml:pos>
+                          </aixm:point>
+                      </aixm:location>
+                  </aixm:runwayReferencePoint>
+                  <pixm:associatedDeclaredDistances>
+                      <pixm:tora uom="M">2527.1</pixm:tora>
+                      <pixm:toda uom="M">2587.1</pixm:toda>
+                      <pixm:asda uom="M">2527.1</pixm:asda>
+                  </pixm:associatedDeclaredDistances>
+                  <aixm:surfaceProperties>
+                      <aixm:SurfaceCharacteristics gml:id="sch_uuid_390faf0d-8607-46ed-9fed-5058b01638a2">
+                          <aixm:classPCN>875</aixm:classPCN>
+                          <aixm:pavementTypePCN>FLEXIBLE</aixm:pavementTypePCN>
+                          <aixm:pavementSubgradePCN>B</aixm:pavementSubgradePCN>
+                          <aixm:maxTyrePressurePCN>W</aixm:maxTyrePressurePCN>
+                          <aixm:evaluationMethodPCN>TECH</aixm:evaluationMethodPCN>
+                      </aixm:SurfaceCharacteristics>
+                  </aixm:surfaceProperties>
+                  <pixm:entryAngle uom="DEG">35</pixm:entryAngle>
+              </pixm:DepartureIntersection>
+          </pixm:DepartureIntersectionTimeSlice>
+      </pixm:timeSlice>
+    </pixm:DepartureIntersection>
+  </gml:featureMember>
+</gml:FeatureCollection>
