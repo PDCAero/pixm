@@ -20,6 +20,6 @@ Keep this file up to date whenever schema files are added, split, renamed or mov
 |---|---|
 | GML 3.2 | `http://schemas.opengis.net/gml/3.2.1/gml.xsd` |
 | ISO 19139 gmd | `http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd` |
-| AIXM 5.1.1 | Currently imported for `aixm:RunwayDirectionPropertyType` only; scheduled for removal (see `docs/changes/known-defects.md`). |
+| AIXM 5.1.1 | `https://aixm.aero/schema/5.1.1/AIXM_Features.xsd`: imported for `aixm:RunwayDirectionPropertyType` only; scheduled for removal (see `docs/changes/known-defects.md`). |
 
 For offline development, `python tools/fetch_schemas.py` caches these in `.schema-cache/` (git-ignored).

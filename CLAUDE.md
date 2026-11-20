@@ -45,9 +45,6 @@ conflicts with this section, this section wins.
 
 ### 3.1 Status
 - PIXM version: **0.5 (pre-release)**. Namespace: `http://www.pixm.aero/schema/0.5`, prefix `pixm:`.
-- Until the `repo-layout-0.5` change lands, the schema still uses
-  `http://www.pixm.aero/schema/0.1` in a flat `schema/` folder (known defects
-  L1, L5). Remove this note when that change is done.
 - Until 1.0, breaking changes are permitted but every one is recorded in the
   change log (§4.5). The deprecation process (§6.4) applies from 1.0 onwards.
 

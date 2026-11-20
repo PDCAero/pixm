@@ -3,20 +3,10 @@
 Verified against the schema and examples on 2026-11-19. Fixed as a dedicated
 task (CLAUDE.md §4.3); remove each item when fixed and log it in `CHANGELOG.md`.
 
-## Handled by the layout move (`repo-layout-0.5` branch)
-| # | Defect | Where |
-|---|---|---|
-| L1 | Namespace `…/schema/0.1` to change to `…/schema/0.5` (schema and all examples) | all schema files, examples |
-| L2 | Example 3 files use a different namespace, `http://www.pixm.aero/pixm/1.0` | `pixm_landing_exits.xml`, `pixm_departure_intersections.xml` |
-| L3 | Example `schemaLocation`s point to `PIXM_Features.XSD` as if in the same folder; one uses a local GML path | all examples |
-| L4 | Folder name contains `&` | `examples/Example 3 - Landing Exits & Departure Ints` |
-| L5 | Feature file has an upper-case extension | `PIXM_Features.XSD` → `PIXM_Features.xsd` |
-| L6 | README refers to `schemas/` instead of `schema/` | `README.md` |
-
 ## Schema (`known-defects` branch)
 | # | Defect | Where | Needs CCB? |
 |---|---|---|---|
-| S1 | AIXM 5.1.1 imported (via a path outside the repo) for one type only; replace with a PIXM reference type and remove the import | `PIXM_Features`, property `aixmRunway` | Structure (open.md #6) |
+| S1 | AIXM 5.1.1 imported for one type only; replace with a PIXM reference type and remove the import | `PIXM_Features`, property `aixmRunway` | Structure (open.md #6) |
 | S2 | Abstract time-slice element named `AbstractPIXMTimeSliceType` (element with `Type` suffix); referenced by all 61 time-slice `substitutionGroup`s | `PIXM_AbstractGML_ObjectTypes`, `PIXM_Features` | No (0.x rename) |
 | S3 | `Contamination` has a time-slice type but no feature type | `PIXM_Features` | Yes |
 | S4 | Top-level element `PerformanceProfile` has no `substitutionGroup` | `PIXM_Features` | No |
@@ -38,3 +28,4 @@ task (CLAUDE.md §4.3); remove each item when fixed and log it in `CHANGELOG.md`
 | E2 | Not well-formed: closing tag mismatch at line 111 | `examples/temporal_example.xml` |
 | E3 | AIXM elements embedded directly in PIXM content (`aixm:runwayReferencePoint` etc.) | `pixm_departure_intersections.xml` |
 | E4 | Headers lack the illustrative-data statement and PIXM version | all examples |
+| E5 | Uses features `LandingExit` and `DepartureIntersection`, which do not exist in the schema | `examples/Example 3 - Landing Exits and Departure Ints/` |
