@@ -4,4 +4,5 @@ One line per change to the schema or examples. Format: `docs/process/ccb-process
 
 ## 0.5 (unreleased)
 
-_No schema or example changes recorded yet. Governance baseline adopted: DEC-0001._
+### 2026-11-19 — Governance baseline (DEC-0001)
+- CHANGE  PIXM_DataTypes: `TextSettingBaseType` maxLength 80 added. Compat: breaking.
