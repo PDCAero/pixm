@@ -20,6 +20,8 @@ task (CLAUDE.md §4.3); remove each item when fixed and log it in `CHANGELOG.md`
 | S12 | Documentation almost absent (6 `xs:documentation` across all files) | all | No (fix on touch; bulk pass optional) |
 | S13 | Feature types named `…Extension` that are not extensions | `AircraftConfigurationExtension`, `LandingAircraftConfigurationExtension` | Yes (open.md #7) |
 | S14 | 69 properties mandatory (`minOccurs="1"`) against the optional-by-default principle | `PIXM_Features` | Yes (open.md #8) |
+| S15 | `timeSlice` is typed directly as the time-slice type; AIXM 5.1.1 (and all examples) use a `…TimeSlicePropertyType` wrapper containing the `…TimeSlice` element. Main cause of example validation failures | `PIXM_Features` (all 61 features) | Yes (open.md #10) |
+| S16 | Abstract time-slice element is not in the `gml:AbstractTimeSlice` substitution group (AIXM's is) | `PIXM_AbstractGML_ObjectTypes` | With S15 |
 
 ## Examples (`known-defects` branch)
 | # | Defect | Where |
@@ -29,3 +31,7 @@ task (CLAUDE.md §4.3); remove each item when fixed and log it in `CHANGELOG.md`
 | E3 | AIXM elements embedded directly in PIXM content (`aixm:runwayReferencePoint` etc.) | `pixm_departure_intersections.xml` |
 | E4 | Headers lack the illustrative-data statement and PIXM version | all examples |
 | E5 | Uses features `LandingExit` and `DepartureIntersection`, which do not exist in the schema | `examples/Example 3 - Landing Exits and Departure Ints/` |
+| E6 | `gml:id` values contain colons (`urn:uuid:obs-…`); `gml:id` must be an NCName | Example 1 `takeoffRequest-28R_*.xml`, `takeoffRequest_01R_*.xml` |
+| E7 | Feature properties placed directly on the feature (no time slice), and time slices / `obstacleSet` placed directly in `gml:featureMember` | `zrh_phased_obstacles.xml`; `obstacleSet` in Example 1 requests |
+| E8 | Time slices have no `pixm:interpretation`, which the schema requires | all examples |
+| E9 | All 20 examples fail validation (523 errors on 2026-11-20); E2, E5–E8 and S15 account for most | `python tools/validate.py` |
