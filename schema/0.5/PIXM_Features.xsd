@@ -1,12 +1,12 @@
 <?xml  version='1.0' encoding='utf-8' ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:aixm="http://www.aixm.aero/schema/5.1.1" xmlns:gml="http://www.opengis.net/gml/3.2"
-	targetNamespace="http://www.pixm.aero/schema/0.1"
-	xmlns="http://www.pixm.aero/schema/0.1"
-	xmlns:pixm="http://www.pixm.aero/schema/0.1"
+	targetNamespace="http://www.pixm.aero/schema/0.5"
+	xmlns="http://www.pixm.aero/schema/0.5"
+	xmlns:pixm="http://www.pixm.aero/schema/0.5"
 	elementFormDefault="qualified"
 	version="0.5">
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
-	<xs:import namespace="http://www.aixm.aero/schema/5.1.1" schemaLocation="../../schema/xsd/aixm/AIXM_Features.xsd"/>
+	<xs:import namespace="http://www.aixm.aero/schema/5.1.1" schemaLocation="https://aixm.aero/schema/5.1.1/AIXM_Features.xsd"/>
 	<xs:include schemaLocation="PIXM_Codelists.xsd"/>
 	<xs:include schemaLocation="PIXM_DataTypes.xsd"/>
 	<xs:include schemaLocation="PIXM_Measures.xsd"/>

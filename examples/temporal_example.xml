@@ -3,8 +3,8 @@
   xmlns:gml="http://www.opengis.net/gml/3.2"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  xmlns:pixm="http://www.pixm.aero/schema/0.1"
-  xsi:schemaLocation="http://www.opengis.net/gml/3.2 schemas/gml/3.2.1/gml.xsd http://www.pixm.aero/schema/0.1 PIXM_Features.XSD">
+  xmlns:pixm="http://www.pixm.aero/schema/0.5"
+  xsi:schemaLocation="http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.pixm.aero/schema/0.5 ../schema/0.5/PIXM_Features.xsd">
 
   <gml:featureMember>
     <pixm:TakeoffRequest gml:id="to-req-01R">
