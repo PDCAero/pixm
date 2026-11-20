@@ -779,6 +779,17 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<!-- Free-text setting value; recommended values are listed in the corresponding Code*BaseType in PIXM_Codelists.xsd -->
+	<xs:simpleType name="TextSettingBaseType">
+		<xs:restriction base="pixm:Character2Type"/>
+	</xs:simpleType>
+	<xs:complexType name="TextSettingType">
+		<xs:simpleContent>
+			<xs:extension base="pixm:TextSettingBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="TextSIDSTARDesignatorBaseType">
 		<xs:restriction base="pixm:Character1Type">
 			<xs:maxLength value="7"/>

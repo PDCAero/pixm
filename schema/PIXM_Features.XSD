@@ -1006,78 +1006,78 @@
 	<!-- Property group for TakeoffAircraftConfiguration -->
 	<xs:group name="AircraftConfigurationPropertyGroup">
 		<xs:sequence>
-			<xs:element name="ahrsStatus" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="airConditioningECSBleed" type="pixm:CodeACorECSBleedType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="alternateBraking" type="pixm:CodeNumInopType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="antiIceDeIce" type="pixm:CodeAntiIceDeIceSettingType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="antiIceDeiceFluid" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="antiSkid" type="pixm:CodeAntiSkidSettingType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="antiSkidAutobrake" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="appClimbFlapSetting" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="appClimbSlatPosition" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ahrsStatus" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="airConditioningECSBleed" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="alternateBraking" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="antiIceDeIce" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="antiIceDeiceFluid" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="antiSkid" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="antiSkidAutobrake" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="appClimbFlapSetting" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="appClimbSlatPosition" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="apu" type="pixm:CodeOnOffType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="apuDoorPosition" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="apuDoorPosition" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="autoBrakes" type="pixm:CodeOnOffType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="autoBrakesCustomSetting" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="availableBleedSources" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="brakeCoolingFans" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="autoBrakesCustomSetting" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="availableBleedSources" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="brakeCoolingFans" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="brakeEnergy" type="pixm:ValBrakeEnergyType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="brakeEnergyChoice" type="pixm:CodeBrakeEnergyChoiceType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="centerGearBrakesInop" type="pixm:CodeNumInopType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="brakeEnergyChoice" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="centerGearBrakesInop" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="centerMainGearPositionBeforeTakeoff" type="pixm:CodeLandingGearPositionType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="differentialFlapSetting" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="differentialFlapSetting" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="dragIndex" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="engineDrivenPump" type="pixm:CodeEngineDrivenPumpInopType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="engineFailureWarningSystem" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="engineIntermix" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="fanAirValve" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="finalClimbACorECS" type="pixm:CodeACorECSBleedType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="flapsFault" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="flapSlatEnhancements" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="flightDirector" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="engineDrivenPump" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="engineFailureWarningSystem" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="engineIntermix" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="fanAirValve" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="finalClimbACorECS" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="flapsFault" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="flapSlatEnhancements" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="flightDirector" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="fmsConfiguration" type="xs:integer" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="fuelTankPump" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="fuelTankPump" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="groundIdle" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="groundSpoilers" type="pixm:CodeGroundSpoilerSettingType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="hydraulicPump" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="groundSpoilers" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="hydraulicPump" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="inflightIcing" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="krugerFlaps" type="pixm:CodeNumInopType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="landingFlapSetting" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="krugerFlaps" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="landingFlapSetting" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="landingGearPosition" type="pixm:CodeLandingGearPositionType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="landingLightsAutoRetractInop" type="pixm:CodeNumInopType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="landingSlatPosition" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="landingLightsAutoRetractInop" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="landingSlatPosition" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="landingSpeedBrakesField" type="pixm:CodeOnOffType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="landingSpeedBrakesWAT" type="pixm:CodeOnOffType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="lgAutoPreArm" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="mainBrakeConfiguration" type="pixm:CodeBrakesConfigurationType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="lgAutoPreArm" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="mainBrakeConfiguration" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="mainGearPositionAfterFirstSeg" type="pixm:CodeLandingGearPositionType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="mainNoseBrakesConfig" type="pixm:CodeNumInopType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="maxTakeoffFlapSetting" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="minTakeoffFlapSetting" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="mainNoseBrakesConfig" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="maxTakeoffFlapSetting" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="minTakeoffFlapSetting" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="noseGearPositionAfterFirstSeg" type="pixm:CodeLandingGearPositionType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="noseWheelSteering" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="noseWheelSteering" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="oeiFerryFlight" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="oeiLandingFlap" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="powerManagementSystem" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="rudderActuator" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="semiLeveredGear" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="slatFlapOptimizationChoice" type="pixm:CodeSlatFlapOptimizationType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="slatsFault" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="oeiLandingFlap" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="powerManagementSystem" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="rudderActuator" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="semiLeveredGear" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="slatFlapOptimizationChoice" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="slatsFault" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="spareEngineCarriage" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="speedBrakes" type="pixm:CodeOnOffType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="startOfTakeoffThrust" type="pixm:CodeStartTakeoffThrustType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="tailskidConfig" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="takeoffFlapPosition" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="takeoffSlatPosition" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="thrustReverseConfig" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="thrustReverseCredit" type="pixm:CodeThrustReverseSettingType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="thrustReverseLevel" type="pixm:CodeThrustReverseLevelType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="startOfTakeoffThrust" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="tailskidConfig" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="takeoffFlapPosition" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="takeoffSlatPosition" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="thrustReverseConfig" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="thrustReverseCredit" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="thrustReverseLevel" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="thrustReverserDelay" type="pixm:ValDurationType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="tirePressure" type="pixm:ValPressureType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="tireSpeed" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="tireType" type="pixm:CodeTireTypeType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="tireType" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="vortexDissipators" type="pixm:CodeOnOffType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="wheelTachometers" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="wheelTachometers" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="wingGearPositionAfterFirstSeg" type="pixm:CodeLandingGearPositionType" minOccurs="0" maxOccurs="1"/>
 			<!-- Extension and custom items -->
 			<xs:element name="customConfigurationItem" type="pixm:CustomAircraftConfigurationItemType" minOccurs="0" maxOccurs="unbounded"/>
@@ -1312,12 +1312,12 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
 				<xs:sequence>
-					<xs:element name="approachAC" type="pixm:CodeACorECSBleedType" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="approachAntiIce" type="pixm:CodeAntiIceDeIceSettingType" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="approachFlapPosition" type="pixm:Character3Type" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="approachThrustPower" type="pixm:CodeNormalSelectedType" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="fuelJettisonConfig" type="xs:string" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="landingFlapPosition" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="approachAC" type="pixm:TextSettingType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="approachAntiIce" type="pixm:TextSettingType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="approachFlapPosition" type="pixm:TextSettingType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="approachThrustPower" type="pixm:TextSettingType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="fuelJettisonConfig" type="pixm:TextSettingType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="landingFlapPosition" type="pixm:TextSettingType" minOccurs="1" maxOccurs="1"/>
 					<xs:element name="zeroFuelWeight" type="pixm:ValWeightType" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
@@ -1363,8 +1363,8 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
 				<xs:sequence>
-					<xs:element name="propAutoFeather" type="pixm:CodeEquipmentConditionType" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="propRPMforNoiseSetting" type="pixm:CodeNormalSelectedType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="propAutoFeather" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="propRPMforNoiseSetting" type="pixm:TextSettingType" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="propRPMValue" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
