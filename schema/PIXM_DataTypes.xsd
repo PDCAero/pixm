@@ -781,7 +781,9 @@
 	</xs:complexType>
 	<!-- Free-text setting value; recommended values are listed in the corresponding Code*BaseType in PIXM_Codelists.xsd -->
 	<xs:simpleType name="TextSettingBaseType">
-		<xs:restriction base="pixm:Character2Type"/>
+		<xs:restriction base="pixm:Character2Type">
+      <xs:maxLength value="80"/>
+    </xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="TextSettingType">
 		<xs:simpleContent>
