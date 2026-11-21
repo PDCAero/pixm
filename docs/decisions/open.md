@@ -14,4 +14,5 @@ file and remove it from this list.
 | 7 | Rename `AircraftConfigurationExtension` / `LandingAircraftConfigurationExtension` (features, not extensions) | 2026-11-19 | |
 | 8 | Review of properties currently mandatory (`minOccurs="1"`, 69 in `PIXM_Features`) against the optional-by-default principle | 2026-11-19 | Multiplicity changes need CCB approval |
 | 9 | How PIXM time-slice interpretations are intended to be used | 2026-11-19 | For the modelling guide |
-| 10 | Time-slice structure: add AIXM-style `…TimeSlicePropertyType` wrappers to the schema, or remove the wrapper from the examples (known defect S15) | 2026-11-20 | Affects CLAUDE.md §3.4 |
+| 11 | Examples: replace the existing examples entirely with new compliant ones, or keep and fix them (known defect E9) | 2026-11-20 | Leaning to replace (CCB, 2026-11-20); to be decided on the examples task |
+| 12 | Feature vs object: which PIXM concepts are time-sliced features and which are objects without time slices (static or embedded data)? | 2026-11-20 | All 62 types are features today; `AbstractPIXMObjectType` exists but is unused; ~60 properties embed whole features. Objects cannot be sent alone as GML features (principle 4). Separate task |

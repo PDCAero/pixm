@@ -12,7 +12,7 @@
 	<xs:include schemaLocation="PIXM_Measures.xsd"/>
 	<xs:include schemaLocation="PIXM_AbstractGML_ObjectTypes.xsd"/>
 	
-	<xs:element name="ContaminationTimeSlice" type="pixm:ContaminationTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="ContaminationTimeSlice" type="pixm:ContaminationTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:complexType name="ContaminationTimeSliceType">
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
@@ -32,12 +32,25 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:ContaminationTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:ContaminationTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Contamination feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="ObstacleTimeSlice" type="pixm:ObstacleTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:complexType name="ContaminationTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Contamination time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:ContaminationTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="ObstacleTimeSlice" type="pixm:ObstacleTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:complexType name="ObstacleTimeSliceType">
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
@@ -58,15 +71,28 @@
         <xs:complexContent>
             <xs:extension base="pixm:AbstractPIXMFeatureType">
                 <xs:sequence>
-                    <xs:element name="timeSlice" type="pixm:VerticalStructureTimeSliceType" maxOccurs="unbounded"/>
+                    <xs:element name="timeSlice" type="pixm:VerticalStructureTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+                    	<xs:annotation>
+                    		<xs:documentation>A time slice of the Vertical Structure feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+                    	</xs:annotation>
+                    </xs:element>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
+<xs:complexType name="VerticalStructureTimeSlicePropertyType">
+	<xs:annotation>
+		<xs:documentation>A property that contains one Vertical Structure time slice. [AIXM 5.1.1]</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+		<xs:element ref="pixm:VerticalStructureTimeSlice" minOccurs="1" maxOccurs="1"/>
+	</xs:sequence>
+	<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+</xs:complexType>
 
 	<xs:element name="VerticalStructure" type="pixm:VerticalStructureType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 
-    <xs:element name="VerticalStructureTimeSlice" type="pixm:VerticalStructureTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+    <xs:element name="VerticalStructureTimeSlice" type="pixm:VerticalStructureTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 
     <xs:complexType name="VerticalStructureTimeSliceType">
         <xs:complexContent>
@@ -92,13 +118,26 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:ObstacleTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:ObstacleTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Obstacle feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="ObstacleTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Obstacle time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:ObstacleTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
-	<xs:element name="PerformanceObstacleTimeSlice" type="pixm:PerformanceObstacleTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="PerformanceObstacleTimeSlice" type="pixm:PerformanceObstacleTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:complexType name="PerformanceObstacleTimeSliceType">
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
@@ -121,13 +160,26 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:PerformanceObstacleTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:PerformanceObstacleTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Performance Obstacle feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="PerformanceObstacleTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Performance Obstacle time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:PerformanceObstacleTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
-	<xs:element name="PerformanceObstacleSetTimeSlice" type="pixm:PerformanceObstacleSetTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="PerformanceObstacleSetTimeSlice" type="pixm:PerformanceObstacleSetTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:complexType name="PerformanceObstacleSetTimeSliceType">
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
@@ -146,13 +198,26 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:PerformanceObstacleSetTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:PerformanceObstacleSetTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Performance Obstacle Set feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="PerformanceObstacleSetTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Performance Obstacle Set time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:PerformanceObstacleSetTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
-	<xs:element name="ObstacleAccountabilitySplayTimeSlice" type="pixm:ObstacleAccountabilitySplayTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="ObstacleAccountabilitySplayTimeSlice" type="pixm:ObstacleAccountabilitySplayTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:complexType name="ObstacleAccountabilitySplayTimeSliceType">
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
@@ -179,14 +244,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:ObstacleAccountabilitySplayTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:ObstacleAccountabilitySplayTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Obstacle Accountability Splay feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="ObstacleAccountabilitySplayTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Obstacle Accountability Splay time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:ObstacleAccountabilitySplayTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	
-	<xs:element name="PerformanceRunwayTimeSlice" type="pixm:PerformanceRunwayTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="PerformanceRunwayTimeSlice" type="pixm:PerformanceRunwayTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:complexType name="PerformanceRunwayTimeSliceType">
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
@@ -219,13 +297,26 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:PerformanceRunwayTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:PerformanceRunwayTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Performance Runway feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="PerformanceRunwayTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Performance Runway time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:PerformanceRunwayTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
-	<xs:element name="PerformanceProfilePointTimeSlice" type="pixm:PerformanceProfilePointTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="PerformanceProfilePointTimeSlice" type="pixm:PerformanceProfilePointTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:complexType name="PerformanceProfilePointTimeSliceType">
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
@@ -252,10 +343,23 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:PerformanceProfilePointTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:PerformanceProfilePointTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Performance Profile Point feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PerformanceProfilePointTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Performance Profile Point time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:PerformanceProfilePointTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
 	
 	<xs:element name="FlightPathTurnDefinition" type="pixm:FlightPathTurnDefinitionType" substitutionGroup="pixm:AbstractPIXMFeature"/> 	
@@ -263,13 +367,26 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:FlightPathTurnDefinitionTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:FlightPathTurnDefinitionTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Flight Path Turn Definition feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="FlightPathTurnDefinitionTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Flight Path Turn Definition time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:FlightPathTurnDefinitionTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
-	<xs:element name="FlightPathTurnDefinitionTimeSlice" type="pixm:FlightPathTurnDefinitionTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="FlightPathTurnDefinitionTimeSlice" type="pixm:FlightPathTurnDefinitionTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:complexType name="FlightPathTurnDefinitionTimeSliceType">
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
@@ -301,13 +418,26 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:FlightPathTurnDefinitionSetTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:FlightPathTurnDefinitionSetTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Flight Path Turn Definition Set feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="FlightPathTurnDefinitionSetTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Flight Path Turn Definition Set time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:FlightPathTurnDefinitionSetTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
-	<xs:element name="FlightPathTurnDefinitionSetTimeSlice" type="pixm:FlightPathTurnDefinitionSetTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="FlightPathTurnDefinitionSetTimeSlice" type="pixm:FlightPathTurnDefinitionSetTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:complexType name="FlightPathTurnDefinitionSetTimeSliceType">
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
@@ -322,7 +452,7 @@
 
 	
 	<!--Element for definition of PerformanceProfileSegment which could be a curve or line segment-->
-	<xs:element name="PerformanceProfileSegmentTimeSlice" type="pixm:PerformanceProfileSegmentTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="PerformanceProfileSegmentTimeSlice" type="pixm:PerformanceProfileSegmentTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:complexType name="PerformanceProfileSegmentTimeSliceType">
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
@@ -340,15 +470,28 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:PerformanceProfileSegmentTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:PerformanceProfileSegmentTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Performance Profile Segment feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="PerformanceProfileSegmentTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Performance Profile Segment time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:PerformanceProfileSegmentTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!--Next element is an object that indicates the obstacle clearance of a flight path over a specific obstacle
 	The object references an existing PerformanceObstacleType object-->
-	<xs:element name="PerformanceObstacleClearanceTimeSlice" type="pixm:PerformanceObstacleClearanceTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="PerformanceObstacleClearanceTimeSlice" type="pixm:PerformanceObstacleClearanceTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:complexType name="PerformanceObstacleClearanceTimeSliceType">
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
@@ -366,15 +509,28 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:PerformanceObstacleClearanceTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:PerformanceObstacleClearanceTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Performance Obstacle Clearance feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="PerformanceObstacleClearanceTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Performance Obstacle Clearance time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:PerformanceObstacleClearanceTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!--Next element for a Performance profile which is a collection of PerformanceProfilePoints and/or-->
 	<!--PerformanceProfileSegments-->
-	<xs:element name="PerformanceProfileTimeSlice" type="pixm:PerformanceProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="PerformanceProfileTimeSlice" type="pixm:PerformanceProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="PerformanceProfile" type="pixm:PerformanceProfileType"></xs:element>
 	<xs:complexType name="PerformanceProfileTimeSliceType">
 		<xs:complexContent>
@@ -397,15 +553,28 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:PerformanceProfileTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:PerformanceProfileTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Performance Profile feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="PerformanceProfileTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Performance Profile time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:PerformanceProfileTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Next object is a GeometricProfilePoint with simplified characteristics of distance and height above
 	reference, flight segment and a point ID-->
-	<xs:element name="GeometricProfilePointTimeSlice" type="pixm:GeometricProfilePointTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="GeometricProfilePointTimeSlice" type="pixm:GeometricProfilePointTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="GeometricProfilePoint" type="pixm:GeometricProfilePointType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="GeometricProfilePointTimeSliceType">
 		<xs:complexContent>
@@ -424,14 +593,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:GeometricProfilePointTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:GeometricProfilePointTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Geometric Profile Point feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="GeometricProfilePointTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Geometric Profile Point time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:GeometricProfilePointTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Next object is a GeometricProfileType for a simplifid 2D non-georefernced profile-->
-	<xs:element name="GeometricProfileTimeSlice" type="pixm:GeometricProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="GeometricProfileTimeSlice" type="pixm:GeometricProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="GeometricProfile" type="pixm:GeometricProfileType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	
 	<xs:complexType name="GeometricProfileTimeSliceType">
@@ -453,14 +635,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:GeometricProfileTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:GeometricProfileTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Geometric Profile feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="GeometricProfileTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Geometric Profile time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:GeometricProfileTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- AEO Takeoff Performance Profile -->
-	<xs:element name="AeoTakeoffPerformanceProfileTimeSlice" type="pixm:AeoTakeoffPerformanceProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="AeoTakeoffPerformanceProfileTimeSlice" type="pixm:AeoTakeoffPerformanceProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="AeoTakeoffPerformanceProfile" type="pixm:AeoTakeoffPerformanceProfileType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="AeoTakeoffPerformanceProfileTimeSliceType">
 		<xs:complexContent>
@@ -480,14 +675,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:AeoTakeoffPerformanceProfileTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:AeoTakeoffPerformanceProfileTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Aeo Takeoff Performance Profile feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="AeoTakeoffPerformanceProfileTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Aeo Takeoff Performance Profile time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:AeoTakeoffPerformanceProfileTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- AEO Flight Path Settings -->
-	<xs:element name="AeoFlightPathSettingsTimeSlice" type="pixm:AeoFlightPathSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="AeoFlightPathSettingsTimeSlice" type="pixm:AeoFlightPathSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="AeoFlightPathSettings" type="pixm:AeoFlightPathSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="AeoFlightPathSettingsTimeSliceType">
 		<xs:complexContent>
@@ -511,10 +719,23 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:AeoFlightPathSettingsTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:AeoFlightPathSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Aeo Flight Path Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AeoFlightPathSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Aeo Flight Path Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:AeoFlightPathSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
 	
 	<xs:element name="AeoClimbConstraint" type="pixm:AeoClimbConstraintType" substitutionGroup="pixm:AbstractPIXMFeature"/>
@@ -532,7 +753,7 @@
 	</xs:complexType>
 	
 	<!-- AEO Procedure -->
-	<xs:element name="AeoProcedureTimeSlice" type="pixm:AeoProcedureTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="AeoProcedureTimeSlice" type="pixm:AeoProcedureTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="AeoProcedure" type="pixm:AeoProcedureType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="AeoProcedureTimeSliceType">
 		<xs:complexContent>
@@ -550,14 +771,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:AeoProcedureTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:AeoProcedureTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Aeo Procedure feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="AeoProcedureTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Aeo Procedure time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:AeoProcedureTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Climb Gradient Compliance Check -->
-	<xs:element name="ClimbGradientComplianceCheckTimeSlice" type="pixm:ClimbGradientComplianceCheckTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="ClimbGradientComplianceCheckTimeSlice" type="pixm:ClimbGradientComplianceCheckTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="ClimbGradientComplianceCheck" type="pixm:ClimbGradientComplianceCheckType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="ClimbGradientComplianceCheckTimeSliceType">
 		<xs:complexContent>
@@ -574,14 +808,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:ClimbGradientComplianceCheckTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:ClimbGradientComplianceCheckTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Climb Gradient Compliance Check feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="ClimbGradientComplianceCheckTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Climb Gradient Compliance Check time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:ClimbGradientComplianceCheckTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Takeoff Aircraft Configuration Settings -->
-	<xs:element name="TakeoffAircraftConfigurationSettingsTimeSlice" type="pixm:TakeoffAircraftConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffAircraftConfigurationSettingsTimeSlice" type="pixm:TakeoffAircraftConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="TakeoffAircraftConfigurationSettings" type="pixm:TakeoffAircraftConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="TakeoffAircraftConfigurationSettingsTimeSliceType">
 		<xs:complexContent>
@@ -596,14 +843,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:TakeoffAircraftConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:TakeoffAircraftConfigurationSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Takeoff Aircraft Configuration Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="TakeoffAircraftConfigurationSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Takeoff Aircraft Configuration Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:TakeoffAircraftConfigurationSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Takeoff Environmental Settings -->
-	<xs:element name="TakeoffEnvironmentalSettingsTimeSlice" type="pixm:TakeoffEnvironmentalSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffEnvironmentalSettingsTimeSlice" type="pixm:TakeoffEnvironmentalSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="TakeoffEnvironmentalSettings" type="pixm:TakeoffEnvironmentalSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 
 	<xs:complexType name="TakeoffEnvironmentalSettingsTimeSliceType">
@@ -619,14 +879,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:TakeoffEnvironmentalSettingsTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:TakeoffEnvironmentalSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Takeoff Environmental Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="TakeoffEnvironmentalSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Takeoff Environmental Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:TakeoffEnvironmentalSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Takeoff CG Configuration Settings -->
-	<xs:element name="TakeoffCGConfigurationSettingsTimeSlice" type="pixm:TakeoffCGConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffCGConfigurationSettingsTimeSlice" type="pixm:TakeoffCGConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="TakeoffCGConfigurationSettings" type="pixm:TakeoffCGConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="TakeoffCGConfigurationSettingsTimeSliceType">
 		<xs:complexContent>
@@ -644,15 +917,28 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:TakeoffCGConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:TakeoffCGConfigurationSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Takeoff CGConfiguration Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="TakeoffCGConfigurationSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Takeoff CGConfiguration Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:TakeoffCGConfigurationSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Takeoff Output Adjustment Factors -->
 
-	<xs:element name="TakeoffOutputAdjustmentFactorsTimeSlice" type="pixm:TakeoffOutputAdjustmentFactorsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffOutputAdjustmentFactorsTimeSlice" type="pixm:TakeoffOutputAdjustmentFactorsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="TakeoffOutputAdjustmentFactors" type="pixm:TakeoffOutputAdjustmentFactorsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="TakeoffOutputAdjustmentFactorsTimeSliceType">
 		<xs:complexContent>
@@ -672,14 +958,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:TakeoffOutputAdjustmentFactorsTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:TakeoffOutputAdjustmentFactorsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Takeoff Output Adjustment Factors feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="TakeoffOutputAdjustmentFactorsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Takeoff Output Adjustment Factors time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:TakeoffOutputAdjustmentFactorsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Takeoff Thrust Configuration Settings -->
-	<xs:element name="TakeoffThrustConfigurationSettingsTimeSlice" type="pixm:TakeoffThrustConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffThrustConfigurationSettingsTimeSlice" type="pixm:TakeoffThrustConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="TakeoffThrustConfigurationSettings" type="pixm:TakeoffThrustConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="TakeoffThrustConfigurationSettingsTimeSliceType">
 		<xs:complexContent>
@@ -708,10 +1007,23 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:TakeoffThrustConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:TakeoffThrustConfigurationSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Takeoff Thrust Configuration Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TakeoffThrustConfigurationSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Takeoff Thrust Configuration Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:TakeoffThrustConfigurationSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
 
 	<xs:complexType name="ImprovedClimbRangeLimitsType">
@@ -734,7 +1046,7 @@
 	</xs:complexType>
 
 	<!-- Takeoff Speed Configuration Settings -->
-	<xs:element name="TakeoffSpeedConfigurationSettingsTimeSlice" type="pixm:TakeoffSpeedConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffSpeedConfigurationSettingsTimeSlice" type="pixm:TakeoffSpeedConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="TakeoffSpeedConfigurationSettings" type="pixm:TakeoffSpeedConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="TakeoffSpeedConfigurationSettingsTimeSliceType">
 		<xs:complexContent>
@@ -771,14 +1083,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:TakeoffSpeedConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:TakeoffSpeedConfigurationSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Takeoff Speed Configuration Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="TakeoffSpeedConfigurationSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Takeoff Speed Configuration Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:TakeoffSpeedConfigurationSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Takeoff Runway Settings -->
-	<xs:element name="TakeoffRunwaySettingsTimeSlice" type="pixm:TakeoffRunwaySettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffRunwaySettingsTimeSlice" type="pixm:TakeoffRunwaySettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="TakeoffRunwaySettings" type="pixm:TakeoffRunwaySettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="TakeoffRunwaySettingsTimeSliceType">
 		<xs:complexContent>
@@ -803,14 +1128,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:TakeoffRunwaySettingsTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:TakeoffRunwaySettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Takeoff Runway Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="TakeoffRunwaySettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Takeoff Runway Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:TakeoffRunwaySettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Takeoff Runway Result -->
-	<xs:element name="TakeoffRunwayResultTimeSlice" type="pixm:TakeoffRunwayResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffRunwayResultTimeSlice" type="pixm:TakeoffRunwayResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="TakeoffRunwayResult" type="pixm:TakeoffRunwayResultType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="TakeoffRunwayResultTimeSliceType">
 		<xs:complexContent>
@@ -835,14 +1173,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:TakeoffRunwayResultTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:TakeoffRunwayResultTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Takeoff Runway Result feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="TakeoffRunwayResultTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Takeoff Runway Result time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:TakeoffRunwayResultTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Takeoff Weight Limit Result -->
-	<xs:element name="TakeoffWeightLimitResultTimeSlice" type="pixm:TakeoffWeightLimitResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffWeightLimitResultTimeSlice" type="pixm:TakeoffWeightLimitResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="TakeoffWeightLimitResult" type="pixm:TakeoffWeightLimitResultType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="TakeoffWeightLimitResultTimeSliceType">
 		<xs:complexContent>
@@ -869,14 +1220,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:TakeoffWeightLimitResultTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:TakeoffWeightLimitResultTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Takeoff Weight Limit Result feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="TakeoffWeightLimitResultTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Takeoff Weight Limit Result time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:TakeoffWeightLimitResultTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Takeoff Brake Energy Result -->
-	<xs:element name="TakeoffBrakeEnergyResultTimeSlice" type="pixm:TakeoffBrakeEnergyResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffBrakeEnergyResultTimeSlice" type="pixm:TakeoffBrakeEnergyResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="TakeoffBrakeEnergyResult" type="pixm:TakeoffBrakeEnergyResultType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="TakeoffBrakeEnergyResultTimeSliceType">
 		<xs:complexContent>
@@ -895,14 +1259,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:TakeoffBrakeEnergyResultTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:TakeoffBrakeEnergyResultTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Takeoff Brake Energy Result feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="TakeoffBrakeEnergyResultTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Takeoff Brake Energy Result time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:TakeoffBrakeEnergyResultTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Thrust Setting Result -->
-	<xs:element name="ThrustSettingResultTimeSlice" type="pixm:ThrustSettingResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="ThrustSettingResultTimeSlice" type="pixm:ThrustSettingResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="ThrustSettingResult" type="pixm:ThrustSettingResultType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="ThrustSettingResultTimeSliceType">
 		<xs:complexContent>
@@ -929,14 +1306,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:ThrustSettingResultTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:ThrustSettingResultTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Thrust Setting Result feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="ThrustSettingResultTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Thrust Setting Result time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:ThrustSettingResultTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- OEI Takeoff Performance Profile -->
-	<xs:element name="OeiTakeoffPerformanceProfileTimeSlice" type="pixm:OeiTakeoffPerformanceProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="OeiTakeoffPerformanceProfileTimeSlice" type="pixm:OeiTakeoffPerformanceProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="OeiTakeoffPerformanceProfile" type="pixm:OeiTakeoffPerformanceProfileType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="OeiTakeoffPerformanceProfileTimeSliceType">
 		<xs:complexContent>
@@ -963,14 +1353,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:OeiTakeoffPerformanceProfileTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:OeiTakeoffPerformanceProfileTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Oei Takeoff Performance Profile feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="OeiTakeoffPerformanceProfileTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Oei Takeoff Performance Profile time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:OeiTakeoffPerformanceProfileTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- OEI Net Geometric Profile -->
-	<xs:element name="OeiNetGeometricProfileTimeSlice" type="pixm:OeiNetGeometricProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="OeiNetGeometricProfileTimeSlice" type="pixm:OeiNetGeometricProfileTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="OeiNetGeometricProfile" type="pixm:OeiNetGeometricProfileType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="OeiNetGeometricProfileTimeSliceType">
 		<xs:complexContent>
@@ -988,10 +1391,23 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:OeiNetGeometricProfileTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:OeiNetGeometricProfileTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Oei Net Geometric Profile feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="OeiNetGeometricProfileTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Oei Net Geometric Profile time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:OeiNetGeometricProfileTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
 
 	<xs:complexType name="CustomAircraftConfigurationItemType">
@@ -1110,7 +1526,7 @@
 	</xs:group>
 
 	<!-- Takeoff Request -->
-	<xs:element name="TakeoffRequestTimeSlice" type="pixm:TakeoffRequestTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffRequestTimeSlice" type="pixm:TakeoffRequestTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="TakeoffRequest" type="pixm:TakeoffRequestType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="TakeoffRequestTimeSliceType">
 		<xs:complexContent>
@@ -1144,14 +1560,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:TakeoffRequestTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:TakeoffRequestTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Takeoff Request feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="TakeoffRequestTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Takeoff Request time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:TakeoffRequestTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- Takeoff Response -->
-	<xs:element name="TakeoffResponseTimeSlice" type="pixm:TakeoffResponseTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="TakeoffResponseTimeSlice" type="pixm:TakeoffResponseTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="TakeoffResponse" type="pixm:TakeoffResponseType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="TakeoffResponseTimeSliceType">
 		<xs:complexContent>
@@ -1191,10 +1620,23 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:TakeoffResponseTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:TakeoffResponseTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Takeoff Response feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TakeoffResponseTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Takeoff Response time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:TakeoffResponseTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
 
 	<!-- Flight Path Configuration Settings -->
@@ -1205,7 +1647,7 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:element name="FlightPathConfigurationSettingsTimeSlice" type="pixm:FlightPathConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="FlightPathConfigurationSettingsTimeSlice" type="pixm:FlightPathConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="FlightPathConfigurationSettings" type="pixm:FlightPathConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="FlightPathConfigurationSettingsTimeSliceType">
 		<xs:complexContent>
@@ -1235,13 +1677,26 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:FlightPathConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:FlightPathConfigurationSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Flight Path Configuration Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="FlightPathConfigurationSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Flight Path Configuration Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:FlightPathConfigurationSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	<!-- AircraftConfigurationExtension -->
-	<xs:element name="AircraftConfigurationExtensionTimeSlice" type="pixm:AircraftConfigurationExtensionTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="AircraftConfigurationExtensionTimeSlice" type="pixm:AircraftConfigurationExtensionTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="AircraftConfigurationExtension" type="pixm:AircraftConfigurationExtensionType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="AircraftConfigurationExtensionTimeSliceType">
 		<xs:complexContent>
@@ -1254,14 +1709,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:AircraftConfigurationExtensionTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:AircraftConfigurationExtensionTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Aircraft Configuration Extension feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="AircraftConfigurationExtensionTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Aircraft Configuration Extension time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:AircraftConfigurationExtensionTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- AircraftConfigurationItem -->
-	<xs:element name="AircraftConfigurationItemTimeSlice" type="pixm:AircraftConfigurationItemTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="AircraftConfigurationItemTimeSlice" type="pixm:AircraftConfigurationItemTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="AircraftConfigurationItem" type="pixm:AircraftConfigurationItemType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="AircraftConfigurationItemTimeSliceType">
 		<xs:complexContent>
@@ -1279,14 +1747,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:AircraftConfigurationItemTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:AircraftConfigurationItemTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Aircraft Configuration Item feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="AircraftConfigurationItemTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Aircraft Configuration Item time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:AircraftConfigurationItemTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- ExternalInstallationItem -->
-	<xs:element name="ExternalInstallationItemTimeSlice" type="pixm:ExternalInstallationItemTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="ExternalInstallationItemTimeSlice" type="pixm:ExternalInstallationItemTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="ExternalInstallationItem" type="pixm:ExternalInstallationItemType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="ExternalInstallationItemTimeSliceType">
 		<xs:complexContent>
@@ -1299,14 +1780,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:ExternalInstallationItemTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:ExternalInstallationItemTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the External Installation Item feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="ExternalInstallationItemTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one External Installation Item time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:ExternalInstallationItemTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	<!-- FuelDumpSettings -->
-	<xs:element name="FuelDumpSettingsTimeSlice" type="pixm:FuelDumpSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="FuelDumpSettingsTimeSlice" type="pixm:FuelDumpSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="FuelDumpSettings" type="pixm:FuelDumpSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="FuelDumpSettingsTimeSliceType">
 		<xs:complexContent>
@@ -1327,14 +1821,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:FuelDumpSettingsTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:FuelDumpSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Fuel Dump Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="FuelDumpSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Fuel Dump Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:FuelDumpSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- MELCDLItem -->
-	<xs:element name="MELCDLItemTimeSlice" type="pixm:MELCDLItemTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="MELCDLItemTimeSlice" type="pixm:MELCDLItemTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="MELCDLItem" type="pixm:MELCDLItemType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="MELCDLItemTimeSliceType">
 		<xs:complexContent>
@@ -1350,14 +1857,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:MELCDLItemTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:MELCDLItemTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the MELCDLItem feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="MELCDLItemTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one MELCDLItem time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:MELCDLItemTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- PropellerConfigurationSettings -->
-	<xs:element name="PropellerConfigurationSettingsTimeSlice" type="pixm:PropellerConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="PropellerConfigurationSettingsTimeSlice" type="pixm:PropellerConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="PropellerConfigurationSettings" type="pixm:PropellerConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="PropellerConfigurationSettingsTimeSliceType">
 		<xs:complexContent>
@@ -1374,13 +1894,26 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:PropellerConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:PropellerConfigurationSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Propeller Configuration Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="PropellerConfigurationSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Propeller Configuration Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:PropellerConfigurationSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	<!-- AircraftConfigurationExtension -->
-	<xs:element name="LandingAircraftConfigurationExtensionTimeSlice" type="pixm:LandingAircraftConfigurationExtensionTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingAircraftConfigurationExtensionTimeSlice" type="pixm:LandingAircraftConfigurationExtensionTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="LandingAircraftConfigurationExtension" type="pixm:LandingAircraftConfigurationExtensionType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="LandingAircraftConfigurationExtensionTimeSliceType">
 	  <xs:complexContent>
@@ -1393,14 +1926,27 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:LandingAircraftConfigurationExtensionTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:LandingAircraftConfigurationExtensionTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Landing Aircraft Configuration Extension feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="LandingAircraftConfigurationExtensionTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Aircraft Configuration Extension time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingAircraftConfigurationExtensionTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	<!-- BrakeEnergySettings -->
-	<xs:element name="BrakeEnergySettingsTimeSlice" type="pixm:BrakeEnergySettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="BrakeEnergySettingsTimeSlice" type="pixm:BrakeEnergySettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="BrakeEnergySettings" type="pixm:BrakeEnergySettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="BrakeEnergySettingsTimeSliceType">
 	  <xs:complexContent>
@@ -1421,14 +1967,27 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:BrakeEnergySettingsTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:BrakeEnergySettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Brake Energy Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="BrakeEnergySettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Brake Energy Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:BrakeEnergySettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	<!-- ErrorMessage -->
-	<xs:element name="ErrorMessageTimeSlice" type="pixm:ErrorMessageTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="ErrorMessageTimeSlice" type="pixm:ErrorMessageTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="ErrorMessage" type="pixm:ErrorMessageType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="ErrorMessageTimeSliceType">
 	  <xs:complexContent>
@@ -1443,14 +2002,27 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:ErrorMessageTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:ErrorMessageTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Error Message feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="ErrorMessageTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Error Message time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:ErrorMessageTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	<!-- ExtendedFinalSegmentObsClearanceMargin -->
-	<xs:element name="ExtendedFinalSegmentObsClearanceMarginTimeSlice" type="pixm:ExtendedFinalSegmentObsClearanceMarginTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="ExtendedFinalSegmentObsClearanceMarginTimeSlice" type="pixm:ExtendedFinalSegmentObsClearanceMarginTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="ExtendedFinalSegmentObsClearanceMargin" type="pixm:ExtendedFinalSegmentObsClearanceMarginType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="ExtendedFinalSegmentObsClearanceMarginTimeSliceType">
 	  <xs:complexContent>
@@ -1466,14 +2038,27 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:ExtendedFinalSegmentObsClearanceMarginTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:ExtendedFinalSegmentObsClearanceMarginTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Extended Final Segment Obs Clearance Margin feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="ExtendedFinalSegmentObsClearanceMarginTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Extended Final Segment Obs Clearance Margin time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:ExtendedFinalSegmentObsClearanceMarginTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	<!-- GoAroundFlightPathSettings -->
-	<xs:element name="GoAroundFlightPathSettingsTimeSlice" type="pixm:GoAroundFlightPathSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="GoAroundFlightPathSettingsTimeSlice" type="pixm:GoAroundFlightPathSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="GoAroundFlightPathSettings" type="pixm:GoAroundFlightPathSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="GoAroundFlightPathSettingsTimeSliceType">
 	  <xs:complexContent>
@@ -1497,15 +2082,28 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:GoAroundFlightPathSettingsTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:GoAroundFlightPathSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Go Around Flight Path Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="GoAroundFlightPathSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Go Around Flight Path Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:GoAroundFlightPathSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	
 	<!-- GoAroundSettings -->
-	<xs:element name="GoAroundSettingsTimeSlice" type="pixm:GoAroundSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="GoAroundSettingsTimeSlice" type="pixm:GoAroundSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="GoAroundSettings" type="pixm:GoAroundSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="GoAroundSettingsTimeSliceType">
 	  <xs:complexContent>
@@ -1525,14 +2123,27 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:GoAroundSettingsTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:GoAroundSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Go Around Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="GoAroundSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Go Around Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:GoAroundSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	<!-- InFlightFailureData -->
-	<xs:element name="InFlightFailureDataTimeSlice" type="pixm:InFlightFailureDataTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="InFlightFailureDataTimeSlice" type="pixm:InFlightFailureDataTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="InFlightFailureData" type="pixm:InFlightFailureDataType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="InFlightFailureDataTimeSliceType">
 	  <xs:complexContent>
@@ -1552,14 +2163,27 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:InFlightFailureDataTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:InFlightFailureDataTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the In Flight Failure Data feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="InFlightFailureDataTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one In Flight Failure Data time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:InFlightFailureDataTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	<!-- LandingAircraftConfigurationSettings -->
-	<xs:element name="LandingAircraftConfigurationSettingsTimeSlice" type="pixm:LandingAircraftConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingAircraftConfigurationSettingsTimeSlice" type="pixm:LandingAircraftConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="LandingAircraftConfigurationSettings" type="pixm:LandingAircraftConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="LandingAircraftConfigurationSettingsTimeSliceType">
 	  <xs:complexContent>
@@ -1574,14 +2198,27 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:LandingAircraftConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:LandingAircraftConfigurationSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Landing Aircraft Configuration Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="LandingAircraftConfigurationSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Aircraft Configuration Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingAircraftConfigurationSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	<!-- LandingBrakeEnergy -->
-	<xs:element name="LandingBrakeEnergyTimeSlice" type="pixm:LandingBrakeEnergyTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingBrakeEnergyTimeSlice" type="pixm:LandingBrakeEnergyTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="LandingBrakeEnergy" type="pixm:LandingBrakeEnergyType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="LandingBrakeEnergyTimeSliceType">
 	  <xs:complexContent>
@@ -1600,14 +2237,27 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:LandingBrakeEnergyTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:LandingBrakeEnergyTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Landing Brake Energy feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="LandingBrakeEnergyTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Brake Energy time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingBrakeEnergyTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	<!-- LandingCGConfigurationSettings -->
-	<xs:element name="LandingCGConfigurationSettingsTimeSlice" type="pixm:LandingCGConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingCGConfigurationSettingsTimeSlice" type="pixm:LandingCGConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="LandingCGConfigurationSettings" type="pixm:LandingCGConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="LandingCGConfigurationSettingsTimeSliceType">
 	  <xs:complexContent>
@@ -1624,13 +2274,26 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:LandingCGConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:LandingCGConfigurationSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Landing CGConfiguration Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="LandingCGConfigurationSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing CGConfiguration Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingCGConfigurationSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
-	<xs:element name="LandingThrustConfigurationSettingsTimeSlice" type="pixm:LandingThrustConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingThrustConfigurationSettingsTimeSlice" type="pixm:LandingThrustConfigurationSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="LandingThrustConfigurationSettings" type="pixm:LandingThrustConfigurationSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="LandingThrustConfigurationSettingsTimeSliceType">
 	  <xs:complexContent>
@@ -1649,13 +2312,26 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:LandingThrustConfigurationSettingsTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:LandingThrustConfigurationSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Landing Thrust Configuration Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="LandingThrustConfigurationSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Thrust Configuration Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingThrustConfigurationSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	<!-- LandingEnvironmentalSettings -->
-	<xs:element name="LandingEnvironmentalSettingsTimeSlice" type="pixm:LandingEnvironmentalSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingEnvironmentalSettingsTimeSlice" type="pixm:LandingEnvironmentalSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="LandingEnvironmentalSettings" type="pixm:LandingEnvironmentalSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="LandingEnvironmentalSettingsTimeSliceType">
 	  <xs:complexContent>
@@ -1670,14 +2346,27 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:LandingEnvironmentalSettingsTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:LandingEnvironmentalSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Landing Environmental Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="LandingEnvironmentalSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Environmental Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingEnvironmentalSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	<!-- LandingRequest -->
-	<xs:element name="LandingRequestTimeSlice" type="pixm:LandingRequestTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingRequestTimeSlice" type="pixm:LandingRequestTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="LandingRequest" type="pixm:LandingRequestType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="LandingRequestTimeSliceType">
 	  <xs:complexContent>
@@ -1716,10 +2405,23 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:LandingRequestTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:LandingRequestTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Landing Request feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingRequestTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Request time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingRequestTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
 	
 	<!-- LandingWeightLimitResult -->
@@ -1729,13 +2431,26 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:LandingWeightLimitResultTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:LandingWeightLimitResultTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Landing Weight Limit Result feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="LandingWeightLimitResultTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Weight Limit Result time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingWeightLimitResultTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
-	<xs:element name="LandingWeightLimitResultTimeSlice" type="pixm:LandingWeightLimitResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingWeightLimitResultTimeSlice" type="pixm:LandingWeightLimitResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 
 	<xs:complexType name="LandingWeightLimitResultTimeSliceType">
 		<xs:complexContent>
@@ -1758,7 +2473,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- LandingRunwayResult -->
-	<xs:element name="LandingRunwayResultTimeSlice" type="pixm:LandingRunwayResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingRunwayResultTimeSlice" type="pixm:LandingRunwayResultTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="LandingRunwayResult" type="pixm:LandingRunwayResultType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="LandingRunwayResultTimeSliceType">
 	  <xs:complexContent>
@@ -1777,14 +2492,27 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:LandingRunwayResultTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:LandingRunwayResultTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Landing Runway Result feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="LandingRunwayResultTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Runway Result time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingRunwayResultTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 
 	<!-- LandingResponse -->
-	<xs:element name="LandingResponseTimeSlice" type="pixm:LandingResponseTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingResponseTimeSlice" type="pixm:LandingResponseTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="LandingResponse" type="pixm:LandingResponseType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="LandingResponseTimeSliceType">
 	  <xs:complexContent>
@@ -1816,16 +2544,29 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:LandingResponseTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:LandingResponseTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Landing Response feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingResponseTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Response time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingResponseTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
 
 
 	
 	<!-- LandingRunwaySettings -->
-	<xs:element name="LandingRunwaySettingsTimeSlice" type="pixm:LandingRunwaySettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingRunwaySettingsTimeSlice" type="pixm:LandingRunwaySettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="LandingRunwaySettings" type="pixm:LandingRunwaySettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="LandingRunwaySettingsTimeSliceType">
 	  <xs:complexContent>
@@ -1853,14 +2594,27 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:LandingRunwaySettingsTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:LandingRunwaySettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the Landing Runway Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="LandingRunwaySettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Runway Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingRunwaySettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	<!-- LandingSpeedSettings -->
-	<xs:element name="LandingSpeedSettingsTimeSlice" type="pixm:LandingSpeedSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingSpeedSettingsTimeSlice" type="pixm:LandingSpeedSettingsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="LandingSpeedSettings" type="pixm:LandingSpeedSettingsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="LandingSpeedSettingsTimeSliceType">
 		<xs:complexContent>
@@ -1885,14 +2639,27 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:LandingSpeedSettingsTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:LandingSpeedSettingsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Landing Speed Settings feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="LandingSpeedSettingsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Speed Settings time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingSpeedSettingsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	<!--VApp Increments element-->
-	<xs:element name="VAppIncrementsTimeSlice" type="pixm:VAppIncrementsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="VAppIncrementsTimeSlice" type="pixm:VAppIncrementsTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="VAppIncrements" type="pixm:VAppIncrementsType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="VAppIncrementsTimeSliceType">
 	  <xs:complexContent>
@@ -1915,14 +2682,27 @@
 	  <xs:complexContent>
 	    <xs:extension base="pixm:AbstractPIXMFeatureType">
 	      <xs:sequence>
-	        <xs:element name="timeSlice" type="pixm:VAppIncrementsTimeSliceType" maxOccurs="unbounded"/>
+	        <xs:element name="timeSlice" type="pixm:VAppIncrementsTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+	        	<xs:annotation>
+	        		<xs:documentation>A time slice of the VApp Increments feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+	        	</xs:annotation>
+	        </xs:element>
 	      </xs:sequence>
 	    </xs:extension>
 	  </xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="VAppIncrementsTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one VApp Increments time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:VAppIncrementsTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
 	
 	<!-- LandingSpecialCondition -->
-	<xs:element name="LandingSpecialConditionTimeSlice" type="pixm:LandingSpecialConditionTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+	<xs:element name="LandingSpecialConditionTimeSlice" type="pixm:LandingSpecialConditionTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 	<xs:element name="LandingSpecialCondition" type="pixm:LandingSpecialConditionType" substitutionGroup="pixm:AbstractPIXMFeature"/>
 	<xs:complexType name="LandingSpecialConditionTimeSliceType">
 		<xs:complexContent>
@@ -1942,9 +2722,22 @@
 		<xs:complexContent>
 			<xs:extension base="pixm:AbstractPIXMFeatureType">
 				<xs:sequence>
-					<xs:element name="timeSlice" type="pixm:LandingSpecialConditionTimeSliceType" maxOccurs="unbounded"/>
+					<xs:element name="timeSlice" type="pixm:LandingSpecialConditionTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Landing Special Condition feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingSpecialConditionTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Special Condition time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingSpecialConditionTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
 </xs:schema>

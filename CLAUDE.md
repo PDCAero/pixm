@@ -72,9 +72,12 @@ the import removed (see known defects).
 
 ### 3.4 Patterns that must stay regular (for future UML generation)
 - No anonymous (inline) types; every type is named and global.
-- Every feature `X` has: element `X` + `XType` (extends `AbstractPIXMFeatureType`,
-  with a `timeSlice` property of type `XTimeSliceType`), and element
-  `XTimeSlice` + `XTimeSliceType`. Both elements carry their `substitutionGroup`.
+- Every feature `X` follows the AIXM 5.1.1 pattern: element `X` + `XType`
+  (extends `AbstractPIXMFeatureType`, with a `timeSlice` property of type
+  `XTimeSlicePropertyType`), `XTimeSlicePropertyType` (contains one
+  `XTimeSlice` element), and element `XTimeSlice` + `XTimeSliceType`. `X`
+  substitutes for `pixm:AbstractPIXMFeature`; `XTimeSlice` for
+  `pixm:AbstractPIXMTimeSlice`.
 - Every codelist has its `Code…BaseType` / `Code…Type` pair; every measure has
   its `Val…BaseType` / `Val…Type` pair.
 - `minOccurs` / `maxOccurs` are always stated explicitly.

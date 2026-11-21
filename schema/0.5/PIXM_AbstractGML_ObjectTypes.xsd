@@ -116,7 +116,7 @@
 			</extension>
 		</complexContent>
 	</complexType>
-	<element name="AbstractPIXMTimeSliceType" type="pixm:AbstractPIXMTimeSliceType" abstract="true">
+	<element name="AbstractPIXMTimeSlice" type="pixm:AbstractPIXMTimeSliceType" abstract="true" substitutionGroup="gml:AbstractTimeSlice">
 		<annotation>
 			<documentation>Substitution head for PIXM timeslices.</documentation>
 		</annotation>

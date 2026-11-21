@@ -127,11 +127,12 @@ Use free text only where the CCB has approved it (CLAUDE.md §2).
 
 ## 5. Feature and time slice
 
-Current PIXM pattern (no AIXM-style `…PropertyType` wrappers):
+AIXM 5.1.1 pattern (DEC-0003): the feature's `timeSlice` property holds a
+`…TimeSlicePropertyType`, which contains the named `…TimeSlice` element.
 
 ```xml
 <xs:element name="TakeoffRequestTimeSlice" type="pixm:TakeoffRequestTimeSliceType"
-            substitutionGroup="pixm:AbstractPIXMTimeSliceType"/>
+            substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
 <xs:element name="TakeoffRequest" type="pixm:TakeoffRequestType"
             substitutionGroup="pixm:AbstractPIXMFeature"/>
 
@@ -154,16 +155,39 @@ Current PIXM pattern (no AIXM-style `…PropertyType` wrappers):
   <xs:complexContent>
     <xs:extension base="pixm:AbstractPIXMFeatureType">
       <xs:sequence>
-        <xs:element name="timeSlice" type="pixm:TakeoffRequestTimeSliceType" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="timeSlice" type="pixm:TakeoffRequestTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+          <xs:annotation><xs:documentation>A time slice of the Takeoff Request feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+        </xs:element>
       </xs:sequence>
     </xs:extension>
   </xs:complexContent>
 </xs:complexType>
+
+<xs:complexType name="TakeoffRequestTimeSlicePropertyType">
+  <xs:annotation><xs:documentation>A property that contains one Takeoff Request time slice. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+  <xs:sequence>
+    <xs:element ref="pixm:TakeoffRequestTimeSlice" minOccurs="1" maxOccurs="1"/>
+  </xs:sequence>
+  <xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+</xs:complexType>
 ```
 
-Note: the abstract time-slice substitution head is currently named
-`AbstractPIXMTimeSliceType` (an element with a `Type` suffix). It is a known
-defect; use the current name until it is fixed.
+Instance:
+
+```xml
+<pixm:TakeoffRequest gml:id="to-req-28R">
+  <pixm:timeSlice>
+    <pixm:TakeoffRequestTimeSlice gml:id="to-req-28R-ts">
+      <gml:validTime>…</gml:validTime>
+      <pixm:interpretation>BASELINE</pixm:interpretation>
+      …
+    </pixm:TakeoffRequestTimeSlice>
+  </pixm:timeSlice>
+</pixm:TakeoffRequest>
+```
+
+The abstract substitution heads are `pixm:AbstractPIXMFeature` (in
+`gml:AbstractFeature`) and `pixm:AbstractPIXMTimeSlice` (in `gml:AbstractTimeSlice`).
 
 ## 6. Reference to an external AIXM feature
 
