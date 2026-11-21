@@ -4,6 +4,13 @@ One line per change to the schema or examples. Format: `docs/process/ccb-process
 
 ## 0.5 (unreleased)
 
+### 2026-11-20 — AIXM time-slice structure (DEC-0003)
+- ADD     PIXM_Features: `…TimeSlicePropertyType` for all 61 features (contains one `…TimeSlice`). Compat: none.
+- CHANGE  PIXM_Features: `timeSlice` on all 61 features `…TimeSliceType` → `…TimeSlicePropertyType`. Compat: breaking. Ref: DEC-0003.
+- RENAME  PIXM_AbstractGML_ObjectTypes: element `AbstractPIXMTimeSliceType` → `AbstractPIXMTimeSlice`; all 61 `substitutionGroup`s updated. Compat: rename.
+- CHANGE  PIXM_AbstractGML_ObjectTypes: `AbstractPIXMTimeSlice` added to substitution group `gml:AbstractTimeSlice`. Compat: none.
+- DOC     PIXM_Features: definitions and explicit `minOccurs`/`maxOccurs` on the 61 `timeSlice` properties (fix on touch). Compat: none.
+
 ### 2026-11-20 — Repository layout and namespace 0.5
 - CHANGE  all schema files: namespace `http://www.pixm.aero/schema/0.1` → `http://www.pixm.aero/schema/0.5`. Compat: breaking.
 - CHANGE  all schema files: moved `schema/` → `schema/0.5/`; `PIXM_Features.XSD` and `PIXM_Codelists.XSD` → lower-case `.xsd`. Compat: none (file location only).
