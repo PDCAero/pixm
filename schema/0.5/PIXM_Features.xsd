@@ -2740,4 +2740,163 @@
 		</xs:sequence>
 		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
+
+	<!-- ========================================================== -->
+	<!-- Shared data blocks (embedded; no time slices) - DEC-0005  -->
+	<!-- ========================================================== -->
+
+	<xs:element name="DeclaredDistances" type="pixm:DeclaredDistancesType">
+		<xs:annotation>
+			<xs:documentation>A set of declared distances that apply from a given point on a runway in a given direction, such as a departure intersection or the threshold. Each distance is measured along the runway centerline from that point. [ICAO Annex 14]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="DeclaredDistancesType">
+		<xs:annotation>
+			<xs:documentation>A set of declared distances that apply from a given point on a runway in a given direction, such as a departure intersection or the threshold. Each distance is measured along the runway centerline from that point. [ICAO Annex 14]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="takeoffRunAvailable" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Takeoff run available (TORA): the length of runway declared available and suitable for the ground run of an airplane taking off. [ICAO Annex 14]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="takeoffDistanceAvailable" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Takeoff distance available (TODA): the takeoff run available plus the length of the clearway, if provided. [ICAO Annex 14]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="accelerateStopDistanceAvailable" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Accelerate-stop distance available (ASDA): the takeoff run available plus the length of the stopway, if provided. [ICAO Annex 14]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="landingDistanceAvailable" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Landing distance available (LDA): the length of runway declared available and suitable for the ground run of an airplane landing. [ICAO Annex 14]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="ElevatedPoint" type="pixm:ElevatedPointType">
+		<xs:annotation>
+			<xs:documentation>A geographical point with its elevation and the vertical datum of that elevation. Adapted from the AIXM ElevatedPoint as a data block rather than a GML point subtype. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ElevatedPointType">
+		<xs:annotation>
+			<xs:documentation>A geographical point with its elevation and the vertical datum of that elevation. Adapted from the AIXM ElevatedPoint as a data block rather than a GML point subtype. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="point" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The horizontal position of the point, with its coordinate reference system given by srsName on the GML point. [GML 3.2]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="elevation" type="pixm:ValDistanceVerticalType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The vertical distance of the point above the vertical datum, positive upward. [AIXM 5.1.1]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="verticalDatum" type="pixm:CodeVerticalDatumType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The vertical datum to which the elevation is referenced. [AIXM 5.1.1]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="RunwayReferencePoint" type="pixm:RunwayReferencePointType">
+		<xs:annotation>
+			<xs:documentation>A point on the runway centerline that has an operational role, such as the start of the takeoff run at a departure intersection or the end of the landing rollout at a landing exit. Adapted from the AIXM RunwayCentrelinePoint. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="RunwayReferencePointType">
+		<xs:annotation>
+			<xs:documentation>A point on the runway centerline that has an operational role, such as the start of the takeoff run at a departure intersection or the end of the landing rollout at a landing exit. Adapted from the AIXM RunwayCentrelinePoint. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="designator" type="pixm:TextDesignatorType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The designator of the point (e.g. 10_B9). [AIXM 5.1.1]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="role" type="pixm:CodeRunwayPointRoleType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The operational role of the point on the runway centerline. [AIXM 5.1.1]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="location" type="pixm:ElevatedPointType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The position and elevation of the point. [AIXM 5.1.1]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="BearingStrength" type="pixm:BearingStrengthType">
+		<xs:annotation>
+			<xs:documentation>The bearing strength of a pavement, reported with the ACN-PCN method: the pavement classification number and its qualifiers. [ICAO Annex 14]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="BearingStrengthType">
+		<xs:annotation>
+			<xs:documentation>The bearing strength of a pavement, reported with the ACN-PCN method: the pavement classification number and its qualifiers. [ICAO Annex 14]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="pavementClassificationNumber" type="pixm:ValPCNType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The pavement classification number (PCN): the bearing strength of the pavement for unrestricted operations. Dimensionless. [ICAO Annex 14]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pavementType" type="pixm:CodePavementBehaviourType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The pavement type used for the classification: rigid or flexible. [ICAO Annex 14]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="subgradeCategory" type="pixm:CodePavementSubgradeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The subgrade strength category of the pavement (A high to D ultra low). [ICAO Annex 14]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="maximumTirePressure" type="pixm:CodeTirePressureCategoryType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The maximum tire pressure category that the pavement can support. [ICAO Annex 14]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="evaluationMethod" type="pixm:CodePavementEvaluationMethodType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The method used to determine the pavement classification number. [ICAO Annex 14]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="UsageLimitation" type="pixm:UsageLimitationType">
+		<xs:annotation>
+			<xs:documentation>Limits on the aircraft that may use a runway access point, such as a departure intersection or landing exit: maximum weight, maximum wingspan and pavement bearing strength. [PIXM]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="UsageLimitationType">
+		<xs:annotation>
+			<xs:documentation>Limits on the aircraft that may use a runway access point, such as a departure intersection or landing exit: maximum weight, maximum wingspan and pavement bearing strength. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="maximumAllowableWeight" type="pixm:ValWeightType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The maximum aircraft weight allowed. [PIXM]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="maximumWingspan" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The maximum aircraft wingspan allowed. [PIXM]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="bearingStrength" type="pixm:BearingStrengthType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The bearing strength of the pavement. [ICAO Annex 14]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 </xs:schema>

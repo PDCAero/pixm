@@ -1030,6 +1030,24 @@
     </xs:union>
   </xs:simpleType>
 
+  <xs:simpleType name="CodePavementEvaluationMethodBaseType">
+    <xs:annotation>
+      <xs:documentation>The method used to determine the pavement classification number of a pavement. [ICAO Annex 14]</xs:documentation>
+    </xs:annotation>
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="TECH">
+      <xs:annotation>
+        <xs:documentation>Technical evaluation: a specific study of the pavement characteristics and behavior. [ICAO Annex 14]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="ACFT">
+      <xs:annotation>
+        <xs:documentation>Evaluation from experience of the aircraft that use the pavement. [ICAO Annex 14]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+  </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="CodePavementSubgradeBaseType">
     <xs:union>
       <xs:simpleType>
@@ -1111,6 +1129,107 @@
       </xs:simpleType>
     </xs:union>
   </xs:simpleType>
+  <xs:simpleType name="CodeRunwayPointRoleBaseType">
+    <xs:annotation>
+      <xs:documentation>The role of a point on the runway centerline. [AIXM 5.1.1]</xs:documentation>
+    </xs:annotation>
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="START">
+      <xs:annotation>
+        <xs:documentation>The start of the runway. [AIXM 5.1.1]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="THR">
+      <xs:annotation>
+        <xs:documentation>The runway threshold. [AIXM 5.1.1]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="DISTHR">
+      <xs:annotation>
+        <xs:documentation>A displaced runway threshold. [AIXM 5.1.1]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="TDZ">
+      <xs:annotation>
+        <xs:documentation>The touchdown zone. [AIXM 5.1.1]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="MID">
+      <xs:annotation>
+        <xs:documentation>The mid point of the runway. [AIXM 5.1.1]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="END">
+      <xs:annotation>
+        <xs:documentation>The end of the runway. [AIXM 5.1.1]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="START_RUN">
+      <xs:annotation>
+        <xs:documentation>The point where the takeoff run starts, for example at a departure intersection. [AIXM 5.1.1]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="LAHSO">
+      <xs:annotation>
+        <xs:documentation>A land and hold short point. [AIXM 5.1.1]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="ABEAM_GLIDESLOPE">
+      <xs:annotation>
+        <xs:documentation>The point abeam the glide slope antenna. [AIXM 5.1.1]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="ABEAM_PAR">
+      <xs:annotation>
+        <xs:documentation>The point abeam the precision approach radar touchdown reflectors. TODO(VERIFY) [AIXM 5.1.1]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="ABEAM_ELEVATION">
+      <xs:annotation>
+        <xs:documentation>The point abeam the elevation antenna of a microwave landing system. TODO(VERIFY) [AIXM 5.1.1]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="ABEAM_TDR">
+      <xs:annotation>
+        <xs:documentation>The point abeam the touchdown reflectors. TODO(VERIFY) [AIXM 5.1.1]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="ABEAM_RER">
+      <xs:annotation>
+        <xs:documentation>The point abeam the runway end reflectors. TODO(VERIFY) [AIXM 5.1.1]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="END_ROLLOUT">
+      <xs:annotation>
+        <xs:documentation>The point where the landing rollout ends and the aircraft leaves the runway, for example at a landing exit. [PIXM]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+  </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeRunwaySideBaseType">
+    <xs:annotation>
+      <xs:documentation>The side of the runway, seen in the direction of the takeoff run or landing roll. [PIXM]</xs:documentation>
+    </xs:annotation>
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="LEFT">
+      <xs:annotation>
+        <xs:documentation>The left side of the runway. [PIXM]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="RIGHT">
+      <xs:annotation>
+        <xs:documentation>The right side of the runway. [PIXM]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="BOTH">
+      <xs:annotation>
+        <xs:documentation>Both sides of the runway. [PIXM]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+  </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="CodeStartTakeoffThrustBaseType">
     <xs:union>
       <xs:simpleType>
@@ -1286,6 +1405,34 @@
     </xs:union>
   </xs:simpleType>
 
+  <xs:simpleType name="CodeTirePressureCategoryBaseType">
+    <xs:annotation>
+      <xs:documentation>The maximum tire pressure category that a pavement can support, as reported with the pavement classification number. Category limits: TODO(VERIFY) against ICAO Annex 14. [ICAO Annex 14]</xs:documentation>
+    </xs:annotation>
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="W">
+      <xs:annotation>
+        <xs:documentation>High: no tire pressure limit. [ICAO Annex 14]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="X">
+      <xs:annotation>
+        <xs:documentation>Medium: tire pressure limited to 1.75 MPa. TODO(VERIFY) [ICAO Annex 14]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="Y">
+      <xs:annotation>
+        <xs:documentation>Low: tire pressure limited to 1.25 MPa. TODO(VERIFY) [ICAO Annex 14]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="Z">
+      <xs:annotation>
+        <xs:documentation>Very low: tire pressure limited to 0.50 MPa. TODO(VERIFY) [ICAO Annex 14]</xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
+  </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="CodeTireProfileBaseType">
     <xs:union>
       <xs:simpleType>
@@ -1423,6 +1570,38 @@
           <xs:enumeration value="FIXED"/>
           <xs:enumeration value="FIXED_VMU"/>
           <xs:enumeration value="OPTIMUM"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeVerticalDatumBaseType">
+    <xs:annotation>
+      <xs:documentation>The vertical datum to which an elevation is referenced. Open list: other datums use OTHER:name (CCB exception, DEC-0005). [AIXM 5.1.1]</xs:documentation>
+    </xs:annotation>
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EGM_96">
+            <xs:annotation>
+              <xs:documentation>Earth Gravitational Model 1996. [AIXM 5.1.1]</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="AHD">
+            <xs:annotation>
+              <xs:documentation>Australian Height Datum. [AIXM 5.1.1]</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="NAVD88">
+            <xs:annotation>
+              <xs:documentation>North American Vertical Datum of 1988. [AIXM 5.1.1]</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
         </xs:restriction>
       </xs:simpleType>
     </xs:union>

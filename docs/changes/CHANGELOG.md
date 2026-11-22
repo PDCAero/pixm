@@ -4,6 +4,11 @@ One line per change to the schema or examples. Format: `docs/process/ccb-process
 
 ## 0.5 (unreleased)
 
+### 2026-11-21 — Shared blocks for departure intersections and landing exits (DEC-0005)
+- ADD     PIXM_Codelists, PIXM_DataTypes: `CodeRunwayPointRole` (AIXM 5.1.1 roles + `END_ROLLOUT`), `CodeTirePressureCategory`, `CodePavementEvaluationMethod`, `CodeRunwaySide` (closed) and `CodeVerticalDatum` (open, `OTHER` by CCB exception), each with base and wrapper types. Compat: none. Ref: DEC-0005.
+- ADD     PIXM_Features: data blocks `DeclaredDistances`, `ElevatedPoint`, `RunwayReferencePoint`, `BearingStrength`, `UsageLimitation` (global elements, no time slices). Compat: none. Ref: DEC-0005.
+- ADD     examples: `Example 5 - Standalone Data Blocks` (runway reference point, declared distances, usage limitation sent on their own). Compat: none.
+
 ### 2026-11-21 — Simple runway status messages (port from branch `simple-runway-status`, DEC-0004)
 - ADD     PIXM_Messages: new schema file with `PIXMRequest`, `PIXMResponse`, `PIXMMessage` bases and `SimpleRunwayStatusRequest`, `SimpleRunwayStatusResponse`, `SimpleRunwayStatusMessage`, `SimpleRunwayEndStatus`, ported from the unmerged 0.1 branch. Compat: none.
 - CHANGE  PIXM_Messages: namespace `…/schema/0.1` → `…/schema/0.5`; include `PIXM_Features.XSD` → `PIXM_Features.xsd`; AIXM import local path → `https://aixm.aero/schema/5.1.1/AIXM_Features.xsd`. Compat: none.

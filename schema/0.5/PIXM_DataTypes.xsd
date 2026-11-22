@@ -468,6 +468,16 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="CodePavementEvaluationMethodType">
+    <xs:annotation>
+      <xs:documentation>The method used to determine the pavement classification number of a pavement, with an optional reason when the value is missing. [ICAO Annex 14]</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodePavementEvaluationMethodBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="CodePavementSubgradeType">
     <xs:simpleContent>
       <xs:extension base="pixm:CodePavementSubgradeBaseType">
@@ -499,6 +509,26 @@
   <xs:complexType name="CodeRelativePositionType">
     <xs:simpleContent>
       <xs:extension base="pixm:CodeRelativePositionBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeRunwayPointRoleType">
+    <xs:annotation>
+      <xs:documentation>The role of a point on the runway centerline, with an optional reason when the value is missing. [AIXM 5.1.1]</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeRunwayPointRoleBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeRunwaySideType">
+    <xs:annotation>
+      <xs:documentation>The side of the runway, seen in the direction of the takeoff run or landing roll, with an optional reason when the value is missing. [PIXM]</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeRunwaySideBaseType">
         <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
       </xs:extension>
     </xs:simpleContent>
@@ -573,6 +603,16 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="CodeTirePressureCategoryType">
+    <xs:annotation>
+      <xs:documentation>The maximum tire pressure category that a pavement can support, as reported with the pavement classification number, with an optional reason when the value is missing. [ICAO Annex 14]</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeTirePressureCategoryBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="CodeTireProfileType">
     <xs:simpleContent>
       <xs:extension base="pixm:CodeTireProfileBaseType">
@@ -625,6 +665,16 @@
   <xs:complexType name="CodeV2VSChoiceType">
     <xs:simpleContent>
       <xs:extension base="pixm:CodeV2VSChoiceBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeVerticalDatumType">
+    <xs:annotation>
+      <xs:documentation>The vertical datum to which an elevation is referenced, with an optional reason when the value is missing. [AIXM 5.1.1]</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeVerticalDatumBaseType">
         <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
       </xs:extension>
     </xs:simpleContent>

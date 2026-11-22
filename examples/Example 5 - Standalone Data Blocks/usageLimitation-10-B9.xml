@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Purpose:   A usage limitation sent on its own: the pavement bearing strength at
+             intersection B9 on runway 10 (PCN 875/F/B/W/T).
+  Scenario:  Example 5 - Standalone Data Blocks (principle 4: a block is interpretable on its own).
+  PIXM:      0.5
+  Exercises: UsageLimitation, BearingStrength.
+  Data:      Illustrative only, taken from departure intersection B9 for runway 10 at a real
+             aerodrome (LSZH) in Example 3. Not for operational use.
+-->
+<pixm:UsageLimitation xmlns:pixm="http://www.pixm.aero/schema/0.5"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.pixm.aero/schema/0.5 ../../schema/0.5/PIXM_Features.xsd">
+    <pixm:bearingStrength>
+        <pixm:pavementClassificationNumber>875</pixm:pavementClassificationNumber>
+        <pixm:pavementType>FLEXIBLE</pixm:pavementType>
+        <pixm:subgradeCategory>B</pixm:subgradeCategory>
+        <pixm:maximumTirePressure>W</pixm:maximumTirePressure>
+        <pixm:evaluationMethod>TECH</pixm:evaluationMethod>
+    </pixm:bearingStrength>
+</pixm:UsageLimitation>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Purpose:   Declared distances sent on their own: the distances available for a takeoff
+             on runway 10 starting at intersection B9.
+  Scenario:  Example 5 - Standalone Data Blocks (principle 4: a block is interpretable on its own).
+  PIXM:      0.5
+  Exercises: DeclaredDistances.
+  Data:      Illustrative only, taken from departure intersection B9 for runway 10 at a real
+             aerodrome (LSZH) in Example 3. Not for operational use.
+-->
+<pixm:DeclaredDistances xmlns:pixm="http://www.pixm.aero/schema/0.5"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.pixm.aero/schema/0.5 ../../schema/0.5/PIXM_Features.xsd">
+    <pixm:takeoffRunAvailable uom="M">2485.4</pixm:takeoffRunAvailable>
+    <pixm:takeoffDistanceAvailable uom="M">2545.4</pixm:takeoffDistanceAvailable>
+    <pixm:accelerateStopDistanceAvailable uom="M">2485.4</pixm:accelerateStopDistanceAvailable>
+</pixm:DeclaredDistances>
