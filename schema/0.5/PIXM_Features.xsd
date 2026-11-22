@@ -2741,6 +2741,258 @@
 		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
 
+	<!-- DepartureIntersection (DEC-0005) -->
+	<xs:element name="DepartureIntersectionTimeSlice" type="pixm:DepartureIntersectionTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
+	<xs:element name="DepartureIntersection" type="pixm:DepartureIntersectionType" substitutionGroup="pixm:AbstractPIXMFeature"/>
+	<xs:complexType name="DepartureIntersectionTimeSliceType">
+		<xs:annotation>
+			<xs:documentation>A time slice of the Departure Intersection feature: its state during one period of validity. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="designator" type="pixm:TextDesignatorType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The designator of the departure intersection, usually that of the taxiway or taxiway segment (e.g. B9). [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="aerodromeDesignator" type="pixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Designator of the aerodrome at which the departure intersection is located (e.g. the ICAO location indicator LSZH). [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="runwayDirectionDesignator" type="pixm:TextDesignatorType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Designator of the runway direction from which the takeoff is made (e.g. 10, 28L). [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="description" type="pixm:TextNoteType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Human-readable remark identifying the physical feature that defines the departure intersection (e.g. "Leading Edge of Fillet with Twy E9"). Free text, for information only (DEC-0005). [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="entryAccessSide" type="pixm:CodeRunwaySideType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The side of the runway from which aircraft enter the runway at the intersection, seen in the direction of the takeoff run. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="runwayReferencePoint" type="pixm:RunwayReferencePointType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The point on the runway centerline at which the takeoff run from the intersection starts (role normally START_RUN). [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="distanceReferencePoint" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The point on the taxiway or fillet from which the distances for a takeoff from the intersection are measured. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="distanceReferenceLine" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The line, such as the edge of a taxiway fillet, from which the distances for a takeoff from the intersection are measured. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="usageLimitation" type="pixm:UsageLimitationType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Limits on the aircraft that may depart from the intersection: maximum weight, maximum wingspan and pavement bearing strength. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="entryAngle" type="pixm:ValAngleType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The angle between the taxiway centerline and the runway centerline in the direction of the takeoff run, from 0 to 180 degrees; 90 is a perpendicular entry. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lineUpAndWait" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Whether line-up-and-wait clearances may be given at the intersection (YES) or not (NO). [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="rollingTakeoffAllowed" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Whether a rolling takeoff from the intersection is allowed (YES) or not (NO). [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="slopeOfDeclaredDistances" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The mean slope of the runway over the declared distances available from the intersection, positive when the runway rises in the direction of the takeoff run. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="displacementFromFullLength" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The distance along the runway centerline from the start of the full-length takeoff run available to the start of the takeoff run from the intersection. Not negative. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="associatedDeclaredDistances" type="pixm:DeclaredDistancesType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The declared distances available for a takeoff from the intersection. [ICAO Annex 14]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="performanceRunway" type="pixm:PerformanceRunwayType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The performance runway (runway direction) from which the intersection departure is made. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<!-- TODO(CCB): methodOfDetermination deferred until its values are agreed (DEC-0005). -->
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DepartureIntersectionType">
+		<xs:annotation>
+			<xs:documentation>A point at which aircraft enter a runway to begin a takeoff run other than from the full length, with the declared distances and limits that apply from that point. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:DepartureIntersectionTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Departure Intersection feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DepartureIntersectionTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Departure Intersection time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:DepartureIntersectionTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+
+	<!-- LandingExit (DEC-0005) -->
+	<xs:element name="LandingExitTimeSlice" type="pixm:LandingExitTimeSliceType" substitutionGroup="pixm:AbstractPIXMTimeSlice"/>
+	<xs:element name="LandingExit" type="pixm:LandingExitType" substitutionGroup="pixm:AbstractPIXMFeature"/>
+	<xs:complexType name="LandingExitTimeSliceType">
+		<xs:annotation>
+			<xs:documentation>A time slice of the Landing Exit feature: its state during one period of validity. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMTimeSliceType">
+				<xs:sequence>
+					<xs:element name="designator" type="pixm:TextDesignatorType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The designator of the landing exit, usually that of the taxiway or taxiway segment (e.g. J). [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="aerodromeDesignator" type="pixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Designator of the aerodrome at which the landing exit is located (e.g. the ICAO location indicator LSZH). [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="runwayDirectionDesignator" type="pixm:TextDesignatorType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Designator of the runway direction on which the landing is made (e.g. 10, 28L). [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="description" type="pixm:TextNoteType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Human-readable remark identifying the physical feature that defines the landing exit (e.g. "Leading Edge of Fillet with Twy E9"). Free text, for information only (DEC-0005). [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="exitSide" type="pixm:CodeRunwaySideType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The side of the runway to which aircraft leave the runway at the exit, seen in the direction of the landing roll. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="runwayReferencePoint" type="pixm:RunwayReferencePointType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The point on the runway centerline at which the landing rollout ends to leave the runway at the exit (role normally END_ROLLOUT). [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="distanceReferencePoint" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The point on the taxiway or fillet from which the distances for the exit are measured. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="referencePoint" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The general location of the landing exit. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="usageLimitation" type="pixm:UsageLimitationType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Limits on the aircraft that may use the exit: maximum weight, maximum wingspan and pavement bearing strength. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="exitAngle" type="pixm:ValAngleType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The angle between the runway centerline in the direction of the landing roll and the exit taxiway centerline, from 0 to 180 degrees; 90 is a perpendicular exit. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="landAndHoldShortPoint" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Whether the exit is a land and hold short (LAHSO) point (YES) or not (NO). [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="maximumExitSpeed" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The maximum ground speed at which the exit may be used. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minimumExitSpeed" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The minimum ground speed at which the exit may be used. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="targetExitSpeed" type="pixm:ValSpeedType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The target ground speed for leaving the runway at the exit. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="slopeOfDeclaredDistances" type="pixm:ValSlopeType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The mean slope of the runway from the threshold to the exit, positive when the runway rises in the direction of the landing roll. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="displacementFromFullLength" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The distance along the runway centerline from the threshold to the point where the landing rollout ends at the exit. Not negative. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="associatedDeclaredDistances" type="pixm:DeclaredDistancesType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The declared distances that apply to a landing using the exit (normally the landing distance available up to the exit). [ICAO Annex 14]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="performanceRunway" type="pixm:PerformanceRunwayType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The performance runway (runway direction) on which the landing is made. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<!-- TODO(CCB): methodOfDetermination deferred until its values are agreed (DEC-0005). -->
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingExitType">
+		<xs:annotation>
+			<xs:documentation>A point at which landing aircraft leave a runway, with the distances, speeds and limits that apply to it. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMFeatureType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:LandingExitTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Landing Exit feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingExitTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Exit time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingExitTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+
 	<!-- ========================================================== -->
 	<!-- Shared data blocks (embedded; no time slices) - DEC-0005  -->
 	<!-- ========================================================== -->

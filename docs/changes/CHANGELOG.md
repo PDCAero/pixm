@@ -4,6 +4,10 @@ One line per change to the schema or examples. Format: `docs/process/ccb-process
 
 ## 0.5 (unreleased)
 
+### 2026-11-21 — Departure intersection and landing exit features (DEC-0005)
+- ADD     PIXM_Features: feature `DepartureIntersection` (with `DepartureIntersectionTimeSlice`, `…TimeSlicePropertyType`): designators, description, entry side, runway reference point, distance reference point and line, usage limitation, entry angle, line-up-and-wait, rolling takeoff, slope, displacement, declared distances, performance runway. Compat: none. Ref: DEC-0005.
+- ADD     PIXM_Features: feature `LandingExit` (with `LandingExitTimeSlice`, `…TimeSlicePropertyType`): designators, description, exit side, runway reference point, distance reference point, reference point, usage limitation, exit angle, land-and-hold-short point, maximum/minimum/target exit speed, slope, displacement, declared distances, performance runway. Compat: none. Ref: DEC-0005.
+
 ### 2026-11-21 — Shared blocks for departure intersections and landing exits (DEC-0005)
 - ADD     PIXM_Codelists, PIXM_DataTypes: `CodeRunwayPointRole` (AIXM 5.1.1 roles + `END_ROLLOUT`), `CodeTirePressureCategory`, `CodePavementEvaluationMethod`, `CodeRunwaySide` (closed) and `CodeVerticalDatum` (open, `OTHER` by CCB exception), each with base and wrapper types. Compat: none. Ref: DEC-0005.
 - ADD     PIXM_Features: data blocks `DeclaredDistances`, `ElevatedPoint`, `RunwayReferencePoint`, `BearingStrength`, `UsageLimitation` (global elements, no time slices). Compat: none. Ref: DEC-0005.
