@@ -13,6 +13,7 @@ Keep this file up to date whenever schema files are added, split, renamed or mov
 | `PIXM_UoM.xsd` | `Uom…Type` unit lists | — |
 | `PIXM_Measures.xsd` | `Val…BaseType` / `Val…Type` measures with `uom` and `nilReason` | UoM, DataTypes, GML |
 | `PIXM_Features.xsd` | All features and their time slices | All of the above (and, until removed, AIXM 5.1.1) |
+| `PIXM_Messages.xsd` | Request, response and notification (unsolicited message) bases, and the simple runway status request, response and message | `PIXM_Features.xsd` |
 
 ## External schemas
 
@@ -20,6 +21,6 @@ Keep this file up to date whenever schema files are added, split, renamed or mov
 |---|---|
 | GML 3.2 | `http://schemas.opengis.net/gml/3.2.1/gml.xsd` |
 | ISO 19139 gmd | `http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd` |
-| AIXM 5.1.1 | `https://aixm.aero/schema/5.1.1/AIXM_Features.xsd`: imported for `aixm:RunwayDirectionPropertyType` only; scheduled for removal (see `docs/changes/known-defects.md`). |
+| AIXM 5.1.1 | `https://aixm.aero/schema/5.1.1/AIXM_Features.xsd`: imported by `PIXM_Features.xsd` only, for `aixm:RunwayDirectionPropertyType` (scheduled for removal, see `docs/changes/known-defects.md`). |
 
 For offline development, `python tools/fetch_schemas.py` caches these in `.schema-cache/` (git-ignored).

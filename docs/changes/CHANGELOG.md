@@ -4,6 +4,18 @@ One line per change to the schema or examples. Format: `docs/process/ccb-process
 
 ## 0.5 (unreleased)
 
+### 2026-11-21 — Simple runway status messages (port from branch `simple-runway-status`, DEC-0004)
+- ADD     PIXM_Messages: new schema file with `PIXMRequest`, `PIXMResponse`, `PIXMMessage` bases and `SimpleRunwayStatusRequest`, `SimpleRunwayStatusResponse`, `SimpleRunwayStatusMessage`, `SimpleRunwayEndStatus`, ported from the unmerged 0.1 branch. Compat: none.
+- CHANGE  PIXM_Messages: namespace `…/schema/0.1` → `…/schema/0.5`; include `PIXM_Features.XSD` → `PIXM_Features.xsd`; AIXM import local path → `https://aixm.aero/schema/5.1.1/AIXM_Features.xsd`. Compat: none.
+- CHANGE  PIXM_Messages: time-slice substitution head `AbstractPIXMTimeSliceType` → `AbstractPIXMTimeSlice`; `timeSlice` on the three features uses new `…TimeSlicePropertyType` wrappers (DEC-0003); abstract time-slice heads marked `abstract`. Compat: none. Ref: DEC-0003.
+- DOC     PIXM_Messages: definitions and explicit `minOccurs`/`maxOccurs` on the three `timeSlice` properties. Compat: none.
+- ADD     examples: `Example 4 - Runway Status Messages` (request, response, unsolicited message) on namespace 0.5, with headers, `schemaLocation`, `interpretation` and valid UUIDs. Compat: none.
+- ADD     PIXM_DataTypes: `CodeAirportHeliportDesignatorBaseType` / `CodeAirportHeliportDesignatorType` (3–6 upper-case letters or digits, ported from AIXM 5.1.1). Compat: none. Ref: DEC-0004.
+- CHANGE  PIXM_Messages: `airportId` (`aixm:CodeAirportHeliportDesignatorType`) → `aerodromeDesignator` (`pixm:CodeAirportHeliportDesignatorType`); `runwayEndId` (`aixm:TextDesignatorType`) → `runwayDirectionDesignator` (`pixm:TextDesignatorType`); AIXM import removed. Compat: none (not previously released). Ref: DEC-0004.
+- CHANGE  PIXM_Messages: `openLanding`, `openTakeoff`, `success`, `provideNextExpectedChange` `xs:boolean` → `pixm:CodeYesNoType`; `requestTimestamp`, `responseTimestamp`, `timeInstant` `xs:dateTime` → `pixm:DateTimeType`. Compat: none (not previously released). Ref: DEC-0004.
+- RENAME  PIXM_Messages: bases `PIXMRequest…` → `AbstractPIXMRequest…`, `PIXMResponse…` → `AbstractPIXMResponse…`, `PIXMMessage…` → `AbstractPIXMNotification…` (elements and types). Compat: none (not previously released). Ref: DEC-0004.
+- DOC     PIXM_Messages: definitions with sources on all types and properties. Compat: none.
+
 ### 2026-11-20 — AIXM time-slice structure (DEC-0003)
 - ADD     PIXM_Features: `…TimeSlicePropertyType` for all 61 features (contains one `…TimeSlice`). Compat: none.
 - CHANGE  PIXM_Features: `timeSlice` on all 61 features `…TimeSliceType` → `…TimeSlicePropertyType`. Compat: breaking. Ref: DEC-0003.

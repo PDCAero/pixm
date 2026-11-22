@@ -1,5 +1,18 @@
-<pixm:SimpleRunwayStatusRequest xmlns:pixm="http://www.pixm.aero/schema/0.1" 
-                         xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="rs_req_1">
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Purpose:   Request for the current operational status of all runway ends at an aerodrome,
+             including the next expected change.
+  Scenario:  Example 4 - Runway Status Messages.
+  PIXM:      0.5
+  Exercises: SimpleRunwayStatusRequest.
+  Data:      Illustrative only, based on a real aerodrome (LSZH). Identifiers are fictional.
+             Not for operational use.
+-->
+<pixm:SimpleRunwayStatusRequest xmlns:pixm="http://www.pixm.aero/schema/0.5"
+                                xmlns:gml="http://www.opengis.net/gml/3.2"
+                                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                xsi:schemaLocation="http://www.pixm.aero/schema/0.5 ../../schema/0.5/PIXM_Messages.xsd"
+                                gml:id="rs_req_1">
     <pixm:timeSlice>
         <pixm:SimpleRunwayStatusRequestTimeSlice gml:id="rs_req_ts_1">
             <gml:validTime>
@@ -8,17 +21,18 @@
                     <gml:endPosition>2026-05-01T00:00:30Z</gml:endPosition>
                 </gml:TimePeriod>
             </gml:validTime>
+            <!-- Interpretation of request time slices is part of open.md #12 (DEC-0004). -->
+            <pixm:interpretation>BASELINE</pixm:interpretation>
 
-            <!-- request metadata-->
+            <!-- Request metadata -->
             <pixm:requesterId>b802d439-e9f3-49f9-96e1-abcdef012345</pixm:requesterId>
             <pixm:requestId>b802d439-e9f3-49f9-96e1-0153b837e113</pixm:requestId>
             <pixm:requestTimestamp>2026-05-01T00:00:00Z</pixm:requestTimestamp>
 
-            <!-- request content-->
-            <pixm:airportId>LSZH</pixm:airportId>
-            <pixm:provideNextExpectedChange>true</pixm:provideNextExpectedChange>
+            <!-- Request content -->
+            <pixm:aerodromeDesignator>LSZH</pixm:aerodromeDesignator>
+            <pixm:provideNextExpectedChange>YES</pixm:provideNextExpectedChange>
             <pixm:timeInstant>2026-05-01T00:00:00Z</pixm:timeInstant>
-
         </pixm:SimpleRunwayStatusRequestTimeSlice>
     </pixm:timeSlice>
 </pixm:SimpleRunwayStatusRequest>

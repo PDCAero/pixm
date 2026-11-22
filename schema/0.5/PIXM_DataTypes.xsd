@@ -29,6 +29,25 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:simpleType name="CodeAirportHeliportDesignatorBaseType">
+    <xs:annotation>
+      <xs:documentation>A coded designator of an aerodrome or heliport: 3 to 6 upper-case letters or digits, such as an ICAO location indicator (e.g. LSZH) or a national designator. [AIXM 5.1.1]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pixm:AlphanumericType">
+      <xs:maxLength value="6"/>
+      <xs:minLength value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CodeAirportHeliportDesignatorType">
+    <xs:annotation>
+      <xs:documentation>A coded designator of an aerodrome or heliport, with an optional reason when the value is missing. [AIXM 5.1.1]</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="pixm:CodeAirportHeliportDesignatorBaseType">
+        <xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="CodeAirspeedType">
     <xs:simpleContent>
       <xs:extension base="pixm:CodeAirspeedBaseType">

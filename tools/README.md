@@ -36,7 +36,7 @@ verify TLS with the `certifi` trust store.
 
 | Rule | Severity | What it checks |
 |---|---|---|
-| `SCHEMA` | error | `schema/0.5/PIXM_Features.xsd` and everything it includes/imports compiles |
+| `SCHEMA` | error | all `schema/0.5/PIXM_*.xsd` files, compiled together with everything they include/import, compile |
 | `FETCH` | error | An external schema could not be downloaded |
 | `WELLFORMED` | error | A schema or example file is not well-formed XML |
 | `EXAMPLE` | error | An example is not valid against the schema |

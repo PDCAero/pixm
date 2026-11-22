@@ -1,7 +1,7 @@
 """PIXM validation: the authoritative check (CLAUDE.md §10).
 
 Checks
-  1. The PIXM schema set compiles (schema/0.5/PIXM_Features.xsd).
+  1. The PIXM schema set compiles (all schema/0.5/PIXM_*.xsd together).
   2. Every example is well-formed and valid against the schema.
   3. Lint of the PIXM schema files (see tools/README.md for the rules).
 
@@ -32,7 +32,7 @@ import schema_cache
 
 REPO_ROOT = schema_cache.REPO_ROOT
 SCHEMA_DIR = schema_cache.SCHEMA_DIR
-MAIN_SCHEMA = os.path.join(SCHEMA_DIR, 'PIXM_Features.xsd')
+SCHEMA_GLOB = os.path.join(SCHEMA_DIR, 'PIXM_*.xsd')
 EXAMPLES_DIR = os.path.join(REPO_ROOT, 'examples')
 BASELINE = os.path.join(REPO_ROOT, 'tools', 'lint-baseline.json')
 
@@ -230,10 +230,13 @@ def compile_schema(findings):
         _, _, failures = schema_cache.fetch(log=lambda m: None)
         for url, msg in failures:
             findings.append(Finding('error', 'FETCH', url, msg))
+    # Compile every PIXM schema file as one set, so examples may use elements
+    # from any of them (e.g. PIXM_Messages.xsd, which includes PIXM_Features.xsd).
+    sources = sorted(glob.glob(SCHEMA_GLOB))
     try:
-        return xmlschema.XMLSchema(MAIN_SCHEMA, uri_mapper=schema_cache.uri_mapper)
+        return xmlschema.XMLSchema(sources, uri_mapper=schema_cache.uri_mapper)
     except Exception as exc:
-        findings.append(Finding('error', 'SCHEMA', rel(MAIN_SCHEMA),
+        findings.append(Finding('error', 'SCHEMA', rel(SCHEMA_DIR),
                                 str(exc).strip().splitlines()[0]))
         return None
 
