@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:pixm="http://www.pixm.aero/schema/0.1"
-           targetNamespace="http://www.pixm.aero/schema/0.1"
-           xmlns="http://www.pixm.aero/schema/0.1"
-           elementFormDefault="qualified">
+           xmlns:pixm="http://www.pixm.aero/schema/0.5"
+           targetNamespace="http://www.pixm.aero/schema/0.5"
+           xmlns="http://www.pixm.aero/schema/0.5"
+           elementFormDefault="qualified"
+           version="0.5">
 
+
+  <xs:simpleType name="UomAngleType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="DEG"/>
+          <xs:enumeration value="RAD"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="OTHER(:(\w|_){1,58})?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
 
   <xs:simpleType name="UomBrakeEnergyType">
     <xs:union>

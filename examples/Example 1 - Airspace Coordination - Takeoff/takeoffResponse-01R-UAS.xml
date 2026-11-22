@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<gml:FeatureCollection xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:pixm="http://www.pixm.aero/schema/0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.pixm.aero/schema/0.1 PIXM_Features.XSD">
+<gml:FeatureCollection xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:pixm="http://www.pixm.aero/schema/0.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.pixm.aero/schema/0.5 ../../schema/0.5/PIXM_Features.xsd">
   <gml:featureMember>
     <pixm:TakeoffResponse gml:id="to-rsp-01R-UAS">
       <pixm:timeSlice>

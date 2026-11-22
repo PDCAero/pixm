@@ -33,13 +33,18 @@ This repository houses the primary data model, including XML Schemas (XSD), Pyth
 
 ```text
 .
-├── schema/                # The core PIXM XML Schema Definition files (XSD)
-│   ├── PIXM_Features.xsd   # Main feature definitions (Aircraft, Engines, etc.)
-│   ├── PIXM_DataTypes.xsd  # Fundamental types (Speed, Weight, Temperature)
-│   ├── PIXM_Codelists.xsd  # Enumerated values (controlled vocabulary)
-│   └── ...
-├── examples/               # Sample PIXM datasets (Takeoff, Landing)
-├── docs/                   # Specification documentation and UML diagrams
+├── schema/
+│   ├── README.md               # What each schema file contains
+│   └── 0.5/                    # The core PIXM XML Schema Definition files (XSD), version 0.5
+│       ├── PIXM_Features.xsd   # Main feature definitions (Aircraft, Engines, etc.)
+│       ├── PIXM_DataTypes.xsd  # Fundamental types (Speed, Weight, Temperature)
+│       ├── PIXM_Codelists.xsd  # Enumerated values (controlled vocabulary)
+│       └── ...
+├── examples/                   # Sample PIXM datasets (Takeoff, Landing)
+├── rules/                      # Schematron business rules
+├── tools/                      # Validation and utility scripts
+├── docs/                       # Guidelines, process, decisions, change log, mappings
+├── CLAUDE.md                   # Working rules for AI-assisted development
 └── README.md
 ```
 

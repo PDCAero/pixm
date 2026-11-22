@@ -1,0 +1,5 @@
+# Local copies of external schemas for offline validation (tools/fetch_schemas.py)
+.schema-cache/
+
+# Python bytecode
+__pycache__/

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-          targetNamespace="http://www.pixm.aero/schema/0.1"
-           xmlns="http://example.com/datatypes"
-           xmlns:pixm="http://www.pixm.aero/schema/0.1"
+          targetNamespace="http://www.pixm.aero/schema/0.5"
+           xmlns="http://www.pixm.aero/schema/0.5"
+           xmlns:pixm="http://www.pixm.aero/schema/0.5"
            xmlns:gml="http://www.opengis.net/gml/3.2"
-           elementFormDefault="qualified">
+           elementFormDefault="qualified"
+           version="0.5">
   <xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
   <xs:include schemaLocation="PIXM_Codelists.xsd"/>
   <xs:complexType name="CodeACorECSBleedType">
@@ -774,6 +775,19 @@
 	<xs:complexType name="TextRemarkType">
 		<xs:simpleContent>
 			<xs:extension base="pixm:TextRemarkBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- Free-text setting value; recommended values are listed in the corresponding Code*BaseType in PIXM_Codelists.xsd -->
+	<xs:simpleType name="TextSettingBaseType">
+		<xs:restriction base="pixm:Character2Type">
+      <xs:maxLength value="80"/>
+    </xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="TextSettingType">
+		<xs:simpleContent>
+			<xs:extension base="pixm:TextSettingBaseType">
 				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
 			</xs:extension>
 		</xs:simpleContent>
