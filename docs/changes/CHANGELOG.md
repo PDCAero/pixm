@@ -4,6 +4,9 @@ One line per change to the schema or examples. Format: `docs/process/ccb-process
 
 ## 0.5 (unreleased)
 
+### 2026-11-21 — LandingExit displacement removed (DEC-0005)
+- REMOVE  PIXM_Features: `LandingExit/displacementFromFullLength` (unreleased; no agreed meaning for exits). Example 3 values (all 0) removed. Compat: none. Ref: DEC-0005.
+
 ### 2026-11-21 — Example 3 converted to DepartureIntersection / LandingExit (DEC-0005)
 - CHANGE  examples: `Example 3 - Landing Exits and Departure Ints` (41 departure intersections, 84 landing exits) converted to the DEC-0005 structure, values kept; AIXM elements replaced by PIXM blocks; headers added. Compat: none.
 - FIX     examples: Example 3 vertical datum NAVD88 → EGM_96 (illustrative); elevations rounded to 4 decimal places (schema limit); designators upper-cased (e.g. `E(North)` → `E(NORTH)`); runway direction of landing exits taken from the reference point designator. Compat: none. Ref: DEC-0005.

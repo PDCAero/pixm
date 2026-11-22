@@ -46,9 +46,10 @@ The model referred to `aixm:RunwayCenterlinePoint` (AIXM 5.1.1 spells it
    pattern (CCB exception to closed codelists, so national datums can be given);
    the LAHSO flag is named `landAndHoldShortPoint` (full words, no glossary entry);
    exit speeds are ground speeds; entry and exit angles use `ValAngleType`;
-   `displacementFromFullLength` is measured along the runway centerline from the
-   start of the takeoff run available (departures) or the threshold (exits) and is
-   not negative.
+   `displacementFromFullLength` (departure intersections only) is measured along
+   the runway centerline from the start of the full-length takeoff run available
+   and is not negative. It was removed from `LandingExit` (CCB, 2026-11-21): the
+   source data gave 0 for every exit and no consistent meaning was agreed.
 10. **Naming:** full words are used instead of abbreviations in new names
     (`takeoffRunAvailable` rather than `tora`, `pavementClassificationNumber`
     rather than `pcn`); `runwayDirectionDesignator` and `aerodromeDesignator`

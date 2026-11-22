@@ -2947,11 +2947,6 @@
 							<xs:documentation>The mean slope of the runway from the threshold to the exit, positive when the runway rises in the direction of the landing roll. [PIXM]</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="displacementFromFullLength" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1">
-						<xs:annotation>
-							<xs:documentation>The distance along the runway centerline from the threshold to the point where the landing rollout ends at the exit. Not negative. [PIXM]</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element name="associatedDeclaredDistances" type="pixm:DeclaredDistancesType" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>The declared distances that apply to a landing using the exit (normally the landing distance available up to the exit). [ICAO Annex 14]</xs:documentation>
