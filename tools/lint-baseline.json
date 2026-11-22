@@ -1861,6 +1861,8 @@
   "PRIMITIVE|schema/0.5/PIXM_Features.xsd|VAppIncrementsTimeSliceType/iceAccretionInc: XSD primitive string used directly",
   "PRIMITIVE|schema/0.5/PIXM_Features.xsd|VAppIncrementsTimeSliceType/steepApproachInc: XSD primitive string used directly",
   "PRIMITIVE|schema/0.5/PIXM_Features.xsd|VerticalStructureTimeSliceType/name: XSD primitive string used directly",
+  "PRIMITIVE|schema/0.5/PIXM_Messages.xsd|AbstractPIXMNotificationTimeSliceType/serviceStatusCode: XSD primitive positiveInteger used directly",
+  "PRIMITIVE|schema/0.5/PIXM_Messages.xsd|AbstractPIXMResponseTimeSliceType/errorMessage: XSD primitive string used directly",
   "UNITS|schema/0.5/PIXM_Measures.xsd|ValAngleType: uom must be use=\"required\"",
   "UNITS|schema/0.5/PIXM_Measures.xsd|ValBearingType: uom must be use=\"required\"",
   "UNITS|schema/0.5/PIXM_Measures.xsd|ValBrakeEnergyType: uom must be use=\"required\"",

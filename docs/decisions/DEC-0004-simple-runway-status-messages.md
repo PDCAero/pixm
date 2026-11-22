@@ -26,6 +26,8 @@ open question #12 (feature vs object) and the existing `AbstractPIXMMessageType`
    `errorMessage` stays free text (`xs:string`) and `serviceStatusCode` stays an
    `xs:positiveInteger` whose values PIXM does not define (CCB exception to
    principles 2 and §6.2 primitives).
+   The two resulting `PRIMITIVE` lint warnings were added to
+   `tools/lint-baseline.json` (CCB approval, 2026-11-21).
 4. **Framework.** Options: keep features and defer to #12; keep unchanged;
    resolve #12 first. **Decided: keep requests, responses and notifications as
    time-sliced features; their feature-vs-object status, the interpretation of
