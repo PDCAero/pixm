@@ -1,0 +1,24 @@
+<pixm:SimpleRunwayStatusRequest xmlns:pixm="http://www.pixm.aero/schema/0.1" 
+                         xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="rs_req_1">
+    <pixm:timeSlice>
+        <pixm:SimpleRunwayStatusRequestTimeSlice gml:id="rs_req_ts_1">
+            <gml:validTime>
+                <gml:TimePeriod gml:id="tp_req_current">
+                    <gml:beginPosition>2026-05-01T00:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2026-05-01T00:00:30Z</gml:endPosition>
+                </gml:TimePeriod>
+            </gml:validTime>
+
+            <!-- request metadata-->
+            <pixm:requesterId>b802d439-e9f3-49f9-96e1-abcdef012345</pixm:requesterId>
+            <pixm:requestId>b802d439-e9f3-49f9-96e1-0153b837e113</pixm:requestId>
+            <pixm:requestTimestamp>2026-05-01T00:00:00Z</pixm:requestTimestamp>
+
+            <!-- request content-->
+            <pixm:airportId>LSZH</pixm:airportId>
+            <pixm:provideNextExpectedChange>true</pixm:provideNextExpectedChange>
+            <pixm:timeInstant>2026-05-01T00:00:00Z</pixm:timeInstant>
+
+        </pixm:SimpleRunwayStatusRequestTimeSlice>
+    </pixm:timeSlice>
+</pixm:SimpleRunwayStatusRequest>
