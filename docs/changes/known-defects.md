@@ -25,10 +25,8 @@ task (CLAUDE.md §4.3); remove each item when fixed and log it in `CHANGELOG.md`
 |---|---|---|
 | E1 | 16 measure values without `uom` (`oeiASD`, `oeiTOD`, `oeiTOR`, `initialHalfWidth`, `maxHalfWidthAfterTurn`) | Example 1 response files; `zrh_phased_obstacles.xml` |
 | E2 | Not well-formed: closing tag mismatch at line 111 | `examples/temporal_example.xml` |
-| E3 | AIXM elements embedded directly in PIXM content (`aixm:runwayReferencePoint` etc.) | `pixm_departure_intersections.xml` |
-| E4 | Headers lack the illustrative-data statement and PIXM version | all examples |
-| E5 | Uses features `LandingExit` and `DepartureIntersection`, which do not exist in the schema | `examples/Example 3 - Landing Exits and Departure Ints/` |
+| E4 | Headers lack the illustrative-data statement and PIXM version | Examples 1, 2 and `temporal_example.xml` |
 | E6 | `gml:id` values contain colons (`urn:uuid:obs-…`); `gml:id` must be an NCName | Example 1 `takeoffRequest-28R_*.xml`, `takeoffRequest_01R_*.xml` |
 | E7 | Feature properties placed directly on the feature (no time slice), and time slices / `obstacleSet` placed directly in `gml:featureMember` | `zrh_phased_obstacles.xml`; `obstacleSet` in Example 1 requests |
-| E8 | Time slices have no `pixm:interpretation`, which the schema requires | all examples |
-| E9 | All 20 examples fail validation (1,014 errors on 2026-11-20, after the time-slice fix let validation reach the content). About 750 are elements the schema does not define (e.g. `contextUsage`, `identifier`, `geometry`, `speedName`, `position`, `description`); about 120 are nested blocks in an older style (e.g. `aircraftConfigurationTimeSlice`); 75 are properties out of sequence order; the rest are E5–E8 and invalid values | `python tools/validate.py`; open.md #11 |
+| E8 | Time slices have no `pixm:interpretation`, which the schema requires | Examples 1, 2 and `temporal_example.xml` |
+| E9 | Examples 1, 2 and `temporal_example.xml` fail validation (889 errors on 2026-11-21; was 1,014 before Example 3 was converted). Most are elements the schema does not define (e.g. `contextUsage`, `identifier`, `geometry`, `speedName`, `position`, `description`); others are nested blocks in an older style (e.g. `aircraftConfigurationTimeSlice`), properties out of sequence order, E6–E8 and invalid values | `python tools/validate.py`; open.md #11 |

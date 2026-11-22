@@ -4,6 +4,11 @@ One line per change to the schema or examples. Format: `docs/process/ccb-process
 
 ## 0.5 (unreleased)
 
+### 2026-11-21 — Example 3 converted to DepartureIntersection / LandingExit (DEC-0005)
+- CHANGE  examples: `Example 3 - Landing Exits and Departure Ints` (41 departure intersections, 84 landing exits) converted to the DEC-0005 structure, values kept; AIXM elements replaced by PIXM blocks; headers added. Compat: none.
+- FIX     examples: Example 3 vertical datum NAVD88 → EGM_96 (illustrative); elevations rounded to 4 decimal places (schema limit); designators upper-cased (e.g. `E(North)` → `E(NORTH)`); runway direction of landing exits taken from the reference point designator. Compat: none. Ref: DEC-0005.
+- DOC     known-defects: E3 and E5 removed (fixed); E9 updated. Compat: none.
+
 ### 2026-11-21 — Departure intersection and landing exit features (DEC-0005)
 - ADD     PIXM_Features: feature `DepartureIntersection` (with `DepartureIntersectionTimeSlice`, `…TimeSlicePropertyType`): designators, description, entry side, runway reference point, distance reference point and line, usage limitation, entry angle, line-up-and-wait, rolling takeoff, slope, displacement, declared distances, performance runway. Compat: none. Ref: DEC-0005.
 - ADD     PIXM_Features: feature `LandingExit` (with `LandingExitTimeSlice`, `…TimeSlicePropertyType`): designators, description, exit side, runway reference point, distance reference point, reference point, usage limitation, exit angle, land-and-hold-short point, maximum/minimum/target exit speed, slope, displacement, declared distances, performance runway. Compat: none. Ref: DEC-0005.
