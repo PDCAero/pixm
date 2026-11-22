@@ -13,7 +13,7 @@ Keep this file up to date whenever schema files are added, split, renamed or mov
 | `PIXM_UoM.xsd` | `Uom…Type` unit lists | — |
 | `PIXM_Measures.xsd` | `Val…BaseType` / `Val…Type` measures with `uom` and `nilReason` | UoM, DataTypes, GML |
 | `PIXM_Features.xsd` | All features and their time slices, and shared data blocks | All of the above (and, until removed, AIXM 5.1.1) |
-| `PIXM_Messages.xsd` | Request, response and notification (unsolicited message) bases, and the simple runway status request, response and message | `PIXM_Features.xsd` |
+| `PIXM_Messages.xsd` | Request, response and notification (unsolicited message) bases; simple runway status request, response and message; departure intersection and landing exit status notifications | `PIXM_Features.xsd` |
 
 ## External schemas
 

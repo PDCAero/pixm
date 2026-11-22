@@ -337,4 +337,137 @@
 		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</xs:complexType>
 
+	<!-- ========================================================== -->
+	<!-- Runway access point status (DEC-0005)                      -->
+	<!-- ========================================================== -->
+
+	<xs:element name="AbstractRunwayAccessPointStatusTimeSlice" type="pixm:AbstractRunwayAccessPointStatusTimeSliceType" abstract="true" substitutionGroup="pixm:AbstractPIXMNotificationTimeSlice"/>
+	<xs:complexType name="AbstractRunwayAccessPointStatusTimeSliceType" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Abstract base for the time slices of status notifications about a runway access point (a departure intersection or a landing exit): its identification, whether it is closed or active, and any temporary restriction. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMNotificationTimeSliceType">
+				<xs:sequence>
+					<xs:element name="aerodromeDesignator" type="pixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Designator of the aerodrome at which the runway access point is located (e.g. the ICAO location indicator LSZH). [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="runwayDirectionDesignator" type="pixm:TextDesignatorType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Designator of the runway direction that the runway access point serves (e.g. 10, 28L). [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="designator" type="pixm:TextDesignatorType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The designator of the runway access point (departure intersection or landing exit) whose status is given (e.g. B9). [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="closed" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Whether the runway access point is physically closed (YES), for example for works, or open (NO). A closed point is never active. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="active" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Whether the runway access point is currently in use by air traffic control (YES) or not (NO). An open point may be inactive. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="restriction" type="pixm:UsageLimitationType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Temporary limits on the aircraft that may use the runway access point, applying instead of its published usage limitation: maximum weight, maximum wingspan and pavement bearing strength. [PIXM]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="AbstractRunwayAccessPointStatus" type="pixm:AbstractRunwayAccessPointStatusType" abstract="true" substitutionGroup="pixm:AbstractPIXMNotification"/>
+	<xs:complexType name="AbstractRunwayAccessPointStatusType" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Abstract base feature for status notifications about a runway access point (a departure intersection or a landing exit). [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMNotificationType"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- DepartureIntersectionStatus -->
+	<xs:element name="DepartureIntersectionStatusTimeSlice" type="pixm:DepartureIntersectionStatusTimeSliceType" substitutionGroup="pixm:AbstractRunwayAccessPointStatusTimeSlice"/>
+	<xs:complexType name="DepartureIntersectionStatusTimeSliceType">
+		<xs:annotation>
+			<xs:documentation>A time slice of a notification giving the operational status of a departure intersection. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractRunwayAccessPointStatusTimeSliceType"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="DepartureIntersectionStatus" type="pixm:DepartureIntersectionStatusType" substitutionGroup="pixm:AbstractRunwayAccessPointStatus"/>
+	<xs:complexType name="DepartureIntersectionStatusType">
+		<xs:annotation>
+			<xs:documentation>A notification giving the operational status of a departure intersection: closed, active and any temporary restriction. Planned changes are given as TEMPDELTA time slices. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractRunwayAccessPointStatusType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:DepartureIntersectionStatusTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Departure Intersection Status feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DepartureIntersectionStatusTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Departure Intersection Status time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:DepartureIntersectionStatusTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+
+	<!-- LandingExitStatus -->
+	<xs:element name="LandingExitStatusTimeSlice" type="pixm:LandingExitStatusTimeSliceType" substitutionGroup="pixm:AbstractRunwayAccessPointStatusTimeSlice"/>
+	<xs:complexType name="LandingExitStatusTimeSliceType">
+		<xs:annotation>
+			<xs:documentation>A time slice of a notification giving the operational status of a landing exit. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractRunwayAccessPointStatusTimeSliceType"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="LandingExitStatus" type="pixm:LandingExitStatusType" substitutionGroup="pixm:AbstractRunwayAccessPointStatus"/>
+	<xs:complexType name="LandingExitStatusType">
+		<xs:annotation>
+			<xs:documentation>A notification giving the operational status of a landing exit: closed, active and any temporary restriction. Planned changes are given as TEMPDELTA time slices. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractRunwayAccessPointStatusType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:LandingExitStatusTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A time slice of the Landing Exit Status feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandingExitStatusTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Landing Exit Status time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:LandingExitStatusTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+
 </xs:schema>

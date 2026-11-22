@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Purpose:   Status of landing exit J for runway 10: open but not in use (BASELINE), with a
+             planned closure for works (TEMPDELTA).
+  Scenario:  Example 3 - Landing Exits and Departure Ints.
+  PIXM:      0.5
+  Exercises: LandingExitStatus (AbstractRunwayAccessPointStatus).
+  Data:      Illustrative only, based on a real aerodrome (LSZH). The status and identifiers
+             are fictional. Not for operational use.
+-->
+<pixm:LandingExitStatus xmlns:pixm="http://www.pixm.aero/schema/0.5"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.pixm.aero/schema/0.5 ../../schema/0.5/PIXM_Messages.xsd"
+    gml:id="les_10_J">
+    <pixm:timeSlice>
+        <pixm:LandingExitStatusTimeSlice gml:id="les_10_J_ts1">
+            <gml:validTime>
+                <gml:TimePeriod gml:id="les_10_J_tp1">
+                    <gml:beginPosition>2026-06-01T00:00:00Z</gml:beginPosition>
+                    <gml:endPosition indeterminatePosition="unknown"/>
+                </gml:TimePeriod>
+            </gml:validTime>
+            <pixm:interpretation>BASELINE</pixm:interpretation>
+            <pixm:messageId>c4d5e6f7-a8b9-4c0d-9e1f-2a3b4c5d6e7f</pixm:messageId>
+            <pixm:sourceId>3f2a1b4c-5d6e-4f70-8a9b-0c1d2e3f4a5b</pixm:sourceId>
+            <pixm:aerodromeDesignator>LSZH</pixm:aerodromeDesignator>
+            <pixm:runwayDirectionDesignator>10</pixm:runwayDirectionDesignator>
+            <pixm:designator>J</pixm:designator>
+            <pixm:closed>NO</pixm:closed>
+            <pixm:active>NO</pixm:active>
+        </pixm:LandingExitStatusTimeSlice>
+    </pixm:timeSlice>
+    <pixm:timeSlice>
+        <pixm:LandingExitStatusTimeSlice gml:id="les_10_J_ts2">
+            <gml:validTime>
+                <gml:TimePeriod gml:id="les_10_J_tp2">
+                    <gml:beginPosition>2026-06-15T21:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2026-06-16T05:00:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </gml:validTime>
+            <pixm:interpretation>TEMPDELTA</pixm:interpretation>
+            <pixm:messageId>c4d5e6f7-a8b9-4c0d-9e1f-2a3b4c5d6e80</pixm:messageId>
+            <pixm:sourceId>3f2a1b4c-5d6e-4f70-8a9b-0c1d2e3f4a5b</pixm:sourceId>
+            <pixm:aerodromeDesignator>LSZH</pixm:aerodromeDesignator>
+            <pixm:runwayDirectionDesignator>10</pixm:runwayDirectionDesignator>
+            <pixm:designator>J</pixm:designator>
+            <pixm:closed>YES</pixm:closed>
+            <pixm:active>NO</pixm:active>
+        </pixm:LandingExitStatusTimeSlice>
+    </pixm:timeSlice>
+</pixm:LandingExitStatus>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Purpose:   Status of departure intersection B9 for runway 10: open and in use (BASELINE),
+             with a planned temporary wingspan restriction during taxiway works (TEMPDELTA).
+  Scenario:  Example 3 - Landing Exits and Departure Ints.
+  PIXM:      0.5
+  Exercises: DepartureIntersectionStatus (AbstractRunwayAccessPointStatus), UsageLimitation.
+  Data:      Illustrative only, based on a real aerodrome (LSZH). The status, restriction
+             and identifiers are fictional. Not for operational use.
+-->
+<pixm:DepartureIntersectionStatus xmlns:pixm="http://www.pixm.aero/schema/0.5"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.pixm.aero/schema/0.5 ../../schema/0.5/PIXM_Messages.xsd"
+    gml:id="dis_10_B9">
+    <pixm:timeSlice>
+        <pixm:DepartureIntersectionStatusTimeSlice gml:id="dis_10_B9_ts1">
+            <gml:validTime>
+                <gml:TimePeriod gml:id="dis_10_B9_tp1">
+                    <gml:beginPosition>2026-06-01T00:00:00Z</gml:beginPosition>
+                    <gml:endPosition indeterminatePosition="unknown"/>
+                </gml:TimePeriod>
+            </gml:validTime>
+            <pixm:interpretation>BASELINE</pixm:interpretation>
+            <pixm:messageId>9b2e4c1a-0d3f-4e5a-8b6c-7d8e9f0a1b2c</pixm:messageId>
+            <pixm:sourceId>3f2a1b4c-5d6e-4f70-8a9b-0c1d2e3f4a5b</pixm:sourceId>
+            <pixm:aerodromeDesignator>LSZH</pixm:aerodromeDesignator>
+            <pixm:runwayDirectionDesignator>10</pixm:runwayDirectionDesignator>
+            <pixm:designator>B9</pixm:designator>
+            <pixm:closed>NO</pixm:closed>
+            <pixm:active>YES</pixm:active>
+        </pixm:DepartureIntersectionStatusTimeSlice>
+    </pixm:timeSlice>
+    <pixm:timeSlice>
+        <pixm:DepartureIntersectionStatusTimeSlice gml:id="dis_10_B9_ts2">
+            <gml:validTime>
+                <gml:TimePeriod gml:id="dis_10_B9_tp2">
+                    <gml:beginPosition>2026-06-10T22:00:00Z</gml:beginPosition>
+                    <gml:endPosition>2026-06-11T05:00:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </gml:validTime>
+            <pixm:interpretation>TEMPDELTA</pixm:interpretation>
+            <pixm:messageId>9b2e4c1a-0d3f-4e5a-8b6c-7d8e9f0a1b2d</pixm:messageId>
+            <pixm:sourceId>3f2a1b4c-5d6e-4f70-8a9b-0c1d2e3f4a5b</pixm:sourceId>
+            <pixm:aerodromeDesignator>LSZH</pixm:aerodromeDesignator>
+            <pixm:runwayDirectionDesignator>10</pixm:runwayDirectionDesignator>
+            <pixm:designator>B9</pixm:designator>
+            <pixm:restriction>
+                <pixm:maximumWingspan uom="M">36</pixm:maximumWingspan>
+            </pixm:restriction>
+        </pixm:DepartureIntersectionStatusTimeSlice>
+    </pixm:timeSlice>
+</pixm:DepartureIntersectionStatus>

@@ -4,6 +4,10 @@ One line per change to the schema or examples. Format: `docs/process/ccb-process
 
 ## 0.5 (unreleased)
 
+### 2026-11-21 — Departure intersection and landing exit status notifications (DEC-0005)
+- ADD     PIXM_Messages: abstract `AbstractRunwayAccessPointStatus` (with time slice: aerodrome, runway direction and point designators, `closed`, `active`, `restriction` as `UsageLimitation`), and notifications `DepartureIntersectionStatus` and `LandingExitStatus` with time slices and wrappers. Compat: none. Ref: DEC-0005.
+- ADD     examples: Example 3 status notifications `departureIntersectionStatus-10-B9.xml` and `landingExitStatus-10-J.xml` (BASELINE + TEMPDELTA). Compat: none.
+
 ### 2026-11-21 — LandingExit displacement removed (DEC-0005)
 - REMOVE  PIXM_Features: `LandingExit/displacementFromFullLength` (unreleased; no agreed meaning for exits). Example 3 values (all 0) removed. Compat: none. Ref: DEC-0005.
 

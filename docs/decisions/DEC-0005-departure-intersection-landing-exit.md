@@ -27,7 +27,11 @@ The model referred to `aixm:RunwayCenterlinePoint` (AIXM 5.1.1 spells it
 3. **Availability and status:** no schedule property. Planned closures and
    restrictions are `TEMPDELTA` time slices of the feature (AIXM practice). The
    detailed status becomes a status notification in `PIXM_Messages` (pattern of
-   DEC-0004), for both features, as a later step.
+   DEC-0004), for both features. Implemented as `DepartureIntersectionStatus` and
+   `LandingExitStatus` on a shared `AbstractRunwayAccessPointStatus`, one point per
+   notification, with `closed` (physically closed, e.g. works), `active` (in use
+   by air traffic control; an open point may be inactive, a closed point never is)
+   and `restriction` (a `UsageLimitation` applying instead of the published one).
 4. **Bearing strength:** a reusable `BearingStrength` block (ACN-PCN), reusing
    `ValPCNType`, `CodePavementBehaviourType` and `CodePavementSubgradeType`, with new
    closed codelists for tire pressure category and evaluation method. PCR may be
