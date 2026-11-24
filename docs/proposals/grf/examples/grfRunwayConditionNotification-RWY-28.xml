@@ -1,54 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   DRAFT FOR CCB DISCUSSION - validates against the draft PIXM_GRF_Proposal.xsd only.
-  Purpose:   The two contamination models side by side on one performance runway (both
-             optional, neither replaces the other): the existing SCAP-equivalent
-             contamDefinition and the proposed GRF runway condition report.
+  Purpose:   A GRF runway condition report for runway 28 sent on its own as a notification:
+             RWYCC 5/5/3, wet snow 3 mm on the first two thirds, compacted snow on the
+             last third, cleared width 40 m, a snowbank on the left.
   Scenario:  GRF proposal prototype (docs/proposals/grf/README.md).
   PIXM:      0.5 + GRF draft
-  Exercises: PerformanceRunway (redefined in the draft), ContaminationDefinition (existing),
-             GRFRunwayConditionReport.
-  Data:      Illustrative only, based on a real aerodrome (LSZH). Conditions and identifiers
-             are fictional. Declared distances are illustrative. Not for operational use.
+  Exercises: GRFRunwayConditionNotification, GRFRunwayConditionReport, RunwayContamination,
+             Ridge, RunwaySectionContamination.
+  Data:      Illustrative only, not a real aerodrome (LXXX). Conditions and identifiers
+             are fictional. Not for operational use.
 -->
-<pixm:PerformanceRunway xmlns:pixm="http://www.pixm.aero/schema/0.5"
+<pixm:GRFRunwayConditionNotification xmlns:pixm="http://www.pixm.aero/schema/0.5"
     xmlns:gml="http://www.opengis.net/gml/3.2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.pixm.aero/schema/0.5 ../PIXM_GRF_Proposal.xsd"
-    gml:id="prwy_lszh_28">
+    gml:id="grf_28">
     <pixm:timeSlice>
-        <pixm:PerformanceRunwayTimeSlice gml:id="prwy_lszh_28_ts1">
+        <pixm:GRFRunwayConditionNotificationTimeSlice gml:id="grf_28_ts1">
             <gml:validTime>
-                <gml:TimePeriod gml:id="prwy_lszh_28_tp1">
+                <gml:TimePeriod gml:id="grf__28_tp1">
                     <gml:beginPosition>2026-12-15T05:40:00Z</gml:beginPosition>
                     <gml:endPosition indeterminatePosition="unknown"/>
                 </gml:TimePeriod>
             </gml:validTime>
             <pixm:interpretation>BASELINE</pixm:interpretation>
-            <pixm:lda uom="M">2500</pixm:lda>
-            <pixm:tora uom="M">2500</pixm:tora>
-            <!-- Existing SCAP-equivalent model (unchanged) -->
-            <pixm:contamDefinition gml:id="scap_lszh_28">
-                <pixm:timeSlice>
-                    <pixm:ContaminationTimeSlice gml:id="scap_lszh_28_ts1">
-                        <gml:validTime>
-                            <gml:TimePeriod gml:id="scap_lszh_28_tp1">
-                                <gml:beginPosition>2026-12-15T05:40:00Z</gml:beginPosition>
-                                <gml:endPosition indeterminatePosition="unknown"/>
-                            </gml:TimePeriod>
-                        </gml:validTime>
-                        <pixm:interpretation>BASELINE</pixm:interpretation>
-                        <pixm:contamDepth uom="MM">3</pixm:contamDepth>
-                        <pixm:contamType>WET_SNOW</pixm:contamType>
-                    </pixm:ContaminationTimeSlice>
-                </pixm:timeSlice>
-            </pixm:contamDefinition>
-            <!-- Proposed GRF report (draft) -->
+            <pixm:messageId>0d6f1b2e-8c4a-4e3b-9f21-5a7c3e9d4b10</pixm:messageId>
+            <pixm:sourceId>3f2a1b4c-5d6e-4f70-8a9b-0c1d2e3f4a5b</pixm:sourceId>
             <pixm:grfRunwayConditionReport>
-                <pixm:aerodromeDesignator>LSZH</pixm:aerodromeDesignator>
+                <pixm:aerodromeDesignator>LXXX</pixm:aerodromeDesignator>
                 <pixm:runwayDirectionDesignator>28</pixm:runwayDirectionDesignator>
                 <pixm:observationTime>2026-12-15T05:40:00Z</pixm:observationTime>
                 <pixm:rcamVersionReference>DOC9981-2020</pixm:rcamVersionReference>
+
+                <!-- Whole runway contamination example-->
                 <pixm:runwayContamination>
                     <pixm:clearedWidth uom="M">40</pixm:clearedWidth>
                     <pixm:criticalRidge>
@@ -58,6 +43,8 @@
                     </pixm:criticalRidge>
                     <pixm:nextObservationTime>2026-12-15T07:00:00Z</pixm:nextObservationTime>
                 </pixm:runwayContamination>
+
+                <!-- Runway 1/3s contamination example-->
                 <pixm:sectionContamination>
                     <pixm:section>FIRST</pixm:section>
                     <pixm:runwayConditionCode>5</pixm:runwayConditionCode>
@@ -78,7 +65,8 @@
                     <pixm:contaminant>COMPACTED_SNOW</pixm:contaminant>
                     <pixm:proportion>100</pixm:proportion>
                 </pixm:sectionContamination>
+                
             </pixm:grfRunwayConditionReport>
-        </pixm:PerformanceRunwayTimeSlice>
+        </pixm:GRFRunwayConditionNotificationTimeSlice>
     </pixm:timeSlice>
-</pixm:PerformanceRunway>
+</pixm:GRFRunwayConditionNotification>
