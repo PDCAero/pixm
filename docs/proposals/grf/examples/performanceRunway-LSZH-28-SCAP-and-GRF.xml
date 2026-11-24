@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DRAFT FOR CCB DISCUSSION - validates against the draft PIXM_GRF_Proposal.xsd only.
+  Purpose:   The two contamination models side by side on one performance runway (both
+             optional, neither replaces the other): the existing SCAP-equivalent
+             contamDefinition and the proposed GRF runway condition report.
+  Scenario:  GRF proposal prototype (docs/proposals/grf/README.md).
+  PIXM:      0.5 + GRF draft
+  Exercises: PerformanceRunway (redefined in the draft), ContaminationDefinition (existing),
+             GRFRunwayConditionReport.
+  Data:      Illustrative only, based on a real aerodrome (LSZH). Conditions and identifiers
+             are fictional. Declared distances are illustrative. Not for operational use.
+-->
+<pixm:PerformanceRunway xmlns:pixm="http://www.pixm.aero/schema/0.5"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.pixm.aero/schema/0.5 ../PIXM_GRF_Proposal.xsd"
+    gml:id="prwy_lszh_28">
+    <pixm:timeSlice>
+        <pixm:PerformanceRunwayTimeSlice gml:id="prwy_lszh_28_ts1">
+            <gml:validTime>
+                <gml:TimePeriod gml:id="prwy_lszh_28_tp1">
+                    <gml:beginPosition>2026-12-15T05:40:00Z</gml:beginPosition>
+                    <gml:endPosition indeterminatePosition="unknown"/>
+                </gml:TimePeriod>
+            </gml:validTime>
+            <pixm:interpretation>BASELINE</pixm:interpretation>
+            <pixm:lda uom="M">2500</pixm:lda>
+            <pixm:tora uom="M">2500</pixm:tora>
+            <!-- Existing SCAP-equivalent model (unchanged) -->
+            <pixm:contamDefinition gml:id="scap_lszh_28">
+                <pixm:timeSlice>
+                    <pixm:ContaminationTimeSlice gml:id="scap_lszh_28_ts1">
+                        <gml:validTime>
+                            <gml:TimePeriod gml:id="scap_lszh_28_tp1">
+                                <gml:beginPosition>2026-12-15T05:40:00Z</gml:beginPosition>
+                                <gml:endPosition indeterminatePosition="unknown"/>
+                            </gml:TimePeriod>
+                        </gml:validTime>
+                        <pixm:interpretation>BASELINE</pixm:interpretation>
+                        <pixm:contamDepth uom="MM">3</pixm:contamDepth>
+                        <pixm:contamType>WET_SNOW</pixm:contamType>
+                    </pixm:ContaminationTimeSlice>
+                </pixm:timeSlice>
+            </pixm:contamDefinition>
+            <!-- Proposed GRF report (draft) -->
+            <pixm:grfRunwayConditionReport>
+                <pixm:aerodromeDesignator>LSZH</pixm:aerodromeDesignator>
+                <pixm:runwayDirectionDesignator>28</pixm:runwayDirectionDesignator>
+                <pixm:observationTime>2026-12-15T05:40:00Z</pixm:observationTime>
+                <pixm:rcamVersionReference>DOC9981-2020</pixm:rcamVersionReference>
+                <pixm:runwayContamination>
+                    <pixm:clearedWidth uom="M">40</pixm:clearedWidth>
+                    <pixm:criticalRidge>
+                        <pixm:side>LEFT</pixm:side>
+                        <pixm:distanceFromCenterline uom="M">22</pixm:distanceFromCenterline>
+                        <pixm:height uom="CM">40</pixm:height>
+                    </pixm:criticalRidge>
+                    <pixm:nextObservationTime>2026-12-15T07:00:00Z</pixm:nextObservationTime>
+                </pixm:runwayContamination>
+                <pixm:sectionContamination>
+                    <pixm:section>FIRST</pixm:section>
+                    <pixm:runwayConditionCode>5</pixm:runwayConditionCode>
+                    <pixm:contaminant>WET_SNOW</pixm:contaminant>
+                    <pixm:depth uom="MM">3</pixm:depth>
+                    <pixm:proportion>50</pixm:proportion>
+                </pixm:sectionContamination>
+                <pixm:sectionContamination>
+                    <pixm:section>SECOND</pixm:section>
+                    <pixm:runwayConditionCode>5</pixm:runwayConditionCode>
+                    <pixm:contaminant>WET_SNOW</pixm:contaminant>
+                    <pixm:depth uom="MM">3</pixm:depth>
+                    <pixm:proportion>50</pixm:proportion>
+                </pixm:sectionContamination>
+                <pixm:sectionContamination>
+                    <pixm:section>THIRD</pixm:section>
+                    <pixm:runwayConditionCode>3</pixm:runwayConditionCode>
+                    <pixm:contaminant>COMPACTED_SNOW</pixm:contaminant>
+                    <pixm:proportion>100</pixm:proportion>
+                </pixm:sectionContamination>
+            </pixm:grfRunwayConditionReport>
+        </pixm:PerformanceRunwayTimeSlice>
+    </pixm:timeSlice>
+</pixm:PerformanceRunway>

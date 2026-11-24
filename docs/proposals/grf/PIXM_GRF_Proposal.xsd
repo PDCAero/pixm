@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PIXM GRF proposal - DRAFT FOR CCB DISCUSSION, NOT NORMATIVE.
+  Prototype of runway condition reporting in the ICAO Global Reporting Format (GRF),
+  based on the concept mapping "PIXM Concept Mapping - GRF" (candidate PIXM v1.0).
+  See README.md in this folder for decisions taken, proposals and open questions.
+  Items marked "PROPOSAL" are not decided; items marked TODO(VERIFY) are from memory
+  and must be checked against ICAO PANS-AD (Doc 9981).
+  This file redefines PerformanceRunwayTimeSliceType (xs:redefine) only to show how
+  GRF could be embedded; the final implementation would edit PIXM_Features.xsd.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:pixm="http://www.pixm.aero/schema/0.5"
+	targetNamespace="http://www.pixm.aero/schema/0.5"
+	elementFormDefault="qualified"
+	version="0.5-grf-draft">
+
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+
+	<!-- PROPOSAL (B1, B8): GRF report embedded in PerformanceRunway alongside the existing
+	     SCAP-equivalent contamDefinition; both optional. -->
+	<xs:redefine schemaLocation="../../../schema/0.5/PIXM_Messages.xsd">
+		<xs:complexType name="PerformanceRunwayTimeSliceType">
+			<xs:complexContent>
+				<xs:extension base="pixm:PerformanceRunwayTimeSliceType">
+					<xs:sequence>
+						<xs:element name="grfRunwayConditionReport" type="pixm:GRFRunwayConditionReportType" minOccurs="0" maxOccurs="1">
+							<xs:annotation>
+								<xs:documentation>The runway condition report in the Global Reporting Format for this runway direction. An alternative to, and independent of, the SCAP-equivalent contamDefinition. [Doc 9981]</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:redefine>
+
+	<!-- ========================================================== -->
+	<!-- Codelists (draft)                                          -->
+	<!-- ========================================================== -->
+
+	<xs:simpleType name="CodeRunwayThirdBaseType">
+		<xs:annotation>
+			<xs:documentation>A third of the runway length, numbered from the threshold of the runway direction in use. [Doc 9981]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FIRST">
+				<xs:annotation><xs:documentation>The first third, beginning at the threshold of the runway direction in use. [Doc 9981]</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SECOND">
+				<xs:annotation><xs:documentation>The middle third. [Doc 9981]</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="THIRD">
+				<xs:annotation><xs:documentation>The last third, ending at the end of the runway in the direction in use. [Doc 9981]</xs:documentation></xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CodeRunwayThirdType">
+		<xs:annotation>
+			<xs:documentation>A third of the runway length, with an optional reason when the value is missing. [Doc 9981]</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="pixm:CodeRunwayThirdBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<!-- PROPOSAL (B4): runway condition code as a closed codelist, not an integer. -->
+	<xs:simpleType name="CodeRunwayConditionBaseType">
+		<xs:annotation>
+			<xs:documentation>The runway condition code (RWYCC) assigned to a runway third with the runway condition assessment matrix (RCAM), from 6 (dry) to 0 (braking action less than poor). The literals are ordered: a higher code means better braking. Meanings below give the associated pilot-reported braking action; TODO(VERIFY) against the RCAM. [Doc 9981]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="6"><xs:annotation><xs:documentation>Dry runway. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="5"><xs:annotation><xs:documentation>Braking action good. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="4"><xs:annotation><xs:documentation>Braking action good to medium. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="3"><xs:annotation><xs:documentation>Braking action medium. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="2"><xs:annotation><xs:documentation>Braking action medium to poor. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="1"><xs:annotation><xs:documentation>Braking action poor. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="0"><xs:annotation><xs:documentation>Braking action less than poor. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CodeRunwayConditionType">
+		<xs:annotation>
+			<xs:documentation>A runway condition code (RWYCC), with an optional reason when the value is missing. [Doc 9981]</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="pixm:CodeRunwayConditionBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<!-- PROPOSAL (B3): a new closed GRF contaminant list with combined descriptors, instead
+	     of the existing CodeContaminationType or AIXM-style layers. Literals TODO(VERIFY). -->
+	<xs:simpleType name="CodeGRFContaminantBaseType">
+		<xs:annotation>
+			<xs:documentation>The type of runway surface contaminant as reported in the Global Reporting Format; combined contaminants are single descriptors (e.g. DRY_SNOW_ON_TOP_OF_ICE). TODO(VERIFY) list against Doc 9981. [Doc 9981]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DRY"><xs:annotation><xs:documentation>Dry: no contaminant and no visible moisture. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="WET"><xs:annotation><xs:documentation>Wet: covered by visible moisture or water up to 3 mm deep. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="SLIPPERY_WET"><xs:annotation><xs:documentation>Slippery wet: a wet runway whose surface friction is degraded. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="STANDING_WATER"><xs:annotation><xs:documentation>Standing water more than 3 mm deep. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="FROST"><xs:annotation><xs:documentation>Frost. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="SLUSH"><xs:annotation><xs:documentation>Slush. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="DRY_SNOW"><xs:annotation><xs:documentation>Dry snow. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="WET_SNOW"><xs:annotation><xs:documentation>Wet snow. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="COMPACTED_SNOW"><xs:annotation><xs:documentation>Compacted snow. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="DRY_SNOW_ON_TOP_OF_COMPACTED_SNOW"><xs:annotation><xs:documentation>Dry snow on top of compacted snow. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="WET_SNOW_ON_TOP_OF_COMPACTED_SNOW"><xs:annotation><xs:documentation>Wet snow on top of compacted snow. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="WATER_ON_TOP_OF_COMPACTED_SNOW"><xs:annotation><xs:documentation>Water on top of compacted snow. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="ICE"><xs:annotation><xs:documentation>Ice. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="WET_ICE"><xs:annotation><xs:documentation>Wet ice. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="DRY_SNOW_ON_TOP_OF_ICE"><xs:annotation><xs:documentation>Dry snow on top of ice. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="WET_SNOW_ON_TOP_OF_ICE"><xs:annotation><xs:documentation>Wet snow on top of ice. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+			<xs:enumeration value="SPECIALLY_PREPARED_WINTER_RUNWAY"><xs:annotation><xs:documentation>A specially prepared winter runway. [Doc 9981]</xs:documentation></xs:annotation></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CodeGRFContaminantType">
+		<xs:annotation>
+			<xs:documentation>A GRF runway surface contaminant type, with an optional reason when the value is missing. [Doc 9981]</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="pixm:CodeGRFContaminantBaseType">
+				<xs:attribute name="nilReason" type="gml:NilReasonEnumeration"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<!-- ========================================================== -->
+	<!-- GRF runway condition report (draft blocks)                 -->
+	<!-- PROPOSAL (B2): composition - report header + whole-runway  -->
+	<!-- part + up to three third sections - instead of inheritance -->
+	<!-- from GRFContaminationDefinition.                           -->
+	<!-- ========================================================== -->
+
+	<xs:element name="GRFRunwayConditionReport" type="pixm:GRFRunwayConditionReportType"/>
+	<xs:complexType name="GRFRunwayConditionReportType">
+		<xs:annotation>
+			<xs:documentation>A runway condition report (RCR) in the Global Reporting Format for one runway direction at one time: the assessment of each runway third and the condition of the runway as a whole. [Doc 9981]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="aerodromeDesignator" type="pixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>Designator of the aerodrome (e.g. the ICAO location indicator LSZH). [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="runwayDirectionDesignator" type="pixm:TextDesignatorType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>Designator of the runway direction assessed (e.g. 28); the runway thirds are numbered from its threshold. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="observationTime" type="pixm:DateTimeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>UTC date and time at which the assessment was completed. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<!-- TODO(CCB) B9: content and type of rcamVersionReference. -->
+			<xs:element name="rcamVersionReference" type="pixm:TextDesignatorType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>Reference to the edition of the runway condition assessment matrix (RCAM) used for the assessment (e.g. DOC9981-2020). Content to be agreed. [PIXM]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="runwayContamination" type="pixm:RunwayContaminationType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The condition of the runway as a whole: cleared dimensions, snowbanks and clearance information. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="sectionContamination" type="pixm:RunwaySectionContaminationType" minOccurs="0" maxOccurs="3">
+				<xs:annotation><xs:documentation>The assessment of one runway third; at most one entry per third. Unordered: each entry identifies its third. [Doc 9981]</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="RunwaySectionContamination" type="pixm:RunwaySectionContaminationType"/>
+	<xs:complexType name="RunwaySectionContaminationType">
+		<xs:annotation>
+			<xs:documentation>The assessment of one third of a runway in the Global Reporting Format: runway condition code, contaminant, depth and coverage. [Doc 9981]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="section" type="pixm:CodeRunwayThirdType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The runway third assessed, numbered from the threshold of the runway direction in use. [Doc 9981]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="runwayConditionCode" type="pixm:CodeRunwayConditionType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The runway condition code (RWYCC) assigned to the third. [Doc 9981]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="contaminant" type="pixm:CodeGRFContaminantType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The type of contaminant on the third. [Doc 9981]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="depth" type="pixm:ValDepthType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The mean depth of the contaminant on the third. Reported only for contaminants for which depth is assessed; otherwise absent or nilReason. TODO(VERIFY) which contaminants. [Doc 9981]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="proportion" type="pixm:ValPercentType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The percentage of the third covered by the contaminant. GRF reports coverage in steps (25, 50, 75, 100 percent); TODO(VERIFY). [Doc 9981]</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="RunwayContamination" type="pixm:RunwayContaminationType"/>
+	<xs:complexType name="RunwayContaminationType">
+		<xs:annotation>
+			<xs:documentation>The condition of a runway as a whole: cleared dimensions, snowbanks and further clearance information. Adapted from the AIXM RunwayContamination. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="clearedLength" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The length of runway cleared of contaminant. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="clearedWidth" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The width of runway cleared, to which the runway condition codes apply when less than the published width. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="clearedSide" type="pixm:CodeRunwaySideType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The side of the runway centerline on which the cleared width lies when it is not centered, seen in the runway direction assessed. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="clearedLengthBegin" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The distance from the threshold of the runway direction assessed to the beginning of the cleared length. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="criticalRidge" type="pixm:RidgeType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation>A snowbank or ridge of contaminant along the runway that may affect operations. Unordered. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<!-- PROPOSAL (B6): SNOWTAM-era fields kept for AIXM alignment. -->
+			<xs:element name="furtherClearanceTime" type="pixm:DateTimeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>UTC date and time by which further clearance is expected to be completed. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="furtherTotalClearance" type="pixm:CodeYesNoType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>Whether the further clearance will cover the full runway length and width (YES) or not (NO). [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="nextObservationTime" type="pixm:DateTimeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>UTC date and time of the next planned assessment. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="Ridge" type="pixm:RidgeType"/>
+	<xs:complexType name="RidgeType">
+		<xs:annotation>
+			<xs:documentation>A snowbank or ridge of contaminant alongside the runway. Adapted from the AIXM Ridge. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="side" type="pixm:CodeRunwaySideType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The side of the runway on which the ridge lies, seen in the runway direction assessed. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="distanceFromCenterline" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The lateral distance from the runway centerline to the ridge. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="height" type="pixm:ValDepthType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The height of the ridge above the runway surface (AIXM: depth). [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- ========================================================== -->
+	<!-- PROPOSAL (B1): GRF report sent on its own as a notification -->
+	<!-- ========================================================== -->
+
+	<xs:element name="GRFRunwayConditionNotificationTimeSlice" type="pixm:GRFRunwayConditionNotificationTimeSliceType" substitutionGroup="pixm:AbstractPIXMNotificationTimeSlice"/>
+	<xs:complexType name="GRFRunwayConditionNotificationTimeSliceType">
+		<xs:annotation>
+			<xs:documentation>A time slice of a notification carrying a GRF runway condition report; valid from the assessment until it is replaced. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMNotificationTimeSliceType">
+				<xs:sequence>
+					<xs:element name="grfRunwayConditionReport" type="pixm:GRFRunwayConditionReportType" minOccurs="0" maxOccurs="1">
+						<xs:annotation><xs:documentation>The runway condition report. [Doc 9981]</xs:documentation></xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="GRFRunwayConditionNotification" type="pixm:GRFRunwayConditionNotificationType" substitutionGroup="pixm:AbstractPIXMNotification"/>
+	<xs:complexType name="GRFRunwayConditionNotificationType">
+		<xs:annotation>
+			<xs:documentation>An unsolicited notification of the runway condition of one runway direction in the Global Reporting Format. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMNotificationType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:GRFRunwayConditionNotificationTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation><xs:documentation>A time slice of the GRF Runway Condition Notification feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GRFRunwayConditionNotificationTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one GRF Runway Condition Notification time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:GRFRunwayConditionNotificationTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+
+	<!-- ========================================================== -->
+	<!-- Runway contamination clearance request (A2)                -->
+	<!-- From an aircraft operator to an aerodrome: bring a runway  -->
+	<!-- to at least a minimum condition by a given time.           -->
+	<!-- requestId, requesterId, requestTimestamp are inherited     -->
+	<!-- from AbstractPIXMRequestTimeSlice (DEC-0004).              -->
+	<!-- ========================================================== -->
+
+	<xs:element name="MinimumRunwayClearance" type="pixm:MinimumRunwayClearanceType"/>
+	<xs:complexType name="MinimumRunwayClearanceType">
+		<xs:annotation>
+			<xs:documentation>The minimum condition requested for one runway direction: a minimum runway condition code and a minimum cleared width. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="runwayDirectionDesignator" type="pixm:TextDesignatorType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>Designator of the runway direction to which the request applies (e.g. 28). [AIXM 5.1.1]</xs:documentation></xs:annotation>
+			</xs:element>
+			<!-- TODO(CCB) B7: whole runway (as here) or per third. -->
+			<xs:element name="minimumRunwayConditionCode" type="pixm:CodeRunwayConditionType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The lowest runway condition code acceptable on every third of the runway. [PIXM]</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="minimumClearedWidth" type="pixm:ValDistanceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>The narrowest cleared runway width acceptable. [PIXM]</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="RunwayContaminationClearanceRequestTimeSlice" type="pixm:RunwayContaminationClearanceRequestTimeSliceType" substitutionGroup="pixm:AbstractPIXMRequestTimeSlice"/>
+	<xs:complexType name="RunwayContaminationClearanceRequestTimeSliceType">
+		<xs:annotation>
+			<xs:documentation>A time slice of a request from an aircraft operator to an aerodrome to clear one or more runway directions to at least a minimum condition by a given time. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMRequestTimeSliceType">
+				<xs:sequence>
+					<xs:element name="aerodromeDesignator" type="pixm:CodeAirportHeliportDesignatorType" minOccurs="0" maxOccurs="1">
+						<xs:annotation><xs:documentation>Designator of the aerodrome to which the request is addressed (e.g. the ICAO location indicator LSZH). [AIXM 5.1.1]</xs:documentation></xs:annotation>
+					</xs:element>
+					<xs:element name="requiredClearedTime" type="pixm:DateTimeType" minOccurs="0" maxOccurs="1">
+						<xs:annotation><xs:documentation>UTC date and time by which the requested minimum condition is needed (e.g. the estimated time of arrival or departure). [PIXM]</xs:documentation></xs:annotation>
+					</xs:element>
+					<!-- TODO(CCB) B7: at least one required? -->
+					<xs:element name="runwayClearanceRequest" type="pixm:MinimumRunwayClearanceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation><xs:documentation>The minimum condition requested for one runway direction. Unordered. [PIXM]</xs:documentation></xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="RunwayContaminationClearanceRequest" type="pixm:RunwayContaminationClearanceRequestType" substitutionGroup="pixm:AbstractPIXMRequest"/>
+	<xs:complexType name="RunwayContaminationClearanceRequestType">
+		<xs:annotation>
+			<xs:documentation>A request from an aircraft operator to an aerodrome to bring one or more runway directions to at least a minimum runway condition by a given time. [PIXM]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="pixm:AbstractPIXMRequestType">
+				<xs:sequence>
+					<xs:element name="timeSlice" type="pixm:RunwayContaminationClearanceRequestTimeSlicePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation><xs:documentation>A time slice of the Runway Contamination Clearance Request feature: its state during one period of validity. [AIXM 5.1.1]</xs:documentation></xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RunwayContaminationClearanceRequestTimeSlicePropertyType">
+		<xs:annotation>
+			<xs:documentation>A property that contains one Runway Contamination Clearance Request time slice. [AIXM 5.1.1]</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="pixm:RunwayContaminationClearanceRequestTimeSlice" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+
+</xs:schema>

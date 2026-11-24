@@ -13,3 +13,5 @@ Each needs CCB approval; the initial list and casing are an open decision
 | VREF | `vRef` | Reference landing speed | 14 CFR 1.2 / CS-Definitions | Candidate |
 | VMCG | `vMCG` | Minimum control speed on the ground | 14 CFR 1.2 / CS-Definitions | Candidate |
 | VMU | `vMU` | Minimum unstick speed | 14 CFR 1.2 / CS-Definitions | Candidate |
+| GRF | `grf` (properties), `GRF` (types) | Global Reporting Format: the ICAO method for assessing and reporting runway surface conditions | ICAO PANS-AD (Doc 9981) | Accepted (CCB, 2026-11-23) |
+| RCAM | `rcam` | Runway condition assessment matrix: the GRF table that assigns runway condition codes | ICAO PANS-AD (Doc 9981) | Accepted (CCB, 2026-11-23) |

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DRAFT FOR CCB DISCUSSION - validates against the draft PIXM_GRF_Proposal.xsd only.
+  Purpose:   An aircraft operator asks the aerodrome to bring runway 28 to at least
+             RWYCC 5 on every third with at least 45 m cleared width by 07:30 UTC.
+  Scenario:  GRF proposal prototype (docs/proposals/grf/README.md).
+  PIXM:      0.5 + GRF draft
+  Exercises: RunwayContaminationClearanceRequest (AbstractPIXMRequest), MinimumRunwayClearance.
+  Data:      Illustrative only, based on a real aerodrome (LSZH). Conditions and identifiers
+             are fictional. Not for operational use.
+-->
+<pixm:RunwayContaminationClearanceRequest xmlns:pixm="http://www.pixm.aero/schema/0.5"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.pixm.aero/schema/0.5 ../PIXM_GRF_Proposal.xsd"
+    gml:id="rccr_1">
+    <pixm:timeSlice>
+        <pixm:RunwayContaminationClearanceRequestTimeSlice gml:id="rccr_1_ts1">
+            <gml:validTime>
+                <gml:TimePeriod gml:id="rccr_1_tp1">
+                    <gml:beginPosition>2026-12-15T05:50:00Z</gml:beginPosition>
+                    <gml:endPosition>2026-12-15T07:30:00Z</gml:endPosition>
+                </gml:TimePeriod>
+            </gml:validTime>
+            <!-- Interpretation of request time slices is part of open.md #12 (DEC-0004). -->
+            <pixm:interpretation>BASELINE</pixm:interpretation>
+            <!-- Inherited request metadata (AbstractPIXMRequestTimeSlice) -->
+            <pixm:requesterId>a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d</pixm:requesterId>
+            <pixm:requestId>5e6f7a8b-9c0d-4e1f-a2b3-c4d5e6f7a8b9</pixm:requestId>
+            <pixm:requestTimestamp>2026-12-15T05:50:00Z</pixm:requestTimestamp>
+            <!-- Request content -->
+            <pixm:aerodromeDesignator>LSZH</pixm:aerodromeDesignator>
+            <pixm:requiredClearedTime>2026-12-15T07:30:00Z</pixm:requiredClearedTime>
+            <pixm:runwayClearanceRequest>
+                <pixm:runwayDirectionDesignator>28</pixm:runwayDirectionDesignator>
+                <pixm:minimumRunwayConditionCode>5</pixm:minimumRunwayConditionCode>
+                <pixm:minimumClearedWidth uom="M">45</pixm:minimumClearedWidth>
+            </pixm:runwayClearanceRequest>
+        </pixm:RunwayContaminationClearanceRequestTimeSlice>
+    </pixm:timeSlice>
+</pixm:RunwayContaminationClearanceRequest>
